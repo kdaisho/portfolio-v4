@@ -1,10 +1,31 @@
 import React, { Component } from "react";
+import Header from "./components/header/Header";
 
 class App extends Component {
     state = {
         username: "",
-        greeting: ""
+        greeting: "",
     };
+
+    socials = [
+        { name: "linkedIn", url: "---" },
+        { name: "github", url: "---" },
+    ];
+
+    menuItems = [
+        {
+            name: "Education",
+        },
+        {
+            name: "Technologies",
+        },
+        {
+            name: "Projects",
+        },
+        {
+            name: "Contact",
+        },
+    ];
 
     componentDidMount() {
         fetch("/api/getUsername")
@@ -22,6 +43,7 @@ class App extends Component {
         const { username, greeting } = this.state;
         return (
             <div>
+                <Header socials={this.socials} menuItems={this.menuItems} />
                 {username ? (
                     <h1>{`Hello ${username}`}</h1>
                 ) : (

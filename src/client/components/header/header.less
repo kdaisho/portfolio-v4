@@ -1,3 +1,153 @@
-body {
-    background: #ccc;
+@import "../../global-style/variables";
+
+.header {
+    background: #fff;
+    border-bottom: 5px solid #000;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    .nav {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+        height: 50px;
+        position: relative;
+        justify-content: space-between;
+
+        @media (min-width: @tablet) {
+            height: 58px;
+        }
+
+        path {
+            stroke: @themeColor;
+            stroke-width: 1;
+            stroke-dasharray: 816;
+            stroke-dashoffset: 816;
+            animation: strokeOffset 2s linear forwards, paintLogo 1s 2s forwards;
+        }
+        .logo-text {
+            animation: paintLogo 2s 2s forwards;
+        }
+
+        .nav-left {
+            flex: 0 0 80px;
+            height: 45px;
+            .logo {
+                transform: scale(0.5);
+                transform-origin: top left;
+            }
+        }
+
+        .nav-right {
+            align-items: center;
+            display: flex;
+            flex-flow: row nowrap;
+            flex: 0 0 calc(100% - 150px);
+            justify-content: flex-end;
+            .social-links {
+                display: flex;
+                flex-flow: row nowrap;
+                flex: 0 0 100px;
+                justify-content: space-around;
+                margin: 0 10px -5px;
+                img {
+                    width: 30px;
+                }
+            }
+            .menu-button {
+                @media (min-width: @tablet) {
+                    display: none;
+                }
+            }
+            .menu-pane {
+                display: none;
+
+                &.active {
+                    background: rgba(0, 0, 0, 0.85);
+                    display: block;
+                    height: 100vh;
+                    left: 0;
+                    position: absolute;
+                    top: 55px;
+                    width: 100%;
+                }
+                @media (min-width: @tablet) {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    flex: 0 0 50%;
+                    justify-content: flex-end;
+                    margin-top: -5px;
+
+                    label {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                input[type="radio"] {
+                    display: none;
+                }
+            }
+            .button {
+                flex: 0 0 120px;
+                align-items: center;
+                background: @themeColor;
+                border: none;
+                bottom: 0;
+                box-shadow: 5px 5px 0 #000;
+                color: #fff;
+                display: flex;
+                font-size: @fontMenuItem;
+                font-weight: bold;
+                flex-flow: column nowrap;
+                height: 40px;
+                justify-content: center;
+                margin: 0 6px;
+                outline: none;
+                padding: 0 1rem;
+                position: relative;
+                right: 0;
+                transition: bottom 0.05s ease-in, right 0.05s ease-in,
+                    box-shadow 0.05s ease-in;
+                user-select: none;
+                width: 120px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .icon {
+                    height: 35px;
+                    margin-bottom: 0.25rem;
+                }
+            }
+            input:checked + .button {
+                bottom: -4px;
+                right: -4px;
+                box-shadow: 1px 1px 0 #000;
+            }
+        }
+    }
+}
+
+@keyframes strokeOffset {
+    0% {
+        stroke-dashoffset: 816;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes paintLogo {
+    0% {
+        fill: transparent;
+    }
+    100% {
+        fill: @themeColor;
+    }
 }

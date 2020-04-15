@@ -1,27 +1,27 @@
 import React from "react";
+import { socials, menuItems } from "./headerData";
+import Logo from "../../images/nav/Logo";
 import "./header.css";
 
-const Header = props => {
+const Header = () => {
     return (
-        <header>
+        <header className="header">
             <div className="app-wrapper nav">
                 <div className="nav-left">
-                    <div className="logo">logo</div>
+                    <div className="logo">
+                        <Logo />
+                    </div>
                 </div>
-
                 <div id="navRight" className="nav-right">
                     <ul className="social-links">
-                        {props.socials.map(item => (
+                        {socials.map(item => (
                             <li key={item.name}>
-                                <img
-                                    src={`images/nav/${item.name}.svg`}
-                                    alt={item.name}
-                                />
+                                <img src={item.src} alt={item.name} />
                             </li>
                         ))}
                     </ul>
                     <div className="menu-pane">
-                        {props.menuItems.map(item => (
+                        {menuItems.map(item => (
                             <button key={item.name} className="button">
                                 {item.name}
                             </button>

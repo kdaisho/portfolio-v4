@@ -45,16 +45,14 @@ class Match extends Component {
         event.target.classList.remove("invisible");
     };
 
-    dragOver = () => {
+    dragOver = index => {
         event.preventDefault();
-        event.target.classList.add("hovered");
+        //todo: add class to 'this' instead of event target
+        document.getElementsByClassName("spot")[index].classList.add("hovered");
     };
 
     dragEnter = position => {
         event.preventDefault();
-        // this.state.indexTo = parseInt(
-        //     event.target.getAttribute("data-position")
-        // );
         this.setState(
             {
                 indexTo: position
@@ -69,10 +67,6 @@ class Match extends Component {
                 );
             }
         );
-        // setTimeout(
-        //     () => this.pushTags(this.state.indexFrom < this.state.indexTo),
-        //     0
-        // );
     };
 
     getPosIndex = () => {
@@ -91,7 +85,10 @@ class Match extends Component {
         event.target.classList.remove("hovered");
         this.removeUpDownFromTags();
         this.dropTags(posIndex);
-        event.target.append(this.state.currentTag);
+        // event.target.append(this.state.currentTag);
+        document
+            .getElementsByClassName("spot")
+            [posIndex].append(this.state.currentTag);
         setTimeout(() => this.setOrder(), 0);
     };
 
@@ -293,7 +290,7 @@ class Match extends Component {
                     <div
                         className="spot"
                         data-position="0"
-                        onDragOver={this.dragOver}
+                        onDragOver={() => this.dragOver(0)}
                         onDragEnter={() => this.dragEnter(0)}
                         onDragLeave={this.dragLeave}
                         onDrop={() => this.dragDrop(0)}
@@ -301,7 +298,6 @@ class Match extends Component {
                         <div
                             className="tag"
                             draggable="true"
-                            // onDragStart={() => this.dragStart(0)}
                             onDragStart={this.dragStart}
                             onDragEnd={this.dragEnd}
                             data-element="0"
@@ -312,7 +308,7 @@ class Match extends Component {
                     <div
                         className="spot"
                         data-position="1"
-                        onDragOver={this.dragOver}
+                        onDragOver={() => this.dragOver(1)}
                         onDragEnter={() => this.dragEnter(1)}
                         onDragLeave={this.dragLeave}
                         onDrop={() => this.dragDrop(1)}
@@ -330,7 +326,7 @@ class Match extends Component {
                     <div
                         className="spot"
                         data-position="2"
-                        onDragOver={this.dragOver}
+                        onDragOver={() => this.dragOver(2)}
                         onDragEnter={() => this.dragEnter(2)}
                         onDragLeave={this.dragLeave}
                         onDrop={() => this.dragDrop(2)}

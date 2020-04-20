@@ -4,12 +4,40 @@ import "./match.css";
 class Match extends Component {
     state = {
         lastPosition: "",
-        spots: [],
         tags: [],
         currentTag: "",
         indexFrom: "",
         indexTo: ""
     };
+
+    list = [
+        {
+            id: 0,
+            text: "CSS and Preprocessors"
+        },
+        {
+            id: 1,
+            text: "Office Politics"
+        },
+        {
+            id: 2,
+            text: "Nodejs"
+        },
+        {
+            id: 3,
+            text: "JavaScript Frameworks"
+        },
+        {
+            id: 4,
+            text: "Vanilla JavaScript"
+        },
+        {
+            id: 5,
+            text: "French"
+        }
+    ];
+
+    spotsRef = [];
 
     componentDidMount() {
         this.init();
@@ -18,10 +46,7 @@ class Match extends Component {
 
     setOrder = () => {
         this.state.lastPosition &&
-            this.state.spots[this.state.lastPosition].classList.remove(
-                "hovered"
-            );
-        // this.state.tags = document.querySelectorAll(".tag");
+            this.spotsRef[this.state.lastPosition].classList.remove("hovered");
         this.setState({ tags: document.querySelectorAll(".tag") }, () =>
             console.log(this.state.tags)
         );
@@ -30,10 +55,7 @@ class Match extends Component {
     dragStart = event => {
         console.log("EVENT TARGET", event.target);
         this.setState({ currentTag: event.target }, () => {
-            console.log("Drag start", this.state.currentTag);
-            this.setState({ indexFrom: this.getPosIndex() }, () =>
-                console.log("indexFrom INIT", this.state.indexFrom)
-            );
+            this.setState({ indexFrom: this.getPosIndex() });
             setTimeout(
                 () => this.state.currentTag.classList.add("invisible"),
                 0
@@ -45,28 +67,20 @@ class Match extends Component {
         event.target.classList.remove("invisible");
     };
 
-    dragOver = index => {
+    dragOver = (index, txt) => {
         event.preventDefault();
-        //todo: add class to 'this' instead of event target
-        document.getElementsByClassName("spot")[index].classList.add("hovered");
+        this.spotsRef[index].classList.add("hovered");
     };
 
     dragEnter = position => {
         event.preventDefault();
-        this.setState(
-            {
-                indexTo: position
-            },
-            () => {
-                setTimeout(
-                    () =>
-                        this.pushTags(
-                            this.state.indexFrom < this.state.indexTo
-                        ),
-                    0
-                );
-            }
-        );
+        console.log("%cENTERING:", "background:red;color:#fff", position);
+        this.setState({ indexTo: position }, () => {
+            setTimeout(
+                () => this.pushTags(this.state.indexFrom < this.state.indexTo),
+                0
+            );
+        });
     };
 
     getPosIndex = () => {
@@ -80,30 +94,20 @@ class Match extends Component {
         }
     };
 
-    dragDrop = posIndex => {
-        console.log("YA", posIndex);
-        event.target.classList.remove("hovered");
+    dragDrop = (spots, posIndex) => {
+        spots[posIndex].classList.remove("hovered");
         this.removeUpDownFromTags();
         this.dropTags(posIndex);
-        // event.target.append(this.state.currentTag);
-        document
-            .getElementsByClassName("spot")
-            [posIndex].append(this.state.currentTag);
+        spots[posIndex].append(this.state.currentTag);
         setTimeout(() => this.setOrder(), 0);
     };
 
     dropTags = indexTo => {
-        console.log("SPOTS ARRAY?", this.state.spots);
         const appendTags = (initialIndex, endIndex, offset) => {
             for (let i = initialIndex; i <= endIndex; i++) {
-                this.state.spots[i + offset].append(this.state.tags[i]);
-                console.log(
-                    "SPOTS ARRAY APPEND",
-                    this.state.spots[i + offset].append
-                );
+                this.spotsRef[i + offset].append(this.state.tags[i]);
             }
         };
-
         this.state.indexFrom < this.state.indexTo
             ? appendTags(this.state.indexFrom + 1, indexTo, -1)
             : appendTags(this.state.indexTo, this.state.indexFrom - 1, 1);
@@ -116,13 +120,6 @@ class Match extends Component {
                 this.state.tags[i].classList.add(className);
             }
         };
-        // downwards
-        //     ? addClassName("up", this.state.indexFrom + 1, this.state.indexTo)
-        //     : addClassName(
-        //           "down",
-        //           this.state.indexTo,
-        //           this.state.indexFrom - 1
-        //       );
         if (downwards) {
             console.log(
                 "DOWN PUSHING TAG INDEX TO:",
@@ -141,13 +138,7 @@ class Match extends Component {
     };
 
     init = () => {
-        this.setState(
-            { spots: document.getElementsByClassName("spot") },
-            () => {
-                console.log("INIT SPOTS", this.state.spots);
-                this.setOrder();
-            }
-        );
+        this.setOrder();
     };
 
     // ********** TOUCH ***********
@@ -287,90 +278,28 @@ class Match extends Component {
                 </div>
 
                 <div className="spots">
-                    <div
-                        className="spot"
-                        data-position="0"
-                        onDragOver={() => this.dragOver(0)}
-                        onDragEnter={() => this.dragEnter(0)}
-                        onDragLeave={this.dragLeave}
-                        onDrop={() => this.dragDrop(0)}
-                    >
+                    {this.list.map(item => (
                         <div
-                            className="tag"
-                            draggable="true"
-                            onDragStart={this.dragStart}
-                            onDragEnd={this.dragEnd}
-                            data-element="0"
+                            key={item.id}
+                            className="spot"
+                            data-position={item.id}
+                            onDragOver={() => this.dragOver(item.id)}
+                            onDragEnter={() => this.dragEnter(item.id)}
+                            onDragLeave={this.dragLeave}
+                            onDrop={() => this.dragDrop(this.spotsRef, item.id)}
+                            ref={ref => (this.spotsRef[item.id] = ref)}
                         >
-                            <span className="text">CSS and Preprocessros</span>
+                            <div
+                                className="tag"
+                                draggable="true"
+                                onDragStart={this.dragStart}
+                                onDragEnd={this.dragEnd}
+                                data-element={item.id}
+                            >
+                                <span className="text">{item.text}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        className="spot"
-                        data-position="1"
-                        onDragOver={() => this.dragOver(1)}
-                        onDragEnter={() => this.dragEnter(1)}
-                        onDragLeave={this.dragLeave}
-                        onDrop={() => this.dragDrop(1)}
-                    >
-                        <div
-                            className="tag"
-                            draggable="true"
-                            onDragStart={this.dragStart}
-                            onDragEnd={this.dragEnd}
-                            data-element="1"
-                        >
-                            <span className="text">Office Politics</span>
-                        </div>
-                    </div>
-                    <div
-                        className="spot"
-                        data-position="2"
-                        onDragOver={() => this.dragOver(2)}
-                        onDragEnter={() => this.dragEnter(2)}
-                        onDragLeave={this.dragLeave}
-                        onDrop={() => this.dragDrop(2)}
-                    >
-                        <div
-                            className="tag"
-                            draggable="true"
-                            onDragStart={this.dragStart}
-                            onDragEnd={this.dragEnd}
-                            data-element="2"
-                        >
-                            <span className="text">Nodejs</span>
-                        </div>
-                    </div>
-                    {/* <div
-                        className="spot"
-                        data-position="3"
-                        // onDragStart={this.dragStart}
-                        // onDragEnd={this.dragEnd}
-                    >
-                        <div className="tag" draggable="true" data-element="3">
-                            <span className="text">JavaScript Frameworks</span>
-                        </div>
-                    </div>
-                    <div
-                        className="spot"
-                        data-position="4"
-                        // onDragStart={this.dragStart}
-                        // onDragEnd={this.dragEnd}
-                    >
-                        <div className="tag" draggable="true" data-element="4">
-                            <span className="text">Vanilla JavaScript</span>
-                        </div>
-                    </div>
-                    <div
-                        className="spot"
-                        data-position="5"
-                        // onDragStart={this.dragStart}
-                        // onDragEnd={this.dragEnd}
-                    >
-                        <div className="tag" draggable="true" data-element="5">
-                            <span className="text">French</span>
-                        </div>
-                    </div> */}
+                    ))}
                 </div>
             </section>
         );

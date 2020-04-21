@@ -52,19 +52,38 @@ class Match extends Component {
         );
     };
 
-    dragStart = event => {
-        console.log("EVENT TARGET", event.target);
-        this.setState({ currentTag: event.target }, () => {
-            this.setState({ indexFrom: this.getPosIndex() });
-            setTimeout(
-                () => this.state.currentTag.classList.add("invisible"),
-                0
-            );
+    disableTags = index => {
+        this.state.tags.forEach((tag, i) => {
+            if (i !== index) {
+                tag.classList.add("nope");
+            }
         });
     };
 
-    dragEnd = () => {
-        event.target.classList.remove("invisible");
+    enableTags = index => {
+        this.state.tags.forEach((tag, i) => {
+            if (i !== index) {
+                tag.classList.remove("nope");
+            }
+        });
+    };
+
+    dragStart = index => {
+        this.setState(
+            { currentTag: this.state.tags[this.getPosIndex()] },
+            () => {
+                this.setState({ indexFrom: this.getPosIndex() });
+                setTimeout(() => {
+                    this.state.currentTag.classList.add("invisible");
+                    this.disableTags(index);
+                }, 0);
+            }
+        );
+    };
+
+    dragEnd = index => {
+        this.state.currentTag.classList.remove("invisible");
+        this.enableTags(index);
     };
 
     dragOver = (index, txt) => {
@@ -87,11 +106,9 @@ class Match extends Component {
         return parseInt(event.target.parentElement.dataset.position, 10);
     };
 
-    dragLeave = () => {
-        event.target.classList.remove("hovered");
-        for (let i = 0; i < this.state.tags.length; i++) {
-            this.state.tags[i].classList.remove("up", "down");
-        }
+    dragLeave = index => {
+        this.spotsRef[index].classList.remove("hovered");
+        this.state.tags[index].classList.remove("up", "down");
     };
 
     dragDrop = (spots, posIndex) => {
@@ -285,15 +302,15 @@ class Match extends Component {
                             data-position={item.id}
                             onDragOver={() => this.dragOver(item.id)}
                             onDragEnter={() => this.dragEnter(item.id)}
-                            onDragLeave={this.dragLeave}
+                            onDragLeave={() => this.dragLeave(item.id)}
                             onDrop={() => this.dragDrop(this.spotsRef, item.id)}
                             ref={ref => (this.spotsRef[item.id] = ref)}
                         >
                             <div
                                 className="tag"
                                 draggable="true"
-                                onDragStart={this.dragStart}
-                                onDragEnd={this.dragEnd}
+                                onDragStart={() => this.dragStart(item.id)}
+                                onDragEnd={() => this.dragEnd(item.id)}
                                 data-element={item.id}
                             >
                                 <span className="text">{item.text}</span>

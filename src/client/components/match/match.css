@@ -39,6 +39,9 @@
   width: calc(100% - 10px);
   z-index: 10;
 }
+.dd-container .tag.nope {
+  pointer-events: none;
+}
 .dd-container .tag:hover {
   cursor: pointer;
 }

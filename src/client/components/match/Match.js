@@ -60,11 +60,9 @@ class Match extends Component {
         });
     };
 
-    enableTags = index => {
-        this.state.tags.forEach((tag, i) => {
-            if (i !== index) {
-                tag.classList.remove("nope");
-            }
+    enableTags = () => {
+        this.state.tags.forEach(tag => {
+            tag.classList.remove("nope");
         });
     };
 
@@ -81,9 +79,10 @@ class Match extends Component {
         );
     };
 
-    dragEnd = index => {
+    dragEnd = () => {
         this.state.currentTag.classList.remove("invisible");
-        this.enableTags(index);
+        this.enableTags();
+        this.removeUpDownFromTags();
     };
 
     dragOver = (index, txt) => {
@@ -113,8 +112,8 @@ class Match extends Component {
 
     dragDrop = (spots, posIndex) => {
         spots[posIndex].classList.remove("hovered");
-        this.removeUpDownFromTags();
-        this.dropTags(posIndex);
+        const refreshed = this.removeUpDownFromTags();
+        refreshed && this.dropTags(posIndex);
         spots[posIndex].append(this.state.currentTag);
         setTimeout(() => this.setOrder(), 0);
     };
@@ -132,27 +131,22 @@ class Match extends Component {
 
     pushTags = downwards => {
         const addClassName = (className, initialIndex, endIndex) => {
-            console.log("initial index:", initialIndex, endIndex);
             for (let i = initialIndex; i <= endIndex; i++) {
                 this.state.tags[i].classList.add(className);
             }
         };
-        if (downwards) {
-            console.log(
-                "DOWN PUSHING TAG INDEX TO:",
-                this.state.indexTo,
-                this.state.indexFrom
-            );
-            addClassName("up", this.state.indexFrom + 1, this.state.indexTo);
-        } else {
-            console.log(
-                "UPWARDS PUSHING TAG INDEX TO:",
-                this.state.indexTo,
-                this.state.indexFrom
-            );
-            addClassName("down", this.state.indexTo, this.state.indexFrom - 1);
-        }
+
+        downwards
+            ? addClassName("up", this.state.indexFrom + 1, this.state.indexTo)
+            : addClassName(
+                  "down",
+                  this.state.indexTo,
+                  this.state.indexFrom - 1
+              );
     };
+
+    removeUpDownFromTags = () =>
+        [...this.state.tags].map(tag => tag.classList.remove("up", "down"));
 
     init = () => {
         this.setOrder();
@@ -171,12 +165,6 @@ class Match extends Component {
     //         }
     //     }
     // };
-
-    removeUpDownFromTags = () => {
-        for (let i = 0; i < this.state.tags.length; i++) {
-            this.state.tags[i].classList.remove("up", "down");
-        }
-    };
 
     // touchStart = event => {
     //     this.state.indexFrom = this.getPosition(
@@ -310,7 +298,7 @@ class Match extends Component {
                                 className="tag"
                                 draggable="true"
                                 onDragStart={() => this.dragStart(item.id)}
-                                onDragEnd={() => this.dragEnd(item.id)}
+                                onDragEnd={() => this.dragEnd()}
                                 data-element={item.id}
                             >
                                 <span className="text">{item.text}</span>

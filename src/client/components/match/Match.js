@@ -185,46 +185,29 @@ class Match extends Component {
                     event.targetTouches[0].pageX,
                     event.targetTouches[0].pageY
                 )
-                // indexFrom: this.getPosIndex("Start")
             },
             () => {
                 console.log("INDEX FROM:", this.state.indexFrom);
-                // this.disableTags(index);
                 this.disableTags(this.state.indexFrom);
             }
         );
-        //this.state.lastPosition = parseInt(
-        // event.target.parentElement.getAttribute("data-position")
-        //);
-        // console.log("POS INdex:", this.getPosIndex());
         this.setState(
             {
                 lastPosition: this.getPosIndex("Start 2"),
-                // lastPosition: this.getPosition(
-                //     event.targetTouches[0].pageX,
-                //     event.targetTouches[0].pageY
-                // ),
                 initialX: event.targetTouches[0].pageX,
                 initialY: event.targetTouches[0].pageY
             },
             () => this.setState({ unlocked: true })
         );
-        // const ha = this.removeUpDownFromTags();
-        // console.log("HA?", ha);
     };
 
     touchMove = index => {
         if (event.cancelable) event.preventDefault();
         if (this.state.unlocked === false) return;
         if (!this.state.hasMoved) {
-            // this.state.hasMoved = true;
             this.setState({ hasMoved: true });
-            // event.target.style.zIndex = 100;
             this.state.tags[this.state.lastPosition].style.zIndex = 100;
         }
-        // event.target.style.transform = `translate(${
-        //     event.targetTouches[0].pageX - this.state.initialX
-        // }px, ${event.targetTouches[0].pageY - this.state.initialY}px)`;
         this.state.tags[this.state.lastPosition].style.transform = `translate(${
             event.targetTouches[0].pageX - this.state.initialX
         }px, ${event.targetTouches[0].pageY - this.state.initialY}px)`;
@@ -278,15 +261,12 @@ class Match extends Component {
             this.spotsRef[this.state.indexTo] &&
                 this.spotsRef[this.state.indexTo].classList.remove("hovered");
             this.dropTags(this.state.indexTo);
-            // this.spotsRef[this.state.indexTo].append(this.state.tags[index]);
             this.spotsRef[this.state.indexTo].append(
                 this.state.tags[this.state.lastPosition]
             );
-            // this.state.hasMoved = false;
             this.setState({ hasMoved: false });
         }
         requestAnimationFrame(() => {
-            // event.target.removeAttribute("style");
             this.enableTags();
             this.state.tags[this.state.lastPosition].removeAttribute("style");
             this.setOrder();

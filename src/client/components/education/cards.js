@@ -1,5 +1,5 @@
-import fem from "../../images/education/frontendmasters-logo-opt.svg";
-import treehouse from "../../images/education/treehouse-logo-opt.svg";
+import fem from "../../images/education/frontendmasters-logo.svg";
+import treehouse from "../../images/education/treehouse-logo.svg";
 
 const cards = [
     {

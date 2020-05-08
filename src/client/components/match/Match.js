@@ -46,7 +46,9 @@ class Match extends Component {
 
     componentDidMount() {
         this.init();
-        this.initTouch();
+        setTimeout(() => {
+            this.initTouch();
+        }, 0);
     }
 
     setOrder = () => {
@@ -206,11 +208,19 @@ class Match extends Component {
         if (this.state.unlocked === false) return;
         if (!this.state.hasMoved) {
             this.setState({ hasMoved: true });
-            this.state.tags[this.state.lastPosition].style.zIndex = 100;
+            console.log("DEBUG TAGS:", this.state.tags);
+            console.log("DEBUG LAST POSITION:", this.state.lastPosition);
+            !isNaN(this.state.lastPosition)
+                ? (this.state.tags[this.state.lastPosition].style.zIndex = 100)
+                : null;
         }
-        this.state.tags[this.state.lastPosition].style.transform = `translate(${
-            event.targetTouches[0].pageX - this.state.initialX
-        }px, ${event.targetTouches[0].pageY - this.state.initialY}px)`;
+        !isNaN(this.state.lastPosition)
+            ? (this.state.tags[
+                  this.state.lastPosition
+              ].style.transform = `translate(${
+                  event.targetTouches[0].pageX - this.state.initialX
+              }px, ${event.targetTouches[0].pageY - this.state.initialY}px)`)
+            : null;
         this.setState(
             {
                 indexTo: this.getPosition(
@@ -255,20 +265,29 @@ class Match extends Component {
 
     touchEnd = index => {
         console.log("END index:", index);
+        console.log("ENABLGING TAGS:");
+        this.enableTags();
         if (!this.state.hasMoved) return false;
         const refreshed = this.removeUpDownFromTags();
         if (typeof this.state.indexTo === "number" && refreshed) {
             this.spotsRef[this.state.indexTo] &&
                 this.spotsRef[this.state.indexTo].classList.remove("hovered");
             this.dropTags(this.state.indexTo);
-            this.spotsRef[this.state.indexTo].append(
-                this.state.tags[this.state.lastPosition]
-            );
+            !isNaN(this.state.lastPosition)
+                ? this.spotsRef[this.state.indexTo].append(
+                      this.state.tags[this.state.lastPosition]
+                  )
+                : null;
             this.setState({ hasMoved: false });
         }
         requestAnimationFrame(() => {
-            this.enableTags();
-            this.state.tags[this.state.lastPosition].removeAttribute("style");
+            // console.log("ENABLGING TAGS:");
+            // this.enableTags();
+            !isNaN(this.state.lastPosition)
+                ? this.state.tags[this.state.lastPosition].removeAttribute(
+                      "style"
+                  )
+                : null;
             this.setOrder();
             this.setState({ unlocked: false });
         });
@@ -282,6 +301,22 @@ class Match extends Component {
         this.setState({ coordinates }, () =>
             console.log("COORDINATES:", this.state.coordinates)
         );
+        console.log("INIT", this.state.tags);
+        for (let i = 0; i < this.state.tags.length; i++) {
+            this.state.tags[i].addEventListener("touchstart", () =>
+                this.touchStart(i)
+            );
+            this.state.tags[i].addEventListener(
+                "touchmove",
+                () => this.touchMove(i),
+                {
+                    passive: false
+                }
+            );
+            this.state.tags[i].addEventListener("touchend", () =>
+                this.touchEnd(i)
+            );
+        }
     };
 
     // window.addEventListener("resize", () => {
@@ -321,9 +356,9 @@ class Match extends Component {
                                 draggable="true"
                                 onDragStart={() => this.dragStart(item.id)}
                                 onDragEnd={() => this.dragEnd()}
-                                onTouchStart={() => this.touchStart(item.id)}
-                                onTouchMove={() => this.touchMove(item.id)}
-                                onTouchEnd={() => this.touchEnd(item.id)}
+                                // onTouchStart={() => this.touchStart(item.id)}
+                                // onTouchMove={() => this.touchMove(item.id)}
+                                // onTouchEnd={() => this.touchEnd(item.id)}
                                 data-element={item.id}
                             >
                                 <span className="text">{item.text}</span>

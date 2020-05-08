@@ -4,11 +4,11 @@ import cat from "../../images/hero/cat-single-041.svg";
 import catAction from "../../images/hero/cat-action-export-051.svg";
 import "./hero.css";
 
-const Hero = ({ goTo }) => {
+const Hero = () => {
     return (
-        <section className="aboutSection">
+        <section className="hero-component">
             <div className="typewriter">
-                <h1>Konichiwa(hello).</h1>
+                <h1>Who am I?</h1>
             </div>
 
             <div

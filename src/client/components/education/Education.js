@@ -6,6 +6,7 @@ const Education = () => {
     console.log("cards", Array.isArray(cards));
     return (
         <section className="education-component">
+            <h2 className="section-title">Education</h2>
             <div className="cards">
                 {cards.map(card => (
                     <div className="card">

@@ -1,8 +1,3 @@
-.education-component {
-  /* ==== Educations and skills ==== */
-  /* ==== Educations ==== */
-  /* === animation ends === */
-}
 .education-component .edu-skills {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,36 +24,18 @@
   }
 }
 .education-component .cards {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-wrap: wrap;
-  -ms-flexbox-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
+  flex-flow: row wrap;
   justify-content: center;
-  -webkit-perspective: 800px;
-  -moz-perspective: 800px;
-  -ms-perspective: 800px;
 }
 .education-component .two-cards {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-wrap: wrap;
-  -ms-flexbox-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
+  flex-flow: row wrap;
   justify-content: center;
 }
 .education-component .card {
   position: relative;
   user-select: none;
-  -webkit-user-select: none;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
@@ -71,37 +48,25 @@
   cursor: pointer;
 }
 .education-component .v-align {
-  -webkit-box-align-self: center;
-  -ms-flex-align-self: center;
   align-self: center;
 }
 .education-component .side-a,
 .education-component .side-b {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  transition: 1s;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
+  transition: transform 1s;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 .education-component .card:hover .side-a,
 .education-component .card:focus .side-a {
-  -webkit-transform: perspective(800px) rotateY(-180deg);
-  -moz-transform: perspective(800px) rotateY(-180deg);
   transform: perspective(800px) rotateY(180deg);
 }
 .education-component .card:hover .side-b,
 .education-component .card:focus .side-b {
-  -moz-transform: perspective(800px) rotateY(0);
-  -webkit-transform: perspective(800px) rotateY(0);
   transform: perspective(800px) rotateY(0);
 }
 .education-component .side-a {
   position: absolute;
   z-index: 100;
-  -moz-transform: perspective(800px) rotateY(0deg);
-  -webkit-transform: perspective(800px) rotateY(0deg);
   transform: perspective(800px) rotateY(0deg);
 }
 .education-component .side-a h4 {
@@ -109,12 +74,8 @@
   padding: 0 4px;
 }
 .education-component .side-b {
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   background: #fff;
-  -moz-transform: perspective(800px) rotateY(-180deg);
-  -webkit-transform: perspective(800px) rotateY(-180deg);
   transform: perspective(800px) rotateY(-180deg);
 }
 .education-component .side-b h4,
@@ -125,41 +86,41 @@
   padding: 0 6px 0;
 }
 .education-component .card-style {
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
   border-radius: 9px;
-  width: 100%;
-  max-width: 170px;
-  height: 236px;
+  max-width: 210px;
+  height: 300px;
   margin: 9px;
-  box-shadow: 3px 3px 6px #777;
+  width: 100%;
 }
 .education-component .edu-title {
-  width: 120px;
+  border-bottom: 1px solid #ccc;
   margin: 0 auto 12px;
   padding-bottom: 12px;
-  border-bottom: 1px solid #ccc;
+  width: 120px;
 }
-.education-component .treehouse-a img {
+.education-component .treehouse {
+  border: 4px solid #5fcf80;
+}
+.education-component .treehouse h4,
+.education-component .treehouse p {
+  color: #5fcf80;
+}
+.education-component .treehouse.side-a img {
   margin: 42px auto 30px;
   display: block;
 }
-.education-component .herzing-a {
-  padding: 0 4px;
+.education-component .herzing {
+  border: 4px solid #000;
 }
-.education-component .herzing-a img {
-  margin: 50px auto 57px;
-  display: block;
+.education-component .herzing h4,
+.education-component .herzing p {
+  color: #000;
 }
-.education-component .sdf-a {
-  background: url("/images/camou.jpg") no-repeat;
+.education-component .frontendmasters {
+  border: 4px solid #c02d28;
 }
-.education-component .sdf-a img {
-  display: block;
-  margin: 66px auto 50px;
-}
-.education-component .sdf-b h4 {
-  line-height: 1;
-}
-.education-component .frontendmasters-a img {
+.education-component .frontendmasters.side-a img {
   margin: 50px auto 72px;
   display: block;
 }

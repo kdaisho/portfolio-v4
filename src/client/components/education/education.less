@@ -1,5 +1,6 @@
+@import "../../global-style/variables";
+
 .education-component {
-    /* ==== Educations and skills ==== */
     .edu-skills {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -14,7 +15,6 @@
         }
     }
 
-    /* ==== Educations ==== */
     .educations {
         flex-grow: 1;
         width: 500px;
@@ -31,38 +31,21 @@
     }
 
     .cards {
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-wrap: wrap;
-        -ms-flexbox-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
+        flex-flow: row wrap;
         justify-content: center;
-        -webkit-perspective: 800px; // card flip animation starts here
-        -moz-perspective: 800px;
-        -ms-perspective: 800px;
+        // -ms-perspective: 800px;
     }
 
     .two-cards {
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-wrap: wrap;
-        -ms-flexbox-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
+        flex-flow: row wrap;
         justify-content: center;
     }
 
     .card {
         position: relative;
         user-select: none;
-        -webkit-user-select: none;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
         -ms-transform-style: preserve-3d;
         transform-style: preserve-3d;
 
@@ -77,41 +60,31 @@
     }
 
     .v-align {
-        -webkit-box-align-self: center;
-        -ms-flex-align-self: center;
         align-self: center;
     }
 
     .side-a,
     .side-b {
-        -webkit-transition: 1s;
-        -moz-transition: 1s;
-        transition: 1s;
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
+        transition: transform 1s;
         -ms-backface-visibility: hidden;
         backface-visibility: hidden;
     }
 
-    .card:hover .side-a,
-    .card:focus .side-a {
-        -webkit-transform: perspective(800px) rotateY(-180deg); // this could be (-179.9deg)
-        -moz-transform: perspective(800px) rotateY(-180deg); // this could be (-179.9deg)
-        transform: perspective(800px) rotateY(180deg);
-    }
-
-    .card:hover .side-b,
-    .card:focus .side-b {
-        -moz-transform: perspective(800px) rotateY(0);
-        -webkit-transform: perspective(800px) rotateY(0);
-        transform: perspective(800px) rotateY(0);
+    .card {
+        &:hover,
+        &:focus {
+            .side-a {
+                transform: perspective(800px) rotateY(180deg);
+            }
+            .side-b {
+                transform: perspective(800px) rotateY(0);
+            }
+        }
     }
 
     .side-a {
         position: absolute;
         z-index: 100;
-        -moz-transform: perspective(800px) rotateY(0deg);
-        -webkit-transform: perspective(800px) rotateY(0deg);
         transform: perspective(800px) rotateY(0deg);
 
         h4 {
@@ -121,12 +94,8 @@
     }
 
     .side-b {
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
         background: #fff;
-        -moz-transform: perspective(800px) rotateY(-180deg);
-        -webkit-transform: perspective(800px) rotateY(-180deg);
         transform: perspective(800px) rotateY(-180deg);
 
         h4,
@@ -137,92 +106,52 @@
             padding: 0 6px 0;
         }
     }
-    /* === animation ends === */
 
     .card-style {
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
         border-radius: 9px;
-        width: 100%;
-        max-width: 170px;
-        height: 236px;
+        max-width: 210px;
+        height: 300px;
         margin: 9px;
-        box-shadow: 3px 3px 6px #777;
-        &.frontendmasters-a,
-        &.frontendmasters-b {
-            // border: 4px solid $fem;
-            // h4,
-            p {
-                // color: $fem;
+        width: 100%;
+    }
+
+    .edu-title {
+        border-bottom: 1px solid #ccc;
+        margin: 0 auto 12px;
+        padding-bottom: 12px;
+        width: 120px;
+    }
+
+    .treehouse {
+        border: 4px solid @treehouse;
+        h4,
+        p {
+            color: @treehouse;
+        }
+        &.side-a {
+            img {
+                margin: 42px auto 30px;
+                display: block;
             }
         }
     }
 
-    .edu-title {
-        width: 120px;
-        margin: 0 auto 12px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid #ccc;
-    }
-
-    .treehouse-a {
-        // background: $treehouse;
-
-        img {
-            margin: 42px auto 30px;
-            display: block;
-        }
-    }
-    .treehouse-b {
-        // border: 3px solid $treehouse;
-
+    .herzing {
+        border: 4px solid @herzing;
         h4,
         p {
-            // color: $treehouse;
+            color: @herzing;
         }
     }
 
-    .herzing-a {
-        // background: $herzing;
-        padding: 0 4px;
-
-        img {
-            margin: 50px auto 57px;
-            display: block;
-        }
-    }
-    .herzing-b {
-        // border: 3px solid $herzing;
-
-        h4,
-        p {
-            // color: $herzing;
-        }
-    }
-
-    .sdf-a {
-        background: url("/images/camou.jpg") no-repeat;
-
-        img {
-            display: block;
-            margin: 66px auto 50px;
-        }
-    }
-    .sdf-b {
-        // border: 3px solid $sdf;
-
-        h4,
-        p {
-            // color: $sdf;
-        }
-
-        h4 {
-            line-height: 1;
-        }
-    }
-
-    .frontendmasters-a {
-        img {
-            margin: 50px auto 72px;
-            display: block;
+    .frontendmasters {
+        border: 4px solid @fem;
+        &.side-a {
+            img {
+                margin: 50px auto 72px;
+                display: block;
+            }
         }
     }
 }

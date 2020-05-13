@@ -17,7 +17,7 @@ const cards = [
         title: "Web Development",
         location: "Online",
         description:
-            "PHP, JavaScript, Angular.js, CSS3 animations, CSS3 flexbox; etc."
+            "Learn HTML, CSS, and JavaScript to create engaging and interactive websites"
     },
     {
         institution: "herzing",
@@ -27,15 +27,6 @@ const cards = [
         location: "Montreal",
         description:
             "Photoshop, Illustrator, HTML5, CSS3, JavaScript, Responsive layout; etc."
-    },
-    {
-        institution: "sdf",
-        period: "Apr - Oct 2008",
-        url: "sdf",
-        title: "Advance Officer's Course",
-        location: "Shizuoka, Japan",
-        description:
-            "Army doctrine / tactics; offensive, defensive and maneuver companies / battalions; etc."
     }
 ];
 

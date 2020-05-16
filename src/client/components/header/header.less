@@ -87,49 +87,6 @@
                         }
                     }
                 }
-
-                input[type="radio"] {
-                    display: none;
-                }
-            }
-            .button {
-                flex: 0 0 120px;
-                align-items: center;
-                background: @themeColor;
-                border: none;
-                border-radius: 3px;
-                bottom: 0;
-                box-shadow: 5px 5px 0 #000;
-                color: #fff;
-                display: flex;
-                font-size: @fontMenuItem;
-                font-weight: bold;
-                flex-flow: column nowrap;
-                height: 40px;
-                justify-content: center;
-                margin: 0 6px;
-                outline: none;
-                padding: 0 1rem;
-                position: relative;
-                right: 0;
-                transition: bottom 0.05s ease-in, right 0.05s ease-in,
-                    box-shadow 0.05s ease-in;
-                user-select: none;
-                width: 120px;
-
-                &:hover {
-                    cursor: pointer;
-                }
-
-                .icon {
-                    height: 35px;
-                    margin-bottom: 0.25rem;
-                }
-            }
-            input:checked + .button {
-                bottom: -4px;
-                right: -4px;
-                box-shadow: 1px 1px 0 #000;
             }
         }
     }

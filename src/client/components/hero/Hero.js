@@ -6,9 +6,9 @@ import "./hero.css";
 
 const Hero = () => {
     return (
-        <section className="hero-component">
+        <section className="hero">
             <div className="typewriter">
-                <h1>Who am I?</h1>
+                <h1 className="is-text-grey">Who am I?</h1>
             </div>
 
             <div
@@ -21,17 +21,18 @@ const Hero = () => {
                 ></div>
                 <div className="greetings-wrap">
                     <div className="clip-path"></div>
-                    <p className="greetings">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing
-                        elit. Donec odio. Quisque volutpat mattis eros. Nullam
-                        malesuada erat ut turpis. Suspendisse urna nibh, viverra
-                        non, semper suscipit, posuere a, pede.
+                    <p className="greetings is-text-grey">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+                        Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse
+                        urna nibh, viverra non, semper suscipit, posuere a, pede.
                     </p>
                 </div>
             </div>
 
-            <div className="matchSection">
-                <Link to="/match">See Our Match</Link>
+            <div className="cta-match m-t-20 m-b-20">
+                <Link to="/match" className="button has-shadow is-large">
+                    See Our Match
+                </Link>
             </div>
         </section>
     );

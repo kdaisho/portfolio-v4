@@ -1,0 +1,132 @@
+@import "../global-style/variables";
+
+#root {
+    .m-t-20 {
+        margin-top: 20px;
+    }
+
+    .m-b-20 {
+        margin-bottom: 20px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .title-group {
+        padding-bottom: 50px;
+
+        .title {
+            color: @themeColor;
+            font-size: @font-large;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: @font-medium;
+        }
+    }
+
+    .is-text-grey {
+        color: #333;
+    }
+
+    .button {
+        align-items: center;
+        background: @themeColor;
+        border: none;
+        bottom: 0;
+        color: #fff;
+        display: flex;
+        font-size: @font-small;
+        font-weight: bold;
+        flex-flow: column nowrap;
+        height: 40px;
+        justify-content: center;
+        margin: 0 6px;
+        outline: none;
+        padding: 0 1rem;
+        position: relative;
+        right: 0;
+        transition: bottom 0.05s ease-in, right 0.05s ease-in, box-shadow 0.05s ease-in;
+        user-select: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.has-shadow {
+            box-shadow: 5px 5px 0 #000;
+            border-radius: 3px;
+        }
+
+        &.is-medium {
+            width: 120px;
+        }
+
+        &.is-large {
+            width: 250px;
+        }
+    }
+
+    input:checked + .button {
+        bottom: -4px;
+        right: -4px;
+        box-shadow: 1px 1px 0 #000;
+    }
+}
+
+@keyframes slideTextIn {
+    0% {
+        opacity: 1;
+        transform: translateX(100%);
+    }
+    16% {
+        transform: translateX(-12.27%);
+    }
+    28% {
+        transform: translateX(13.12%);
+    }
+    44% {
+        transform: translateX(-4.63%);
+    }
+    59% {
+        transform: translateX(1.64%);
+    }
+    73% {
+        transform: translateX(-0.58%);
+    }
+    88% {
+        transform: translateX(0.2%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes coding {
+    100% {
+        background-position: 0 -4320px;
+        // background-position: 0 -3456px;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCursor {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #000;
+    }
+}

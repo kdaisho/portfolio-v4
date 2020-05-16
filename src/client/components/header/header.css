@@ -84,45 +84,6 @@
     cursor: pointer;
   }
 }
-.header .nav .nav-right .menu-pane input[type="radio"] {
-  display: none;
-}
-.header .nav .nav-right .button {
-  flex: 0 0 120px;
-  align-items: center;
-  background: #2aaaff;
-  border: none;
-  border-radius: 3px;
-  bottom: 0;
-  box-shadow: 5px 5px 0 #000;
-  color: #fff;
-  display: flex;
-  font-size: 14px;
-  font-weight: bold;
-  flex-flow: column nowrap;
-  height: 40px;
-  justify-content: center;
-  margin: 0 6px;
-  outline: none;
-  padding: 0 1rem;
-  position: relative;
-  right: 0;
-  transition: bottom 0.05s ease-in, right 0.05s ease-in, box-shadow 0.05s ease-in;
-  user-select: none;
-  width: 120px;
-}
-.header .nav .nav-right .button:hover {
-  cursor: pointer;
-}
-.header .nav .nav-right .button .icon {
-  height: 35px;
-  margin-bottom: 0.25rem;
-}
-.header .nav .nav-right input:checked + .button {
-  bottom: -4px;
-  right: -4px;
-  box-shadow: 1px 1px 0 #000;
-}
 @keyframes strokeOffset {
   0% {
     stroke-dashoffset: 816;

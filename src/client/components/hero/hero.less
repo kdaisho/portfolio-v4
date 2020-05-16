@@ -1,6 +1,6 @@
 @import "../../global-style/variables";
 
-.hero-component {
+.hero {
     padding-top: 100px;
 
     @media (min-width: @tablet) {
@@ -76,8 +76,7 @@
             padding-bottom: 75px;
         }
         h1 {
-            animation: typing 1s 2.25s steps(17, end) forwards,
-                blinkCursor 1s step-end infinite;
+            animation: typing 1s 2.25s steps(17, end) forwards, blinkCursor 1s step-end infinite;
             border-right: 0.5rem solid #fff;
             color: #000;
             font-family: monospace;
@@ -97,59 +96,10 @@
             }
         }
     }
-}
 
-@keyframes slideTextIn {
-    0% {
-        opacity: 1;
-        transform: translateX(100%);
-    }
-    16% {
-        transform: translateX(-12.27%);
-    }
-    28% {
-        transform: translateX(13.12%);
-    }
-    44% {
-        transform: translateX(-4.63%);
-    }
-    59% {
-        transform: translateX(1.64%);
-    }
-    73% {
-        transform: translateX(-0.58%);
-    }
-    88% {
-        transform: translateX(0.2%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes coding {
-    100% {
-        background-position: 0 -4320px;
-        // background-position: 0 -3456px;
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blinkCursor {
-    from,
-    to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #000;
+    .cta-match {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
     }
 }

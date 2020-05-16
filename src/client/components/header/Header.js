@@ -14,15 +14,15 @@ const Header = () => {
                 </div>
                 <div id="navRight" className="nav-right">
                     <ul className="social-links">
-                        {socials.map(item => (
+                        {socials.map((item) => (
                             <li key={item.name}>
                                 <img src={item.src} alt={item.name} />
                             </li>
                         ))}
                     </ul>
                     <div className="menu-pane">
-                        {menuItems.map(item => (
-                            <button key={item.name} className="button">
+                        {menuItems.map((item) => (
+                            <button key={item.name} className="button is-medium has-shadow">
                                 {item.name}
                             </button>
                         ))}

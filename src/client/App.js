@@ -5,6 +5,7 @@ import Main from "./components/Main";
 // import Hero from "./components/hero/Hero";
 import Match from "./components/match/Match";
 import "./global-style/reset.css";
+import "./global-style/general.css";
 
 class App extends Component {
     state = {};

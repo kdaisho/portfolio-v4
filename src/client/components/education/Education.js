@@ -7,8 +7,8 @@ const Education = () => {
     return (
         <section className="section is-education">
             <div className="title-group">
-                <h2 className="title">Education</h2>
-                <p className="subtitle is-text-grey">
+                <h2 className="title font-extra-large">Education</h2>
+                <p className="subtitle is-text-grey font-large">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
                     volutpat mattis eros.
                 </p>

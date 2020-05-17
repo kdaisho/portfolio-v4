@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header/Header";
 import Hero from "./hero/Hero";
 import Education from "./education/Education";
+import Technologies from "./technologies/Technologies";
 import "./main.css";
 
 const Main = () => {
@@ -10,6 +11,7 @@ const Main = () => {
             <Header />
             <Hero />
             <Education />
+            <Technologies />
         </div>
     );
 };

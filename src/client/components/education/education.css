@@ -65,12 +65,13 @@
   transform: perspective(800px) rotateY(0);
 }
 .is-education .side-a {
-  position: absolute;
-  z-index: 100;
-  transform: perspective(800px) rotateY(0deg);
+  background: #fff;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
+  position: absolute;
+  transform: perspective(800px) rotateY(0deg);
+  z-index: 100;
 }
 .is-education .side-a img {
   display: block;

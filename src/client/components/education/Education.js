@@ -1,9 +1,8 @@
 import React from "react";
-import cards from "./cards";
+import cards from "./edu-data";
 import "./education.css";
 
 const Education = () => {
-    console.log("cards", Array.isArray(cards));
     return (
         <section className="section is-education">
             <div className="title-group">
@@ -17,7 +16,7 @@ const Education = () => {
                 {cards.map((card) => (
                     <div key={card.institution} className="card">
                         <div className={`side-a ${card.institution} card-style`}>
-                            <img src={card.url} alt={card.institution} />
+                            <img src={card.src} alt={card.institution} />
                             <div className="summary">
                                 <h3 className="edu-title">{card.title}</h3>
                                 <span className="separator"></span>

@@ -5,16 +5,29 @@ import "./technologies.css";
 
 // const Technologies = () => {
 class Technologies extends Component {
+    state = {
+        filterTerms: []
+    };
+
+    handleChange = (type) => {
+        console.log(type, event.target.checked);
+        event.target.checked
+            ? this.setState(
+                  (prevState) => ({ filterTerms: [...prevState.filterTerms, type] }),
+                  () => console.log("NEW STATE:", this.state.filterTerms)
+              )
+            : "";
+    };
+
     renderStars = (num) => {
-        console.log("HEY", num);
         let str = "";
         for (let i = 0; i < num; i++) {
             str += String.fromCharCode(9733);
         }
         return str;
     };
+
     render() {
-        this.renderStars(2);
         return (
             <section className="section is-technologies">
                 <div className="title-group">
@@ -24,15 +37,31 @@ class Technologies extends Component {
                         Quisque volutpat mattis eros.
                     </p>
                 </div>
+                <div className="filters">
+                    <label>
+                        <input type="checkbox" onChange={() => this.handleChange("js")} />
+                        JavaScript
+                    </label>
+                </div>
                 <div className="technologies">
-                    {technologies.map((tech) => (
-                        <div key={tech.id} className="tech">
-                            {icons[tech.id]}
-                            <span className="separator"></span>
-                            <span className="stars">{this.renderStars(tech.stars)}</span>
-                            <p className="tech-name">{tech.name}</p>
-                        </div>
-                    ))}
+                    {/*technologies// .filter((tech) => this.state.filterTerms.includes(tech.genre))*/}
+                    {technologies
+                        .filter((tech) => {
+                            if (this.state.filterTerms.length) {
+                                console.log("ADDING", tech.genre);
+                                return this.state.filterTerms.includes(tech.genre);
+                            } else {
+                                true;
+                            }
+                        })
+                        .map((tech) => (
+                            <div key={tech.id} className="tech">
+                                {icons[tech.id]}
+                                <span className="separator"></span>
+                                <span className="stars">{this.renderStars(tech.stars)}</span>
+                                <p className="tech-name">{tech.name}</p>
+                            </div>
+                        ))}
                 </div>
             </section>
         );

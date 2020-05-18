@@ -3,6 +3,55 @@
   flex-flow: row wrap;
   justify-content: space-between;
 }
-.is-technologies .technologies .tech .icon {
+.is-technologies .technologies .tech {
+  flex: 0 0 20%;
+  height: 165px;
+  text-align: center;
+  padding: 20px;
+}
+.is-technologies .technologies .tech:hover {
+  background: #2aaaff;
+  cursor: pointer;
+}
+.is-technologies .technologies .tech:hover path,
+.is-technologies .technologies .tech:hover circle {
+  fill: #fff;
+}
+.is-technologies .technologies .tech:hover .separator {
+  border-color: #fff;
+  transform: translateY(36px);
+}
+.is-technologies .technologies .tech:hover .stars {
+  font-size: 16px;
+  opacity: 1;
+}
+.is-technologies .technologies .tech:hover .tech-name {
+  color: #fff;
+  transform: translateY(-36px);
+}
+.is-technologies .technologies .tech svg {
   width: 75px;
+}
+.is-technologies .technologies .tech path,
+.is-technologies .technologies .tech circle {
+  fill: #2aaaff;
+}
+.is-technologies .technologies .tech .separator {
+  display: block;
+  border-bottom: 2px solid #2aaaff;
+  margin: 10px auto;
+  transition: transform 0.25s ease-out;
+  width: 30px;
+}
+.is-technologies .technologies .tech .stars {
+  color: #fff;
+  font-size: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease-out 0.25s;
+}
+.is-technologies .technologies .tech .tech-name {
+  color: #2aaaff;
+  font-size: 14px;
+  transform: translateY(-20px);
+  transition: transform 0.25s ease-out;
 }

@@ -5,9 +5,67 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+
         .tech {
-            .icon {
+            flex: 0 0 20%;
+            height: 165px;
+            text-align: center;
+            padding: 20px;
+
+            &:hover {
+                background: @themeColor;
+                cursor: pointer;
+
+                path,
+                circle {
+                    fill: #fff;
+                }
+
+                .separator {
+                    border-color: #fff;
+                    transform: translateY(36px);
+                }
+
+                .stars {
+                    font-size: 16px;
+                    opacity: 1;
+                }
+
+                .tech-name {
+                    color: #fff;
+                    transform: translateY(-36px);
+                }
+            }
+
+            svg {
                 width: 75px;
+            }
+
+            path,
+            circle {
+                fill: @themeColor;
+            }
+
+            .separator {
+                display: block;
+                border-bottom: 2px solid @themeColor;
+                margin: 10px auto;
+                transition: transform 0.25s ease-out;
+                width: 30px;
+            }
+
+            .stars {
+                color: #fff;
+                font-size: 0;
+                opacity: 0;
+                transition: opacity 0.25s ease-out 0.25s;
+            }
+
+            .tech-name {
+                color: @themeColor;
+                font-size: @font-small;
+                transform: translateY(-20px);
+                transition: transform 0.25s ease-out;
             }
         }
     }

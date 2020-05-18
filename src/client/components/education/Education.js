@@ -1,5 +1,7 @@
 import React from "react";
 import cards from "./edu-data";
+// import Fr from "../../images/edu/frontendmasters-logo.svg";
+// import Fr from "./frontendmasters-logo.svg";
 import "./education.css";
 
 const Education = () => {

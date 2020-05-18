@@ -1,106 +1,88 @@
-import js from "../../images/tech/javascript-plain.svg";
-import nodejs from "../../images/tech/nodejs-plain.svg";
-import react from "../../images/tech/react-original.svg";
-import angular from "../../images/tech/angularjs-plain.svg";
-import html from "../../images/tech/html5-plain.svg";
-import css from "../../images/tech/css3-plain.svg";
-import sass from "../../images/tech/sass-original.svg";
-import less from "../../images/tech/less-plain-wordmark.svg";
-import ps from "../../images/tech/photoshop-line.svg";
-import gimp from "../../images/tech/gimp-plain.svg";
-import inkscape from "../../images/tech/inkscape-plain.svg";
-import git from "../../images/tech/git-plain.svg";
-import webpack from "../../images/tech/webpack-plain.svg";
-import gulp from "../../images/tech/gulp-plain.svg";
-import mongodb from "../../images/tech/mongodb-plain.svg";
-import ubuntu from "../../images/tech/ubuntu-plain.svg";
-import vim from "../../images/tech/vim-plain.svg";
-
 const technologies = [
     {
         id: 0,
         name: "javascript",
-        src: js
+        stars: 5
     },
     {
         id: 1,
         name: "nodejs",
-        src: nodejs
+        stars: 5
     },
     {
         id: 2,
         name: "react",
-        src: react
+        stars: 5
     },
     {
         id: 3,
         name: "angualr",
-        src: angular
+        stars: 5
     },
     {
         id: 4,
         name: "html",
-        src: html
+        stars: 5
     },
     {
         id: 5,
         name: "css",
-        src: css
+        stars: 5
     },
     {
         id: 6,
         name: "sass",
-        src: sass
+        stars: 5
     },
     {
         id: 7,
         name: "less",
-        src: less
+        stars: 5
     },
     {
         id: 8,
         name: "photoshop",
-        src: ps
+        stars: 5
     },
     {
         id: 9,
         name: "gimp",
-        src: gimp
+        stars: 5
     },
     {
         id: 10,
         name: "inkscape",
-        src: inkscape
+        stars: 5
     },
     {
         id: 11,
         name: "git",
-        src: git
+        stars: 5
     },
     {
         id: 12,
         name: "webpack",
-        src: webpack
+        stars: 5
     },
     {
         id: 13,
         name: "gulp",
-        src: gulp
+        stars: 3
     },
     {
         id: 14,
         name: "mongodb",
-        src: mongodb
+        stars: 3
     },
     {
         id: 15,
         name: "ubuntu",
-        src: ubuntu
+        stars: 3
     },
     {
         id: 16,
         name: "vim",
-        src: vim
+        stars: 3
     }
 ];
 

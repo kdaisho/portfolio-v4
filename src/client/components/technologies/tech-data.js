@@ -1,4 +1,4 @@
-const technologies = [
+export const technologies = [
     {
         id: 0,
         name: "javascript",
@@ -50,19 +50,19 @@ const technologies = [
     {
         id: 8,
         name: "photoshop",
-        genre: "design",
+        genre: "graphicsEditor",
         stars: 5
     },
     {
         id: 9,
         name: "gimp",
-        genre: "design",
+        genre: "graphicsEditor",
         stars: 5
     },
     {
         id: 10,
         name: "inkscape",
-        genre: "design",
+        genre: "graphicsEditor",
         stars: 5
     },
     {
@@ -98,9 +98,38 @@ const technologies = [
     {
         id: 16,
         name: "vim",
-        genre: "texteditor",
+        genre: "textEditor",
         stars: 3
     }
 ];
 
-export default technologies;
+export const filterItems = [
+    {
+        name: "JavaScript",
+        type: "js"
+    },
+    {
+        name: "Markup",
+        type: "markup"
+    },
+    {
+        name: "Graphics Editor",
+        type: "graphicsEditor"
+    },
+    {
+        name: "Tools",
+        type: "tools"
+    },
+    {
+        name: "Platform",
+        type: "platform"
+    },
+    {
+        name: "Database",
+        type: "database"
+    },
+    {
+        name: "Text Editor",
+        type: "textEditor"
+    }
+];

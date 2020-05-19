@@ -17,7 +17,7 @@
         position: relative;
         justify-content: space-between;
 
-        @media (min-width: @tablet) {
+        @media @largerThanTablet {
             height: 58px;
         }
 
@@ -58,7 +58,7 @@
                 }
             }
             .menu-button {
-                @media (min-width: @tablet) {
+                @media @largerThanTablet {
                     display: none;
                 }
             }
@@ -74,7 +74,7 @@
                     top: 55px;
                     width: 100%;
                 }
-                @media (min-width: @tablet) {
+                @media @largerThanTablet {
                     display: flex;
                     flex-flow: row nowrap;
                     flex: 0 0 50%;

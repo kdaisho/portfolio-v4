@@ -18,8 +18,12 @@
 #root .title-group .subtitle {
   font-size: 18px;
 }
+#root .lead {
+  color: #2aaaff;
+  font-size: 24px;
+}
 #root .is-text-grey {
-  color: #333;
+  color: #444;
 }
 #root .button {
   align-items: center;

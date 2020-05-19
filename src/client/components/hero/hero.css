@@ -1,7 +1,7 @@
 .hero {
   padding-top: 100px;
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .hero {
     padding-top: 120px;
   }
@@ -15,7 +15,7 @@
   position: relative;
   width: 100%;
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .hero .animation-container {
     max-width: 680px;
   }
@@ -24,7 +24,7 @@
   position: absolute;
   top: 400px;
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .hero .greetings-wrap {
     animation: 0.75s 4s 1 slideTextIn forwards;
     opacity: 0;
@@ -38,7 +38,7 @@
   shape-outside: polygon(72.92% 0px, 91.57% 15.65%, 93.51% 27%, 89.52% 36.8%, 96.53% 51.52%, 96.67% 63.39%, 100.18% 67.3%, 99.37% 72.06%, 79.94% 86.94%, 51.82% 85.79%, 49.47% 0.26%);
   width: 498px;
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .hero .clip-path {
     display: block;
   }
@@ -59,7 +59,7 @@
   margin: 0 auto;
   width: 160px;
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .hero .typewriter {
     width: 172px;
     padding-bottom: 75px;
@@ -81,7 +81,7 @@
   white-space: nowrap;
   width: 0;
 }
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .hero .typewriter h1 {
     font-size: 26px;
   }
@@ -90,4 +90,54 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+}
+@keyframes slideTextIn {
+  0% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  16% {
+    transform: translateX(-12.27%);
+  }
+  28% {
+    transform: translateX(13.12%);
+  }
+  44% {
+    transform: translateX(-4.63%);
+  }
+  59% {
+    transform: translateX(1.64%);
+  }
+  73% {
+    transform: translateX(-0.58%);
+  }
+  88% {
+    transform: translateX(0.2%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes coding {
+  100% {
+    background-position: 0 -4320px;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blinkCursor {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #000;
+  }
 }

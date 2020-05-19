@@ -1,22 +1,34 @@
 import React, { Component } from "react";
-import technologies from "./tech-data.js";
+import { technologies, filterItems } from "./tech-data.js";
 import icons from "./icons";
 import "./technologies.css";
 
 // const Technologies = () => {
 class Technologies extends Component {
     state = {
-        filterTerms: []
+        filterTerms: [],
+        js: false,
+        markup: false,
+        graphicsEditor: false,
+        tools: false,
+        platform: false,
+        database: false,
+        textEditor: false
     };
 
     handleChange = (type) => {
-        console.log(type, event.target.checked);
-        event.target.checked
-            ? this.setState(
-                  (prevState) => ({ filterTerms: [...prevState.filterTerms, type] }),
-                  () => console.log("NEW STATE:", this.state.filterTerms)
-              )
-            : "";
+        const name = event.target.name;
+        this.setState({ [name]: event.target.checked });
+        const copy = [...this.state.filterTerms];
+        if (event.target.checked) {
+            this.setState((prevState) => ({ filterTerms: [...prevState.filterTerms, type] }));
+        } else {
+            const index = this.state.filterTerms.indexOf(type);
+            if (index >= 0) {
+                copy.splice(index, 1);
+                this.setState({ filterTerms: copy });
+            }
+        }
     };
 
     renderStars = (num) => {
@@ -37,22 +49,32 @@ class Technologies extends Component {
                         Quisque volutpat mattis eros.
                     </p>
                 </div>
-                <div className="filters">
-                    <label>
-                        <input type="checkbox" onChange={() => this.handleChange("js")} />
-                        JavaScript
-                    </label>
-                </div>
+                <fieldset className="filter-section">
+                    <legend className="lead">Filters</legend>
+                    <div className="filters">
+                        {filterItems.map((item) => (
+                            <label
+                                key={item.type}
+                                className={this.state[item.type] ? "active" : ""}
+                            >
+                                <input
+                                    type="checkbox"
+                                    name={item.type}
+                                    checked={this.state.type}
+                                    onChange={() => this.handleChange(item.type)}
+                                />
+                                <span className="dummy"></span>
+                                {item.name}
+                            </label>
+                        ))}
+                    </div>
+                </fieldset>
                 <div className="technologies">
-                    {/*technologies// .filter((tech) => this.state.filterTerms.includes(tech.genre))*/}
                     {technologies
                         .filter((tech) => {
-                            if (this.state.filterTerms.length) {
-                                console.log("ADDING", tech.genre);
-                                return this.state.filterTerms.includes(tech.genre);
-                            } else {
-                                true;
-                            }
+                            return this.state.filterTerms.length
+                                ? this.state.filterTerms.includes(tech.genre)
+                                : true;
                         })
                         .map((tech) => (
                             <div key={tech.id} className="tech">

@@ -1,0 +1,249 @@
+@import "../../global-style/variables";
+
+.is-projects {
+    padding-bottom: 400px !important;
+
+    .left-side {
+        flex: 0 0 100%;
+
+        @media @largerThan769 {
+            flex: 0 0 35%;
+        }
+    }
+
+    .filter-section {
+        border-color: @themeColor;
+        border-radius: 3px;
+        padding: 12px 15px 6px;
+
+        legend {
+            font-size: @font-large;
+            padding: 0 12px;
+        }
+
+        .filters {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+
+            label {
+                align-items: center;
+                background: @themeColor;
+                box-shadow: 4px 4px 0 #000;
+                color: #fff;
+                display: flex;
+                flex-flow: row nowrap;
+                height: 30px;
+                margin: 0 15px 15px 0;
+                padding: 0 15px 0 3px;
+                transition: transform 0.03s ease-in, box-shadow 0.03s ease-in;
+                user-select: none;
+
+                &.active {
+                    box-shadow: 0 0 0 #000;
+                    transform: translate(4px, 4px);
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                input[type="checkbox"] {
+                    position: absolute;
+                    z-index: -99;
+
+                    &:checked + .dummy {
+                        background: @themeColor;
+                        border: 3px solid #fff;
+                    }
+                }
+
+                .dummy {
+                    background: #fff;
+                    display: block;
+                    height: 24px;
+                    margin-right: 9px;
+                    width: 24px;
+                }
+            }
+        }
+    }
+
+    .projects {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 50px 0;
+
+        &.right-side {
+            flex: 0 0 100%;
+            @media @largerThan769 {
+                flex: 0 0 60%;
+            }
+        }
+
+        .project {
+            flex: 0 0 20%;
+            height: 165px;
+            text-align: center;
+            padding: 20px;
+
+            &:hover {
+                background: @themeColor;
+                cursor: pointer;
+
+                path,
+                circle {
+                    fill: #fff;
+                }
+
+                .separator {
+                    border-color: #fff;
+                    transform: translateY(36px);
+                }
+
+                .stars {
+                    font-size: 16px;
+                    opacity: 1;
+                }
+
+                .project-name {
+                    color: #fff;
+                    transform: translateY(-36px);
+                }
+            }
+
+            svg {
+                width: 75px;
+            }
+
+            path,
+            circle {
+                fill: @themeColor;
+            }
+
+            .separator {
+                display: block;
+                border-bottom: 2px solid @themeColor;
+                margin: 10px auto;
+                transition: transform 0.25s ease-out;
+                width: 30px;
+            }
+
+            .stars {
+                color: #fff;
+                font-size: 0;
+                opacity: 0;
+                transition: opacity 0.25s ease-out 0.25s;
+            }
+
+            .project-name {
+                color: @themeColor;
+                font-size: @font-small;
+                transform: translateY(-20px);
+                transition: transform 0.25s ease-out;
+            }
+        }
+    }
+}
+
+.projects {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    .card {
+        border: 4px solid #000;
+        box-shadow: 6px 6px 0 #000;
+        height: 300px;
+        width: 250px;
+
+        .top {
+            background: #ccc;
+            height: 55%;
+        }
+
+        .bottom {
+            background: #fff;
+            box-sizing: border-box;
+            // color: #444;
+            display: flex;
+            flex-flow: column nowrap;
+            height: 45%;
+            justify-content: space-between;
+            padding: 24px 0 6px;
+            position: relative;
+
+            .cta {
+                background: @themeColor;
+                border-radius: 3px;
+                box-shadow: 4px 4px 0 #000;
+                border: none;
+                color: #fff;
+                // display: block;
+                font-size: @font-small;
+                left: 50%;
+                margin: 0 auto;
+                padding: 6px 16px;
+                position: absolute;
+                top: 0;
+                transform: translate(-50%, -18px);
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .text-group {
+                padding: 6px 0;
+                text-align: center;
+
+                .title {
+                    font-size: @font-large;
+                }
+
+                .separator {
+                    display: block;
+                    border-bottom: 2px solid #000;
+                    margin: 12px auto 9px;
+                    width: 35px;
+                }
+
+                .desc {
+                    text-align: center;
+                    font-size: @font-small;
+                }
+            }
+
+            .tech-stack {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+                padding-top: 6px;
+
+                li {
+                    color: #fff;
+                    font-size: 12px;
+                    height: 20px;
+                    margin-right: 1px;
+                    line-height: 20px;
+                    text-align: center;
+                    width: 20px;
+
+                    &.js {
+                        background: @themeColor;
+                    }
+
+                    &.markup {
+                        background: #ef5350;
+                    }
+
+                    &.css {
+                        background: #26c6da;
+                    }
+                }
+            }
+        }
+    }
+}

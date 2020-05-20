@@ -1,7 +1,7 @@
 .is-education {
   background: #f6f6f6;
 }
-.is-education .side-by-side {
+.is-education .is-backy-side {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -39,33 +39,47 @@
   margin: 12px;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+  transition-delay: 0.45s;
+}
+.is-education .card.is-frontendmasters {
+  box-shadow: 5px 5px 0 #c02d28;
+}
+.is-education .card.is-treehouse {
+  box-shadow: 5px 5px 0 #42c168;
+}
+.is-education .card.is-herzing {
+  box-shadow: 5px 5px 0 #1755a5;
+}
+.is-education .card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 #000;
+  transform: translate(5px, 5px);
+  transition-delay: 0s;
+}
+.is-education .card:hover .is-front,
+.is-education .card:focus .is-front {
+  transform: perspective(800px) rotateY(180deg);
+}
+.is-education .card:hover .is-back,
+.is-education .card:focus .is-back {
+  transform: perspective(800px) rotateY(0);
 }
 .is-education .card h3,
 .is-education .card p {
   text-align: center;
   color: #fff;
 }
-.is-education .card:hover {
-  cursor: pointer;
-}
-.is-education .card:hover .side-a,
-.is-education .card:focus .side-a {
-  transform: perspective(800px) rotateY(180deg);
-}
-.is-education .card:hover .side-b,
-.is-education .card:focus .side-b {
-  transform: perspective(800px) rotateY(0);
-}
-.is-education .v-align {
+.is-education .align-center {
   align-self: center;
 }
-.is-education .side-a,
-.is-education .side-b {
-  transition: transform 1s;
+.is-education .is-front,
+.is-education .is-back {
+  transition: transform 0.3s linear 0.15s;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.is-education .side-a {
+.is-education .is-front {
   background: #fff;
   display: flex;
   flex-flow: column nowrap;
@@ -74,26 +88,24 @@
   transform: perspective(800px) rotateY(0deg);
   z-index: 100;
 }
-.is-education .side-a img {
+.is-education .is-front img {
   display: block;
   margin: 0 auto;
   width: 90%;
 }
-.is-education .side-b {
+.is-education .is-back {
   display: flex;
   background: #fff;
   transform: perspective(800px) rotateY(-180deg);
 }
-.is-education .side-b h3,
-.is-education .side-b p {
+.is-education .is-back h3,
+.is-education .is-back p {
   line-height: 1.3;
 }
-.is-education .side-b p {
+.is-education .is-back p {
   padding: 0 6px 0;
 }
-.is-education .card-style {
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
-  border-radius: 9px;
+.is-education .side {
   max-width: 210px;
   height: 300px;
   width: 100%;

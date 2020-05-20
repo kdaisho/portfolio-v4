@@ -21,7 +21,7 @@
   }
 }
 .header .nav path {
-  stroke: #2aaaff;
+  stroke: #e91e63;
   stroke-width: 1;
   stroke-dasharray: 816;
   stroke-dashoffset: 816;
@@ -97,6 +97,6 @@
     fill: transparent;
   }
   100% {
-    fill: #2aaaff;
+    fill: #e91e63;
   }
 }

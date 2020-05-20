@@ -3,7 +3,7 @@
 .is-education {
     background: @backgroundColor;
 
-    .side-by-side {
+    .is-backy-side {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -41,39 +41,57 @@
         margin: 12px;
         -ms-transform-style: preserve-3d;
         transform-style: preserve-3d;
+        transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+        transition-delay: 0.45s;
+
+        &.is-frontendmasters {
+            box-shadow: 5px 5px 0 @fem;
+        }
+
+        &.is-treehouse {
+            box-shadow: 5px 5px 0 @treehouse;
+        }
+
+        &.is-herzing {
+            box-shadow: 5px 5px 0 @herzing;
+        }
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 0 #000;
+            transform: translate(5px, 5px);
+            transition-delay: 0s;
+        }
+
+        &:hover,
+        &:focus {
+            .is-front {
+                transform: perspective(800px) rotateY(180deg);
+            }
+            .is-back {
+                transform: perspective(800px) rotateY(0);
+            }
+        }
 
         h3,
         p {
             text-align: center;
             color: #fff;
         }
-        &:hover {
-            cursor: pointer;
-        }
-
-        &:hover,
-        &:focus {
-            .side-a {
-                transform: perspective(800px) rotateY(180deg);
-            }
-            .side-b {
-                transform: perspective(800px) rotateY(0);
-            }
-        }
     }
 
-    .v-align {
+    .align-center {
         align-self: center;
     }
 
-    .side-a,
-    .side-b {
-        transition: transform 1s;
+    .is-front,
+    .is-back {
+        transition: transform 0.3s linear 0.15s;
         -ms-backface-visibility: hidden;
         backface-visibility: hidden;
     }
 
-    .side-a {
+    .is-front {
         background: #fff;
         display: flex;
         flex-flow: column nowrap;
@@ -89,7 +107,7 @@
         }
     }
 
-    .side-b {
+    .is-back {
         display: flex;
         background: #fff;
         transform: perspective(800px) rotateY(-180deg);
@@ -103,9 +121,7 @@
         }
     }
 
-    .card-style {
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
-        border-radius: 9px;
+    .side {
         max-width: 210px;
         height: 300px;
         width: 100%;

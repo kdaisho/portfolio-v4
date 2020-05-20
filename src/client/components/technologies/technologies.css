@@ -10,7 +10,7 @@
   }
 }
 .is-technologies .filter-section {
-  border-color: #2aaaff;
+  border-color: #e91e63;
   border-radius: 3px;
   padding: 12px 15px 6px;
 }
@@ -25,7 +25,7 @@
 }
 .is-technologies .filter-section .filters label {
   align-items: center;
-  background: #2aaaff;
+  background: #e91e63;
   box-shadow: 4px 4px 0 #000;
   color: #fff;
   display: flex;
@@ -48,7 +48,7 @@
   z-index: -99;
 }
 .is-technologies .filter-section .filters label input[type="checkbox"]:checked + .dummy {
-  background: #2aaaff;
+  background: #e91e63;
   border: 3px solid #fff;
 }
 .is-technologies .filter-section .filters label .dummy {
@@ -79,7 +79,7 @@
   padding: 20px;
 }
 .is-technologies .technologies .tech:hover {
-  background: #2aaaff;
+  background: #e91e63;
   cursor: pointer;
 }
 .is-technologies .technologies .tech:hover path,
@@ -103,11 +103,11 @@
 }
 .is-technologies .technologies .tech path,
 .is-technologies .technologies .tech circle {
-  fill: #2aaaff;
+  fill: #e91e63;
 }
 .is-technologies .technologies .tech .separator {
   display: block;
-  border-bottom: 2px solid #2aaaff;
+  border-bottom: 2px solid #e91e63;
   margin: 10px auto;
   transition: transform 0.25s ease-out;
   width: 30px;
@@ -119,7 +119,7 @@
   transition: opacity 0.25s ease-out 0.25s;
 }
 .is-technologies .technologies .tech .tech-name {
-  color: #2aaaff;
+  color: #e91e63;
   font-size: 14px;
   transform: translateY(-20px);
   transition: transform 0.25s ease-out;

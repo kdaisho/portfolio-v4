@@ -1,32 +1,32 @@
-.is-education .edu-skills {
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.is-education {
+  background: #f6f6f6;
+}
+.is-education .side-by-side {
   display: flex;
-  -webkit-box-wrap: wrap;
-  -ms-flexbox-wrap: wrap;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
-.is-education .edu-skills h2 {
-  text-align: center;
-  margin-bottom: 18px;
+.is-education .title-group {
+  flex: 0 0 100%;
 }
-.is-education .educations {
-  flex-grow: 1;
-  width: 500px;
-  padding: 80px 24px 0;
-  -webkit-box-wrap: wrap;
-  -ms-flexbox-wrap: wrap;
-  flex-wrap: wrap;
-}
-@media (max-width: 767px) {
-  .is-education .educations {
-    padding: 80px 0 0;
+@media only screen and (min-width: 769px) {
+  .is-education .title-group {
+    flex: 0 0 35%;
+    order: 2;
   }
 }
 .is-education .cards {
   display: flex;
+  flex: 0 0 100%;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
+}
+@media only screen and (min-width: 769px) {
+  .is-education .cards {
+    flex: 0 0 65%;
+    order: 1;
+    justify-content: flex-start;
+  }
 }
 .is-education .two-cards {
   display: flex;
@@ -36,6 +36,7 @@
 .is-education .card {
   position: relative;
   user-select: none;
+  margin: 12px;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
@@ -47,6 +48,14 @@
 .is-education .card:hover {
   cursor: pointer;
 }
+.is-education .card:hover .side-a,
+.is-education .card:focus .side-a {
+  transform: perspective(800px) rotateY(180deg);
+}
+.is-education .card:hover .side-b,
+.is-education .card:focus .side-b {
+  transform: perspective(800px) rotateY(0);
+}
 .is-education .v-align {
   align-self: center;
 }
@@ -55,14 +64,6 @@
   transition: transform 1s;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-.is-education .card:hover .side-a,
-.is-education .card:focus .side-a {
-  transform: perspective(800px) rotateY(180deg);
-}
-.is-education .card:hover .side-b,
-.is-education .card:focus .side-b {
-  transform: perspective(800px) rotateY(0);
 }
 .is-education .side-a {
   background: #fff;
@@ -95,7 +96,6 @@
   border-radius: 9px;
   max-width: 210px;
   height: 300px;
-  margin: 20px;
   width: 100%;
 }
 .is-education .edu-title {

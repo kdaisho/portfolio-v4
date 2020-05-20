@@ -3,16 +3,15 @@ import Header from "./header/Header";
 import Hero from "./hero/Hero";
 import Education from "./education/Education";
 import Technologies from "./technologies/Technologies";
-import "./main.css";
 
 const Main = () => {
     return (
-        <div className="app-wrapper">
+        <React.Fragment>
             <Header />
             <Hero />
             <Education />
             <Technologies />
-        </div>
+        </React.Fragment>
     );
 };
 

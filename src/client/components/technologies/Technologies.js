@@ -42,48 +42,52 @@ class Technologies extends Component {
     render() {
         return (
             <section className="section is-technologies">
-                <div className="title-group">
-                    <h2 className="title font-extra-large">Technologies</h2>
-                    <p className="subtitle is-text-grey font-large">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-                        Quisque volutpat mattis eros.
-                    </p>
-                </div>
-                <fieldset className="filter-section">
-                    <legend className="lead">Filters</legend>
-                    <div className="filters">
-                        {filterItems.map((item) => (
-                            <label
-                                key={item.type}
-                                className={this.state[item.type] ? "active" : ""}
-                            >
-                                <input
-                                    type="checkbox"
-                                    name={item.type}
-                                    checked={this.state.type}
-                                    onChange={() => this.handleChange(item.type)}
-                                />
-                                <span className="dummy"></span>
-                                {item.name}
-                            </label>
-                        ))}
-                    </div>
-                </fieldset>
-                <div className="technologies">
-                    {technologies
-                        .filter((tech) => {
-                            return this.state.filterTerms.length
-                                ? this.state.filterTerms.includes(tech.genre)
-                                : true;
-                        })
-                        .map((tech) => (
-                            <div key={tech.id} className="tech">
-                                {icons[tech.id]}
-                                <span className="separator"></span>
-                                <span className="stars">{this.renderStars(tech.stars)}</span>
-                                <p className="tech-name">{tech.name}</p>
+                <div className="content-wrap is-side-by-side">
+                    <div className="left-side">
+                        <div className="title-group">
+                            <h2 className="title font-extra-large">Technologies</h2>
+                            <p className="subtitle is-text-grey font-large">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                                odio. Quisque volutpat mattis eros.
+                            </p>
+                        </div>
+                        <fieldset className="filter-section">
+                            <legend className="is-text-grey">Filters</legend>
+                            <div className="filters">
+                                {filterItems.map((item) => (
+                                    <label
+                                        key={item.type}
+                                        className={this.state[item.type] ? "active" : ""}
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            name={item.type}
+                                            checked={this.state.type}
+                                            onChange={() => this.handleChange(item.type)}
+                                        />
+                                        <span className="dummy"></span>
+                                        {item.name}
+                                    </label>
+                                ))}
                             </div>
-                        ))}
+                        </fieldset>
+                    </div>
+                    <div className="technologies right-side">
+                        {technologies
+                            .filter((tech) => {
+                                return this.state.filterTerms.length
+                                    ? this.state.filterTerms.includes(tech.genre)
+                                    : true;
+                            })
+                            .map((tech) => (
+                                <div key={tech.id} className="tech">
+                                    {icons[tech.id]}
+                                    <span className="separator"></span>
+                                    <span className="stars">{this.renderStars(tech.stars)}</span>
+                                    <p className="tech-name">{tech.name}</p>
+                                </div>
+                            ))}
+                    </div>
                 </div>
             </section>
         );

@@ -15,7 +15,7 @@
   position: relative;
   justify-content: space-between;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .header .nav {
     height: 58px;
   }
@@ -55,7 +55,7 @@
 .header .nav .nav-right .social-links img {
   width: 30px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .header .nav .nav-right .menu-button {
     display: none;
   }
@@ -72,7 +72,7 @@
   top: 55px;
   width: 100%;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .header .nav .nav-right .menu-pane {
     display: flex;
     flex-flow: row nowrap;

@@ -1,22 +1,36 @@
 @import "../../global-style/variables";
 
-.hero {
+.is-hero {
     padding-top: 100px;
+    padding-bottom: 170px;
 
-    @media @largerThanTablet {
-        padding-top: 120px;
+    @media @largerThan769 {
+        padding: 120px 0 60px;
     }
 
-    .animation-container {
-        // background: url("/images/about/cat-single-041.svg") center no-repeat;
+    .left-side {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 0 0 100%;
+
+        @media @largerThan769 {
+            align-items: flex-end;
+            flex: 0 0 40%;
+        }
+    }
+    .right-side {
+        background-position: center center;
+        background-repeat: no-repeat;
         background-size: contain;
         color: #000;
+        flex: 0 0 100%;
         height: 366px;
-        margin: 0 auto;
-        max-width: 500px;
         position: relative;
         width: 100%;
-        @media @largerThanTablet {
+        @media @largerThan769 {
+            background-position: left center;
+            flex: 0 0 55%;
             max-width: 680px;
         }
     }
@@ -24,10 +38,13 @@
     .greetings-wrap {
         position: absolute;
         top: 400px;
-        @media @largerThanTablet {
+        @media @largerThan769 {
             animation: 0.75s 4s 1 slideTextIn forwards;
             opacity: 0;
             top: 0;
+        }
+        @media @largerThan1024 {
+            width: 500px;
         }
     }
 
@@ -36,27 +53,25 @@
         float: left;
         height: 425px;
         shape-outside: polygon(
-            72.92% 0px,
-            91.57% 15.65%,
-            93.51% 27%,
-            89.52% 36.8%,
-            96.53% 51.52%,
-            96.67% 63.39%,
-            100.18% 67.3%,
-            99.37% 72.06%,
-            79.94% 86.94%,
+            76.88% 8.83%,
+            87.89% 25.35%,
+            82.02% 36.09%,
+            90.91% 46.34%,
+            92.6% 61.75%,
+            98.93% 62.36%,
+            98.43% 72.77%,
+            71.82% 85.76%,
             51.82% 85.79%,
             49.47% 0.26%
         );
-        width: 498px;
-        @media @largerThanTablet {
+        width: 320px;
+        @media @largerThan769 {
             display: block;
         }
     }
 
     .sequence {
         animation: coding 1.1s steps(12, end) infinite;
-        // background: url("/images/about/cat-action-export-051.svg") 0 0 no-repeat;
         background-size: cover;
         height: 300px;
         left: 50%;
@@ -64,15 +79,17 @@
         top: 0;
         transform: translateX(-50%);
         width: 320px;
+        @media @largerThan769 {
+            left: 0;
+            transform: none;
+        }
     }
 
     .typewriter {
-        height: 32px;
         position: relative;
-        margin: 0 auto;
         width: 160px;
-        @media @largerThanTablet {
-            width: 172px;
+        @media @largerThan769 {
+            width: 230px;
             padding-bottom: 75px;
         }
         h1 {
@@ -81,7 +98,6 @@
             color: #000;
             font-family: monospace;
             font-size: 24px;
-            height: 28px;
             letter-spacing: 0.15rem;
             left: 0;
             margin: 0 auto;
@@ -91,8 +107,8 @@
             white-space: nowrap;
             width: 0;
 
-            @media @largerThanTablet {
-                font-size: 26px;
+            @media @largerThan769 {
+                font-size: 36px;
             }
         }
     }
@@ -136,7 +152,6 @@
 @keyframes coding {
     100% {
         background-position: 0 -4320px;
-        // background-position: 0 -3456px;
     }
 }
 

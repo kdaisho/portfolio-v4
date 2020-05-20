@@ -1,17 +1,21 @@
 .is-technologies {
   padding-bottom: 400px !important;
 }
+.is-technologies .left-side {
+  flex: 0 0 100%;
+}
+@media only screen and (min-width: 769px) {
+  .is-technologies .left-side {
+    flex: 0 0 35%;
+  }
+}
 .is-technologies .filter-section {
   border-color: #2aaaff;
   border-radius: 3px;
-  padding: 6px 9px 3px;
-}
-@media only screen and (min-width: 768px) {
-  .is-technologies .filter-section {
-    padding: 9px 15px 6px;
-  }
+  padding: 12px 15px 6px;
 }
 .is-technologies .filter-section legend {
+  font-size: 18px;
   padding: 0 12px;
 }
 .is-technologies .filter-section .filters {
@@ -29,7 +33,8 @@
   height: 30px;
   margin: 0 15px 15px 0;
   padding: 0 15px 0 3px;
-  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+  transition: transform 0.03s ease-in, box-shadow 0.03s ease-in;
+  user-select: none;
 }
 .is-technologies .filter-section .filters label.active {
   box-shadow: 0 0 0 #000;
@@ -49,15 +54,23 @@
 .is-technologies .filter-section .filters label .dummy {
   background: #fff;
   display: block;
-  height: 25px;
+  height: 24px;
   margin-right: 9px;
-  width: 25px;
+  width: 24px;
 }
 .is-technologies .technologies {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 50px 0;
+}
+.is-technologies .technologies.right-side {
+  flex: 0 0 100%;
+}
+@media only screen and (min-width: 769px) {
+  .is-technologies .technologies.right-side {
+    flex: 0 0 60%;
+  }
 }
 .is-technologies .technologies .tech {
   flex: 0 0 20%;

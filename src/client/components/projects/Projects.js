@@ -33,14 +33,11 @@ class Projects extends Component {
     };
 
     isIncludes = (stack, filterList) => {
-        console.count();
         const arr = [];
         for (let i = 0; i < stack.length; i++) {
-            if (filterList.indexOf(stack[i]) >= 0) {
-                arr.push(filterList.indexOf(stack[i]));
-            }
+            arr.push(filterList.includes(stack[i]));
         }
-        console.log("????", arr);
+        return arr.includes(true);
     };
 
     render() {
@@ -80,8 +77,7 @@ class Projects extends Component {
                         {projects
                             .filter((project) => {
                                 return this.state.filterTerms.length
-                                    ? // ? this.isIncludes(this.state.filterTerms, project.stack)
-                                      this.isIncludes(project.stack, this.state.filterTerms)
+                                    ? this.isIncludes(project.stack, this.state.filterTerms)
                                     : true;
                             })
                             .map((project) => (
@@ -100,10 +96,6 @@ class Projects extends Component {
                                                     {tech.slice(0, 1).toUpperCase()}
                                                 </li>
                                             ))}
-                                            {/* <li className="js">J</li>
-                                            <li className="js">N</li>
-                                            <li className="markup">H</li>
-                                            <li className="css">S</li> */}
                                         </ul>
                                     </div>
                                 </div>

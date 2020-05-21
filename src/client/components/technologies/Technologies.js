@@ -52,7 +52,7 @@ class Technologies extends Component {
                             </p>
                         </div>
                         <fieldset className="filter-section">
-                            <legend className="is-text-grey">Filters</legend>
+                            <legend className="is-text-grey">Categories</legend>
                             <div className="filters">
                                 {filterItems.map((item) => (
                                     <label

@@ -1,13 +1,15 @@
 .is-projects {
-  padding-bottom: 400px !important;
+  background: #f6f6f6;
 }
 .is-projects .left-side {
   flex: 0 0 100%;
+  padding-top: 30px;
 }
 @media only screen and (min-width: 769px) {
   .is-projects .left-side {
     flex: 0 0 65%;
     order: 1;
+    padding: 0;
   }
 }
 .is-projects .right-side {
@@ -17,6 +19,7 @@
   .is-projects .right-side {
     flex: 0 0 35%;
     order: 2;
+    padding: 0;
   }
 }
 .is-projects .filter-section {
@@ -184,8 +187,8 @@
 .is-projects .cards .card .bottom .tech-stack li.live {
   background: lawngreen;
 }
-.is-projects .cards .card .bottom .tech-stack li.mustache {
-  background: darkorange;
+.is-projects .cards .card .bottom .tech-stack li.mongodb {
+  background: darkgreen;
 }
 .is-projects .cards .card .bottom .tech-stack li.php {
   background: rebeccapurple;

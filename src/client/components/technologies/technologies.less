@@ -1,8 +1,6 @@
 @import "../../global-style/variables";
 
 .is-technologies {
-    padding-bottom: 400px !important;
-
     .left-side {
         flex: 0 0 100%;
 
@@ -73,12 +71,13 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        padding: 50px 0;
 
         &.right-side {
             flex: 0 0 100%;
+            padding-top: 30px;
             @media @largerThan769 {
                 flex: 0 0 60%;
+                padding: 0;
             }
         }
 
@@ -125,7 +124,7 @@
             .separator {
                 display: block;
                 border-bottom: 2px solid @themeColor;
-                margin: 10px auto;
+                margin: 12px auto;
                 transition: transform 0.25s ease-out;
                 width: 30px;
             }

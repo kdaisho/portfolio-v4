@@ -32,12 +32,12 @@ class Projects extends Component {
         }
     };
 
-    isIncludes = (stack, filterList) => {
-        const arr = [];
-        for (let i = 0; i < stack.length; i++) {
-            arr.push(filterList.includes(stack[i]));
+    isIncludes = (stack, filterTerms) => {
+        let counter = 0;
+        for (let i = 0; i < filterTerms.length; i++) {
+            stack.includes(filterTerms[i]) ? counter++ : "";
         }
-        return arr.includes(true);
+        return filterTerms.length === counter ? true : false;
     };
 
     render() {

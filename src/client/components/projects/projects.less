@@ -1,15 +1,16 @@
 @import "../../global-style/variables";
 
 .is-projects {
-    padding-bottom: 400px !important;
+    background: @backgroundColor;
 
     .left-side {
         flex: 0 0 100%;
+        padding-top: 30px;
 
         @media @largerThan769 {
-            // flex: 0 0 35%;
             flex: 0 0 65%;
             order: 1;
+            padding: 0;
         }
     }
 
@@ -19,6 +20,7 @@
         @media @largerThan769 {
             flex: 0 0 35%;
             order: 2;
+            padding: 0;
         }
     }
 
@@ -219,9 +221,10 @@
                             background: lawngreen;
                         }
 
-                        &.mustache {
-                            background: darkorange;
+                        &.mongodb {
+                            background: darkgreen;
                         }
+
                         &.php {
                             background: rebeccapurple;
                         }

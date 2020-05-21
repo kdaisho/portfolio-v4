@@ -3,14 +3,14 @@ export const projects = [
         id: 0,
         title: "JavaScriptBest",
         subtitle: "Online Course Review App",
-        stack: ["nodejs", "mustache", "live"],
+        stack: ["nodejs", "vanillajs", "live", "mongodb"],
         url: "https://javascriptbest.com"
     },
     {
         id: 1,
         title: "Portofolio",
         subtitle: "My portofolio site",
-        stack: ["react", "nodejs", "live"],
+        stack: ["react", "nodejs", "live", "less"],
         url: "https://daishodesign.com"
     },
     {
@@ -38,14 +38,14 @@ export const projects = [
         id: 5,
         title: "Suicide in Japan",
         subtitle: "Beatiful visualization for beautiful country",
-        stack: ["infographic", "cssGrid"],
+        stack: ["infographic", "cssGrid", "live"],
         url: "https://kdaisho.github.io/Infographic/"
     },
     {
         id: 6,
         title: "Non-breaking Injector",
         subtitle: "Sick of '&nbsp;' by hand?",
-        stack: ["vanillajs", "tool"],
+        stack: ["vanillajs", "tool", "less"],
         url: "https://kdaisho.github.io/French-Formatter/"
     },
     {
@@ -59,7 +59,7 @@ export const projects = [
         id: 8,
         title: "Japanese Drum Kit",
         subtitle: "Just a simple fun project",
-        stack: ["vanillajs"],
+        stack: ["vanillajs", "live"],
         url: "https://kdaisho.github.io/Japan_Sound_Board/"
     }
 ];
@@ -67,47 +67,42 @@ export const projects = [
 export const filterItems = [
     {
         name: "Live",
-        tech: "live",
-        type: "js"
+        tech: "live"
     },
     {
         name: "VanillaJs",
-        tech: "vanillajs",
-        type: "js"
+        tech: "vanillajs"
     },
     {
         name: "Nodejs",
-        tech: "nodejs",
-        type: "js"
+        tech: "nodejs"
     },
     {
         name: "React",
-        tech: "react",
-        type: "js"
+        tech: "react"
     },
     {
         name: "Angular",
-        tech: "angular",
-        type: "js"
+        tech: "angular"
     },
     {
         name: "Sass",
-        tech: "sass",
-        type: "css"
+        tech: "sass"
     },
     {
         name: "Less",
-        tech: "less",
-        type: "css"
+        tech: "less"
     },
     {
         name: "Css Grid",
-        tech: "cssGrid",
-        type: "css"
+        tech: "cssGrid"
     },
     {
         name: "PHP",
-        tech: "php",
-        type: "php"
+        tech: "php"
+    },
+    {
+        name: "mongoDB",
+        tech: "mongodb"
     }
 ];

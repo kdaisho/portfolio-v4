@@ -6,7 +6,17 @@
 }
 @media only screen and (min-width: 769px) {
   .is-projects .left-side {
+    flex: 0 0 65%;
+    order: 1;
+  }
+}
+.is-projects .right-side {
+  flex: 0 0 100%;
+}
+@media only screen and (min-width: 769px) {
+  .is-projects .right-side {
     flex: 0 0 35%;
+    order: 2;
   }
 }
 .is-projects .filter-section {
@@ -58,99 +68,35 @@
   margin-right: 9px;
   width: 24px;
 }
-.is-projects .projects {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 50px 0;
-}
-.is-projects .projects.right-side {
-  flex: 0 0 100%;
-}
-@media only screen and (min-width: 769px) {
-  .is-projects .projects.right-side {
-    flex: 0 0 60%;
-  }
-}
-.is-projects .projects .project {
-  flex: 0 0 20%;
-  height: 165px;
-  text-align: center;
-  padding: 20px;
-}
-.is-projects .projects .project:hover {
-  background: #e91e63;
-  cursor: pointer;
-}
-.is-projects .projects .project:hover path,
-.is-projects .projects .project:hover circle {
-  fill: #fff;
-}
-.is-projects .projects .project:hover .separator {
-  border-color: #fff;
-  transform: translateY(36px);
-}
-.is-projects .projects .project:hover .stars {
-  font-size: 16px;
-  opacity: 1;
-}
-.is-projects .projects .project:hover .project-name {
-  color: #fff;
-  transform: translateY(-36px);
-}
-.is-projects .projects .project svg {
-  width: 75px;
-}
-.is-projects .projects .project path,
-.is-projects .projects .project circle {
-  fill: #e91e63;
-}
-.is-projects .projects .project .separator {
-  display: block;
-  border-bottom: 2px solid #e91e63;
-  margin: 10px auto;
-  transition: transform 0.25s ease-out;
-  width: 30px;
-}
-.is-projects .projects .project .stars {
-  color: #fff;
-  font-size: 0;
-  opacity: 0;
-  transition: opacity 0.25s ease-out 0.25s;
-}
-.is-projects .projects .project .project-name {
-  color: #e91e63;
-  font-size: 14px;
-  transform: translateY(-20px);
-  transition: transform 0.25s ease-out;
-}
-.projects {
+.is-projects .cards {
   align-items: flex-start;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
 }
-.projects .card {
+.is-projects .cards .card {
   border: 4px solid #000;
   box-shadow: 6px 6px 0 #000;
-  height: 300px;
-  width: 250px;
+  height: 280px;
+  margin: 12px;
+  width: 225px;
 }
-.projects .card .top {
+.is-projects .cards .card .top {
   background: #ccc;
   height: 55%;
 }
-.projects .card .bottom {
+.is-projects .cards .card .bottom {
   background: #fff;
   box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
   height: 45%;
   justify-content: space-between;
-  padding: 24px 0 6px;
+  padding: 18px 0 4px;
   position: relative;
+  user-select: none;
 }
-.projects .card .bottom .cta {
+.is-projects .cards .card .bottom .cta {
   background: #e91e63;
   border-radius: 3px;
   box-shadow: 4px 4px 0 #000;
@@ -159,52 +105,64 @@
   font-size: 14px;
   left: 50%;
   margin: 0 auto;
+  opacity: 0;
   padding: 6px 16px;
   position: absolute;
   top: 0;
   transform: translate(-50%, -18px);
+  transition: all 0.25s ease-in;
+  white-space: nowrap;
 }
-.projects .card .bottom .cta:hover {
+.is-projects .cards .card .bottom .cta:hover {
   cursor: pointer;
 }
-.projects .card .bottom .text-group {
+.is-projects .cards .card .bottom .text-group {
   padding: 6px 0;
   text-align: center;
 }
-.projects .card .bottom .text-group .title {
+.is-projects .cards .card .bottom .text-group .title {
   font-size: 18px;
 }
-.projects .card .bottom .text-group .separator {
+.is-projects .cards .card .bottom .text-group .separator {
   display: block;
   border-bottom: 2px solid #000;
   margin: 12px auto 9px;
   width: 35px;
 }
-.projects .card .bottom .text-group .desc {
+.is-projects .cards .card .bottom .text-group .desc {
   text-align: center;
   font-size: 14px;
 }
-.projects .card .bottom .tech-stack {
+.is-projects .cards .card .bottom .tech-stack {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   padding-top: 6px;
 }
-.projects .card .bottom .tech-stack li {
+.is-projects .cards .card .bottom .tech-stack li {
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   height: 20px;
   margin-right: 1px;
   line-height: 20px;
   text-align: center;
   width: 20px;
 }
-.projects .card .bottom .tech-stack li.js {
+.is-projects .cards .card .bottom .tech-stack li.js {
   background: #e91e63;
 }
-.projects .card .bottom .tech-stack li.markup {
+.is-projects .cards .card .bottom .tech-stack li.nodejs {
+  background: #000;
+}
+.is-projects .cards .card .bottom .tech-stack li.markup {
   background: #ef5350;
 }
-.projects .card .bottom .tech-stack li.css {
+.is-projects .cards .card .bottom .tech-stack li.css {
   background: #26c6da;
+}
+.is-projects .cards .card:hover {
+  cursor: pointer;
+}
+.is-projects .cards .card:hover .cta {
+  opacity: 1;
 }

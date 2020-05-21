@@ -45,15 +45,23 @@
 .is-education .card.is-frontendmasters {
   box-shadow: 5px 5px 0 #c02d28;
 }
+.is-education .card.is-frontendmasters:hover {
+  box-shadow: 0 0 0 #c02d28;
+}
 .is-education .card.is-treehouse {
   box-shadow: 5px 5px 0 #42c168;
+}
+.is-education .card.is-treehouse:hover {
+  box-shadow: 0 0 0 #42c168;
 }
 .is-education .card.is-herzing {
   box-shadow: 5px 5px 0 #1755a5;
 }
+.is-education .card.is-herzing:hover {
+  box-shadow: 0 0 0 #1755a5;
+}
 .is-education .card:hover {
   cursor: pointer;
-  box-shadow: 0 0 0 #000;
   transform: translate(5px, 5px);
   transition-delay: 0s;
 }

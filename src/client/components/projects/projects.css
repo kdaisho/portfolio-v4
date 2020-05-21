@@ -130,8 +130,11 @@
   width: 35px;
 }
 .is-projects .cards .card .bottom .text-group .desc {
-  text-align: center;
   font-size: 14px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .is-projects .cards .card .bottom .tech-stack {
   display: flex;
@@ -148,17 +151,44 @@
   text-align: center;
   width: 20px;
 }
-.is-projects .cards .card .bottom .tech-stack li.js {
+.is-projects .cards .card .bottom .tech-stack li.vanillajs {
   background: #e91e63;
+}
+.is-projects .cards .card .bottom .tech-stack li.react {
+  background: green;
+}
+.is-projects .cards .card .bottom .tech-stack li.angular {
+  background: red;
 }
 .is-projects .cards .card .bottom .tech-stack li.nodejs {
   background: #000;
 }
+.is-projects .cards .card .bottom .tech-stack li.infographic {
+  background: navy;
+}
 .is-projects .cards .card .bottom .tech-stack li.markup {
   background: #ef5350;
 }
-.is-projects .cards .card .bottom .tech-stack li.css {
+.is-projects .cards .card .bottom .tech-stack li.sass {
   background: #26c6da;
+}
+.is-projects .cards .card .bottom .tech-stack li.less {
+  background: peru;
+}
+.is-projects .cards .card .bottom .tech-stack li.cssGrid {
+  background: pink;
+}
+.is-projects .cards .card .bottom .tech-stack li.tool {
+  background: brown;
+}
+.is-projects .cards .card .bottom .tech-stack li.live {
+  background: lawngreen;
+}
+.is-projects .cards .card .bottom .tech-stack li.mustache {
+  background: darkorange;
+}
+.is-projects .cards .card .bottom .tech-stack li.php {
+  background: rebeccapurple;
 }
 .is-projects .cards .card:hover {
   cursor: pointer;

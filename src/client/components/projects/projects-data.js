@@ -17,7 +17,7 @@ export const projects = [
         id: 2,
         title: "Quebec3",
         subtitle: "CMS with Laravel",
-        stack: ["laravel", "sass", "live"],
+        stack: ["php", "sass", "live"],
         url: "https://quebec3.com"
     },
     {
@@ -106,8 +106,8 @@ export const filterItems = [
         type: "css"
     },
     {
-        name: "Laravel",
-        tech: "laravel",
+        name: "PHP",
+        tech: "php",
         type: "php"
     }
 ];

@@ -46,19 +46,28 @@
 
         &.is-frontendmasters {
             box-shadow: 5px 5px 0 @fem;
+            &:hover {
+                box-shadow: 0 0 0 @fem;
+            }
         }
 
         &.is-treehouse {
             box-shadow: 5px 5px 0 @treehouse;
+            &:hover {
+                box-shadow: 0 0 0 @treehouse;
+            }
         }
 
         &.is-herzing {
             box-shadow: 5px 5px 0 @herzing;
+            &:hover {
+                box-shadow: 0 0 0 @herzing;
+            }
         }
 
         &:hover {
             cursor: pointer;
-            box-shadow: 0 0 0 #000;
+            // box-shadow: 0 0 0 transparent;
             transform: translate(5px, 5px);
             transition-delay: 0s;
         }

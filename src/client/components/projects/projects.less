@@ -151,8 +151,11 @@
                     }
 
                     .desc {
-                        text-align: center;
                         font-size: @font-small;
+                        overflow: hidden;
+                        text-align: center;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
                     }
                 }
 
@@ -164,6 +167,7 @@
 
                     li {
                         color: #fff;
+                        // color: grey;
                         font-size: @font-small;
                         height: 20px;
                         margin-right: 1px;
@@ -171,20 +175,55 @@
                         text-align: center;
                         width: 20px;
 
-                        &.js {
+                        &.vanillajs {
                             background: @themeColor;
+                        }
+
+                        &.react {
+                            background: green;
+                        }
+
+                        &.angular {
+                            background: red;
                         }
 
                         &.nodejs {
                             background: #000;
                         }
 
+                        &.infographic {
+                            background: navy;
+                        }
+
                         &.markup {
                             background: #ef5350;
                         }
 
-                        &.css {
+                        &.sass {
                             background: #26c6da;
+                        }
+
+                        &.less {
+                            background: peru;
+                        }
+
+                        &.cssGrid {
+                            background: pink;
+                        }
+
+                        &.tool {
+                            background: brown;
+                        }
+
+                        &.live {
+                            background: lawngreen;
+                        }
+
+                        &.mustache {
+                            background: darkorange;
+                        }
+                        &.php {
+                            background: rebeccapurple;
                         }
                     }
                 }

@@ -1,0 +1,17 @@
+.is-contact .left-side {
+  flex: 0 0 100%;
+}
+@media only screen and (min-width: 769px) {
+  .is-contact .left-side {
+    flex: 0 0 35%;
+  }
+}
+.is-contact .right-side {
+  padding-top: 30px;
+}
+@media only screen and (min-width: 769px) {
+  .is-contact .right-side {
+    flex: 0 0 65%;
+    padding: 0 0 0 3%;
+  }
+}

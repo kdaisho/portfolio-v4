@@ -3,12 +3,6 @@
 .is-education {
     background: @backgroundColor;
 
-    .is-backy-side {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
-
     .title-group {
         flex: 0 0 100%;
         @media @largerThan769 {
@@ -22,17 +16,13 @@
         flex: 0 0 100%;
         flex-flow: row wrap;
         justify-content: space-around;
+        justify-content: space-evenly;
+
         @media @largerThan769 {
             flex: 0 0 65%;
             order: 1;
-            justify-content: flex-start;
+            padding-right: 3%;
         }
-    }
-
-    .two-cards {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
     }
 
     .card {
@@ -145,8 +135,8 @@
         border-bottom: solid;
         border-width: 2px;
         display: block;
-        margin: 14px auto;
-        width: 40px;
+        margin: 14px auto 16px;
+        width: 38px;
     }
 
     .frontendmasters {

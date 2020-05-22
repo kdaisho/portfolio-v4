@@ -61,6 +61,13 @@ export const projects = [
         subtitle: "Just a simple fun project",
         stack: ["vanillajs", "live"],
         url: "https://kdaisho.github.io/Japan_Sound_Board/"
+    },
+    {
+        id: 9,
+        title: "Archive Everything",
+        subtitle: "Archiving tool using file system",
+        stack: ["nodejs", "react"],
+        url: ""
     }
 ];
 

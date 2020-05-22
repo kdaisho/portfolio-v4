@@ -4,6 +4,7 @@ import Hero from "./hero/Hero";
 import Education from "./education/Education";
 import Technologies from "./technologies/Technologies";
 import Projects from "./projects/Projects";
+import Contact from "./contact/Contact";
 
 const Main = () => {
     return (
@@ -13,6 +14,7 @@ const Main = () => {
             <Education />
             <Technologies />
             <Projects />
+            <Contact />
         </React.Fragment>
     );
 };

@@ -10,7 +10,7 @@ class Education extends Component {
             <section className="section is-education">
                 <div className="content-wrap is-side-by-side">
                     <div className="title-group">
-                        <h2 className="title font-extra-large">Education</h2>
+                        <h2 className="title">Education</h2>
                         <p className="subtitle is-text-grey font-large">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
                             Quisque volutpat mattis eros.

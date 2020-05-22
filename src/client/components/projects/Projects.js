@@ -5,16 +5,16 @@ import "./projects.css";
 class Projects extends Component {
     state = {
         filterTerms: [],
-        js: false,
-        vanillajs: false,
-        react: false,
         angular: false,
-        markup: false,
-        graphicsEditor: false,
-        tools: false,
-        platform: false,
-        database: false,
-        textEditor: false
+        cssGrid: false,
+        less: false,
+        live: false,
+        mongodb: false,
+        nodejs: false,
+        php: false,
+        react: false,
+        sass: false,
+        vanillajs: false
     };
 
     handleChange = (tech) => {
@@ -46,7 +46,7 @@ class Projects extends Component {
                 <div className="content-wrap is-side-by-side">
                     <div className="right-side">
                         <div className="title-group">
-                            <h2 className="title font-extra-large">Projects</h2>
+                            <h2 className="title">Projects</h2>
                             <p className="subtitle is-text-grey font-large">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                                 odio. Quisque volutpat mattis eros.
@@ -84,7 +84,6 @@ class Projects extends Component {
                                 <div key={project.id} className="card">
                                     <div className="top"></div>
                                     <div className="bottom">
-                                        <button className="cta">View Details</button>
                                         <div className="text-group">
                                             <h2 className="title">{project.title}</h2>
                                             <span className="separator"></span>

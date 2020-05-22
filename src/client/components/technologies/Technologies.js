@@ -45,7 +45,7 @@ class Technologies extends Component {
                 <div className="content-wrap is-side-by-side">
                     <div className="left-side">
                         <div className="title-group">
-                            <h2 className="title font-extra-large">Technologies</h2>
+                            <h2 className="title">Technologies</h2>
                             <p className="subtitle is-text-grey font-large">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                                 odio. Quisque volutpat mattis eros.

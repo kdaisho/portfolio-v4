@@ -22,55 +22,6 @@
     padding: 0;
   }
 }
-.is-projects .filter-section {
-  border-color: #e91e63;
-  border-radius: 3px;
-  padding: 12px 15px 6px;
-}
-.is-projects .filter-section legend {
-  font-size: 18px;
-  padding: 0 12px;
-}
-.is-projects .filter-section .filters {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-}
-.is-projects .filter-section .filters label {
-  align-items: center;
-  background: #e91e63;
-  box-shadow: 4px 4px 0 #000;
-  color: #fff;
-  display: flex;
-  flex-flow: row nowrap;
-  height: 30px;
-  margin: 0 15px 15px 0;
-  padding: 0 15px 0 3px;
-  transition: transform 0.03s ease-in, box-shadow 0.03s ease-in;
-  user-select: none;
-}
-.is-projects .filter-section .filters label.active {
-  box-shadow: 0 0 0 #000;
-  transform: translate(4px, 4px);
-}
-.is-projects .filter-section .filters label:hover {
-  cursor: pointer;
-}
-.is-projects .filter-section .filters label input[type="checkbox"] {
-  position: absolute;
-  z-index: -99;
-}
-.is-projects .filter-section .filters label input[type="checkbox"]:checked + .dummy {
-  background: #e91e63;
-  border: 3px solid #fff;
-}
-.is-projects .filter-section .filters label .dummy {
-  background: #fff;
-  display: block;
-  height: 24px;
-  margin-right: 9px;
-  width: 24px;
-}
 .is-projects .cards {
   align-items: flex-start;
   display: flex;
@@ -134,7 +85,7 @@
   width: 20px;
 }
 .is-projects .cards .card .bottom .tech-stack li.vanillajs {
-  background: #e91e63;
+  background: #6200ea;
 }
 .is-projects .cards .card .bottom .tech-stack li.react {
   background: green;

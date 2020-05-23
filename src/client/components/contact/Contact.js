@@ -24,7 +24,7 @@ class Contact extends Component {
                         >
                             {/* <h3 className="heading">Questions or comments?</h3> */}
                             <div className="form-group">
-                                <label className="is-text-grey" htmlFor="name">
+                                <label className="is-text-grey_" htmlFor="name">
                                     Name
                                 </label>
                                 <input
@@ -37,7 +37,7 @@ class Contact extends Component {
                                 />
                             </div>
                             <div className="form-group" style={{ display: "none" }}>
-                                <label className="is-text-grey" htmlFor="address">
+                                <label className="is-text-grey_" htmlFor="address">
                                     Address
                                 </label>
                                 <input
@@ -49,7 +49,7 @@ class Contact extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label className="is-text-grey" htmlFor="email">
+                                <label className="is-text-grey_" htmlFor="email">
                                     Email
                                 </label>
                                 <input
@@ -62,7 +62,7 @@ class Contact extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label className="is-text-grey" htmlFor="message">
+                                <label className="is-text-grey_" htmlFor="message">
                                     Message
                                 </label>
                                 <textarea
@@ -74,10 +74,9 @@ class Contact extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label>
+                                <label className="receive-copy-check">
                                     <input
                                         type="checkbox"
-                                        className="receive-copy"
                                         // name={item.type}
                                         // checked={this.state.type}
                                         // onChange={() => this.handleChange(item.type)}

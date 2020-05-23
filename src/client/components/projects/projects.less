@@ -24,64 +24,6 @@
         }
     }
 
-    .filter-section {
-        border-color: @themeColor;
-        border-radius: 3px;
-        padding: 12px 15px 6px;
-
-        legend {
-            font-size: @font-large;
-            padding: 0 12px;
-        }
-
-        .filters {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: flex-start;
-
-            label {
-                align-items: center;
-                background: @themeColor;
-                box-shadow: 4px 4px 0 #000;
-                color: #fff;
-                display: flex;
-                flex-flow: row nowrap;
-                height: 30px;
-                margin: 0 15px 15px 0;
-                padding: 0 15px 0 3px;
-                transition: transform 0.03s ease-in, box-shadow 0.03s ease-in;
-                user-select: none;
-
-                &.active {
-                    box-shadow: 0 0 0 #000;
-                    transform: translate(4px, 4px);
-                }
-
-                &:hover {
-                    cursor: pointer;
-                }
-
-                input[type="checkbox"] {
-                    position: absolute;
-                    z-index: -99;
-
-                    &:checked + .dummy {
-                        background: @themeColor;
-                        border: 3px solid #fff;
-                    }
-                }
-
-                .dummy {
-                    background: #fff;
-                    display: block;
-                    height: 24px;
-                    margin-right: 9px;
-                    width: 24px;
-                }
-            }
-        }
-    }
-
     .cards {
         align-items: flex-start;
         display: flex;

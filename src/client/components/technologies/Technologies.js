@@ -57,7 +57,7 @@ class Technologies extends Component {
                                 {filterItems.map((item) => (
                                     <label
                                         key={item.type}
-                                        className={this.state[item.type] ? "active" : ""}
+                                        className={`tag ${this.state[item.type] ? "active" : ""}`}
                                     >
                                         <input
                                             type="checkbox"

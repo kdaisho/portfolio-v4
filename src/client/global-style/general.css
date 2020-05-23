@@ -23,7 +23,7 @@
   padding-bottom: 50px;
 }
 .root .title-group .title {
-  color: #e91e63;
+  color: #6200ea;
   font-size: 36px;
   font-weight: bold;
 }
@@ -35,7 +35,7 @@
 }
 .root .button {
   align-items: center;
-  background: #e91e63;
+  background: #6200ea;
   border: none;
   bottom: 0;
   color: #fff;
@@ -70,4 +70,55 @@
   bottom: -4px;
   right: -4px;
   box-shadow: 1px 1px 0 #000;
+}
+.root .filter-section {
+  border-color: #6200ea;
+  border-radius: 3px;
+  padding: 12px 15px 6px;
+}
+.root .filter-section legend {
+  font-size: 18px;
+  padding: 0 12px;
+}
+.root .filter-section .filters {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.root .filter-section .filters .tag {
+  align-items: center;
+  border: 2px solid #6200ea;
+  box-shadow: 4px 4px 0 #6200ea;
+  color: #6200ea;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 30px;
+  margin: 0 15px 15px 0;
+  padding: 0 15px 0 3px;
+  transition: transform 0.05s ease-in, box-shadow 0.05s ease-in;
+  user-select: none;
+}
+.root .filter-section .filters .tag.active {
+  box-shadow: 0 0 0 #000;
+  transform: translate(4px, 4px);
+}
+.root .filter-section .filters .tag:hover {
+  cursor: pointer;
+}
+.root .filter-section .filters .tag input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+  z-index: -99;
+}
+.root .filter-section .filters .tag input[type="checkbox"]:checked + .dummy {
+  background: #6200ea;
+  transition: background 0.1s ease-in 0.15s;
+}
+.root .filter-section .filters .tag .dummy {
+  border: 1px solid #6200ea;
+  transition: background 0.1s ease-in;
+  display: block;
+  height: 20px;
+  margin-right: 9px;
+  width: 20px;
 }

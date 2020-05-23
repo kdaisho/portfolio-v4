@@ -29,7 +29,7 @@
         position: relative;
         width: 100%;
         @media @largerThan769 {
-            background-position: left center;
+            background-position: -2px center;
             flex: 0 0 55%;
             max-width: 680px;
         }
@@ -39,8 +39,10 @@
         position: absolute;
         top: 400px;
         @media @largerThan769 {
-            animation: 0.75s 4s 1 slideTextIn forwards;
-            opacity: 0;
+            &.slide {
+                animation: 0.75s 4s 1 slideTextIn forwards;
+                opacity: 0;
+            }
             top: 0;
         }
         @media @largerThan1024 {

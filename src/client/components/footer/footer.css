@@ -1,0 +1,11 @@
+.is-footer {
+  background: #e91e63;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+@media only screen and (min-width: 769px) {
+  .is-footer {
+    text-align: left;
+  }
+}

@@ -5,6 +5,14 @@ import catAction from "../../images/hero/cat-action-export-051.svg";
 import "./hero.css";
 
 class Hero extends Component {
+    state = {
+        animation: true
+    };
+
+    componentDidMount() {
+        setTimeout(() => this.setState({ animation: false }), 5000);
+    }
+
     render() {
         return (
             <section className="is-hero">
@@ -24,7 +32,7 @@ class Hero extends Component {
                             className="sequence"
                             style={{ background: `url(${catAction}) 0 0 no-repeat` }}
                         ></div>
-                        <div className="greetings-wrap">
+                        <div className={`greetings-wrap ${this.state.animation ? "slide" : ""}`}>
                             <div className="clip-path"></div>
                             <p className="greetings is-text-grey">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec

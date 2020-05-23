@@ -16,49 +16,76 @@ class Contact extends Component {
                         </p>
                     </div>
                     <div className="right-side">
-                        <form id="form" name="myForm" action="/send" method="POST">
-                            <h3 className="heading">Questions or comments?</h3>
-                            <div className="form-child">
-                                <label htmlFor="name">Name:</label>
+                        <form
+                            className="contact-form"
+                            name="contactForm"
+                            action="/send"
+                            method="POST"
+                        >
+                            {/* <h3 className="heading">Questions or comments?</h3> */}
+                            <div className="form-group">
+                                <label className="is-text-grey" htmlFor="name">
+                                    Name
+                                </label>
                                 <input
                                     id="name"
+                                    className="text-input name"
                                     type="text"
                                     placeholder="Name"
                                     name="name"
                                     required
                                 />
                             </div>
-                            <div className="form-child" style={{ display: "none" }}>
-                                <label htmlFor="address">Address:</label>
+                            <div className="form-group" style={{ display: "none" }}>
+                                <label className="is-text-grey" htmlFor="address">
+                                    Address
+                                </label>
                                 <input
                                     id="address"
+                                    className="text-input address"
                                     type="text"
                                     placeholder="Address"
                                     name="address"
                                 />
                             </div>
-                            <div className="form-child">
-                                <label htmlFor="email">Email:</label>
+                            <div className="form-group">
+                                <label className="is-text-grey" htmlFor="email">
+                                    Email
+                                </label>
                                 <input
                                     id="email"
+                                    className="text-input email"
                                     type="email"
                                     placeholder="Email"
                                     name="email"
                                     required
                                 />
                             </div>
-                            <div className="form-child">
-                                <label htmlFor="message">Message:</label>
+                            <div className="form-group">
+                                <label className="is-text-grey" htmlFor="message">
+                                    Message
+                                </label>
                                 <textarea
                                     id="message"
+                                    className="message"
                                     placeholder="Message"
                                     name="message"
-                                    rows="5"
-                                ></textarea>
+                                    rows="6"
+                                />
                             </div>
-                            <button id="submit" className="form-child">
-                                SEND
-                            </button>
+                            <div className="form-group">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        className="receive-copy"
+                                        // name={item.type}
+                                        // checked={this.state.type}
+                                        // onChange={() => this.handleChange(item.type)}
+                                    />
+                                    I want to receive a copy
+                                </label>
+                            </div>
+                            <button className="button is-submit">SEND</button>
                         </form>
                     </div>
                 </div>

@@ -31,7 +31,7 @@
 }
 @media only screen and (min-width: 769px) {
   .is-hero .right-side {
-    background-position: left center;
+    background-position: -2px center;
     flex: 0 0 55%;
     max-width: 680px;
   }
@@ -42,9 +42,11 @@
 }
 @media only screen and (min-width: 769px) {
   .is-hero .greetings-wrap {
+    top: 0;
+  }
+  .is-hero .greetings-wrap.slide {
     animation: 0.75s 4s 1 slideTextIn forwards;
     opacity: 0;
-    top: 0;
   }
 }
 @media only screen and (min-width: 1024px) {

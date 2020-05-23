@@ -5,6 +5,7 @@ import Education from "./education/Education";
 import Technologies from "./technologies/Technologies";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
+import Footer from "./footer/Footer";
 
 const Main = () => {
     return (
@@ -15,6 +16,7 @@ const Main = () => {
             <Technologies />
             <Projects />
             <Contact />
+            <Footer />
         </React.Fragment>
     );
 };

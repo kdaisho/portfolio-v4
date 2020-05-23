@@ -1,39 +1,39 @@
-#root .m-t-20 {
+.root .m-t-20 {
   margin-top: 20px;
 }
-#root .m-b-20 {
+.root .m-b-20 {
   margin-bottom: 20px;
 }
-#root .section {
+.root .section {
   padding: 80px 0;
 }
-#root .content-wrap {
+.root .content-wrap {
   margin: 0 auto;
   max-width: 1280px;
   padding: 0 15px;
   width: 100%;
 }
-#root .content-wrap.is-side-by-side {
+.root .content-wrap.is-side-by-side {
   align-items: flex-start;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
-#root .title-group {
+.root .title-group {
   padding-bottom: 50px;
 }
-#root .title-group .title {
+.root .title-group .title {
   color: #e91e63;
   font-size: 36px;
   font-weight: bold;
 }
-#root .title-group .subtitle {
+.root .title-group .subtitle {
   font-size: 18px;
 }
-#root .is-text-grey {
+.root .is-text-grey {
   color: #444;
 }
-#root .button {
+.root .button {
   align-items: center;
   background: #e91e63;
   border: none;
@@ -53,20 +53,20 @@
   transition: bottom 0.05s ease-in, right 0.05s ease-in, box-shadow 0.05s ease-in;
   user-select: none;
 }
-#root .button:hover {
+.root .button:hover {
   cursor: pointer;
 }
-#root .button.has-shadow {
+.root .button.has-shadow {
   box-shadow: 5px 5px 0 #000;
   border-radius: 3px;
 }
-#root .button.is-medium {
+.root .button.is-medium {
   width: 120px;
 }
-#root .button.is-large {
+.root .button.is-large {
   width: 250px;
 }
-#root input:checked + .button {
+.root input:checked + .button {
   bottom: -4px;
   right: -4px;
   box-shadow: 1px 1px 0 #000;

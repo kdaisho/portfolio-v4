@@ -1,6 +1,6 @@
 .header {
   background: #fff;
-  border-bottom: 5px solid #000;
+  border-bottom: 5px solid #6200ea;
   left: 0;
   position: fixed;
   top: 0;
@@ -21,7 +21,7 @@
   }
 }
 .header .nav path {
-  stroke: #e91e63;
+  stroke: #6200ea;
   stroke-width: 1;
   stroke-dasharray: 816;
   stroke-dashoffset: 816;
@@ -97,6 +97,6 @@
     fill: transparent;
   }
   100% {
-    fill: #e91e63;
+    fill: #6200ea;
   }
 }

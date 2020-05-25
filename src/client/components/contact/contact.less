@@ -3,15 +3,16 @@
 .is-contact {
     .left-side {
         flex: 0 0 100%;
-        @media @largerThan769 {
+        @media @largerThan600 {
             flex: 0 0 35%;
         }
     }
 
     .right-side {
-        padding-top: 30px;
-        @media @largerThan769 {
-            flex: 0 0 300px;
+        flex: 0 0 100%;
+        // padding-top: 30px;
+        @media @largerThan600 {
+            flex: 0 0 340px;
             padding: 0 0 0 3%;
         }
     }
@@ -22,8 +23,9 @@
         border: 4px solid @themeColor;
         // box-shadow: 5px 5px 0 #000;
         box-shadow: 5px 5px 0 @themeColor;
+        flex: 0 0 100%;
         padding: 15px 12px 20px;
-        width: 280px;
+        // width: 320px;
 
         .form-group {
             padding: 6px 0;
@@ -38,6 +40,7 @@
             textarea {
                 border: 1px solid @themeColor;
                 box-sizing: border-box;
+                font-size: @font-medium;
                 width: 100%;
 
                 &::placeholder {

@@ -1,17 +1,17 @@
 .is-contact .left-side {
   flex: 0 0 100%;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 600px) {
   .is-contact .left-side {
     flex: 0 0 35%;
   }
 }
 .is-contact .right-side {
-  padding-top: 30px;
+  flex: 0 0 100%;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 600px) {
   .is-contact .right-side {
-    flex: 0 0 300px;
+    flex: 0 0 340px;
     padding: 0 0 0 3%;
   }
 }
@@ -19,8 +19,8 @@
   background: #fff;
   border: 4px solid #6200ea;
   box-shadow: 5px 5px 0 #6200ea;
+  flex: 0 0 100%;
   padding: 15px 12px 20px;
-  width: 280px;
 }
 .is-contact .contact-form .form-group {
   padding: 6px 0;
@@ -34,6 +34,7 @@
 .is-contact .contact-form .form-group textarea {
   border: 1px solid #6200ea;
   box-sizing: border-box;
+  font-size: 16px;
   width: 100%;
 }
 .is-contact .contact-form .form-group .text-input::placeholder,

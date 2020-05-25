@@ -1,6 +1,19 @@
 @import "../global-style/variables";
 
 .root {
+    h1,
+    h2,
+    h3,
+    p,
+    a,
+    li,
+    button,
+    label,
+    input,
+    textarea {
+        font-family: "Quicksand", sans-serif;
+    }
+
     .m-t-20 {
         margin-top: 20px;
     }
@@ -48,10 +61,10 @@
 
     .button {
         align-items: center;
-        background: @themeColor;
-        border: none;
+        background: #fff;
+        border: 3px solid @themeColor;
         bottom: 0;
-        color: #fff;
+        color: @themeColor;
         display: flex;
         font-size: @font-medium;
         font-weight: bold;
@@ -71,8 +84,12 @@
         }
 
         &.has-shadow {
-            box-shadow: 5px 5px 0 #000;
-            border-radius: 3px;
+            box-shadow: 4px 4px 0 @themeColor;
+        }
+
+        &.is-flat {
+            background: @themeColor;
+            color: #fff;
         }
 
         &.is-medium {

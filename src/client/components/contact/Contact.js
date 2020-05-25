@@ -84,7 +84,7 @@ class Contact extends Component {
                                     I want to receive a copy
                                 </label>
                             </div>
-                            <button className="button is-submit">SEND</button>
+                            <button className="button is-flat is-submit">SEND</button>
                         </form>
                     </div>
                 </div>

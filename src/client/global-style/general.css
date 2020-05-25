@@ -1,3 +1,15 @@
+.root h1,
+.root h2,
+.root h3,
+.root p,
+.root a,
+.root li,
+.root button,
+.root label,
+.root input,
+.root textarea {
+  font-family: "Quicksand", sans-serif;
+}
 .root .m-t-20 {
   margin-top: 20px;
 }
@@ -35,10 +47,10 @@
 }
 .root .button {
   align-items: center;
-  background: #6200ea;
-  border: none;
+  background: #fff;
+  border: 3px solid #6200ea;
   bottom: 0;
-  color: #fff;
+  color: #6200ea;
   display: flex;
   font-size: 16px;
   font-weight: bold;
@@ -57,8 +69,11 @@
   cursor: pointer;
 }
 .root .button.has-shadow {
-  box-shadow: 5px 5px 0 #000;
-  border-radius: 3px;
+  box-shadow: 4px 4px 0 #6200ea;
+}
+.root .button.is-flat {
+  background: #6200ea;
+  color: #fff;
 }
 .root .button.is-medium {
   width: 120px;

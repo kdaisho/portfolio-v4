@@ -1,6 +1,5 @@
 .is-hero {
-  padding-top: 100px;
-  padding-bottom: 170px;
+  padding: 100px 0 80px;
 }
 @media only screen and (min-width: 769px) {
   .is-hero {
@@ -37,11 +36,12 @@
   }
 }
 .is-hero .greetings-wrap {
-  position: absolute;
-  top: 400px;
+  padding-top: 40px;
 }
 @media only screen and (min-width: 769px) {
   .is-hero .greetings-wrap {
+    padding-top: 0;
+    position: absolute;
     top: 0;
   }
   .is-hero .greetings-wrap.slide {
@@ -115,6 +115,7 @@
 .is-hero .cta-match {
   display: flex;
   flex-flow: row nowrap;
+  margin: 20px 0;
   justify-content: center;
 }
 @keyframes slideTextIn {

@@ -1,6 +1,7 @@
 import React from "react";
 import { socials, menuItems } from "./headerData";
 import Logo from "../../images/nav/Logo";
+import menu from "../../images/nav/menu-dots.svg";
 import "./header.css";
 
 const Header = () => {
@@ -20,6 +21,9 @@ const Header = () => {
                             </li>
                         ))}
                     </ul>
+                    <button className="menu-toggle">
+                        <img src={menu} alt="menu" />
+                    </button>
                     <div className="menu-pane">
                         {menuItems.map((item) => (
                             <button key={item.name} className="button is-medium has-shadow">

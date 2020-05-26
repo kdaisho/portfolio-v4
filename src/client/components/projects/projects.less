@@ -36,7 +36,12 @@
             box-shadow: 6px 6px 0 #000;
             height: 280px;
             margin: 12px;
-            width: 225px;
+            max-width: 350px;
+            width: 100%;
+
+            @media @largerThan600 {
+                width: 225px;
+            }
 
             .top {
                 background: #ccc;

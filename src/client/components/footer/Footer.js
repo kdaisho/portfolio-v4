@@ -13,7 +13,9 @@ class Footer extends Component {
         return (
             <footer className="is-footer">
                 <div className="content-wrap">
-                    <p>&copy; Copyright {this.getCurrentYear()} daishodesign.com</p>
+                    <p className="copyright">
+                        &copy; Copyright {this.getCurrentYear()} daishodesign.com
+                    </p>
                     <p>Montreal, QC</p>
                 </div>
             </footer>

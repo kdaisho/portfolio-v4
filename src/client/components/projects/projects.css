@@ -34,7 +34,13 @@
   box-shadow: 6px 6px 0 #000;
   height: 280px;
   margin: 12px;
-  width: 225px;
+  max-width: 350px;
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+  .is-projects .cards .card {
+    width: 225px;
+  }
 }
 .is-projects .cards .card .top {
   background: #ccc;

@@ -1,8 +1,7 @@
 @import "../../global-style/variables";
 
 .is-hero {
-    padding-top: 100px;
-    padding-bottom: 170px;
+    padding: 100px 0 80px;
 
     @media @largerThan769 {
         padding: 120px 0 60px;
@@ -36,9 +35,11 @@
     }
 
     .greetings-wrap {
-        position: absolute;
-        top: 400px;
+        padding-top: 40px;
+
         @media @largerThan769 {
+            padding-top: 0;
+            position: absolute;
             &.slide {
                 animation: 0.75s 4s 1 slideTextIn forwards;
                 opacity: 0;
@@ -118,6 +119,7 @@
     .cta-match {
         display: flex;
         flex-flow: row nowrap;
+        margin: 20px 0;
         justify-content: center;
     }
 }

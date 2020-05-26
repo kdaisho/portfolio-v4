@@ -47,21 +47,41 @@
             flex-flow: row nowrap;
             flex: 0 0 calc(100% - 150px);
             justify-content: flex-end;
+
             .social-links {
                 display: flex;
                 flex-flow: row nowrap;
                 flex: 0 0 100px;
+                height: 35px;
                 justify-content: space-around;
                 margin: 0 10px -5px;
+
                 img {
-                    width: 30px;
+                    width: 32px;
                 }
             }
+
             .menu-button {
                 @media @largerThan769 {
                     display: none;
                 }
             }
+
+            .menu-toggle {
+                background: #fff;
+                border: none;
+                color: @themeColor;
+                padding-top: 4px;
+
+                img {
+                    width: 32px;
+                }
+
+                @media @largerThan769 {
+                    display: none;
+                }
+            }
+
             .menu-pane {
                 display: none;
 

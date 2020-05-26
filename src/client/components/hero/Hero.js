@@ -9,9 +9,42 @@ class Hero extends Component {
         animation: true
     };
 
+    options = {
+        passive: true,
+        capture: true
+    };
+
     componentDidMount() {
         setTimeout(() => this.setState({ animation: false }), 5000);
+        window.addEventListener("load", this.handleResize, this.options);
+        window.addEventListener("resize", this.handleResize, this.options);
     }
+
+    componentWillUnmount() {
+        window.removeEventListener("load", this.handleResize, this.options);
+        window.removeEventListener("resize", this.handleResize, this.options);
+    }
+
+    handleResize = () =>
+        this.setState({
+            h: window.innerHeight,
+            w: window.innerWidth
+        });
+
+    renderGreetings = () => {
+        return (
+            <div className={`greetings-wrap ${this.state.animation ? "slide" : ""}`}>
+                <div className="clip-path"></div>
+                <p className="greetings is-text-grey">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                    volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh,
+                    viverra non, semper suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
+                    consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+                    malesuada erat ut turpis.
+                </p>
+            </div>
+        );
+    };
 
     render() {
         return (
@@ -21,7 +54,7 @@ class Hero extends Component {
                         <div className="typewriter">
                             <h1 className="is-text-grey">Who am I?</h1>
                         </div>
-                        <div className="cta-match m-t-20 m-b-20">
+                        <div className="cta-match">
                             <Link to="/match" className="button has-shadow is-large">
                                 See Our Match
                             </Link>
@@ -32,18 +65,9 @@ class Hero extends Component {
                             className="sequence"
                             style={{ background: `url(${catAction}) 0 0 no-repeat` }}
                         ></div>
-                        <div className={`greetings-wrap ${this.state.animation ? "slide" : ""}`}>
-                            <div className="clip-path"></div>
-                            <p className="greetings is-text-grey">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-                                Suspendisse urna nibh, viverra non, semper suscipit, posuere a,
-                                pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                                turpis.
-                            </p>
-                        </div>
+                        {this.state.w >= 769 && this.renderGreetings("red")}
                     </div>
+                    {this.state.w <= 768 && this.renderGreetings("green")}
                 </div>
             </section>
         );

@@ -2,7 +2,7 @@
 
 .header {
     background: #fff;
-    border-bottom: 5px solid @themeColor;
+    border-bottom: 4px solid @themeColor;
     left: 0;
     position: fixed;
     top: 0;
@@ -83,37 +83,54 @@
             }
 
             .menu-pane {
-                display: none;
+                background: #fff;
+                border: 4px solid #6200ea;
+                border-width: 0 0 4px 4px;
+                height: calc(100vh - 54px);
+                max-width: 250px;
+                position: absolute;
+                right: -250px;
+                top: 54px;
+                transition: right 0.15s ease-out;
+                width: 100%;
 
                 &.active {
-                    background: #fff;
-                    display: block;
-                    height: 125px;
-                    top: 50px;
-                    position: absolute;
-                    height: calc(100vh - 50px);
-                    width: 50%;
-                    max-width: 250px;
-                    width: 100%;
-                    border: 4px solid #6200ea;
                     right: 0;
-                    border-width: 0 0 4px 4px;
                 }
-                .is-meun-button {
-                    background: pink;
-                    width: calc(100% - 18px);
-                }
+
                 @media @largerThan769 {
+                    border: none;
                     display: flex;
                     flex-flow: row nowrap;
                     flex: 0 0 50%;
+                    height: auto;
                     justify-content: flex-end;
                     margin-top: -5px;
+                    max-width: none;
+                    position: initial;
+                    width: 100%;
 
                     label {
                         &:hover {
                             cursor: pointer;
                         }
+                    }
+                }
+
+                .is-menu-item {
+                    box-shadow: none;
+                    border-width: 0 0 4px 0;
+                    font-size: 18px;
+                    height: 70px;
+                    margin: 0;
+                    width: 100%;
+
+                    @media @largerThan769 {
+                        border: 3px solid @themeColor;
+                        box-shadow: 4px 4px 0 @themeColor;
+                        font-size: @font-medium;
+                        height: 40px;
+                        margin: 0 6px;
                     }
                 }
             }

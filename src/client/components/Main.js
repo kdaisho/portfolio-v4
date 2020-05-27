@@ -6,6 +6,7 @@ import Technologies from "./technologies/Technologies";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
+import "./main.css";
 
 class Main extends Component {
     state = {
@@ -13,7 +14,6 @@ class Main extends Component {
     };
 
     toggleState = (state) => {
-        console.log("ST", state);
         this.setState((prevState) => ({
             [state]: !prevState[state]
         }));
@@ -22,6 +22,10 @@ class Main extends Component {
     render() {
         return (
             <React.Fragment>
+                <div
+                    className={`backdrop ${this.state.mobileMenuOpen ? "active" : ""}`}
+                    onClick={() => this.toggleState("mobileMenuOpen")}
+                ></div>
                 <Header toggleState={this.toggleState} mobileMenuOpen={this.state.mobileMenuOpen} />
                 <Hero />
                 <Education />

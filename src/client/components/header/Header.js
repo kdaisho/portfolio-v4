@@ -27,7 +27,7 @@ const Header = (props) => (
                     {menuItems.map((item) => (
                         <button
                             key={item.name}
-                            className="button is-medium has-shadow is-menu-button"
+                            className="button is-medium__ has-shadow is-menu-item"
                         >
                             {item.name}
                         </button>

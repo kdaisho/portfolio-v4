@@ -1,6 +1,6 @@
 .header {
   background: #fff;
-  border-bottom: 5px solid #6200ea;
+  border-bottom: 4px solid #6200ea;
   left: 0;
   position: fixed;
   top: 0;
@@ -76,36 +76,52 @@
   }
 }
 .header .nav .nav-right .menu-pane {
-  display: none;
+  background: #fff;
+  border: 4px solid #6200ea;
+  border-width: 0 0 4px 4px;
+  height: calc(100vh - 54px);
+  max-width: 250px;
+  position: absolute;
+  right: -250px;
+  top: 54px;
+  transition: right 0.15s ease-out;
+  width: 100%;
 }
 .header .nav .nav-right .menu-pane.active {
-  background: #fff;
-  display: block;
-  height: 125px;
-  top: 50px;
-  position: absolute;
-  height: calc(100vh - 50px);
-  width: 50%;
-  max-width: 250px;
-  width: 100%;
-  border: 4px solid #6200ea;
   right: 0;
-  border-width: 0 0 4px 4px;
-}
-.header .nav .nav-right .menu-pane .is-meun-button {
-  background: pink;
-  width: calc(100% - 18px);
 }
 @media only screen and (min-width: 769px) {
   .header .nav .nav-right .menu-pane {
+    border: none;
     display: flex;
     flex-flow: row nowrap;
     flex: 0 0 50%;
+    height: auto;
     justify-content: flex-end;
     margin-top: -5px;
+    max-width: none;
+    position: initial;
+    width: 100%;
   }
   .header .nav .nav-right .menu-pane label:hover {
     cursor: pointer;
+  }
+}
+.header .nav .nav-right .menu-pane .is-menu-item {
+  box-shadow: none;
+  border-width: 0 0 4px 0;
+  font-size: 18px;
+  height: 70px;
+  margin: 0;
+  width: 100%;
+}
+@media only screen and (min-width: 769px) {
+  .header .nav .nav-right .menu-pane .is-menu-item {
+    border: 3px solid #6200ea;
+    box-shadow: 4px 4px 0 #6200ea;
+    font-size: 16px;
+    height: 40px;
+    margin: 0 6px;
   }
 }
 @keyframes strokeOffset {

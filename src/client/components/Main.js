@@ -22,10 +22,12 @@ class Main extends Component {
     render() {
         return (
             <React.Fragment>
-                <div
-                    className={`backdrop ${this.state.mobileMenuOpen ? "active" : ""}`}
-                    onClick={() => this.toggleState("mobileMenuOpen")}
-                ></div>
+                {this.state.mobileMenuOpen && (
+                    <div
+                        className={`backdrop ${this.state.mobileMenuOpen ? "active" : ""}`}
+                        onClick={() => this.toggleState("mobileMenuOpen")}
+                    ></div>
+                )}
                 <Header toggleState={this.toggleState} mobileMenuOpen={this.state.mobileMenuOpen} />
                 <Hero />
                 <Education />

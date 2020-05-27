@@ -22,6 +22,8 @@
   margin: 0 auto;
   max-width: 1280px;
   padding: 0 15px;
+  position: relative;
+  overflow: hidden;
   width: 100%;
 }
 .root .content-wrap.is-side-by-side {
@@ -77,20 +79,6 @@
 .root .button.is-medium {
   width: 120px;
 }
-.root .button.is-menu-item__ {
-  margin-bottom: -4px;
-  width: 230px;
-  height: 70px;
-  border-width: 4px 0 4px 0;
-  width: 100%;
-  font-size: 18px;
-}
-@media only screen and (min-width: 769px) {
-  .root .button.is-menu-item__ {
-    border: 3px solid #6200ea;
-    width: 120px;
-  }
-}
 .root .button.is-large {
   width: 250px;
 }
@@ -100,9 +88,21 @@
   box-shadow: 1px 1px 0 #000;
 }
 .root .filter-section {
+  background: #fff;
   border-color: #6200ea;
   border-radius: 3px;
   padding: 12px 15px 6px;
+  position: absolute;
+  right: -240px;
+  width: 250px;
+  z-index: 2;
+}
+@media only screen and (min-width: 769px) {
+  .root .filter-section {
+    position: initial;
+    background: transparent;
+    width: auto;
+  }
 }
 .root .filter-section legend {
   font-size: 18px;

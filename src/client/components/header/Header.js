@@ -1,10 +1,11 @@
 import React from "react";
 import { socials, menuItems } from "./headerData";
 import Logo from "../../images/nav/Logo";
-import menu from "../../images/nav/menu-dots.svg";
+import menuDots from "../../images/nav/menu-dots-opt.svg";
+import menuClose from "../../images/nav/menu-close-opt.svg";
 import "./header.css";
 
-const Header = (props) => (
+const Header = ({ mobileMenuOpen, toggleState }) => (
     <header className="header">
         <div className="content-wrap nav">
             <div className="nav-left">
@@ -20,15 +21,15 @@ const Header = (props) => (
                         </li>
                     ))}
                 </ul>
-                <button className="menu-toggle" onClick={() => props.toggleState("mobileMenuOpen")}>
-                    <img src={menu} alt="menu" />
+                <button className="menu-toggle" onClick={() => toggleState("mobileMenuOpen")}>
+                    <img
+                        src={mobileMenuOpen ? menuClose : menuDots}
+                        alt={`${mobileMenuOpen ? "close" : "open"} menu`}
+                    />
                 </button>
-                <div className={`menu-pane ${props.mobileMenuOpen ? "active" : ""}`}>
+                <div className={`menu-pane ${mobileMenuOpen ? "active" : ""}`}>
                     {menuItems.map((item) => (
-                        <button
-                            key={item.name}
-                            className="button is-medium__ has-shadow is-menu-item"
-                        >
+                        <button key={item.name} className="button has-shadow is-menu-item">
                             {item.name}
                         </button>
                     ))}

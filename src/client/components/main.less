@@ -1,3 +1,5 @@
+@import "../global-style/variables";
+
 .backdrop {
     background: rgba(0, 0, 0, 0.5);
     height: 100vh;
@@ -11,5 +13,9 @@
     &.active {
         opacity: 1;
         transition: opacity 0.15s ease-out 0.15s;
+    }
+
+    @media @largerThan769 {
+        display: none;
     }
 }

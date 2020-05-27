@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import cat from "../../images/hero/cat-single-041.svg";
-import catAction from "../../images/hero/cat-action-export-051.svg";
+import cat from "../../images/hero/cat-body-opt.svg";
+import catAction from "../../images/hero/cat-actions-opt.svg";
 import "./hero.css";
 
 class Hero extends Component {

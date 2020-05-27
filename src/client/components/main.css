@@ -12,3 +12,8 @@
   opacity: 1;
   transition: opacity 0.15s ease-out 0.15s;
 }
+@media only screen and (min-width: 769px) {
+  .backdrop {
+    display: none;
+  }
+}

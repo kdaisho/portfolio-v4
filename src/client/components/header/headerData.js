@@ -1,5 +1,5 @@
-import linkedinIcon from "../../images/nav/linkedin.svg";
-import githubIcon from "../../images/nav/github.svg";
+import linkedinIcon from "../../images/nav/linkedin-opt.svg";
+import githubIcon from "../../images/nav/github-opt.svg";
 
 const socials = [
     {

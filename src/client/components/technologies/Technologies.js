@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { technologies, filterItems } from "./tech-data.js";
-import icons from "./icons";
+import icons from "../../svg/icons";
 import "./technologies.css";
 
 // const Technologies = () => {

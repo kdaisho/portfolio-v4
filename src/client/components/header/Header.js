@@ -1,6 +1,6 @@
 import React from "react";
-import { socials, menuItems } from "./headerData";
-import Logo from "../../images/nav/Logo";
+import { socials, menuItems } from "./header-data";
+import Logo from "../../svg/Logo";
 import menuDots from "../../images/nav/menu-dots-opt.svg";
 import menuClose from "../../images/nav/menu-close-opt.svg";
 import "./header.css";

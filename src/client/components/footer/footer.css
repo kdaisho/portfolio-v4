@@ -2,12 +2,26 @@
   background: #6200ea;
   color: #fff;
   padding: 30px 0;
-  text-align: center;
 }
-@media only screen and (min-width: 767px) {
-  .is-footer {
-    text-align: left;
-  }
+@media only screen and (min-width: 769px) {
+}
+.is-footer .content-wrap {
+  align-items: flex-end;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.is-footer .content-wrap .logo {
+  height: 44px;
+  overflow: hidden;
+  width: 54px;
+}
+.is-footer .content-wrap .logo svg {
+  transform: scale(0.5);
+  transform-origin: top left;
+}
+.is-footer .content-wrap .logo path {
+  fill: #fff;
 }
 .is-footer .copyright {
   margin-bottom: 3px;

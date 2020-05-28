@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Logo from "../../svg/Logo";
 import "./footer.css";
 
 class Footer extends Component {
@@ -13,10 +14,16 @@ class Footer extends Component {
         return (
             <footer className="is-footer">
                 <div className="content-wrap">
-                    <p className="copyright">
-                        &copy; Copyright {this.getCurrentYear()} daishodesign.com
-                    </p>
-                    <p>Montreal, QC</p>
+                    <div className="left">
+                        <p className="copyright">
+                            {" "}
+                            &copy; Copyright {this.getCurrentYear()} daishodesign.com
+                        </p>
+                        <p>Montreal, QC</p>
+                    </div>
+                    <div className="logo right">
+                        <Logo />
+                    </div>
                 </div>
             </footer>
         );

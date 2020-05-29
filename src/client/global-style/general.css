@@ -22,8 +22,6 @@
   margin: 0 auto;
   max-width: 1280px;
   padding: 0 15px;
-  position: relative;
-  overflow: hidden;
   width: 100%;
 }
 .root .content-wrap.is-side-by-side {
@@ -34,6 +32,9 @@
 }
 .root .title-group {
   padding-bottom: 50px;
+}
+.root .title-group.has-filters {
+  padding-bottom: 15px;
 }
 .root .title-group .title {
   color: #6200ea;
@@ -87,15 +88,23 @@
   right: -4px;
   box-shadow: 1px 1px 0 #000;
 }
+.root .toggle-filter {
+  display: block;
+  margin: 0 0 15px auto;
+}
 .root .filter-section {
   background: #fff;
   border-color: #6200ea;
   border-radius: 3px;
   padding: 12px 15px 6px;
   position: absolute;
-  right: -240px;
+  right: -290px;
+  top: auto;
   width: 250px;
-  z-index: 2;
+  z-index: 10;
+}
+.root .filter-section.active {
+  right: -6px;
 }
 @media only screen and (min-width: 769px) {
   .root .filter-section {
@@ -105,13 +114,29 @@
   }
 }
 .root .filter-section legend {
+  display: none;
   font-size: 18px;
   padding: 0 12px;
+}
+@media only screen and (min-width: 769px) {
+  .root .filter-section legend {
+    display: block;
+  }
 }
 .root .filter-section .filters {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+}
+.root .filter-section .filters .filter-title {
+  color: #6200ea;
+  font-size: 18px;
+  padding-bottom: 16px;
+}
+@media only screen and (min-width: 769px) {
+  .root .filter-section .filters .filter-title {
+    display: none;
+  }
 }
 .root .filter-section .filters .tag {
   align-items: center;
@@ -119,12 +144,21 @@
   box-shadow: 4px 4px 0 #6200ea;
   color: #6200ea;
   display: flex;
+  font-size: 18px;
   flex-flow: row nowrap;
-  height: 30px;
+  height: 45px;
   margin: 0 15px 15px 0;
   padding: 0 15px 0 3px;
   transition: transform 0.05s ease-in, box-shadow 0.05s ease-in;
   user-select: none;
+  width: 100%;
+}
+@media only screen and (min-width: 769px) {
+  .root .filter-section .filters .tag {
+    font-size: 16px;
+    height: 30px;
+    width: auto;
+  }
 }
 .root .filter-section .filters .tag.active {
   box-shadow: 0 0 0 #000;
@@ -146,7 +180,13 @@
   border: 1px solid #6200ea;
   transition: background 0.1s ease-in;
   display: block;
-  height: 20px;
+  height: 35px;
   margin-right: 9px;
-  width: 20px;
+  width: 35px;
+}
+@media only screen and (min-width: 769px) {
+  .root .filter-section .filters .tag .dummy {
+    height: 20px;
+    width: 20px;
+  }
 }

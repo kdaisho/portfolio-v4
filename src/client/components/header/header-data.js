@@ -22,7 +22,7 @@ const menuItems = [
         name: "Technologies"
     },
     {
-        name: "Projects"
+        name: "Pet Projects"
     },
     {
         name: "Contact"

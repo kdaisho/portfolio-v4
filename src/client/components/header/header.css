@@ -35,6 +35,9 @@
   height: 45px;
 }
 .header .nav .nav-left .logo {
+  width: 54px;
+}
+.header .nav .nav-left .logo svg {
   transform: scale(0.5);
   transform-origin: top left;
 }
@@ -55,11 +58,6 @@
 }
 .header .nav .nav-right .social-links img {
   width: 32px;
-}
-@media only screen and (min-width: 769px) {
-  .header .nav .nav-right .menu-button {
-    display: none;
-  }
 }
 .header .nav .nav-right .menu-toggle {
   background: #fff;
@@ -115,6 +113,7 @@
   height: 70px;
   margin: 0;
   width: 100%;
+  white-space: nowrap;
 }
 @media only screen and (min-width: 769px) {
   .header .nav .nav-right .menu-pane .is-menu-item {

@@ -5,7 +5,7 @@ import menuDots from "../../images/nav/menu-dots-opt.svg";
 import menuClose from "../../images/nav/menu-close-opt.svg";
 import "./header.css";
 
-const Header = ({ mobileMenuOpen, toggleState }) => (
+const Header = ({ togglePane, openPane }) => (
     <header className="header">
         <div className="content-wrap nav">
             <div className="nav-left">
@@ -21,13 +21,13 @@ const Header = ({ mobileMenuOpen, toggleState }) => (
                         </li>
                     ))}
                 </ul>
-                <button className="menu-toggle" onClick={() => toggleState("mobileMenuOpen")}>
+                <button className="menu-toggle" onClick={() => togglePane("menu")}>
                     <img
-                        src={mobileMenuOpen ? menuClose : menuDots}
-                        alt={`${mobileMenuOpen ? "close" : "open"} menu`}
+                        src={openPane === "menu" ? menuClose : menuDots}
+                        alt={`${openPane === "menu" ? "close" : "open"} menu`}
                     />
                 </button>
-                <div className={`menu-pane ${mobileMenuOpen ? "active" : ""}`}>
+                <div className={`menu-pane ${openPane === "menu" ? "active" : ""}`}>
                     {menuItems.map((item) => (
                         <button key={item.name} className="button has-shadow is-menu-item">
                             {item.name}

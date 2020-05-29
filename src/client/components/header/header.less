@@ -28,6 +28,7 @@
             stroke-dashoffset: 816;
             animation: strokeOffset 2s linear forwards, paintLogo 1s 2s forwards;
         }
+
         .logo-text {
             animation: paintLogo 2s 2s forwards;
         }
@@ -35,9 +36,14 @@
         .nav-left {
             flex: 0 0 80px;
             height: 45px;
+
             .logo {
-                transform: scale(0.5);
-                transform-origin: top left;
+                width: 54px;
+
+                svg {
+                    transform: scale(0.5);
+                    transform-origin: top left;
+                }
             }
         }
 
@@ -58,12 +64,6 @@
 
                 img {
                     width: 32px;
-                }
-            }
-
-            .menu-button {
-                @media @largerThan769 {
-                    display: none;
                 }
             }
 
@@ -125,6 +125,7 @@
                     height: 70px;
                     margin: 0;
                     width: 100%;
+                    white-space: nowrap;
 
                     @media @largerThan769 {
                         border: 3px solid @themeColor;

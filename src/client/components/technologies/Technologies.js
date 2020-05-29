@@ -44,16 +44,27 @@ class Technologies extends Component {
             <section className="section is-technologies">
                 <div className="content-wrap is-side-by-side">
                     <div className="left-side">
-                        <div className="title-group">
+                        <div className="title-group has-filters">
                             <h2 className="title">Technologies</h2>
                             <p className="subtitle is-text-grey font-large">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                                 odio. Quisque volutpat mattis eros.
                             </p>
                         </div>
-                        <fieldset className="filter-section">
-                            <legend className="is-text-grey">Categories</legend>
+                        <button
+                            className="toggle-filter"
+                            onClick={() => this.props.togglePane("tech")}
+                        >
+                            Filters
+                        </button>
+                        <fieldset
+                            className={`filter-section ${
+                                this.props.openPane === "tech" ? "active" : ""
+                            }`}
+                        >
+                            <legend className="is-text-grey">Filters</legend>
                             <div className="filters">
+                                <h3 className="filter-title">Filters</h3>
                                 {filterItems.map((item) => (
                                     <label
                                         key={item.type}

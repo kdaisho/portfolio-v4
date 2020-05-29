@@ -10,32 +10,32 @@ import "./main.css";
 
 class Main extends Component {
     state = {
-        mobileMenuOpen: false
+        openPane: ""
     };
 
-    toggleState = (state) => {
-        this.setState((prevState) => ({
-            [state]: !prevState[state]
-        }));
+    togglePane = (name) => {
+        this.setState({ openPane: this.state.openPane ? "" : name }, () =>
+            console.log("TOO::", this.state.openPane)
+        );
     };
 
     render() {
         return (
-            <React.Fragment>
-                {this.state.mobileMenuOpen && (
+            <div className="component-wrap">
+                {this.state.openPane && (
                     <div
-                        className={`backdrop ${this.state.mobileMenuOpen ? "active" : ""}`}
-                        onClick={() => this.toggleState("mobileMenuOpen")}
+                        className="backdrop"
+                        onClick={() => this.togglePane(this.state.openPane)}
                     ></div>
                 )}
-                <Header toggleState={this.toggleState} mobileMenuOpen={this.state.mobileMenuOpen} />
+                <Header togglePane={this.togglePane} openPane={this.state.openPane} />
                 <Hero />
                 <Education />
-                <Technologies />
-                <Projects />
+                <Technologies togglePane={this.togglePane} openPane={this.state.openPane} />
+                <Projects togglePane={this.togglePane} openPane={this.state.openPane} />
                 <Contact />
                 <Footer />
-            </React.Fragment>
+            </div>
         );
     }
 }

@@ -26,8 +26,6 @@
         margin: 0 auto;
         max-width: 1280px;
         padding: 0 15px;
-        position: relative;
-        overflow: hidden;
         width: 100%;
 
         &.is-side-by-side {
@@ -40,6 +38,10 @@
 
     .title-group {
         padding-bottom: 50px;
+
+        &.has-filters {
+            padding-bottom: 15px;
+        }
 
         .title {
             color: @themeColor;
@@ -104,15 +106,25 @@
         box-shadow: 1px 1px 0 #000;
     }
 
+    .toggle-filter {
+        display: block;
+        margin: 0 0 15px auto;
+    }
+
     .filter-section {
         background: #fff;
         border-color: @themeColor;
         border-radius: 3px;
         padding: 12px 15px 6px;
         position: absolute;
-        right: -240px;
+        right: -290px;
+        top: auto;
         width: 250px;
-        z-index: 2;
+        z-index: 10;
+
+        &.active {
+            right: -6px;
+        }
 
         @media @largerThan769 {
             position: initial;
@@ -121,8 +133,13 @@
         }
 
         legend {
+            display: none;
             font-size: @font-large;
             padding: 0 12px;
+
+            @media @largerThan769 {
+                display: block;
+            }
         }
 
         .filters {
@@ -130,18 +147,36 @@
             flex-flow: row wrap;
             justify-content: flex-start;
 
+            .filter-title {
+                color: @themeColor;
+                font-size: @font-large;
+                padding-bottom: 16px;
+
+                @media @largerThan769 {
+                    display: none;
+                }
+            }
+
             .tag {
                 align-items: center;
                 border: 2px solid @themeColor;
                 box-shadow: 4px 4px 0 @themeColor;
                 color: @themeColor;
                 display: flex;
+                font-size: @font-large;
                 flex-flow: row nowrap;
-                height: 30px;
+                height: 45px;
                 margin: 0 15px 15px 0;
                 padding: 0 15px 0 3px;
                 transition: transform 0.05s ease-in, box-shadow 0.05s ease-in;
                 user-select: none;
+                width: 100%;
+
+                @media @largerThan769 {
+                    font-size: @font-medium;
+                    height: 30px;
+                    width: auto;
+                }
 
                 &.active {
                     box-shadow: 0 0 0 #000;
@@ -167,9 +202,14 @@
                     border: 1px solid @themeColor;
                     transition: background 0.1s ease-in;
                     display: block;
-                    height: 20px;
+                    height: 35px;
                     margin-right: 9px;
-                    width: 20px;
+                    width: 35px;
+
+                    @media @largerThan769 {
+                        height: 20px;
+                        width: 20px;
+                    }
                 }
             }
         }

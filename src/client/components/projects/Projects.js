@@ -45,14 +45,24 @@ class Projects extends Component {
             <section className="section is-projects">
                 <div className="content-wrap is-side-by-side">
                     <div className="right-side">
-                        <div className="title-group">
-                            <h2 className="title">Projects</h2>
+                        <div className="title-group has-filters">
+                            <h2 className="title">Pet Projects</h2>
                             <p className="subtitle is-text-grey font-large">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                                 odio. Quisque volutpat mattis eros.
                             </p>
                         </div>
-                        <fieldset className="filter-section">
+                        <button
+                            className="toggle-filter"
+                            onClick={() => this.props.togglePane("projects")}
+                        >
+                            Filters
+                        </button>
+                        <fieldset
+                            className={`filter-section ${
+                                this.props.openPane === "projects" ? "active" : ""
+                            }`}
+                        >
                             <legend className="is-text-grey">Filters</legend>
                             <div className="filters">
                                 {filterItems.map((item) => (

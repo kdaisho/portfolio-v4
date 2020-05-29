@@ -47,6 +47,14 @@
 .root .is-text-grey {
   color: #444;
 }
+.root .outline:focus {
+  outline: 2px solid #e91e63;
+}
+.root .outline:active,
+.root .outline:visited,
+.root .outline:hover {
+  outline: none;
+}
 .root .button {
   align-items: center;
   background: #fff;
@@ -89,14 +97,25 @@
   box-shadow: 1px 1px 0 #000;
 }
 .root .toggle-filter {
+  background: #fff;
+  border: 3px solid #6200ea;
+  color: #6200ea;
   display: block;
-  margin: 0 0 15px auto;
+  font-size: 16px;
+  margin: 0 0 5px auto;
+  padding: 6px 12px;
+  transform: translateX(18px);
+}
+@media only screen and (min-width: 769px) {
+  .root .toggle-filter {
+    display: none;
+  }
 }
 .root .filter-section {
   background: #fff;
   border-color: #6200ea;
-  border-radius: 3px;
-  padding: 12px 15px 6px;
+  border-width: 3px;
+  padding: 15px 15px 6px;
   position: absolute;
   right: -290px;
   top: auto;
@@ -108,6 +127,7 @@
 }
 @media only screen and (min-width: 769px) {
   .root .filter-section {
+    border-width: 2px;
     position: initial;
     background: transparent;
     width: auto;
@@ -120,6 +140,7 @@
 }
 @media only screen and (min-width: 769px) {
   .root .filter-section legend {
+    color: #6200ea;
     display: block;
   }
 }
@@ -127,16 +148,6 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-}
-.root .filter-section .filters .filter-title {
-  color: #6200ea;
-  font-size: 18px;
-  padding-bottom: 16px;
-}
-@media only screen and (min-width: 769px) {
-  .root .filter-section .filters .filter-title {
-    display: none;
-  }
 }
 .root .filter-section .filters .tag {
   align-items: center;

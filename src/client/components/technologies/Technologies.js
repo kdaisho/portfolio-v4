@@ -52,7 +52,7 @@ class Technologies extends Component {
                             </p>
                         </div>
                         <button
-                            className="toggle-filter"
+                            className="toggle-filter outline"
                             onClick={() => this.props.togglePane("tech")}
                         >
                             Filters
@@ -62,9 +62,8 @@ class Technologies extends Component {
                                 this.props.openPane === "tech" ? "active" : ""
                             }`}
                         >
-                            <legend className="is-text-grey">Filters</legend>
+                            <legend className="is-text-grey">(OR) Filters</legend>
                             <div className="filters">
-                                <h3 className="filter-title">Filters</h3>
                                 {filterItems.map((item) => (
                                     <label
                                         key={item.type}

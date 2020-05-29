@@ -58,6 +58,18 @@
         color: #444;
     }
 
+    .outline {
+        &:focus {
+            outline: 2px solid @outline-focus;
+        }
+
+        &:active,
+        &:visited,
+        &:hover {
+            outline: none;
+        }
+    }
+
     .button {
         align-items: center;
         background: #fff;
@@ -107,15 +119,25 @@
     }
 
     .toggle-filter {
+        background: #fff;
+        border: 3px solid @themeColor;
+        color: @themeColor;
         display: block;
-        margin: 0 0 15px auto;
+        font-size: @font-medium;
+        margin: 0 0 5px auto;
+        padding: 6px 12px;
+        transform: translateX(18px);
+
+        @media @largerThan769 {
+            display: none;
+        }
     }
 
     .filter-section {
         background: #fff;
         border-color: @themeColor;
-        border-radius: 3px;
-        padding: 12px 15px 6px;
+        border-width: 3px;
+        padding: 15px 15px 6px;
         position: absolute;
         right: -290px;
         top: auto;
@@ -127,6 +149,7 @@
         }
 
         @media @largerThan769 {
+            border-width: 2px;
             position: initial;
             background: transparent;
             width: auto;
@@ -138,6 +161,7 @@
             padding: 0 12px;
 
             @media @largerThan769 {
+                color: @themeColor;
                 display: block;
             }
         }
@@ -146,16 +170,6 @@
             display: flex;
             flex-flow: row wrap;
             justify-content: flex-start;
-
-            .filter-title {
-                color: @themeColor;
-                font-size: @font-large;
-                padding-bottom: 16px;
-
-                @media @largerThan769 {
-                    display: none;
-                }
-            }
 
             .tag {
                 align-items: center;

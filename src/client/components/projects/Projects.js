@@ -53,7 +53,7 @@ class Projects extends Component {
                             </p>
                         </div>
                         <button
-                            className="toggle-filter"
+                            className="toggle-filter outline"
                             onClick={() => this.props.togglePane("projects")}
                         >
                             Filters
@@ -63,7 +63,7 @@ class Projects extends Component {
                                 this.props.openPane === "projects" ? "active" : ""
                             }`}
                         >
-                            <legend className="is-text-grey">Filters</legend>
+                            <legend className="is-text-grey">(AND) Filters</legend>
                             <div className="filters">
                                 {filterItems.map((item) => (
                                     <label

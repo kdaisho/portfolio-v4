@@ -13,7 +13,7 @@
 }
 .is-technologies .technologies.right-side {
   flex: 0 0 100%;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 @media only screen and (min-width: 769px) {
   .is-technologies .technologies.right-side {

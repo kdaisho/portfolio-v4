@@ -28,7 +28,7 @@ exports.sendMessage = (req, res) => {
 
     const sender = {
         // name: req.body.name,
-        name: "haha",
+        name: "tester text",
         email: "emaile@fdsf.ca",
         msg: "testing"
     };
@@ -41,16 +41,11 @@ exports.sendMessage = (req, res) => {
         html: `<p>Name: ${sender.name}</p><br><p>Message: ${sender.msg}</p><br><p>Email: ${sender.email}</p>`
     };
 
-    console.log("OPTIONS:::", mailOptions);
-
-    transport.sendMail(mailOptions, (err, info) => {
-        console.log("INFO::::", info);
+    return transport.sendMail(mailOptions, (err, info) => {
         if (err) {
-            console.log("dame :P");
             console.error(err);
         } else {
-            console.log("SUCCESS!!!!");
-            res.redirect("/");
+            res.send({ success: true });
         }
     });
 };

@@ -8,7 +8,7 @@ class Contact extends Component {
         message: "This is a test"
     };
 
-    send = (event) => {
+    send = async (event) => {
         event.preventDefault();
 
         const params = {
@@ -17,18 +17,17 @@ class Contact extends Component {
             message: this.state.message
         };
 
-        console.log("TRYING TO SEND:::", params);
-        fetch("/send", {
-            method: "post",
+        const response = await fetch("/send", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(params)
-        })
-            .then((response) => {
-                console.log("WHAT IS RESPONSE?:::", response);
-                return response.json();
-            })
-            .then((data) => {
-                console.lg.log("MESSAGE SENT:", params);
-            });
+        });
+
+        const result = await response.json();
+
+        console.log("RESULT::", result);
     };
 
     render() {

@@ -1,18 +1,14 @@
+require("dotenv").config({
+    path: "variables.env"
+});
+
 const express = require("express");
-// const os = require("os");
+const mail = require("./mail");
 
 const app = express();
 
 app.use(express.static("dist"));
 
-// app.get("/api/getUsername", (req, res) => {
-//     res.send({ username: os.userInfo().username });
-// });
+app.post("/send", mail.sendMessage);
 
-app.get("/sayHi", (req, res) => {
-    res.send("Hello");
-});
-
-app.listen(process.env.PORT || 8080, () =>
-    console.log(`Listening on port ${process.env.PORT || 8080}!`)
-);
+app.listen(process.env.PORT, () => console.log(`Listening on port ${process.env.PORT}!`));

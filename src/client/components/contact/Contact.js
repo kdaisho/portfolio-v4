@@ -2,7 +2,34 @@ import React, { Component } from "react";
 import "./contact.css";
 
 class Contact extends Component {
-    state = {};
+    state = {
+        name: "testman",
+        email: "testman@test.com",
+        message: "This is a test"
+    };
+
+    send = (event) => {
+        event.preventDefault();
+
+        const params = {
+            name: this.state.name,
+            email: this.state.email,
+            message: this.state.message
+        };
+
+        console.log("TRYING TO SEND:::", params);
+        fetch("/send", {
+            method: "post",
+            body: JSON.stringify(params)
+        })
+            .then((response) => {
+                console.log("WHAT IS RESPONSE?:::", response);
+                return response.json();
+            })
+            .then((data) => {
+                console.lg.log("MESSAGE SENT:", params);
+            });
+    };
 
     render() {
         return (
@@ -24,9 +51,7 @@ class Contact extends Component {
                         >
                             {/* <h3 className="heading">Questions or comments?</h3> */}
                             <div className="form-group">
-                                <label className="is-text-grey_" htmlFor="name">
-                                    Name
-                                </label>
+                                <label htmlFor="name">Name</label>
                                 <input
                                     id="name"
                                     className="text-input name"
@@ -37,9 +62,7 @@ class Contact extends Component {
                                 />
                             </div>
                             <div className="form-group" style={{ display: "none" }}>
-                                <label className="is-text-grey_" htmlFor="address">
-                                    Address
-                                </label>
+                                <label htmlFor="address">Address</label>
                                 <input
                                     id="address"
                                     className="text-input address"
@@ -49,9 +72,7 @@ class Contact extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label className="is-text-grey_" htmlFor="email">
-                                    Email
-                                </label>
+                                <label htmlFor="email">Email</label>
                                 <input
                                     id="email"
                                     className="text-input email"
@@ -62,9 +83,7 @@ class Contact extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label className="is-text-grey_" htmlFor="message">
-                                    Message
-                                </label>
+                                <label htmlFor="message">Message</label>
                                 <textarea
                                     id="message"
                                     className="message"
@@ -84,7 +103,10 @@ class Contact extends Component {
                                     I want to receive a copy
                                 </label>
                             </div>
-                            <button className="button is-flat is-submit">SEND</button>
+                            <button className="button is-flat is-submit" onClick={this.send}>
+                                SEND
+                            </button>
+                            {/* <button className="button is-flat is-submit">SEND</button> */}
                         </form>
                     </div>
                 </div>

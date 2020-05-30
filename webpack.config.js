@@ -38,7 +38,7 @@ module.exports = {
         historyApiFallback: true,
         proxy: {
             "/api": "http://localhost:8080",
-            "/sayHi": "http://localhost:8080"
+            "/send": "http://localhost:8080"
         }
     },
     plugins: [

@@ -24,6 +24,13 @@
         box-shadow: 5px 5px 0 @themeColor;
         flex: 0 0 100%;
         padding: 15px 12px 20px;
+        transition: transform 0.3s ease-out, opacity 0s 0.2s;
+
+        &.fly {
+            transform: translate(50%, -100vh) scale(0.1) rotate(15deg);
+            opacity: 0;
+            pointer-events: none;
+        }
 
         .form-group {
             padding: 6px 0;

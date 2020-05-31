@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import "./contact.css";
 
 class Contact extends Component {
@@ -7,11 +7,17 @@ class Contact extends Component {
         email: "",
         message: "",
         address: "",
-        requestCopy: false
+        requestCopy: false,
+        isFormActive: true
     };
+
+    componentDidMount() {
+        this.contactForm = createRef();
+    }
 
     handleSubmit = async (event) => {
         event.preventDefault();
+        this.throwEmail();
         const params = {
             name: this.state.name,
             email: this.state.email,
@@ -37,6 +43,11 @@ class Contact extends Component {
         });
     };
 
+    throwEmail = () => {
+        this.contactForm.current.classList.add("fly");
+        setTimeout(() => this.setState({ isFormActive: false }), 200);
+    };
+
     render() {
         return (
             <section className="section is-contact">
@@ -49,7 +60,11 @@ class Contact extends Component {
                         </p>
                     </div>
                     <div className="right-side">
-                        <form className="contact-form" onSubmit={this.handleSubmit}>
+                        <form
+                            className="contact-form"
+                            onSubmit={this.handleSubmit}
+                            ref={this.contactForm}
+                        >
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input
@@ -59,6 +74,7 @@ class Contact extends Component {
                                     name="name"
                                     value={this.state.name}
                                     onChange={this.handleChange}
+                                    tabIndex={this.state.isFormActive ? "0" : "-1"}
                                     required
                                 />
                             </div>
@@ -82,6 +98,7 @@ class Contact extends Component {
                                     name="email"
                                     value={this.state.email}
                                     onChange={this.handleChange}
+                                    tabIndex={this.state.isFormActive ? "0" : "-1"}
                                     required
                                 />
                             </div>
@@ -93,6 +110,7 @@ class Contact extends Component {
                                     rows="6"
                                     value={this.state.message}
                                     onChange={this.handleChange}
+                                    tabIndex={this.state.isFormActive ? "0" : "-1"}
                                     required
                                 />
                             </div>
@@ -103,6 +121,7 @@ class Contact extends Component {
                                         name="requestCopy"
                                         checked={this.state.requestCopy}
                                         onChange={this.handleChange}
+                                        tabIndex={this.state.isFormActive ? "0" : "-1"}
                                     />
                                     <span className="dummy">
                                         {this.state.requestCopy ? String.fromCharCode(10004) : ""}
@@ -110,7 +129,10 @@ class Contact extends Component {
                                     I want to receive a copy
                                 </label>
                             </div>
-                            <button className="button is-flat is-submit outline-button">
+                            <button
+                                className="button is-flat is-submit outline-button"
+                                tabIndex={this.state.isFormActive ? "0" : "-1"}
+                            >
                                 SEND
                             </button>
                         </form>

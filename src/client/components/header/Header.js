@@ -21,7 +21,7 @@ const Header = ({ togglePane, openPane }) => (
                         </li>
                     ))}
                 </ul>
-                <button className="menu-toggle outline" onClick={() => togglePane("menu")}>
+                <button className="menu-toggle outline-button" onClick={() => togglePane("menu")}>
                     <img
                         src={openPane === "menu" ? menuClose : menuDots}
                         alt={`${openPane === "menu" ? "close" : "open"} menu`}

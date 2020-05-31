@@ -1,11 +1,4 @@
 const nodemailer = require("nodemailer");
-// require("dotenv").config({
-//     path: "variables.env"
-// });
-console.log("1:::", process.env.MAIL_HOST);
-console.log("2:::", process.env.MAIL_PORT);
-console.log("3:::", process.env.MAIL_USER);
-console.log("4:::", process.env.MAIL_PASS);
 
 const transport = nodemailer.createTransport({
     host: process.env.MAIL_HOST,
@@ -16,36 +9,49 @@ const transport = nodemailer.createTransport({
     }
 });
 
+const myEmail = process.env.MAIL_DESTINATION;
+
 exports.sendMessage = (req, res) => {
-    console.log("SEND MESSAGE::::");
+    let dest = "";
+    let bcc = "";
 
     // Honeypot
-    // if (req.body.address) {
-    //     console.error("honeypot");
-    //     res.redirect("/");
-    //     return false;
-    // }
+    if (req.body.address) {
+        console.error("honeypot");
+        res.send({ success: false, type: "robot" });
+        return false;
+    }
+
+    if (req.body.requestCopy) {
+        // By using bcc my personal email won't be exposed to email sender
+        dest = req.body.email;
+        bcc = myEmail;
+    } else {
+        dest = myEmail;
+    }
 
     const sender = {
-        // name: req.body.name,
-        name: "tester text",
-        email: "emaile@fdsf.ca",
-        msg: "testing"
+        name: req.body.name,
+        email: req.body.email,
+        msg: req.body.message
     };
 
     mailOptions = {
-        from: "Daisho <noreply@daishokomiyama@gmail.com>",
-        to: "daishokomiyama@gmail.com",
-        subject: `Message from ${sender.name}`,
+        from: `Daisho <noreply@${process.env}>`,
+        to: dest,
+        bcc,
+        subject: req.body.requestCopy
+            ? `Copy: Message from ${sender.name}`
+            : `Message from ${sender.name}`,
         text: `Name: ${sender.name}. Content: ${sender.msg} Email: ${sender.email}`,
         html: `<p>Name: ${sender.name}</p><br><p>Message: ${sender.msg}</p><br><p>Email: ${sender.email}</p>`
     };
 
-    return transport.sendMail(mailOptions, (err, info) => {
+    return transport.sendMail(mailOptions, (err) => {
         if (err) {
             console.error(err);
         } else {
-            res.send({ success: true });
+            res.send({ success: true, type: "human" });
         }
     });
 };

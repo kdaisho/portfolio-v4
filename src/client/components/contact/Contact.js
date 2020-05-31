@@ -3,20 +3,22 @@ import "./contact.css";
 
 class Contact extends Component {
     state = {
-        name: "testman",
-        email: "testman@test.com",
-        message: "This is a test"
+        name: "",
+        email: "",
+        message: "",
+        address: "",
+        requestCopy: false
     };
 
-    send = async (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-
         const params = {
             name: this.state.name,
             email: this.state.email,
-            message: this.state.message
+            message: this.state.message,
+            address: this.state.address,
+            requestCopy: this.state.requestCopy
         };
-
         const response = await fetch("/send", {
             method: "POST",
             headers: {
@@ -24,10 +26,15 @@ class Contact extends Component {
             },
             body: JSON.stringify(params)
         });
-
         const result = await response.json();
+        console.log("DONE:::", result);
+    };
 
-        console.log("RESULT::", result);
+    handleChange = (event) => {
+        const { target } = event;
+        this.setState({
+            [target.name]: target.name === "requestCopy" ? target.checked : target.value
+        });
     };
 
     render() {
@@ -42,70 +49,70 @@ class Contact extends Component {
                         </p>
                     </div>
                     <div className="right-side">
-                        <form
-                            className="contact-form"
-                            name="contactForm"
-                            action="/send"
-                            method="POST"
-                        >
-                            {/* <h3 className="heading">Questions or comments?</h3> */}
+                        <form className="contact-form" onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input
-                                    id="name"
-                                    className="text-input name"
+                                    className="text-input"
                                     type="text"
                                     placeholder="Name"
                                     name="name"
+                                    value={this.state.name}
+                                    onChange={this.handleChange}
                                     required
                                 />
                             </div>
-                            <div className="form-group" style={{ display: "none" }}>
+                            <div className="form-group is-address">
                                 <label htmlFor="address">Address</label>
                                 <input
-                                    id="address"
-                                    className="text-input address"
+                                    className="text-input"
                                     type="text"
                                     placeholder="Address"
                                     name="address"
+                                    value={this.state.address}
+                                    onChange={this.handleChange}
                                 />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
                                 <input
-                                    id="email"
-                                    className="text-input email"
+                                    className="text-input"
                                     type="email"
                                     placeholder="Email"
                                     name="email"
+                                    value={this.state.email}
+                                    onChange={this.handleChange}
                                     required
                                 />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="message">Message</label>
                                 <textarea
-                                    id="message"
-                                    className="message"
                                     placeholder="Message"
                                     name="message"
                                     rows="6"
+                                    value={this.state.message}
+                                    onChange={this.handleChange}
+                                    required
                                 />
                             </div>
                             <div className="form-group">
                                 <label className="receive-copy-check">
                                     <input
                                         type="checkbox"
-                                        // name={item.type}
-                                        // checked={this.state.type}
-                                        // onChange={() => this.handleChange(item.type)}
+                                        name="requestCopy"
+                                        checked={this.state.requestCopy}
+                                        onChange={this.handleChange}
                                     />
+                                    <span className="dummy">
+                                        {this.state.requestCopy ? String.fromCharCode(10004) : ""}
+                                    </span>
                                     I want to receive a copy
                                 </label>
                             </div>
-                            <button className="button is-flat is-submit" onClick={this.send}>
+                            <button className="button is-flat is-submit outline-button">
                                 SEND
                             </button>
-                            {/* <button className="button is-flat is-submit">SEND</button> */}
                         </form>
                     </div>
                 </div>

@@ -53,7 +53,7 @@ class Projects extends Component {
                             </p>
                         </div>
                         <button
-                            className="toggle-filter outline"
+                            className="toggle-filter outline-button"
                             onClick={() => this.props.togglePane("projects")}
                         >
                             Filters

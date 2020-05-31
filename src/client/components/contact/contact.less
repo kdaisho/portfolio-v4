@@ -27,9 +27,13 @@
 
         .form-group {
             padding: 6px 0;
-            color: @themeColor;
+
+            &.is-address {
+                display: none;
+            }
 
             label {
+                color: @themeColor;
                 display: block;
                 padding-bottom: 3px;
             }
@@ -57,13 +61,25 @@
             .text-input {
                 height: 30px;
                 padding: 0 5px;
+
+                &:focus {
+                    outline: 2px solid @themeColor;
+                }
             }
 
-            .message {
+            textarea {
                 padding: 5px;
+
+                &:focus {
+                    outline: 2px solid @themeColor;
+                }
             }
 
             .receive-copy-check {
+                align-items: center;
+                display: flex;
+                flex-flow: row nowrap;
+
                 &:hover {
                     cursor: pointer;
                 }
@@ -72,12 +88,38 @@
                     margin-right: 9px;
                 }
             }
+
+            input[type="checkbox"] {
+                position: absolute;
+                visibility: hidden;
+                z-index: -99;
+
+                &:checked + .dummy {
+                    background: @themeColor;
+                    color: #fff;
+                    font-size: 22px;
+                    line-height: 18px;
+                }
+            }
+
+            .dummy {
+                border: 1px solid @themeColor;
+                height: 20px;
+                margin-right: 9px;
+                width: 20px;
+            }
         }
 
         .button {
             &.is-submit {
                 margin: 9px 0 0 0;
+                opacity: 1;
+                transition: opacity 0.15s ease-in;
                 width: 100%;
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
     }

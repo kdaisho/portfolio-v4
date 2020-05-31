@@ -25,9 +25,12 @@
 }
 .is-contact .contact-form .form-group {
   padding: 6px 0;
-  color: #6200ea;
+}
+.is-contact .contact-form .form-group.is-address {
+  display: none;
 }
 .is-contact .contact-form .form-group label {
+  color: #6200ea;
   display: block;
   padding-bottom: 3px;
 }
@@ -54,8 +57,19 @@
   height: 30px;
   padding: 0 5px;
 }
-.is-contact .contact-form .form-group .message {
+.is-contact .contact-form .form-group .text-input:focus {
+  outline: 2px solid #6200ea;
+}
+.is-contact .contact-form .form-group textarea {
   padding: 5px;
+}
+.is-contact .contact-form .form-group textarea:focus {
+  outline: 2px solid #6200ea;
+}
+.is-contact .contact-form .form-group .receive-copy-check {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
 }
 .is-contact .contact-form .form-group .receive-copy-check:hover {
   cursor: pointer;
@@ -63,7 +77,29 @@
 .is-contact .contact-form .form-group .receive-copy-check input {
   margin-right: 9px;
 }
+.is-contact .contact-form .form-group input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+  z-index: -99;
+}
+.is-contact .contact-form .form-group input[type="checkbox"]:checked + .dummy {
+  background: #6200ea;
+  color: #fff;
+  font-size: 22px;
+  line-height: 18px;
+}
+.is-contact .contact-form .form-group .dummy {
+  border: 1px solid #6200ea;
+  height: 20px;
+  margin-right: 9px;
+  width: 20px;
+}
 .is-contact .contact-form .button.is-submit {
   margin: 9px 0 0 0;
+  opacity: 1;
+  transition: opacity 0.15s ease-in;
   width: 100%;
+}
+.is-contact .contact-form .button.is-submit:hover {
+  opacity: 0.8;
 }

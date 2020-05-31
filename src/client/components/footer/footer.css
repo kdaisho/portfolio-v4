@@ -13,6 +13,10 @@
 .is-footer .content-wrap .right {
   margin-bottom: 10px;
 }
+.is-footer .content-wrap .left p,
+.is-footer .content-wrap .right p {
+  color: #fff;
+}
 .is-footer .content-wrap .logo {
   height: 44px;
   overflow: hidden;

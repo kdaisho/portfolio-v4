@@ -8,6 +8,7 @@
 .root label,
 .root input,
 .root textarea {
+  color: #444;
   font-family: "Quicksand", sans-serif;
 }
 .root .section {
@@ -44,15 +45,12 @@
 .root .title-group .subtitle {
   font-size: 18px;
 }
-.root .is-text-grey {
-  color: #444;
+.root .outline-button:focus {
+  outline: 2px solid #6200ea;
 }
-.root .outline:focus {
-  outline: 2px solid #e91e63;
-}
-.root .outline:active,
-.root .outline:visited,
-.root .outline:hover {
+.root .outline-button:active,
+.root .outline-button:visited,
+.root .outline-button:hover {
   outline: none;
 }
 .root .button {

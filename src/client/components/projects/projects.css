@@ -135,3 +135,28 @@
 .is-projects .cards .card:hover .cta {
   opacity: 1;
 }
+.modal-self .loading-wrap {
+  display: none;
+  text-align: center;
+}
+.modal-self .loading-wrap.active {
+  display: block;
+}
+.modal-self .loading-wrap svg {
+  animation: spin 3s linear infinite;
+  transform-origin: center;
+}
+.modal-self .content {
+  display: none;
+}
+.modal-self .content.active {
+  display: block;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

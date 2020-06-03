@@ -54,7 +54,7 @@ class Contact extends Component {
                 <div className="content-wrap is-side-by-side">
                     <div className="left-side title-group">
                         <h2 className="title">Contact</h2>
-                        <p className="subtitle is-text-grey font-large">
+                        <p className="subtitle font-large">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
                             Quisque volutpat mattis eros.
                         </p>

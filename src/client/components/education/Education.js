@@ -11,7 +11,7 @@ class Education extends Component {
                 <div className="content-wrap is-side-by-side">
                     <div className="title-group">
                         <h2 className="title">Education</h2>
-                        <p className="subtitle is-text-grey font-large">
+                        <p className="subtitle font-large">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
                             Quisque volutpat mattis eros.
                         </p>

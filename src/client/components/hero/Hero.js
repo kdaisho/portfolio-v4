@@ -35,7 +35,7 @@ class Hero extends Component {
         return (
             <div className={`greetings-wrap ${this.state.animation ? "slide" : ""}`}>
                 <div className="clip-path"></div>
-                <p className="greetings is-text-grey">
+                <p className="greetings">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
                     volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh,
                     viverra non, semper suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
@@ -52,7 +52,7 @@ class Hero extends Component {
                 <div className="content-wrap is-side-by-side">
                     <div className="left-side">
                         <div className="typewriter">
-                            <h1 className="is-text-grey">Who am I?</h1>
+                            <h1>Who am I?</h1>
                         </div>
                         <div className="cta-match">
                             <Link to="/match" className="button has-shadow is-large">

@@ -160,3 +160,36 @@
         }
     }
 }
+
+.modal-self {
+    .loading-wrap {
+        display: none;
+        text-align: center;
+
+        &.active {
+            display: block;
+        }
+
+        svg {
+            animation: spin 3s linear infinite;
+            transform-origin: center;
+        }
+    }
+
+    .content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

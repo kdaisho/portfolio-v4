@@ -46,7 +46,7 @@ class Technologies extends Component {
                     <div className="left-side">
                         <div className="title-group has-filters">
                             <h2 className="title">Technologies</h2>
-                            <p className="subtitle is-text-grey font-large">
+                            <p className="subtitle font-large">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                                 odio. Quisque volutpat mattis eros.
                             </p>
@@ -62,7 +62,7 @@ class Technologies extends Component {
                                 this.props.openPane === "tech" ? "active" : ""
                             }`}
                         >
-                            <legend className="is-text-grey">(OR) Filters</legend>
+                            <legend>(OR) Filters</legend>
                             <div className="filters">
                                 {filterItems.map((item) => (
                                     <label

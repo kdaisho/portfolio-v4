@@ -1,0 +1,18 @@
+#modal .backdrop {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100vh;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 40;
+}
+#modal .backdrop .modal-self {
+  max-width: 650px;
+  width: 90%;
+}
+#modal .backdrop .modal-self .content {
+  background: #fff;
+}

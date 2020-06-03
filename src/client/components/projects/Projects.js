@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { projects, filterItems } from "./projects-data.js";
+import Modal from "../modal/Modal";
+import Loading from "../../svg/Loading";
 import "./projects.css";
 
 class Projects extends Component {
@@ -14,7 +16,9 @@ class Projects extends Component {
         php: false,
         react: false,
         sass: false,
-        vanillajs: false
+        vanillajs: false,
+        selectedProject: {},
+        loading: false
     };
 
     handleChange = (tech) => {
@@ -40,14 +44,29 @@ class Projects extends Component {
         return filterTerms.length === counter ? true : false;
     };
 
+    toggleModal = ({ title, subtitle, stack, url }) => {
+        this.setState({
+            loading: true,
+            selectedProject: Object.keys(this.state.selectedProject).length
+                ? {}
+                : {
+                      title,
+                      subtitle,
+                      stack,
+                      url
+                  }
+        });
+    };
+
     render() {
+        const { selectedProject, loading } = this.state;
         return (
             <section className="section is-projects">
                 <div className="content-wrap is-side-by-side">
                     <div className="right-side">
                         <div className="title-group has-filters">
                             <h2 className="title">Pet Projects</h2>
-                            <p className="subtitle is-text-grey font-large">
+                            <p className="subtitle font-large">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                                 odio. Quisque volutpat mattis eros.
                             </p>
@@ -63,7 +82,7 @@ class Projects extends Component {
                                 this.props.openPane === "projects" ? "active" : ""
                             }`}
                         >
-                            <legend className="is-text-grey">(AND) Filters</legend>
+                            <legend>(AND) Filters</legend>
                             <div className="filters">
                                 {filterItems.map((item) => (
                                     <label
@@ -91,7 +110,11 @@ class Projects extends Component {
                                     : true;
                             })
                             .map((project) => (
-                                <div key={project.id} className="card">
+                                <div
+                                    key={project.id}
+                                    className="card"
+                                    onClick={() => this.toggleModal(project)}
+                                >
                                     <div className="top"></div>
                                     <div className="bottom">
                                         <div className="text-group">
@@ -110,6 +133,28 @@ class Projects extends Component {
                                 </div>
                             ))}
                     </div>
+                    {!!Object.keys(selectedProject).length && (
+                        <Modal className={"modal-self"}>
+                            <div className={`loading-wrap ${loading ? "active" : ""}`}>
+                                <Loading />
+                            </div>
+                            <div className={`content ${loading ? "" : "active"}`}>
+                                <img
+                                    src="https://picsum.photos/400/600"
+                                    alt={selectedProject.title}
+                                    onLoad={() => this.setState({ loading: false })}
+                                />
+                                <h1>{selectedProject.title}</h1>
+                                <p>{selectedProject.subtitle}</p>
+                                <div className="buttons">
+                                    <button onClick={this.adopt}>Yes</button>
+                                    <button onClick={this.toggleModal}>
+                                        No, I&apos;m a monster
+                                    </button>
+                                </div>
+                            </div>
+                        </Modal>
+                    )}
                 </div>
             </section>
         );

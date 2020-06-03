@@ -11,6 +11,7 @@
     .right-side {
         flex: 0 0 100%;
         max-width: 450px;
+        position: relative;
 
         @media @largerThan600 {
             flex: 0 0 360px;
@@ -128,6 +129,22 @@
                     opacity: 0.8;
                 }
             }
+        }
+    }
+
+    .thank-you-note {
+        color: @themeColor;
+        font-size: @font-large;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 8%;
+        transform: translateY(50%);
+        width: 100%;
+
+        @media @largerThan600 {
+            left: 30px;
+            text-align: left;
         }
     }
 }

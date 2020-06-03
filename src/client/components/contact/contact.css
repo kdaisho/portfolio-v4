@@ -9,6 +9,7 @@
 .is-contact .right-side {
   flex: 0 0 100%;
   max-width: 450px;
+  position: relative;
 }
 @media only screen and (min-width: 600px) {
   .is-contact .right-side {
@@ -108,4 +109,20 @@
 }
 .is-contact .contact-form .button.is-submit:hover {
   opacity: 0.8;
+}
+.is-contact .thank-you-note {
+  color: #6200ea;
+  font-size: 18px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 8%;
+  transform: translateY(50%);
+  width: 100%;
+}
+@media only screen and (min-width: 600px) {
+  .is-contact .thank-you-note {
+    left: 30px;
+    text-align: left;
+  }
 }

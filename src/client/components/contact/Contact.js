@@ -8,7 +8,8 @@ class Contact extends Component {
         message: "",
         address: "",
         requestCopy: false,
-        isFormActive: true
+        isFormActive: true,
+        hasSent: false
     };
 
     componentDidMount() {
@@ -33,6 +34,7 @@ class Contact extends Component {
             body: JSON.stringify(params)
         });
         const result = await response.json();
+        this.setState({ hasSent: true });
         console.log("DONE:::", result);
     };
 
@@ -60,6 +62,15 @@ class Contact extends Component {
                         </p>
                     </div>
                     <div className="right-side">
+                        <p className="thank-you-note">
+                            {this.state.hasSent ? (
+                                <span>
+                                    Thank you {this.state.name}, I will get back to you soon!
+                                </span>
+                            ) : (
+                                !this.state.isFormActive && <span>Sending...</span>
+                            )}
+                        </p>
                         <form
                             className="contact-form"
                             onSubmit={this.handleSubmit}

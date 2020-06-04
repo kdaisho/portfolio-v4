@@ -162,6 +162,9 @@
 }
 
 .modal-self {
+    max-height: 90vh;
+    overflow: auto;
+
     .loading-wrap {
         display: none;
         text-align: center;
@@ -181,6 +184,11 @@
 
         &.active {
             display: block;
+        }
+
+        .hero {
+            height: 300px;
+            width: 100%;
         }
     }
 }

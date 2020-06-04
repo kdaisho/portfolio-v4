@@ -44,14 +44,15 @@ class Projects extends Component {
         return filterTerms.length === counter ? true : false;
     };
 
-    toggleModal = ({ title, subtitle, stack, url }) => {
+    toggleModal = ({ title, subtitle, stack, url, description }) => {
         this.setState({
-            loading: true,
+            // loading: true,
             selectedProject: Object.keys(this.state.selectedProject).length
                 ? {}
                 : {
                       title,
                       subtitle,
+                      description,
                       stack,
                       url
                   }
@@ -139,18 +140,18 @@ class Projects extends Component {
                                 <Loading />
                             </div>
                             <div className={`content ${loading ? "" : "active"}`}>
-                                <img
-                                    src="https://picsum.photos/400/600"
-                                    alt={selectedProject.title}
-                                    onLoad={() => this.setState({ loading: false })}
-                                />
-                                <h1>{selectedProject.title}</h1>
-                                <p>{selectedProject.subtitle}</p>
+                                <div
+                                    className="hero"
+                                    style={{
+                                        background: `#333 url(https://picsum.photos/600/400)`,
+                                        backgroundSize: "cover"
+                                    }}
+                                ></div>
+                                <h1 className="title">{selectedProject.title}</h1>
+                                <p className="subtitle">{selectedProject.subtitle}</p>
+                                <p className="description">{selectedProject.description}</p>
                                 <div className="buttons">
-                                    <button onClick={this.adopt}>Yes</button>
-                                    <button onClick={this.toggleModal}>
-                                        No, I&apos;m a monster
-                                    </button>
+                                    <button onClick={this.toggleModal}>Close</button>
                                 </div>
                             </div>
                         </Modal>

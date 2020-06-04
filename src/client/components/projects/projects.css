@@ -135,6 +135,10 @@
 .is-projects .cards .card:hover .cta {
   opacity: 1;
 }
+.modal-self {
+  max-height: 90vh;
+  overflow: auto;
+}
 .modal-self .loading-wrap {
   display: none;
   text-align: center;
@@ -151,6 +155,10 @@
 }
 .modal-self .content.active {
   display: block;
+}
+.modal-self .content .hero {
+  height: 300px;
+  width: 100%;
 }
 @keyframes spin {
   0% {

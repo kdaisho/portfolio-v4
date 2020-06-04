@@ -117,7 +117,13 @@ class Projects extends Component {
                                     className="card"
                                     onClick={() => this.toggleModal(project)}
                                 >
-                                    <div className="top"></div>
+                                    <div
+                                        className="top"
+                                        style={{
+                                            background: `#444 url(${bg}) no-repeat center`,
+                                            backgroundSize: "cover"
+                                        }}
+                                    ></div>
                                     <div className="bottom">
                                         <div className="text-group">
                                             <h2 className="title">{project.title}</h2>
@@ -142,21 +148,31 @@ class Projects extends Component {
                             </div>
                             <div className="backdrop" onClick={this.toggleModal}>
                                 <div
-                                    className={`content ${loading ? "" : "active"}`}
+                                    className={`content bit-style ${loading ? "" : "active"}`}
                                     onClick={(event) => event.stopPropagation()}
                                 >
                                     <div
-                                        className="hero"
+                                        className="top"
                                         style={{
                                             background: `#333 url(${bg})`,
                                             backgroundSize: "cover"
                                         }}
                                     ></div>
-                                    <h1 className="title">{selectedProject.title}</h1>
-                                    <p className="subtitle">{selectedProject.subtitle}</p>
-                                    <p className="description">{selectedProject.description}</p>
-                                    <div className="buttons">
-                                        <button onClick={this.toggleModal}>Close</button>
+                                    <div className="bottom">
+                                        <h1 className="title">{selectedProject.title}</h1>
+                                        <p className="subtitle">{selectedProject.subtitle}</p>
+                                        <p className="description">{selectedProject.description}</p>
+                                        <div className="tech-stack">
+                                            {selectedProject.stack.map((tech) => {
+                                                return tech === "live" ? (
+                                                    false
+                                                ) : (
+                                                    <span key={tech} className="tech">
+                                                        {tech}
+                                                    </span>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -1,59 +1,82 @@
 .root h1,
+#modal h1,
 .root h2,
+#modal h2,
 .root h3,
+#modal h3,
 .root p,
+#modal p,
 .root a,
+#modal a,
 .root li,
+#modal li,
 .root button,
+#modal button,
 .root label,
+#modal label,
 .root input,
-.root textarea {
+#modal input,
+.root textarea,
+#modal textarea {
   color: #444;
   font-family: "Quicksand", sans-serif;
 }
-.root .section {
+.root .section,
+#modal .section {
   padding: 50px 0;
 }
 @media only screen and (min-width: 769px) {
-  .root .section {
+  .root .section,
+  #modal .section {
     padding: 80px 0;
   }
 }
-.root .content-wrap {
+.root .content-wrap,
+#modal .content-wrap {
   margin: 0 auto;
   max-width: 1280px;
   padding: 0 15px;
   width: 100%;
 }
-.root .content-wrap.is-side-by-side {
+.root .content-wrap.is-side-by-side,
+#modal .content-wrap.is-side-by-side {
   align-items: flex-start;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
-.root .title-group {
+.root .title-group,
+#modal .title-group {
   padding-bottom: 50px;
 }
-.root .title-group.has-filters {
+.root .title-group.has-filters,
+#modal .title-group.has-filters {
   padding-bottom: 15px;
 }
-.root .title-group .title {
+.root .title-group .title,
+#modal .title-group .title {
   color: #6200ea;
   font-size: 36px;
   font-weight: bold;
 }
-.root .title-group .subtitle {
+.root .title-group .subtitle,
+#modal .title-group .subtitle {
   font-size: 18px;
 }
-.root .outline-button:focus {
+.root .outline-button:focus,
+#modal .outline-button:focus {
   outline: 2px solid #6200ea;
 }
 .root .outline-button:active,
+#modal .outline-button:active,
 .root .outline-button:visited,
-.root .outline-button:hover {
+#modal .outline-button:visited,
+.root .outline-button:hover,
+#modal .outline-button:hover {
   outline: none;
 }
-.root .button {
+.root .button,
+#modal .button {
   align-items: center;
   background: #fff;
   border: 3px solid #6200ea;
@@ -73,28 +96,35 @@
   transition: bottom 0.05s ease-in, right 0.05s ease-in, box-shadow 0.05s ease-in;
   user-select: none;
 }
-.root .button:hover {
+.root .button:hover,
+#modal .button:hover {
   cursor: pointer;
 }
-.root .button.has-shadow {
+.root .button.has-shadow,
+#modal .button.has-shadow {
   box-shadow: 4px 4px 0 #6200ea;
 }
-.root .button.is-flat {
+.root .button.is-flat,
+#modal .button.is-flat {
   background: #6200ea;
   color: #fff;
 }
-.root .button.is-medium {
+.root .button.is-medium,
+#modal .button.is-medium {
   width: 120px;
 }
-.root .button.is-large {
+.root .button.is-large,
+#modal .button.is-large {
   width: 250px;
 }
-.root input:checked + .button {
+.root input:checked + .button,
+#modal input:checked + .button {
   bottom: -4px;
   right: -4px;
   box-shadow: 1px 1px 0 #000;
 }
-.root .toggle-filter {
+.root .toggle-filter,
+#modal .toggle-filter {
   background: #fff;
   border: 3px solid #6200ea;
   color: #6200ea;
@@ -105,11 +135,13 @@
   transform: translateX(18px);
 }
 @media only screen and (min-width: 769px) {
-  .root .toggle-filter {
+  .root .toggle-filter,
+  #modal .toggle-filter {
     display: none;
   }
 }
-.root .filter-section {
+.root .filter-section,
+#modal .filter-section {
   background: #fff;
   border-color: #6200ea;
   border-width: 3px;
@@ -120,34 +152,40 @@
   width: 250px;
   z-index: 10;
 }
-.root .filter-section.active {
+.root .filter-section.active,
+#modal .filter-section.active {
   right: -6px;
 }
 @media only screen and (min-width: 769px) {
-  .root .filter-section {
+  .root .filter-section,
+  #modal .filter-section {
     border-width: 2px;
     position: initial;
     background: transparent;
     width: auto;
   }
 }
-.root .filter-section legend {
+.root .filter-section legend,
+#modal .filter-section legend {
   display: none;
   font-size: 18px;
   padding: 0 12px;
 }
 @media only screen and (min-width: 769px) {
-  .root .filter-section legend {
+  .root .filter-section legend,
+  #modal .filter-section legend {
     color: #6200ea;
     display: block;
   }
 }
-.root .filter-section .filters {
+.root .filter-section .filters,
+#modal .filter-section .filters {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
 }
-.root .filter-section .filters .tag {
+.root .filter-section .filters .tag,
+#modal .filter-section .filters .tag {
   align-items: center;
   border: 2px solid #6200ea;
   box-shadow: 4px 4px 0 #6200ea;
@@ -163,29 +201,35 @@
   width: 100%;
 }
 @media only screen and (min-width: 769px) {
-  .root .filter-section .filters .tag {
+  .root .filter-section .filters .tag,
+  #modal .filter-section .filters .tag {
     font-size: 16px;
     height: 30px;
     width: auto;
   }
 }
-.root .filter-section .filters .tag.active {
+.root .filter-section .filters .tag.active,
+#modal .filter-section .filters .tag.active {
   box-shadow: 0 0 0 #000;
   transform: translate(4px, 4px);
 }
-.root .filter-section .filters .tag:hover {
+.root .filter-section .filters .tag:hover,
+#modal .filter-section .filters .tag:hover {
   cursor: pointer;
 }
-.root .filter-section .filters .tag input[type="checkbox"] {
+.root .filter-section .filters .tag input[type="checkbox"],
+#modal .filter-section .filters .tag input[type="checkbox"] {
   position: absolute;
   visibility: hidden;
   z-index: -99;
 }
-.root .filter-section .filters .tag input[type="checkbox"]:checked + .dummy {
+.root .filter-section .filters .tag input[type="checkbox"]:checked + .dummy,
+#modal .filter-section .filters .tag input[type="checkbox"]:checked + .dummy {
   background: #6200ea;
   transition: background 0.1s ease-in 0.15s;
 }
-.root .filter-section .filters .tag .dummy {
+.root .filter-section .filters .tag .dummy,
+#modal .filter-section .filters .tag .dummy {
   border: 1px solid #6200ea;
   transition: background 0.1s ease-in;
   display: block;
@@ -194,7 +238,8 @@
   width: 35px;
 }
 @media only screen and (min-width: 769px) {
-  .root .filter-section .filters .tag .dummy {
+  .root .filter-section .filters .tag .dummy,
+  #modal .filter-section .filters .tag .dummy {
     height: 20px;
     width: 20px;
   }

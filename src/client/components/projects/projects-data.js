@@ -41,7 +41,7 @@ export const projects = [
         subtitle: "HTML email builder for non-coders",
         description:
             "Lorem ipsum dfsf fdsfk jkdfjf kfdskf jfkdfjk jfdkjfjdk jfjdk jd jfdkf jfdfdsj fddfj jkdfsds jfdsfj jfdf",
-        stack: ["angular", "tool"],
+        stack: ["angular"],
         url: ""
     },
     {
@@ -50,7 +50,7 @@ export const projects = [
         subtitle: "Beatiful visualization for beautiful country",
         description:
             "Lorem ipsum dfsf fdsfk jkdfjf kfdskf jfkdfjk jfdkjfjdk jfjdk jd jfdkf jfdfdsj fddfj jkdfsds jfdsfj jfdf",
-        stack: ["infographic", "cssGrid", "live"],
+        stack: ["cssGrid", "live"],
         url: "https://kdaisho.github.io/Infographic/"
     },
     {
@@ -59,7 +59,7 @@ export const projects = [
         subtitle: "Sick of '&nbsp;' by hand?",
         description:
             "Lorem ipsum dfsf fdsfk jkdfjf kfdskf jfkdfjk jfdkjfjdk jfjdk jd jfdkf jfdfdsj fddfj jkdfsds jfdsfj jfdf",
-        stack: ["vanillajs", "tool", "less"],
+        stack: ["vanillajs", "less"],
         url: "https://kdaisho.github.io/French-Formatter/"
     },
     {

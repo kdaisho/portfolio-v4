@@ -46,6 +46,11 @@
             .top {
                 background: #ccc;
                 height: 55%;
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
             }
 
             .bottom {
@@ -195,20 +200,59 @@
     .content {
         background: #fff;
         display: none;
+        max-width: 750px;
+        width: 95%;
 
         &:hover {
             cursor: auto;
         }
+
         &.active {
             display: block;
             overflow: auto;
             max-height: 90vh;
         }
 
-        .hero {
-            height: 300px;
+        .top {
+            height: 38vh;
             width: 100%;
+
+            @media @largerThan769 {
+                height: 300px;
+            }
         }
+
+        .bottom {
+            padding: 9px 15px 12px;
+
+            .title {
+                font-size: @font-lead;
+            }
+
+            .description {
+                padding: 10px 0 15px;
+            }
+
+            .tech-stack {
+                display: flex;
+                flex-flow: row wrap;
+                justify-self: flex-start;
+
+                .tech {
+                    background: #6200ea;
+                    color: #fff;
+                    font-size: @font-small;
+                    margin: 0 6px 6px 0;
+                    padding: 5px 12px;
+                }
+            }
+        }
+    }
+
+    .bit-style {
+        border: 4px solid #000;
+        box-shadow: 5px 5px 0 #000;
+        transform: translate(-2px, -2px);
     }
 }
 

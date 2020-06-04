@@ -135,28 +135,46 @@
 .is-projects .cards .card:hover .cta {
   opacity: 1;
 }
-.modal-self {
-  max-height: 90vh;
-  overflow: auto;
+.backdrop {
+  background: rgba(0, 0, 0, 0.45);
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
 }
-.modal-self .loading-wrap {
+.backdrop:hover {
+  cursor: pointer;
+}
+.backdrop .loading-wrap {
   display: none;
   text-align: center;
 }
-.modal-self .loading-wrap.active {
+.backdrop .loading-wrap.active {
   display: block;
 }
-.modal-self .loading-wrap svg {
+.backdrop .loading-wrap svg {
   animation: spin 3s linear infinite;
   transform-origin: center;
 }
-.modal-self .content {
+.backdrop .content {
+  background: #fff;
   display: none;
 }
-.modal-self .content.active {
-  display: block;
+.backdrop .content:hover {
+  cursor: auto;
 }
-.modal-self .content .hero {
+.backdrop .content.active {
+  display: block;
+  overflow: auto;
+  max-height: 90vh;
+}
+.backdrop .content .hero {
   height: 300px;
   width: 100%;
 }

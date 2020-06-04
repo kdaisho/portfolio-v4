@@ -161,9 +161,22 @@
     }
 }
 
-.modal-self {
-    max-height: 90vh;
-    overflow: auto;
+.backdrop {
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+
+    &:hover {
+        cursor: pointer;
+    }
 
     .loading-wrap {
         display: none;
@@ -180,10 +193,16 @@
     }
 
     .content {
+        background: #fff;
         display: none;
 
+        &:hover {
+            cursor: auto;
+        }
         &.active {
             display: block;
+            overflow: auto;
+            max-height: 90vh;
         }
 
         .hero {

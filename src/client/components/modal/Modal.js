@@ -2,12 +2,11 @@ import React, { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import "./modal.css";
 
-const Modal = ({ children, className }) => {
+const Modal = ({ children }) => {
     console.log(children);
     const elementRef = useRef(null);
     if (!elementRef.current) {
         elementRef.current = document.createElement("div");
-        elementRef.current.classList.add("backdrop");
     }
 
     useEffect(() => {
@@ -17,7 +16,7 @@ const Modal = ({ children, className }) => {
         return () => modalRoot.removeChild(elementRef.current);
     }, []);
 
-    return createPortal(<div className={className}>{children}</div>, elementRef.current);
+    return createPortal(<div>{children}</div>, elementRef.current);
 };
 
 export default Modal;

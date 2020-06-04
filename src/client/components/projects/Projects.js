@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { projects, filterItems } from "./projects-data.js";
 import Modal from "../modal/Modal";
 import Loading from "../../svg/Loading";
+import bg from "../../images/projects/test-bg.jpg";
 import "./projects.css";
 
 class Projects extends Component {
@@ -135,23 +136,28 @@ class Projects extends Component {
                             ))}
                     </div>
                     {!!Object.keys(selectedProject).length && (
-                        <Modal className={"modal-self"}>
+                        <Modal>
                             <div className={`loading-wrap ${loading ? "active" : ""}`}>
                                 <Loading />
                             </div>
-                            <div className={`content ${loading ? "" : "active"}`}>
+                            <div className="backdrop" onClick={this.toggleModal}>
                                 <div
-                                    className="hero"
-                                    style={{
-                                        background: `#333 url(https://picsum.photos/600/400)`,
-                                        backgroundSize: "cover"
-                                    }}
-                                ></div>
-                                <h1 className="title">{selectedProject.title}</h1>
-                                <p className="subtitle">{selectedProject.subtitle}</p>
-                                <p className="description">{selectedProject.description}</p>
-                                <div className="buttons">
-                                    <button onClick={this.toggleModal}>Close</button>
+                                    className={`content ${loading ? "" : "active"}`}
+                                    onClick={(event) => event.stopPropagation()}
+                                >
+                                    <div
+                                        className="hero"
+                                        style={{
+                                            background: `#333 url(${bg})`,
+                                            backgroundSize: "cover"
+                                        }}
+                                    ></div>
+                                    <h1 className="title">{selectedProject.title}</h1>
+                                    <p className="subtitle">{selectedProject.subtitle}</p>
+                                    <p className="description">{selectedProject.description}</p>
+                                    <div className="buttons">
+                                        <button onClick={this.toggleModal}>Close</button>
+                                    </div>
                                 </div>
                             </div>
                         </Modal>

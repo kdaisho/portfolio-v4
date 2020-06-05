@@ -30,8 +30,8 @@
   justify-content: space-evenly;
 }
 .is-projects .cards .card {
-  border: 4px solid #000;
-  box-shadow: 6px 6px 0 #000;
+  border: 4px solid #6200ea;
+  box-shadow: 6px 6px 0 #6200ea;
   height: 280px;
   margin: 12px;
   max-width: 350px;
@@ -66,24 +66,29 @@
   text-align: center;
 }
 .is-projects .cards .card .bottom .text-group .title {
+  color: #6200ea;
   font-size: 18px;
 }
 .is-projects .cards .card .bottom .text-group .separator {
   display: block;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #7c4dff;
   margin: 10px auto;
   width: 35px;
 }
 .is-projects .cards .card .bottom .text-group .desc {
+  color: #6200ea;
   font-size: 14px;
 }
 .is-projects .cards .card .bottom .tech-stack {
-  bottom: 4px;
+  background: #7c4dff;
+  bottom: 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   left: 0;
+  padding: 3px 0;
   position: absolute;
+  width: 100%;
 }
 .is-projects .cards .card .bottom .tech-stack li {
   color: #fff;
@@ -93,45 +98,6 @@
   line-height: 20px;
   text-align: center;
   width: 20px;
-}
-.is-projects .cards .card .bottom .tech-stack li.vanillajs {
-  background: #6200ea;
-}
-.is-projects .cards .card .bottom .tech-stack li.react {
-  background: green;
-}
-.is-projects .cards .card .bottom .tech-stack li.angular {
-  background: red;
-}
-.is-projects .cards .card .bottom .tech-stack li.nodejs {
-  background: #000;
-}
-.is-projects .cards .card .bottom .tech-stack li.infographic {
-  background: navy;
-}
-.is-projects .cards .card .bottom .tech-stack li.markup {
-  background: #ef5350;
-}
-.is-projects .cards .card .bottom .tech-stack li.sass {
-  background: #26c6da;
-}
-.is-projects .cards .card .bottom .tech-stack li.less {
-  background: peru;
-}
-.is-projects .cards .card .bottom .tech-stack li.cssGrid {
-  background: pink;
-}
-.is-projects .cards .card .bottom .tech-stack li.tool {
-  background: brown;
-}
-.is-projects .cards .card .bottom .tech-stack li.live {
-  background: lawngreen;
-}
-.is-projects .cards .card .bottom .tech-stack li.mongodb {
-  background: darkgreen;
-}
-.is-projects .cards .card .bottom .tech-stack li.php {
-  background: rebeccapurple;
 }
 .is-projects .cards .card:hover {
   cursor: pointer;
@@ -190,7 +156,7 @@
   }
 }
 .backdrop .content .bottom .text-group {
-  padding: 9px 15px;
+  padding: 9px 15px 12px;
 }
 .backdrop .content .bottom .text-group .title {
   font-size: 24px;
@@ -200,7 +166,7 @@
   padding-top: 2px;
 }
 .backdrop .content .bottom .text-group .description {
-  padding: 10px 0 15px;
+  padding: 10px 0 18px;
 }
 .backdrop .content .bottom .text-group .links {
   display: flex;
@@ -215,6 +181,7 @@
   flex: 0 0 100%;
   height: 32px;
   margin-bottom: 6px;
+  transition: background 0.1s linear, color 0.1s linear;
 }
 @media only screen and (min-width: 769px) {
   .backdrop .content .bottom .text-group .links .link {
@@ -222,6 +189,8 @@
   }
 }
 .backdrop .content .bottom .text-group .links .link:hover {
+  background: #7c4dff;
+  color: #fff;
   cursor: pointer;
 }
 .backdrop .content .bottom .tech-stack {
@@ -239,9 +208,7 @@
   padding: 6px 15px;
 }
 .backdrop .bit-style {
-  border: 5px solid #000;
-  box-shadow: 6px 6px 0 #000;
-  transform: translate(-3px, -3px);
+  border: 2px solid #6200ea;
 }
 @keyframes spin {
   0% {

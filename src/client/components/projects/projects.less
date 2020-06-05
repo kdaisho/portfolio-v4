@@ -32,8 +32,8 @@
         justify-content: space-evenly;
 
         .card {
-            border: 4px solid #000;
-            box-shadow: 6px 6px 0 #000;
+            border: 4px solid @themeColor;
+            box-shadow: 6px 6px 0 @themeColor;
             height: 280px;
             margin: 12px;
             max-width: 350px;
@@ -69,28 +69,34 @@
                     text-align: center;
 
                     .title {
+                        color: @themeColor;
                         font-size: @font-large;
                     }
 
                     .separator {
                         display: block;
-                        border-bottom: 2px solid #000;
+                        // border-bottom: 2px solid #000;
+                        border-bottom: 2px solid @themeColorSecondary;
                         margin: 10px auto;
                         width: 35px;
                     }
 
                     .desc {
+                        color: @themeColor;
                         font-size: @font-small;
                     }
                 }
 
                 .tech-stack {
-                    bottom: 4px;
+                    background: @themeColorSecondary;
+                    bottom: 0;
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: flex-start;
                     left: 0;
+                    padding: 3px 0;
                     position: absolute;
+                    width: 100%;
 
                     li {
                         color: #fff;
@@ -100,58 +106,6 @@
                         line-height: 20px;
                         text-align: center;
                         width: 20px;
-
-                        &.vanillajs {
-                            background: @themeColor;
-                        }
-
-                        &.react {
-                            background: green;
-                        }
-
-                        &.angular {
-                            background: red;
-                        }
-
-                        &.nodejs {
-                            background: #000;
-                        }
-
-                        &.infographic {
-                            background: navy;
-                        }
-
-                        &.markup {
-                            background: #ef5350;
-                        }
-
-                        &.sass {
-                            background: #26c6da;
-                        }
-
-                        &.less {
-                            background: peru;
-                        }
-
-                        &.cssGrid {
-                            background: pink;
-                        }
-
-                        &.tool {
-                            background: brown;
-                        }
-
-                        &.live {
-                            background: lawngreen;
-                        }
-
-                        &.mongodb {
-                            background: darkgreen;
-                        }
-
-                        &.php {
-                            background: rebeccapurple;
-                        }
                     }
                 }
             }
@@ -224,7 +178,7 @@
 
         .bottom {
             .text-group {
-                padding: 9px 15px;
+                padding: 9px 15px 12px;
 
                 .title {
                     font-size: @font-lead;
@@ -236,7 +190,7 @@
                 }
 
                 .description {
-                    padding: 10px 0 15px;
+                    padding: 10px 0 18px;
                 }
 
                 .links {
@@ -252,12 +206,15 @@
                         flex: 0 0 100%;
                         height: 32px;
                         margin-bottom: 6px;
+                        transition: background 0.1s linear, color 0.1s linear;
 
                         @media @largerThan769 {
                             flex: 0 0 48%;
                         }
 
                         &:hover {
+                            background: @themeColorSecondary;
+                            color: #fff;
                             cursor: pointer;
                         }
                     }
@@ -283,9 +240,7 @@
     }
 
     .bit-style {
-        border: 5px solid #000;
-        box-shadow: 6px 6px 0 #000;
-        transform: translate(-3px, -3px);
+        border: 2px solid @themeColor;
     }
 }
 

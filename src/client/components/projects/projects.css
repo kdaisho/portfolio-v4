@@ -136,6 +136,7 @@
   background: #fff;
   display: none;
   max-width: 750px;
+  position: relative;
   width: 95%;
 }
 .backdrop .content:hover {
@@ -206,6 +207,19 @@
   font-size: 14px;
   margin: 0 4px 6px 4px;
   padding: 6px 15px;
+}
+.backdrop .content .close {
+  background: transparent;
+  border: none;
+  bottom: 0;
+  color: #fff;
+  font-size: 32px;
+  position: absolute;
+  right: 0;
+}
+.backdrop .content .close:hover {
+  cursor: pointer;
+  opacity: 0.75;
 }
 .backdrop .bit-style {
   border: 2px solid #6200ea;

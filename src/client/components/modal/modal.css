@@ -1,6 +1,6 @@
 #modal .backdrop {
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-flow: row nowrap;
   height: 100vh;

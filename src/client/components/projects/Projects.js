@@ -159,9 +159,17 @@ class Projects extends Component {
                                         }}
                                     ></div>
                                     <div className="bottom">
-                                        <h1 className="title">{selectedProject.title}</h1>
-                                        <p className="subtitle">{selectedProject.subtitle}</p>
-                                        <p className="description">{selectedProject.description}</p>
+                                        <div className="text-group">
+                                            <h1 className="title">{selectedProject.title}</h1>
+                                            <p className="subtitle">{selectedProject.subtitle}</p>
+                                            <p className="description">
+                                                {selectedProject.description}
+                                            </p>
+                                            <div className="links">
+                                                <button className="link">View Live</button>
+                                                <button className="link">View Github Repo</button>
+                                            </div>
+                                        </div>
                                         <div className="tech-stack">
                                             {selectedProject.stack.map((tech) => {
                                                 return tech === "live" ? (

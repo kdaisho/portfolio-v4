@@ -3,7 +3,7 @@
   overflow: hidden;
 }
 .backdrop {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   height: 100vh;
   left: 0;
   position: fixed;

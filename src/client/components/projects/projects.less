@@ -214,45 +214,78 @@
         }
 
         .top {
-            height: 38vh;
+            height: 35vh;
             width: 100%;
 
             @media @largerThan769 {
-                height: 300px;
+                height: 350px;
             }
         }
 
         .bottom {
-            padding: 9px 15px 12px;
+            .text-group {
+                padding: 9px 15px;
 
-            .title {
-                font-size: @font-lead;
-            }
+                .title {
+                    font-size: @font-lead;
+                }
 
-            .description {
-                padding: 10px 0 15px;
+                .subtitle {
+                    font-size: @font-small;
+                    padding-top: 2px;
+                }
+
+                .description {
+                    padding: 10px 0 15px;
+                }
+
+                .links {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-between;
+
+                    .link {
+                        color: @themeColor;
+                        background: @backgroundColor;
+                        border: 1px solid @themeColor;
+                        font-size: @font-small;
+                        flex: 0 0 100%;
+                        height: 32px;
+                        margin-bottom: 6px;
+
+                        @media @largerThan769 {
+                            flex: 0 0 48%;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
 
             .tech-stack {
+                background: @themeColorSecondary;
                 display: flex;
                 flex-flow: row wrap;
                 justify-self: flex-start;
+                padding: 9px 0 3px;
 
                 .tech {
-                    background: #6200ea;
                     color: #fff;
+                    box-shadow: 3px 3px 0 @themeColor;
                     font-size: @font-small;
-                    margin: 0 6px 6px 0;
-                    padding: 5px 12px;
+                    margin: 0 4px 6px 4px;
+                    padding: 6px 15px;
                 }
             }
         }
     }
 
     .bit-style {
-        border: 4px solid #000;
-        box-shadow: 5px 5px 0 #000;
-        transform: translate(-2px, -2px);
+        border: 5px solid #000;
+        box-shadow: 6px 6px 0 #000;
+        transform: translate(-3px, -3px);
     }
 }
 

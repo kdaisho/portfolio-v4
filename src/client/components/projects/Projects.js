@@ -181,10 +181,11 @@ class Projects extends Component {
                                                 );
                                             })}
                                         </div>
+
+                                        <button className="close" onClick={this.toggleModal}>
+                                            &#10005;
+                                        </button>
                                     </div>
-                                    <button className="close" onClick={this.toggleModal}>
-                                        &#10005;
-                                    </button>
                                 </div>
                             </div>
                         </Modal>

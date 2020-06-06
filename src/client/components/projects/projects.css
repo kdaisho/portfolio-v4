@@ -136,7 +136,6 @@
   background: #fff;
   display: none;
   max-width: 750px;
-  position: relative;
   width: 95%;
 }
 .backdrop .content:hover {
@@ -155,6 +154,9 @@
   .backdrop .content .top {
     height: 350px;
   }
+}
+.backdrop .content .bottom {
+  position: relative;
 }
 .backdrop .content .bottom .text-group {
   padding: 9px 15px 12px;
@@ -184,7 +186,7 @@
   margin-bottom: 6px;
   transition: background 0.1s linear, color 0.1s linear;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 600px) {
   .backdrop .content .bottom .text-group .links .link {
     flex: 0 0 48%;
   }

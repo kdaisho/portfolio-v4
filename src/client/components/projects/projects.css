@@ -177,12 +177,16 @@
   justify-content: space-between;
 }
 .backdrop .content .bottom .text-group .links .link {
+  align-items: center;
   color: #6200ea;
   background: #f6f6f6;
   border: 1px solid #6200ea;
+  display: flex;
+  flex-flow: row nowrap;
   font-size: 14px;
   flex: 0 0 100%;
   height: 32px;
+  justify-content: center;
   margin-bottom: 6px;
   transition: background 0.1s linear, color 0.1s linear;
 }
@@ -191,10 +195,25 @@
     flex: 0 0 48%;
   }
 }
+.backdrop .content .bottom .text-group .links .link path {
+  transition: fill 0.1s linear;
+}
 .backdrop .content .bottom .text-group .links .link:hover {
   background: #7c4dff;
   color: #fff;
   cursor: pointer;
+}
+.backdrop .content .bottom .text-group .links .link:hover path {
+  fill: #fff;
+}
+.backdrop .content .bottom .text-group .links .link svg {
+  margin-right: 9px;
+}
+.backdrop .content .bottom .text-group .links .link.is-desktop-icon svg {
+  width: 18px;
+}
+.backdrop .content .bottom .text-group .links .link.is-github-icon svg {
+  width: 22px;
 }
 .backdrop .content .bottom .tech-stack {
   background: #7c4dff;

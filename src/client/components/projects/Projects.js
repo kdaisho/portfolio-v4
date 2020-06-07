@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { projects, filterItems } from "./projects-data.js";
 import Modal from "../modal/Modal";
 import Loading from "../../svg/Loading";
+import { Desktop, Github } from "../../svg/Icons";
 import bg from "../../images/projects/test-bg.jpg";
 import "./projects.css";
 
@@ -166,8 +167,12 @@ class Projects extends Component {
                                                 {selectedProject.description}
                                             </p>
                                             <div className="links">
-                                                <button className="link">View Live</button>
-                                                <button className="link">View Github Repo</button>
+                                                <button className="link is-desktop-icon">
+                                                    {Desktop()} Visit The Website
+                                                </button>
+                                                <button className="link is-github-icon">
+                                                    {Github()}View Github Repo
+                                                </button>
                                             </div>
                                         </div>
                                         <div className="tech-stack">

@@ -21,18 +21,6 @@
             height: 58px;
         }
 
-        path {
-            stroke: @themeColor;
-            stroke-width: 1;
-            stroke-dasharray: 816;
-            stroke-dashoffset: 816;
-            animation: strokeOffset 2s linear forwards, paintLogo 1s 2s forwards;
-        }
-
-        .logo-text {
-            animation: paintLogo 2s 2s forwards;
-        }
-
         .nav-left {
             flex: 0 0 80px;
             height: 45px;
@@ -43,6 +31,10 @@
                 svg {
                     transform: scale(0.5);
                     transform-origin: top left;
+                }
+
+                path {
+                    fill: @themeColor;
                 }
             }
         }
@@ -136,23 +128,5 @@
                 }
             }
         }
-    }
-}
-
-@keyframes strokeOffset {
-    0% {
-        stroke-dashoffset: 816;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes paintLogo {
-    0% {
-        fill: transparent;
-    }
-    100% {
-        fill: @themeColor;
     }
 }

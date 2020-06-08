@@ -19,6 +19,7 @@
 }
 .is-footer .content-wrap .logo {
   height: 44px;
+  margin-left: auto;
   overflow: hidden;
   width: 54px;
 }
@@ -26,9 +27,32 @@
   transform: scale(0.5);
   transform-origin: top left;
 }
-.is-footer .content-wrap .logo path {
-  fill: #fff;
+.is-footer.draw path {
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 816;
+  stroke-dashoffset: 816;
+  animation: strokeOffset 2s linear forwards, paintLogo 1s 2s forwards;
+}
+.is-footer.draw .logo-text {
+  animation: paintLogo 2s 2s forwards;
 }
 .is-footer .copyright {
   margin-bottom: 3px;
+}
+@keyframes strokeOffset {
+  0% {
+    stroke-dashoffset: 816;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes paintLogo {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: #fff;
+  }
 }

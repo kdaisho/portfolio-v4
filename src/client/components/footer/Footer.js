@@ -1,9 +1,27 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import { Logo } from "../../svg/Icons";
 import "./footer.css";
 
 class Footer extends Component {
-    state = {};
+    constructor(props) {
+        super(props);
+        this.refFooter = createRef();
+    }
+
+    componentDidMount() {
+        document.addEventListener("scroll", this.drawLogo, {
+            passive: true
+        });
+    }
+
+    drawLogo = () => {
+        console.log("drawing", this.refFooter.current);
+        if (this.refFooter.current.getBoundingClientRect().top + 100 <= window.innerHeight) {
+            console.log("hit");
+            this.refFooter.current.classList.add("draw");
+            document.removeEventListener("scroll", this.drawLogo);
+        }
+    };
 
     getCurrentYear = () => {
         const d = new Date();
@@ -12,7 +30,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer className="is-footer">
+            <footer className="is-footer" ref={this.refFooter}>
                 <div className="content-wrap">
                     <div className="left">
                         <p className="copyright">

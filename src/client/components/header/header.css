@@ -20,16 +20,6 @@
     height: 58px;
   }
 }
-.header .nav path {
-  stroke: #6200ea;
-  stroke-width: 1;
-  stroke-dasharray: 816;
-  stroke-dashoffset: 816;
-  animation: strokeOffset 2s linear forwards, paintLogo 1s 2s forwards;
-}
-.header .nav .logo-text {
-  animation: paintLogo 2s 2s forwards;
-}
 .header .nav .nav-left {
   flex: 0 0 80px;
   height: 45px;
@@ -40,6 +30,9 @@
 .header .nav .nav-left .logo svg {
   transform: scale(0.5);
   transform-origin: top left;
+}
+.header .nav .nav-left .logo path {
+  fill: #6200ea;
 }
 .header .nav .nav-right {
   align-items: center;
@@ -121,21 +114,5 @@
     font-size: 16px;
     height: 40px;
     margin: 0 6px;
-  }
-}
-@keyframes strokeOffset {
-  0% {
-    stroke-dashoffset: 816;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes paintLogo {
-  0% {
-    fill: transparent;
-  }
-  100% {
-    fill: #6200ea;
   }
 }

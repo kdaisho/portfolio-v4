@@ -10,7 +10,7 @@ class Education extends Component {
             <section className="section is-education">
                 <div className="content-wrap is-side-by-side">
                     <div className="title-group">
-                        <h2 className="title">Education</h2>
+                        <h2 className="title">Work Log</h2>
                         <p className="subtitle font-large">
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
                             Quisque volutpat mattis eros.
@@ -18,11 +18,11 @@ class Education extends Component {
                     </div>
                     <div className="cards">
                         {cards.map((card) => (
-                            <div key={card.institution} className={`card is-${card.institution}`}>
+                            <div key={card.id} className={`card`}>
                                 <div className={`side is-front ${card.institution}`}>
-                                    <img src={card.src} alt={card.institution} />
+                                    <h2 className="company">{card.company}</h2>
                                     <div className="summary">
-                                        <h3 className="edu-title">{card.title}</h3>
+                                        <h3 className="position">{card.title}</h3>
                                         <span className="separator"></span>
                                         <p>{card.period}</p>
                                         <p>{card.location}</p>

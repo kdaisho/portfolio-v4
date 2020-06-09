@@ -8,6 +8,13 @@
         url("../fonts/quicksand-v20-latin-regular.woff2") format("woff2");
 }
 
+.root * {
+    ::selection {
+        background: @themeColor;
+        color: #fff;
+    }
+}
+
 .root,
 .modal {
     h1,

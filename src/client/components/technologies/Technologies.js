@@ -3,7 +3,6 @@ import { technologies, filterItems } from "./tech-data.js";
 import icons from "../../svg/devIcons";
 import "./technologies.css";
 
-// const Technologies = () => {
 class Technologies extends Component {
     state = {
         filterTerms: [],
@@ -51,17 +50,17 @@ class Technologies extends Component {
                                 odio. Quisque volutpat mattis eros.
                             </p>
                         </div>
-                        <button
-                            className="toggle-filter outline-button"
-                            onClick={() => this.props.togglePane("tech")}
-                        >
-                            Filters
-                        </button>
                         <fieldset
                             className={`filter-section ${
                                 this.props.openPane === "tech" ? "active" : ""
                             }`}
                         >
+                            <button
+                                className="toggle-filter outline-button"
+                                onClick={() => this.props.togglePane("tech")}
+                            >
+                                Filters
+                            </button>
                             <legend>(OR) Filters</legend>
                             <div className="filters">
                                 {filterItems.map((item) => (

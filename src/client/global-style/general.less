@@ -36,6 +36,7 @@
         margin: 0 auto;
         max-width: 1280px;
         padding: 0 15px;
+        position: relative;
         width: 100%;
 
         &.is-side-by-side {
@@ -127,11 +128,15 @@
     .toggle-filter {
         background: #fff;
         border: 3px solid @themeColor;
+        border-right: none;
         color: @themeColor;
         display: block;
         font-size: @font-medium;
+        left: -100px;
         margin: 0 0 5px auto;
-        padding: 6px 12px;
+        padding: 6px 20px 6px 12px;
+        position: absolute;
+        top: -3px;
         transform: translateX(18px);
 
         @media @largerThan769 {
@@ -146,7 +151,8 @@
         padding: 15px 15px 6px;
         position: absolute;
         right: -290px;
-        top: auto;
+        top: 0;
+        transition: right 0.15s ease-out;
         width: 250px;
         z-index: 10;
 

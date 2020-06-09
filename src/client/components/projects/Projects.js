@@ -74,17 +74,17 @@ class Projects extends Component {
                                 odio. Quisque volutpat mattis eros.
                             </p>
                         </div>
-                        <button
-                            className="toggle-filter outline-button"
-                            onClick={() => this.props.togglePane("projects")}
-                        >
-                            Filters
-                        </button>
                         <fieldset
                             className={`filter-section ${
                                 this.props.openPane === "projects" ? "active" : ""
                             }`}
                         >
+                            <button
+                                className="toggle-filter outline-button"
+                                onClick={() => this.props.togglePane("projects")}
+                            >
+                                Filters
+                            </button>
                             <legend>(AND) Filters</legend>
                             <div className="filters">
                                 {filterItems.map((item) => (

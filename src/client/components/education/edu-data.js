@@ -1,35 +1,39 @@
 const cards = [
     {
-        id: 0,
+        id: "bell",
         company: "Bell Canada",
         period: "July 2018 - June 2020",
         title: "Web Application Developer",
         location: "Montreal",
-        description: "In-depth, modern JavaScript engineering"
+        tasks: ["Creating web applications"],
+        techStack: ["React", "AngularJS", "Less", "SVN"]
     },
     {
-        id: 1,
+        id: "cgi",
         company: "CGI Inc.",
         period: "Apr 2018 - June 2018",
         title: "Front-end Developer",
         location: "Montreal",
-        description: "Learn HTML, CSS, and JavaScript to create engaging and interactive websites"
+        tasks: ["Updating existent web application", "Adding user interaction"],
+        techStack: ["HTML5", "CSS3", "Less", "AngularJS", "JavaScript", "Git"]
     },
     {
-        id: 2,
+        id: "reitmans",
         company: "Reitmans Ltd.",
         period: "Feb 2016 - Mar 2018",
         title: "Integrator",
         location: "Montreal",
-        description: "Learn HTML, CSS, and JavaScript to create engaging and interactive websites"
+        tasks: ["Markup", "Styling", "HTML Email", "Improving user engagement"],
+        techStack: ["HTML5", "CSS3", "Sass", "JavaScript", "SVN"]
     },
     {
-        id: 3,
+        id: "jfandsons",
         company: "JF and Sons",
         period: "Jan 2015  - Dec 2015",
         title: "Designer/Integrator",
         location: "Montreal",
-        description: "Photoshop, Illustrator, HTML5, CSS3, JavaScript, Responsive layout; etc."
+        tasks: ["Design", "Markup", "HTML Email"],
+        techStack: ["HTML5", "CSS3", "Sass", "JavaScript", "Photoshop", "Illustrator", "PHP", "Git"]
     }
 ];
 export default cards;

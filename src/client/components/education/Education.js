@@ -18,8 +18,8 @@ class Education extends Component {
                     </div>
                     <div className="cards">
                         {cards.map((card) => (
-                            <div key={card.id} className={`card`}>
-                                <div className={`side is-front ${card.institution}`}>
+                            <div key={card.id} className={`card is-${card.id}`}>
+                                <div className={`side is-front ${card.id}`}>
                                     <h2 className="company">{card.company}</h2>
                                     <div className="summary">
                                         <h3 className="position">{card.title}</h3>
@@ -28,9 +28,24 @@ class Education extends Component {
                                         <p>{card.location}</p>
                                     </div>
                                 </div>
-                                <div className={`side is-back ${card.institution}`}>
-                                    <div className="align-center">
-                                        <p>{card.description}</p>
+                                <div className={`side is-back ${card.id}`}>
+                                    <div className="list">
+                                        <p>Doing</p>
+                                        <ul>
+                                            {card.tasks.map((task) => (
+                                                <li>{task}</li>
+                                            ))}
+                                            <p>{card.description}</p>
+                                        </ul>
+                                    </div>
+                                    <div className="list">
+                                        <p>Using</p>
+                                        <ul>
+                                            {card.techStack.map((tech) => (
+                                                <li>{tech}</li>
+                                            ))}
+                                            <p>{card.description}</p>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

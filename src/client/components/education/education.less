@@ -34,6 +34,35 @@
         transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
         transition-delay: 0.45s;
         user-select: none;
+        width: 210px;
+
+        &.is-bell {
+            box-shadow: 5px 5px 0 @bell;
+            &:hover {
+                box-shadow: 0 0 0 @bell;
+            }
+        }
+
+        &.is-cgi {
+            box-shadow: 5px 5px 0 @cgi;
+            &:hover {
+                box-shadow: 0 0 0 @cgi;
+            }
+        }
+
+        &.is-reitmans {
+            box-shadow: 5px 5px 0 @reitmans;
+            &:hover {
+                box-shadow: 0 0 0 @reitmans;
+            }
+        }
+
+        &.is-jfandsons {
+            box-shadow: 5px 5px 0 @jfandsons;
+            &:hover {
+                box-shadow: 0 0 0 @jfandsons;
+            }
+        }
 
         &:hover {
             cursor: pointer;
@@ -53,7 +82,8 @@
         }
 
         .company {
-            font-size: @font-large;
+            font-size: @font-lead;
+            font-weight: bold;
             flex: 0 0 20%;
             padding-top: 30px;
             text-align: center;
@@ -67,10 +97,6 @@
         .separator {
             border-color: #000;
         }
-    }
-
-    .align-center {
-        align-self: center;
     }
 
     .is-front,
@@ -100,6 +126,8 @@
     .is-back {
         background: #fff;
         display: flex;
+        flex-flow: column nowrap;
+        padding: 15px 10px;
         transform: perspective(800px) rotateY(-180deg);
 
         h3,
@@ -112,7 +140,6 @@
     }
 
     .side {
-        max-width: 210px;
         height: 300px;
         width: 100%;
     }
@@ -128,5 +155,100 @@
         display: block;
         margin: 14px auto 16px;
         width: 38px;
+    }
+
+    .list {
+        flex: 0 0 50%;
+        width: 100%;
+
+        li {
+            color: #fff;
+            display: inline-block;
+            font-size: @font-small;
+            font-weight: bold;
+            margin: 2px;
+            padding: 6px 12px;
+        }
+    }
+
+    .bell {
+        border: 4px solid @bell;
+
+        h2,
+        h3,
+        p {
+            color: @bell;
+        }
+
+        .separator {
+            border-color: @bell;
+        }
+
+        li {
+            background: @bell;
+        }
+    }
+
+    .cgi {
+        border: 4px solid @cgi;
+
+        h2,
+        h3,
+        p {
+            color: @cgi;
+        }
+
+        .separator {
+            border-color: @cgi;
+        }
+
+        li {
+            background: @cgi;
+        }
+    }
+
+    .reitmans {
+        border: 4px solid @reitmans;
+
+        h2,
+        h3,
+        p {
+            color: @reitmans;
+        }
+
+        .separator {
+            border-color: @reitmans;
+        }
+
+        li {
+            background: @reitmans;
+        }
+    }
+
+    .jfandsons {
+        border: 4px solid @jfandsons;
+
+        h2,
+        h3,
+        p {
+            color: @jfandsons;
+        }
+
+        .separator {
+            border-color: @jfandsons;
+        }
+
+        li {
+            background: @jfandsons;
+        }
+
+        .list {
+            &:first-child {
+                flex: 0 0 35%;
+            }
+            &:last-child {
+                flex: 0 0 65%;
+            }
+        }
     }
 }

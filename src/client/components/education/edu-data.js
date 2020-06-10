@@ -5,26 +5,29 @@ const cards = [
         period: "July 2018 - June 2020",
         title: "Web Application Developer",
         location: "Montreal",
-        tasks: ["Creating web applications"],
-        techStack: ["React", "AngularJS", "Less", "SVN"]
+        what: "Building",
+        tasks: ["Lots of Web Apps"],
+        techStack: ["React", "AngularJS", "Javascript", "HTML5", "CSS3", "Less", "SVN"]
     },
     {
         id: "cgi",
-        company: "CGI Inc.",
+        company: "CGI",
         period: "Apr 2018 - June 2018",
         title: "Front-end Developer",
         location: "Montreal",
-        tasks: ["Updating existent web application", "Adding user interaction"],
-        techStack: ["HTML5", "CSS3", "Less", "AngularJS", "JavaScript", "Git"]
+        what: "Doing",
+        tasks: ["Update", "Bug fix", "HTML Email"],
+        techStack: ["AngularJS", "JavaScript", "HTML5", "CSS3", "Less", "Git"]
     },
     {
         id: "reitmans",
-        company: "Reitmans Ltd.",
+        company: "Reitmans",
         period: "Feb 2016 - Mar 2018",
-        title: "Integrator",
+        title: "Web Integrator",
         location: "Montreal",
-        tasks: ["Markup", "Styling", "HTML Email", "Improving user engagement"],
-        techStack: ["HTML5", "CSS3", "Sass", "JavaScript", "SVN"]
+        what: "Doing",
+        tasks: ["Markup", "Style", "HTML Email", "DOM Manipulation"],
+        techStack: ["HTML5", "CSS3", "Sass", "Susy", "JavaScript", "SVN"]
     },
     {
         id: "jfandsons",
@@ -32,8 +35,10 @@ const cards = [
         period: "Jan 2015  - Dec 2015",
         title: "Designer/Integrator",
         location: "Montreal",
+        what: "Doing",
         tasks: ["Design", "Markup", "HTML Email"],
-        techStack: ["HTML5", "CSS3", "Sass", "JavaScript", "Photoshop", "Illustrator", "PHP", "Git"]
+        techStack: ["HTML5", "CSS3", "Sass", "JavaScript", "PHP", "Photoshop", "Illustrator", "Git"]
     }
 ];
+
 export default cards;

@@ -3,8 +3,6 @@ import cards from "./edu-data";
 import "./education.css";
 
 class Education extends Component {
-    // const Education = () => {
-
     render() {
         return (
             <section className="section is-education">
@@ -30,10 +28,10 @@ class Education extends Component {
                                 </div>
                                 <div className={`side is-back ${card.id}`}>
                                     <div className="list">
-                                        <p>Doing</p>
+                                        <p>{card.what}</p>
                                         <ul>
                                             {card.tasks.map((task) => (
-                                                <li>{task}</li>
+                                                <li key={task}>{task}</li>
                                             ))}
                                             <p>{card.description}</p>
                                         </ul>
@@ -42,7 +40,7 @@ class Education extends Component {
                                         <p>Using</p>
                                         <ul>
                                             {card.techStack.map((tech) => (
-                                                <li>{tech}</li>
+                                                <li key={tech}>{tech}</li>
                                             ))}
                                             <p>{card.description}</p>
                                         </ul>

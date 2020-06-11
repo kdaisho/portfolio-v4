@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import cards from "./edu-data";
-import "./education.css";
+import cards from "./workLog-data";
+import "./worklog.css";
 
-class Education extends Component {
+class WorkLog extends Component {
     render() {
         return (
             <section className="section is-education">
@@ -55,4 +55,4 @@ class Education extends Component {
     }
 }
 
-export default Education;
+export default WorkLog;

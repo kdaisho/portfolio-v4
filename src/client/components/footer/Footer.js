@@ -15,9 +15,7 @@ class Footer extends Component {
     }
 
     drawLogo = () => {
-        console.log("drawing", this.refFooter.current);
         if (this.refFooter.current.getBoundingClientRect().top + 100 <= window.innerHeight) {
-            console.log("hit");
             this.refFooter.current.classList.add("draw");
             document.removeEventListener("scroll", this.drawLogo);
         }

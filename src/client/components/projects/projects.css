@@ -132,7 +132,7 @@
 .backdrop .content {
   background: #fff;
   display: none;
-  max-width: 750px;
+  max-width: 600px;
   width: 95%;
 }
 .backdrop .content:hover {

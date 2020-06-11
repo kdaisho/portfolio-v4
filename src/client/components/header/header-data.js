@@ -16,13 +16,13 @@ const socials = [
 
 const menuItems = [
     {
-        name: "Education"
+        name: "Work Log"
     },
     {
         name: "Technologies"
     },
     {
-        name: "Pet Projects"
+        name: "Side Projects"
     },
     {
         name: "Contact"

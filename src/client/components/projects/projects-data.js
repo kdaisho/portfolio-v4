@@ -38,7 +38,7 @@ export const projects = [
     {
         id: 4,
         title: "Email Builder",
-        subtitle: "HTML email builder for non-coders",
+        subtitle: "HTML email builder for &quot; non-coders",
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["angular"],

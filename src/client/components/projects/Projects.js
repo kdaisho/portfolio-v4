@@ -70,7 +70,7 @@ class Projects extends Component {
                 <div className="content-wrap is-side-by-side">
                     <div className="right-side">
                         <div className="title-group has-filters">
-                            <h2 className="title">Pet Projects</h2>
+                            <h2 className="title">Side Projects</h2>
                             <p className="subtitle font-large">
                                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
                                 odio. Quisque volutpat mattis eros.

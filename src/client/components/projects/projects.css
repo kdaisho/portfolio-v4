@@ -37,12 +37,18 @@
   height: 280px;
   margin: 12px;
   max-width: 350px;
+  transition: box-shadow 0.05s ease-out 0.1s, transform 0.05s ease-out 0.1s;
   width: 100%;
 }
 @media only screen and (min-width: 600px) {
   .is-projects .cards .card {
     width: 235px;
   }
+}
+.is-projects .cards .card.active {
+  box-shadow: 0 0 0 #6200ea;
+  transform: translate(6px, 6px);
+  transition: box-shadow 0.05s ease-out 0s, transform 0.05s ease-out 0s;
 }
 .is-projects .cards .card .top {
   background: #ccc;
@@ -122,17 +128,6 @@
 }
 .backdrop:hover {
   cursor: pointer;
-}
-.backdrop .loading-wrap {
-  display: none;
-  text-align: center;
-}
-.backdrop .loading-wrap.active {
-  display: block;
-}
-.backdrop .loading-wrap svg {
-  animation: spin 3s linear infinite;
-  transform-origin: center;
 }
 .backdrop .content {
   background: #fff;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { projects, filterItems } from "./projects-data.js";
 import Modal from "../modal/Modal";
-import Loading from "../../svg/Loading";
 import { Desktop, Github } from "../../svg/Icons";
 import bg from "../../images/projects/test-bg.jpg";
 import "./projects.css";
@@ -20,7 +19,7 @@ class Projects extends Component {
         sass: false,
         vanillajs: false,
         selectedProject: {},
-        loading: false
+        activeCardId: ""
     };
 
     handleChange = (tech) => {
@@ -46,23 +45,26 @@ class Projects extends Component {
         return filterTerms.length === counter ? true : false;
     };
 
-    toggleModal = ({ title, subtitle, stack, url, description }) => {
-        this.setState({
-            // loading: true,
-            selectedProject: Object.keys(this.state.selectedProject).length
-                ? {}
-                : {
-                      title,
-                      subtitle,
-                      description,
-                      stack,
-                      url
-                  }
+    toggleModal = ({ id, title, subtitle, stack, url, description }, delay) => {
+        this.setState({ activeCardId: id }, () => {
+            setTimeout(() => {
+                this.setState({
+                    selectedProject: Object.keys(this.state.selectedProject).length
+                        ? {}
+                        : {
+                              title,
+                              subtitle,
+                              description,
+                              stack,
+                              url
+                          }
+                });
+            }, delay);
         });
     };
 
     render() {
-        const { selectedProject, loading } = this.state;
+        const { selectedProject } = this.state;
         return (
             <section className="section is-projects">
                 <div className="content-wrap is-side-by-side">
@@ -115,8 +117,10 @@ class Projects extends Component {
                             .map((project) => (
                                 <div
                                     key={project.id}
-                                    className="card"
-                                    onClick={() => this.toggleModal(project)}
+                                    className={`card ${
+                                        this.state.activeCardId === project.id ? "active" : ""
+                                    }`}
+                                    onClick={() => this.toggleModal(project, 100)}
                                 >
                                     <div
                                         className="top"
@@ -144,12 +148,9 @@ class Projects extends Component {
                     </div>
                     {!!Object.keys(selectedProject).length && (
                         <Modal>
-                            <div className={`loading-wrap ${loading ? "active" : ""}`}>
-                                <Loading />
-                            </div>
                             <div className="backdrop" onClick={this.toggleModal}>
                                 <div
-                                    className={`content bit-style ${loading ? "" : "active"}`}
+                                    className="content bit-style active"
                                     onClick={(event) => event.stopPropagation()}
                                 >
                                     <div

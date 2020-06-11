@@ -39,10 +39,17 @@
             height: 280px;
             margin: 12px;
             max-width: 350px;
+            transition: box-shadow 0.05s ease-out 0.1s, transform 0.05s ease-out 0.1s;
             width: 100%;
 
             @media @largerThan600 {
                 width: 235px;
+            }
+
+            &.active {
+                box-shadow: 0 0 0 @themeColor;
+                transform: translate(6px, 6px);
+                transition: box-shadow 0.05s ease-out 0s, transform 0.05s ease-out 0s;
             }
 
             .top {
@@ -136,20 +143,6 @@
 
     &:hover {
         cursor: pointer;
-    }
-
-    .loading-wrap {
-        display: none;
-        text-align: center;
-
-        &.active {
-            display: block;
-        }
-
-        svg {
-            animation: spin 3s linear infinite;
-            transform-origin: center;
-        }
     }
 
     .content {

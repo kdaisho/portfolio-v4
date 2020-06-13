@@ -51,8 +51,40 @@
   transition: box-shadow 0.05s ease-out 0s, transform 0.05s ease-out 0s;
 }
 .is-projects .cards .card .top {
-  background: #ccc;
   flex: 0 0 50%;
+  overflow: hidden;
+}
+.is-projects .cards .card .top:hover .glass {
+  opacity: 0;
+}
+.is-projects .cards .card .top .glass {
+  height: 100%;
+  width: 100%;
+  background: rgba(98, 0, 234, 0.9);
+  opacity: 1;
+  transition: opacity 0.35s;
+  position: relative;
+}
+.is-projects .cards .card .top .glass:before,
+.is-projects .cards .card .top .glass:after {
+  content: "";
+  background: rgba(255, 255, 255, 0.75);
+  display: block;
+  height: 160%;
+  position: absolute;
+  transform: rotate(20deg);
+  transform-origin: 50% 100%;
+  z-index: 30;
+}
+.is-projects .cards .card .top .glass:before {
+  right: 90px;
+  top: -40px;
+  width: 50px;
+}
+.is-projects .cards .card .top .glass:after {
+  right: 60px;
+  top: -40px;
+  width: 15px;
 }
 .is-projects .cards .card .top img {
   display: block;
@@ -132,7 +164,7 @@
 .backdrop .content {
   background: #fff;
   display: none;
-  max-width: 600px;
+  max-width: 604px;
   width: 95%;
 }
 .backdrop .content:hover {
@@ -153,6 +185,7 @@
   }
 }
 .backdrop .content .bottom {
+  border-top: 2px solid #7c4dff;
   position: relative;
 }
 .backdrop .content .bottom .text-group {
@@ -241,12 +274,4 @@
 }
 .backdrop .bit-style {
   border: 2px solid #6200ea;
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

@@ -4,12 +4,19 @@ import portfolioHero from "../../images/projects/opt/portfolio-hero.jpg";
 import portfolioThumb from "../../images/projects/opt/portfolio-thumb.jpg";
 import qc3Hero from "../../images/projects/opt/qc3-hero.jpg";
 import qc3Thumb from "../../images/projects/opt/qc3-thumb.jpg";
+import mybraillerHero from "../../images/projects/opt/mybrailler-hero.jpg";
 import mybraillerThumb from "../../images/projects/opt/mybrailler-thumb.jpg";
+import ebHero from "../../images/projects/opt/eb-hero.jpg";
 import ebThumb from "../../images/projects/opt/eb-thumb.jpg";
+import suicideHero from "../../images/projects/opt/suicide-hero.jpg";
 import suicideThumb from "../../images/projects/opt/suicide-thumb.jpg";
+import nonbreakingHero from "../../images/projects/opt/nonbreaking-hero.jpg";
 import nonbreakingThumb from "../../images/projects/opt/nonbreaking-thumb.jpg";
+import countdownHero from "../../images/projects/opt/countdown-hero.jpg";
 import countdownThumb from "../../images/projects/opt/countdown-thumb.jpg";
+import drumkitHero from "../../images/projects/opt/drumkit-hero.jpg";
 import drumkitThumb from "../../images/projects/opt/drumkit-thumb.jpg";
+import archiveHero from "../../images/projects/opt/archive-hero.jpg";
 import archiveThumb from "../../images/projects/opt/archive-thumb.jpg";
 
 export const projects = [
@@ -42,7 +49,7 @@ export const projects = [
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["php", "sass", "live"],
-        // hero: portfolioHero,
+        hero: qc3Hero,
         thumb: qc3Thumb,
         url: "https://quebec3.com"
     },
@@ -53,6 +60,7 @@ export const projects = [
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["angular", "live"],
+        hero: mybraillerHero,
         thumb: mybraillerThumb,
         url: "https://mybrailler.com"
     },
@@ -63,6 +71,7 @@ export const projects = [
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["angular"],
+        hero: ebHero,
         thumb: ebThumb,
         url: ""
     },
@@ -73,6 +82,7 @@ export const projects = [
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["cssGrid", "live"],
+        hero: suicideHero,
         thumb: suicideThumb,
         url: "https://kdaisho.github.io/Infographic/"
     },
@@ -83,6 +93,7 @@ export const projects = [
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["vanillajs", "less"],
+        hero: nonbreakingHero,
         thumb: nonbreakingThumb,
         url: "https://kdaisho.github.io/French-Formatter/"
     },
@@ -93,6 +104,7 @@ export const projects = [
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["vanillajs"],
+        hero: countdownHero,
         thumb: countdownThumb,
         url: "https://github.com/kdaisho/Countdown"
     },
@@ -103,6 +115,7 @@ export const projects = [
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["vanillajs", "live"],
+        hero: drumkitHero,
         thumb: drumkitThumb,
         url: "https://kdaisho.github.io/Japan_Sound_Board/"
     },
@@ -113,6 +126,7 @@ export const projects = [
         description:
             "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
         stack: ["nodejs", "react"],
+        hero: archiveHero,
         thumb: archiveThumb,
         url: ""
     }

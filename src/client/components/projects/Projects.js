@@ -142,11 +142,20 @@ class Projects extends Component {
                                             <p className="desc">{project.subtitle}</p>
                                         </div>
                                         <ul className="tech-stack">
-                                            {project.stack.map((tech) => (
-                                                <li key={tech} className={tech}>
-                                                    {tech.slice(0, 1).toUpperCase()}
-                                                </li>
-                                            ))}
+                                            {project.stack.map((tech) => {
+                                                return (
+                                                    tech !== "live" && (
+                                                        <li
+                                                            key={tech}
+                                                            className={`tool ${tech}`}
+                                                            data-tip={tech}
+                                                        >
+                                                            {tech.slice(0, 1).toUpperCase()}
+                                                            {/* {tech} */}
+                                                        </li>
+                                                    )
+                                                );
+                                            })}
                                         </ul>
                                     </div>
                                 </div>

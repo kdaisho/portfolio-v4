@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import Match from "./components/match/Match";
 import "./global-style/reset.css";
 import "./global-style/general.css";
+import "./global-style/tooltip.css";
 
 class App extends Component {
     state = {};

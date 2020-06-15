@@ -1,5 +1,4 @@
 import React, { Component, createRef } from "react";
-import "./contact.css";
 
 class Contact extends Component {
     state = {

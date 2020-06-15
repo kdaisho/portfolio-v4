@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import cat from "../../images/hero/cat-body-opt.svg";
 import catAction from "../../images/hero/cat-actions-opt.svg";
-import "./hero.css";
 
 class Hero extends Component {
     state = {

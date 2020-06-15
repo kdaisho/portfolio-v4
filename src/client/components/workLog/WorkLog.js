@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import cards from "./workLog-data";
-import "./worklog.css";
 
 class WorkLog extends Component {
     render() {

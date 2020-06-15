@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { projects, filterItems } from "./projects-data.js";
 import Modal from "../modal/Modal";
 import { Desktop, Github } from "../../svg/Icons";
-// import bg from "../../images/projects/test-bg.jpg";
-// import bg from "../../images/projects/opt/jsbest-large-02.jpg";
-// import thumb from "../../images/projects/opt/jsbest-thumb.jpg";
-import "./projects.css";
 
 class Projects extends Component {
     state = {

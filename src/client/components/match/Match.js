@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./match.css";
+// import "./match.css";
 
 class Match extends Component {
     state = {
@@ -60,7 +60,7 @@ class Match extends Component {
         );
     };
 
-    disableTags = index => {
+    disableTags = (index) => {
         this.state.tags.forEach((tag, i) => {
             if (i !== index) {
                 tag.classList.add("nope");
@@ -69,22 +69,19 @@ class Match extends Component {
     };
 
     enableTags = () => {
-        this.state.tags.forEach(tag => {
+        this.state.tags.forEach((tag) => {
             tag.classList.remove("nope");
         });
     };
 
-    dragStart = index => {
-        this.setState(
-            { currentTag: this.state.tags[this.getPosIndex()] },
-            () => {
-                this.setState({ indexFrom: this.getPosIndex() });
-                setTimeout(() => {
-                    this.state.currentTag.classList.add("invisible");
-                    this.disableTags(index);
-                }, 0);
-            }
-        );
+    dragStart = (index) => {
+        this.setState({ currentTag: this.state.tags[this.getPosIndex()] }, () => {
+            this.setState({ indexFrom: this.getPosIndex() });
+            setTimeout(() => {
+                this.state.currentTag.classList.add("invisible");
+                this.disableTags(index);
+            }, 0);
+        });
     };
 
     dragEnd = () => {
@@ -98,18 +95,15 @@ class Match extends Component {
         this.spotsRef[index].classList.add("hovered");
     };
 
-    dragEnter = position => {
+    dragEnter = (position) => {
         event.preventDefault();
         console.log("%cENTERING:", "background:red;color:#fff", position);
         this.setState({ indexTo: position }, () => {
-            setTimeout(
-                () => this.pushTags(this.state.indexFrom < this.state.indexTo),
-                0
-            );
+            setTimeout(() => this.pushTags(this.state.indexFrom < this.state.indexTo), 0);
         });
     };
 
-    getPosIndex = type => {
+    getPosIndex = (type) => {
         console.log(
             `%cPARENT POSITION ${type}`,
             "color:red",
@@ -118,7 +112,7 @@ class Match extends Component {
         return parseInt(event.target.parentElement.dataset.position, 10);
     };
 
-    dragLeave = index => {
+    dragLeave = (index) => {
         this.spotsRef[index].classList.remove("hovered");
         this.state.tags[index].classList.remove("up", "down");
     };
@@ -131,7 +125,7 @@ class Match extends Component {
         setTimeout(() => this.setOrder(), 0);
     };
 
-    dropTags = indexTo => {
+    dropTags = (indexTo) => {
         const appendTags = (initialIndex, endIndex, offset) => {
             for (let i = initialIndex; i <= endIndex; i++) {
                 this.spotsRef[i + offset].append(this.state.tags[i]);
@@ -142,7 +136,7 @@ class Match extends Component {
             : appendTags(this.state.indexTo, this.state.indexFrom - 1, 1);
     };
 
-    pushTags = downwards => {
+    pushTags = (downwards) => {
         const addClassName = (className, initialIndex, endIndex) => {
             for (let i = initialIndex; i <= endIndex; i++) {
                 this.state.tags[i].classList.add(className);
@@ -151,15 +145,11 @@ class Match extends Component {
 
         downwards
             ? addClassName("up", this.state.indexFrom + 1, this.state.indexTo)
-            : addClassName(
-                  "down",
-                  this.state.indexTo,
-                  this.state.indexFrom - 1
-              );
+            : addClassName("down", this.state.indexTo, this.state.indexFrom - 1);
     };
 
     removeUpDownFromTags = () =>
-        [...this.state.tags].map(tag => tag.classList.remove("up", "down"));
+        [...this.state.tags].map((tag) => tag.classList.remove("up", "down"));
 
     init = () => {
         this.setOrder();
@@ -179,7 +169,7 @@ class Match extends Component {
         }
     };
 
-    touchStart = index => {
+    touchStart = (index) => {
         console.log("EVENT:", index, event.target);
         this.setState(
             {
@@ -203,7 +193,7 @@ class Match extends Component {
         );
     };
 
-    touchMove = index => {
+    touchMove = (index) => {
         if (event.cancelable) event.preventDefault();
         if (this.state.unlocked === false) return;
         if (!this.state.hasMoved) {
@@ -215,9 +205,7 @@ class Match extends Component {
                 : null;
         }
         !isNaN(this.state.lastPosition)
-            ? (this.state.tags[
-                  this.state.lastPosition
-              ].style.transform = `translate(${
+            ? (this.state.tags[this.state.lastPosition].style.transform = `translate(${
                   event.targetTouches[0].pageX - this.state.initialX
               }px, ${event.targetTouches[0].pageY - this.state.initialY}px)`)
             : null;
@@ -229,11 +217,7 @@ class Match extends Component {
                 )
             },
             () => {
-                console.log(
-                    "NOT NUMBER?:",
-                    this.state.indexFrom,
-                    this.state.indexTo
-                );
+                console.log("NOT NUMBER?:", this.state.indexFrom, this.state.indexTo);
                 if (
                     typeof this.state.indexFrom === "number" &&
                     typeof this.state.indexTo === "number"
@@ -241,20 +225,14 @@ class Match extends Component {
                     if (!this.state.wasInside) {
                         this.state.lastSpot = this.state.indexTo;
                         this.spotsRef[this.state.indexTo] &&
-                            this.spotsRef[this.state.indexTo].classList.add(
-                                "hovered"
-                            );
-                        this.pushTags(
-                            this.state.indexFrom < this.state.indexTo
-                        );
+                            this.spotsRef[this.state.indexTo].classList.add("hovered");
+                        this.pushTags(this.state.indexFrom < this.state.indexTo);
                         this.setState({ wasInside: true });
                     }
                 } else {
                     if (this.state.wasInside) {
                         this.spotsRef[this.state.lastSpot] &&
-                            this.spotsRef[this.state.lastSpot].classList.remove(
-                                "hovered"
-                            );
+                            this.spotsRef[this.state.lastSpot].classList.remove("hovered");
                         this.removeUpDownFromTags();
                         this.setState({ wasInside: false });
                     }
@@ -263,7 +241,7 @@ class Match extends Component {
         );
     };
 
-    touchEnd = index => {
+    touchEnd = (index) => {
         console.log("END index:", index);
         console.log("ENABLGING TAGS:");
         this.enableTags();
@@ -274,9 +252,7 @@ class Match extends Component {
                 this.spotsRef[this.state.indexTo].classList.remove("hovered");
             this.dropTags(this.state.indexTo);
             !isNaN(this.state.lastPosition)
-                ? this.spotsRef[this.state.indexTo].append(
-                      this.state.tags[this.state.lastPosition]
-                  )
+                ? this.spotsRef[this.state.indexTo].append(this.state.tags[this.state.lastPosition])
                 : null;
             this.setState({ hasMoved: false });
         }
@@ -284,9 +260,7 @@ class Match extends Component {
             // console.log("ENABLGING TAGS:");
             // this.enableTags();
             !isNaN(this.state.lastPosition)
-                ? this.state.tags[this.state.lastPosition].removeAttribute(
-                      "style"
-                  )
+                ? this.state.tags[this.state.lastPosition].removeAttribute("style")
                 : null;
             this.setOrder();
             this.setState({ unlocked: false });
@@ -298,24 +272,14 @@ class Match extends Component {
         for (let i = 0; i < this.spotsRef.length; i++) {
             coordinates.push(this.spotsRef[i].getBoundingClientRect());
         }
-        this.setState({ coordinates }, () =>
-            console.log("COORDINATES:", this.state.coordinates)
-        );
+        this.setState({ coordinates }, () => console.log("COORDINATES:", this.state.coordinates));
         console.log("INIT", this.state.tags);
         for (let i = 0; i < this.state.tags.length; i++) {
-            this.state.tags[i].addEventListener("touchstart", () =>
-                this.touchStart(i)
-            );
-            this.state.tags[i].addEventListener(
-                "touchmove",
-                () => this.touchMove(i),
-                {
-                    passive: false
-                }
-            );
-            this.state.tags[i].addEventListener("touchend", () =>
-                this.touchEnd(i)
-            );
+            this.state.tags[i].addEventListener("touchstart", () => this.touchStart(i));
+            this.state.tags[i].addEventListener("touchmove", () => this.touchMove(i), {
+                passive: false
+            });
+            this.state.tags[i].addEventListener("touchend", () => this.touchEnd(i));
         }
     };
 
@@ -330,17 +294,17 @@ class Match extends Component {
                 <div className="heading">
                     <h1 className="heading">Skills</h1>
                     <p>
-                        When you look for a developer, what skills do you expect
-                        most? What do you expect least?
+                        When you look for a developer, what skills do you expect most? What do you
+                        expect least?
                     </p>
                     <p>
-                        Drag & sort to rank the following skills in order. Click
-                        Submit to compare to mine.
+                        Drag & sort to rank the following skills in order. Click Submit to compare
+                        to mine.
                     </p>
                 </div>
 
                 <div className="spots">
-                    {this.list.map(item => (
+                    {this.list.map((item) => (
                         <div
                             key={item.id}
                             className="spot"
@@ -349,7 +313,7 @@ class Match extends Component {
                             onDragEnter={() => this.dragEnter(item.id)}
                             onDragLeave={() => this.dragLeave(item.id)}
                             onDrop={() => this.dragDrop(this.spotsRef, item.id)}
-                            ref={ref => (this.spotsRef[item.id] = ref)}
+                            ref={(ref) => (this.spotsRef[item.id] = ref)}
                         >
                             <div
                                 className="tag"

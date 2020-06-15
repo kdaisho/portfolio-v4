@@ -6,7 +6,6 @@ import Technologies from "./technologies/Technologies";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
-import "./main.css";
 
 class Main extends Component {
     state = {

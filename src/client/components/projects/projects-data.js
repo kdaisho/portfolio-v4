@@ -25,7 +25,7 @@ export const projects = [
         title: "JavaScriptBest",
         subtitle: "Online Course Review App",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            "JavaScriptBest can keep your overviews of favourite online couses in one place. Built with only JavaScript from UI to backend while providing great performance thans to nginx.",
         stack: ["nodejs", "vanillajs", "live", "mongodb"],
         hero: jsbestHero,
         thumb: jsbestThumb,
@@ -36,7 +36,7 @@ export const projects = [
         title: "Portofolio",
         subtitle: "My portofolio site",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            'My portfolio is a showcase of what I do and what I\'m good at. Built with React and Nodejs (Express) without "create-react-app" black magic.',
         stack: ["react", "nodejs", "live", "less"],
         hero: portfolioHero,
         thumb: portfolioThumb,
@@ -47,7 +47,7 @@ export const projects = [
         title: "Quebec3",
         subtitle: "CMS with Laravel",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            "Quebec3 is CMS built with PHP and Laravel from scratch. It's up and running since 2015.",
         stack: ["php", "sass", "live"],
         hero: qc3Hero,
         thumb: qc3Thumb,
@@ -58,7 +58,7 @@ export const projects = [
         title: "My Brailler",
         subtitle: "Electronic braille typewriter",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            "My Brailler is a training application for visually impaired to practice Perkins Brailler. By using My Brailler, you don't need to reach out to paper in order to check if you've made typos anymore because My Brailler can speak what you just typed.",
         stack: ["angular", "live"],
         hero: mybraillerHero,
         thumb: mybraillerThumb,
@@ -67,9 +67,9 @@ export const projects = [
     {
         id: 4,
         title: "Email Builder",
-        subtitle: "HTML email builder for &quot; non-coders",
+        subtitle: "HTML email builder for non-coders",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            "Email Builder was originally built just for myself to cheat while I was assiged a bunch of emails everyday in previous workplace. But found out Email Builder can help non-coders build HTML email all by themselves. Building email is basically filling a template with different contents (text and images). This boring task should be automated",
         stack: ["angular"],
         hero: ebHero,
         thumb: ebThumb,

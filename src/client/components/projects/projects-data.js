@@ -69,7 +69,7 @@ export const projects = [
         title: "Email Builder",
         subtitle: "HTML email builder for non-coders",
         description:
-            "Email Builder was originally built just for myself to cheat while I was assiged a bunch of emails everyday in previous workplace. But found out Email Builder can help non-coders build HTML email all by themselves. Building email is basically filling a template with different contents (text and images). This boring task should be automated",
+            "Email Builder was originally built just for myself in order to spend less time on emails more time on site updates. It reduces time from 50 minutes to 7 minutes on average per single email. Email Builder also enables non-coders build HTML email all by themselves. Built with Angular 4x.",
         stack: ["angular"],
         hero: ebHero,
         thumb: ebThumb,
@@ -80,7 +80,7 @@ export const projects = [
         title: "Suicide in Japan",
         subtitle: "Beatiful visualization for beautiful country",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            "Suicide in Japan is an infographic inspired by Japan's high suicide rate. Built with plain HTML and CSS Grid.",
         stack: ["cssGrid", "live"],
         hero: suicideHero,
         thumb: suicideThumb,
@@ -91,7 +91,7 @@ export const projects = [
         title: "Non-breaking Injector",
         subtitle: "Sick of '&nbsp;' by hand?",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            "Non-breaking Injector (a.k.a French Formatter) is a tool that inserts non-breakins space (as HTML entity) into where French grammer requires, for example 30 % and 10 $.",
         stack: ["vanillajs", "less"],
         hero: nonbreakingHero,
         thumb: nonbreakingThumb,
@@ -102,7 +102,7 @@ export const projects = [
         title: "Global Countdown Timer",
         subtitle: "Everybody ends at the same time anywhere on earth",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            "Global Countdown Timer allows you to implement a countdown widget that displays the same hours in different time zones without server setup. Implementation is a walk in the park to all level of Front-end devs.",
         stack: ["vanillajs"],
         hero: countdownHero,
         thumb: countdownThumb,
@@ -112,8 +112,7 @@ export const projects = [
         id: 8,
         title: "Japanese Drum Kit",
         subtitle: "Just a simple fun project",
-        description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+        description: "Japanese Drum Kit is a simple fun project. Built with vanilla JS.",
         stack: ["vanillajs", "live"],
         hero: drumkitHero,
         thumb: drumkitThumb,
@@ -124,7 +123,7 @@ export const projects = [
         title: "Archive Everything",
         subtitle: "Archiving tool using file system",
         description:
-            "So I have my version of the game up here. So if you click this and open it, our game is gonna look something like this. Which looks really nice, right? It's got buttons that work, just like you know how the Tamagotchi had three buttons, and it was really annoying, and the worst UX ever.",
+            "Archive Everithing is a documentation tool built with Nodejs and React. It provides command-line interface to help initial setup. Data is persisitent using file system so this can be handy in a workplace where you handle sensitive information or just for self documentation.",
         stack: ["nodejs", "react"],
         hero: archiveHero,
         thumb: archiveThumb,

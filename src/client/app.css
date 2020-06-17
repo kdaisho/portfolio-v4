@@ -1122,9 +1122,9 @@ p {
   background: #f6f6f6;
   border: 1px solid #6200ea;
   display: flex;
+  flex: 0 0 100%;
   flex-flow: row nowrap;
   font-size: 14px;
-  flex: 0 0 100%;
   height: 32px;
   justify-content: center;
   margin-bottom: 6px;
@@ -1134,6 +1134,9 @@ p {
   .backdrop .content .bottom .text-group .links .link {
     flex: 0 0 48%;
   }
+}
+.backdrop .content .bottom .text-group .links .link:only-child {
+  flex: 0 0 100%;
 }
 .backdrop .content .bottom .text-group .links .link path {
   transition: fill 0.1s linear;

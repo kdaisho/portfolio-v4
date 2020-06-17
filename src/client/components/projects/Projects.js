@@ -43,7 +43,7 @@ class Projects extends Component {
         return filterTerms.length === counter ? true : false;
     };
 
-    toggleModal = ({ id, title, subtitle, description, hero, stack, url }, delay) => {
+    toggleModal = ({ id, title, subtitle, description, hero, stack, url, githubUrl }, delay) => {
         this.setState({ activeCardId: id }, () => {
             setTimeout(() => {
                 this.setState({
@@ -55,7 +55,8 @@ class Projects extends Component {
                               description,
                               hero,
                               stack,
-                              url
+                              url,
+                              githubUrl
                           }
                 });
             }, delay);
@@ -147,7 +148,6 @@ class Projects extends Component {
                                                             data-tip={tech}
                                                         >
                                                             {tech.slice(0, 1).toUpperCase()}
-                                                            {/* {tech} */}
                                                         </li>
                                                     )
                                                 );
@@ -179,12 +179,28 @@ class Projects extends Component {
                                                 {selectedProject.description}
                                             </p>
                                             <div className="links">
-                                                <button className="link is-desktop-icon">
-                                                    {Desktop()} Visit The Website
-                                                </button>
-                                                <button className="link is-github-icon">
-                                                    {Github()}View Github Repo
-                                                </button>
+                                                {selectedProject.url && (
+                                                    <a
+                                                        href={selectedProject.url}
+                                                        title={selectedProject.title}
+                                                        className="link is-desktop-icon"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        {Desktop()} Visit The Website
+                                                    </a>
+                                                )}
+                                                {selectedProject.githubUrl && (
+                                                    <a
+                                                        href={selectedProject.githubUrl}
+                                                        title={`${selectedProject.title} github repository`}
+                                                        className="link is-github-icon"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        {Github()}View Github Repo
+                                                    </a>
+                                                )}
                                             </div>
                                         </div>
                                         <div className="tech-stack">

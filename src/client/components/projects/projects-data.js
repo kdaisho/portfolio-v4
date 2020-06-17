@@ -29,7 +29,8 @@ export const projects = [
         stack: ["nodejs", "vanillajs", "live", "mongodb"],
         hero: jsbestHero,
         thumb: jsbestThumb,
-        url: "https://javascriptbest.com"
+        url: "https://javascriptbest.com",
+        githubUrl: "https://github.com/kdaisho/javascriptbest"
     },
     {
         id: 1,
@@ -40,7 +41,8 @@ export const projects = [
         stack: ["react", "nodejs", "live", "less"],
         hero: portfolioHero,
         thumb: portfolioThumb,
-        url: "https://daishodesign.com"
+        url: "https://daishodesign.com",
+        githubUrl: "https://github.com/kdaisho/portfolio-v4"
     },
     {
         id: 2,
@@ -51,7 +53,8 @@ export const projects = [
         stack: ["php", "sass", "live"],
         hero: qc3Hero,
         thumb: qc3Thumb,
-        url: "https://quebec3.com"
+        url: "https://quebec3.com",
+        githubUrl: "https://github.com/kdaisho/quebec3"
     },
     {
         id: 3,
@@ -62,7 +65,8 @@ export const projects = [
         stack: ["angular", "live"],
         hero: mybraillerHero,
         thumb: mybraillerThumb,
-        url: "https://mybrailler.com"
+        url: "https://mybrailler.com",
+        githubUrl: "https://github.com/kdaisho/brailler"
     },
     {
         id: 4,
@@ -73,7 +77,8 @@ export const projects = [
         stack: ["angular"],
         hero: ebHero,
         thumb: ebThumb,
-        url: ""
+        url: "",
+        githubUrl: ""
     },
     {
         id: 5,
@@ -84,7 +89,8 @@ export const projects = [
         stack: ["cssGrid", "live"],
         hero: suicideHero,
         thumb: suicideThumb,
-        url: "https://kdaisho.github.io/Infographic/"
+        url: "https://kdaisho.github.io/Infographic/",
+        githubUrl: "https://github.com/kdaisho/Infographic"
     },
     {
         id: 6,
@@ -95,7 +101,8 @@ export const projects = [
         stack: ["vanillajs", "less"],
         hero: nonbreakingHero,
         thumb: nonbreakingThumb,
-        url: "https://kdaisho.github.io/French-Formatter/"
+        url: "https://kdaisho.github.io/French-Formatter/",
+        githubUrl: "https://github.com/kdaisho/Infographic"
     },
     {
         id: 7,
@@ -106,7 +113,8 @@ export const projects = [
         stack: ["vanillajs"],
         hero: countdownHero,
         thumb: countdownThumb,
-        url: "https://github.com/kdaisho/Countdown"
+        url: "https://kdaisho.github.io/Countdown/",
+        githubUrl: "https://github.com/kdaisho/Countdown"
     },
     {
         id: 8,
@@ -116,7 +124,8 @@ export const projects = [
         stack: ["vanillajs", "live"],
         hero: drumkitHero,
         thumb: drumkitThumb,
-        url: "https://kdaisho.github.io/Japan_Sound_Board/"
+        url: "https://kdaisho.github.io/Japan_Sound_Board/",
+        githubUrl: "https://github.com/kdaisho/Japan_Sound_Board"
     },
     {
         id: 9,
@@ -127,7 +136,8 @@ export const projects = [
         stack: ["nodejs", "react"],
         hero: archiveHero,
         thumb: archiveThumb,
-        url: ""
+        url: "",
+        githubUrl: "https://github.com/kdaisho/archiving-app"
     }
 ];
 

@@ -53,11 +53,6 @@ class Hero extends Component {
                         <div className="typewriter">
                             <h1>Who am I?</h1>
                         </div>
-                        <div className="cta-match">
-                            <Link to="/match" className="button has-shadow is-large">
-                                See Our Match
-                            </Link>
-                        </div>
                     </div>
                     <div className="right-side" style={{ backgroundImage: `url(${cat})` }}>
                         <div

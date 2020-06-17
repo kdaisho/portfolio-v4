@@ -74,7 +74,7 @@ export const projects = [
         subtitle: "HTML email builder for non-coders",
         description:
             "Email Builder was originally built just for myself in order to spend less time on emails more time on site updates. It reduces time from 50 minutes to 7 minutes on average per single email. Email Builder also enables non-coders build HTML email all by themselves. Built with Angular 4x.",
-        stack: ["angular"],
+        stack: ["angular", "regex"],
         hero: ebHero,
         thumb: ebThumb,
         url: "",
@@ -95,10 +95,10 @@ export const projects = [
     {
         id: 6,
         title: "Non-breaking Injector",
-        subtitle: "Sick of '&nbsp;' by hand?",
+        subtitle: "Save you time from French grammar police",
         description:
-            "Non-breaking Injector (a.k.a French Formatter) is a tool that inserts non-breakins space (as HTML entity) into where French grammer requires, for example 30 % and 10 $.",
-        stack: ["vanillajs", "less"],
+            "Non-breaking Injector auto-inserts non-breakins space (as HTML entity) into where French grammar requires (i.e. 30 %)",
+        stack: ["vanillajs", "less", "regex"],
         hero: nonbreakingHero,
         thumb: nonbreakingThumb,
         url: "https://kdaisho.github.io/French-Formatter/",

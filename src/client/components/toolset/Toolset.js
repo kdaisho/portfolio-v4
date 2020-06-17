@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { technologies, filterItems } from "./tech-data.js";
+import { toolset, filterItems } from "./toolset-data.js";
 import icons from "../../svg/devIcons";
 
-class Technologies extends Component {
+class Toolset extends Component {
     state = {
         filterTerms: [],
         js: false,
@@ -39,7 +39,7 @@ class Technologies extends Component {
 
     render() {
         return (
-            <section className="section is-technologies">
+            <section className="section is-toolset">
                 <div className="content-wrap is-side-by-side">
                     <div className="left-side">
                         <div className="title-group has-filters">
@@ -51,12 +51,12 @@ class Technologies extends Component {
                         </div>
                         <fieldset
                             className={`filter-section ${
-                                this.props.openPane === "tech" ? "active" : ""
+                                this.props.openPane === "tool" ? "active" : ""
                             }`}
                         >
                             <button
                                 className="toggle-filter outline-button"
-                                onClick={() => this.props.togglePane("tech")}
+                                onClick={() => this.props.togglePane("tool")}
                             >
                                 Filters
                             </button>
@@ -80,19 +80,19 @@ class Technologies extends Component {
                             </div>
                         </fieldset>
                     </div>
-                    <div className="technologies right-side">
-                        {technologies
-                            .filter((tech) => {
+                    <div className="toolset right-side">
+                        {toolset
+                            .filter((tool) => {
                                 return this.state.filterTerms.length
-                                    ? this.state.filterTerms.includes(tech.genre)
+                                    ? this.state.filterTerms.includes(tool.genre)
                                     : true;
                             })
-                            .map((tech) => (
-                                <div key={tech.id} className="tech">
-                                    {icons[tech.id]}
+                            .map((tool) => (
+                                <div key={tool.id} className="tool">
+                                    {icons[tool.id]}
                                     <span className="separator"></span>
-                                    <span className="stars">{this.renderStars(tech.stars)}</span>
-                                    <p className="tech-name">{tech.name}</p>
+                                    <span className="stars">{this.renderStars(tool.stars)}</span>
+                                    <p className="tool-name">{tool.name}</p>
                                 </div>
                             ))}
                     </div>
@@ -102,4 +102,4 @@ class Technologies extends Component {
     }
 }
 
-export default Technologies;
+export default Toolset;

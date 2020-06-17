@@ -168,8 +168,9 @@
 }
 
 .backdrop {
-    background: rgba(0, 0, 0, 0.45);
     align-items: center;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
     display: flex;
     flex-flow: row nowrap;
     height: 100%;
@@ -182,6 +183,10 @@
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media @largerThan769 {
+        border: 15px solid @themeColor;
     }
 
     .content {

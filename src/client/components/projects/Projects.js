@@ -144,7 +144,7 @@ class Projects extends Component {
                                                     tech !== "live" && (
                                                         <li
                                                             key={tech}
-                                                            className={`tool ${tech}`}
+                                                            className={`tooltip ${tech}`}
                                                             data-tip={tech}
                                                         >
                                                             {tech.slice(0, 1).toUpperCase()}

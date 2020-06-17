@@ -146,8 +146,9 @@
   opacity: 1;
 }
 .backdrop {
-  background: rgba(0, 0, 0, 0.45);
   align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
   display: flex;
   flex-flow: row nowrap;
   height: 100%;
@@ -160,6 +161,11 @@
 }
 .backdrop:hover {
   cursor: pointer;
+}
+@media only screen and (min-width: 769px) {
+  .backdrop {
+    border: 15px solid #6200ea;
+  }
 }
 .backdrop .content {
   background: #fff;

@@ -19,7 +19,7 @@ const menuItems = [
         name: "Work Log"
     },
     {
-        name: "Technologies"
+        name: "Toolset"
     },
     {
         name: "Side Projects"

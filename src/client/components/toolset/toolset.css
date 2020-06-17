@@ -1,73 +1,73 @@
-.is-technologies .left-side {
+.is-toolset .left-side {
   flex: 0 0 100%;
 }
 @media only screen and (min-width: 769px) {
-  .is-technologies .left-side {
+  .is-toolset .left-side {
     flex: 0 0 35%;
   }
 }
-.is-technologies .technologies {
+.is-toolset .toolset {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
-.is-technologies .technologies.right-side {
+.is-toolset .toolset.right-side {
   flex: 0 0 100%;
   padding-top: 10px;
 }
 @media only screen and (min-width: 769px) {
-  .is-technologies .technologies.right-side {
+  .is-toolset .toolset.right-side {
     flex: 0 0 65%;
     padding: 0 0 0 3%;
   }
 }
-.is-technologies .technologies .tech {
+.is-toolset .toolset .tool {
   flex: 0 0 20%;
   height: 165px;
   text-align: center;
   padding: 20px;
 }
-.is-technologies .technologies .tech:hover {
+.is-toolset .toolset .tool:hover {
   background: #6200ea;
   cursor: pointer;
 }
-.is-technologies .technologies .tech:hover path,
-.is-technologies .technologies .tech:hover circle {
+.is-toolset .toolset .tool:hover path,
+.is-toolset .toolset .tool:hover circle {
   fill: #fff;
 }
-.is-technologies .technologies .tech:hover .separator {
+.is-toolset .toolset .tool:hover .separator {
   border-color: #fff;
   transform: translateY(36px);
 }
-.is-technologies .technologies .tech:hover .stars {
+.is-toolset .toolset .tool:hover .stars {
   font-size: 16px;
   opacity: 1;
 }
-.is-technologies .technologies .tech:hover .tech-name {
+.is-toolset .toolset .tool:hover .tool-name {
   color: #fff;
   transform: translateY(-36px);
 }
-.is-technologies .technologies .tech svg {
+.is-toolset .toolset .tool svg {
   width: 75px;
 }
-.is-technologies .technologies .tech path,
-.is-technologies .technologies .tech circle {
+.is-toolset .toolset .tool path,
+.is-toolset .toolset .tool circle {
   fill: #6200ea;
 }
-.is-technologies .technologies .tech .separator {
+.is-toolset .toolset .tool .separator {
   display: block;
   border-bottom: 2px solid #6200ea;
   margin: 12px auto;
   transition: transform 0.25s ease-out;
   width: 30px;
 }
-.is-technologies .technologies .tech .stars {
+.is-toolset .toolset .tool .stars {
   color: #fff;
   font-size: 0;
   opacity: 0;
   transition: opacity 0.25s ease-out 0.25s;
 }
-.is-technologies .technologies .tech .tech-name {
+.is-toolset .toolset .tool .tool-name {
   color: #6200ea;
   font-size: 14px;
   transform: translateY(-20px);

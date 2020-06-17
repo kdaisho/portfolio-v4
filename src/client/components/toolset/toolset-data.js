@@ -1,4 +1,4 @@
-export const technologies = [
+export const toolset = [
     {
         id: 0,
         name: "javascript",

@@ -5,12 +5,12 @@ const socials = [
     {
         src: linkedinIcon,
         name: "linkedinHub",
-        url: "---"
+        url: "https://www.linkedin.com/in/daisho-komiyama-6766657a/"
     },
     {
         src: githubIcon,
         name: "github",
-        url: "---"
+        url: "https://github.com/kdaisho"
     }
 ];
 

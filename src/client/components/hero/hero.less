@@ -35,7 +35,7 @@
     }
 
     .greetings-wrap {
-        padding-top: 40px;
+        padding-top: 25px;
 
         @media @largerThan769 {
             padding-top: 0;
@@ -89,30 +89,24 @@
     }
 
     .typewriter {
+        padding-bottom: 50px;
         position: relative;
-        width: 160px;
-        @media @largerThan769 {
-            width: 230px;
-            padding-bottom: 75px;
-        }
+        width: 230px;
+
         h1 {
             animation: typing 1s 1.75s steps(9, end) forwards, blinkCursor 1s step-end infinite;
             border-right: 0.5rem solid #fff;
             color: #000;
             font-family: monospace;
-            font-size: 24px;
+            font-size: 36px;
             letter-spacing: 0.15rem;
             left: 0;
             margin: 0 auto;
             overflow: hidden;
             position: absolute;
             top: 0;
-            white-space: nowrap;
             width: 0;
-
-            @media @largerThan769 {
-                font-size: 36px;
-            }
+            white-space: nowrap;
         }
     }
 

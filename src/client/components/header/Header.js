@@ -16,7 +16,14 @@ const Header = ({ togglePane, openPane, scrollTo }) => (
                 <ul className="social-links">
                     {socials.map((item) => (
                         <li key={item.name}>
-                            <img src={item.src} alt={item.name} />
+                            <a
+                                href={item.url}
+                                title={item.name}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img src={item.src} alt={item.name} />
+                            </a>
                         </li>
                     ))}
                 </ul>

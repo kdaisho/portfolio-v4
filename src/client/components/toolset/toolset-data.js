@@ -9,19 +9,19 @@ export const toolset = [
         id: 1,
         name: "nodejs",
         genre: "js",
-        stars: 5
+        stars: 3
     },
     {
         id: 2,
         name: "react",
         genre: "js",
-        stars: 5
+        stars: 3
     },
     {
         id: 3,
         name: "angualr",
         genre: "js",
-        stars: 5
+        stars: 4
     },
     {
         id: 4,
@@ -51,31 +51,31 @@ export const toolset = [
         id: 8,
         name: "photoshop",
         genre: "graphicsEditor",
-        stars: 5
+        stars: 4
     },
     {
         id: 9,
         name: "gimp",
         genre: "graphicsEditor",
-        stars: 5
+        stars: 3
     },
     {
         id: 10,
         name: "inkscape",
         genre: "graphicsEditor",
-        stars: 5
+        stars: 3
     },
     {
         id: 11,
         name: "git",
         genre: "tools",
-        stars: 5
+        stars: 4
     },
     {
         id: 12,
         name: "webpack",
         genre: "tools",
-        stars: 5
+        stars: 2
     },
     {
         id: 13,
@@ -87,19 +87,19 @@ export const toolset = [
         id: 14,
         name: "mongodb",
         genre: "database",
-        stars: 3
+        stars: 1
     },
     {
         id: 15,
         name: "ubuntu",
         genre: "platform",
-        stars: 3
+        stars: 4
     },
     {
         id: 16,
         name: "vim",
         genre: "textEditor",
-        stars: 3
+        stars: 4
     }
 ];
 

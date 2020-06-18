@@ -5,7 +5,10 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 30;
+  z-index: 35;
+}
+.header.high-z-index {
+  z-index: 100;
 }
 .header .nav {
   align-items: center;
@@ -80,6 +83,7 @@
 }
 .header .nav .nav-right .menu-pane.active {
   right: 0;
+  z-index: 100;
 }
 @media only screen and (min-width: 769px) {
   .header .nav .nav-right .menu-pane {

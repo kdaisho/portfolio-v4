@@ -145,74 +145,55 @@
 .is-projects .cards .card:hover .cta {
   opacity: 1;
 }
-.backdrop {
-  align-items: center;
-  background: rgba(0, 0, 0, 0.45);
-  border: none;
-  display: flex;
-  flex-flow: row nowrap;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 50;
-}
-.backdrop:hover {
-  cursor: pointer;
-}
-@media only screen and (min-width: 769px) {
-  .backdrop {
-    border: 15px solid #6200ea;
-  }
-}
-.backdrop .content {
+.project-details {
   background: #fff;
   display: none;
   max-width: 604px;
   width: 95%;
 }
-.backdrop .content:hover {
+.project-details:hover {
   cursor: auto;
 }
-.backdrop .content.active {
+.project-details.active {
   display: block;
   overflow: auto;
   max-height: 90vh;
 }
-.backdrop .content .top {
+.project-details.bit-style {
+  border: 2px solid #6200ea;
+}
+.project-details .top {
   height: 35vh;
   width: 100%;
 }
 @media only screen and (min-width: 769px) {
-  .backdrop .content .top {
+  .project-details .top {
     height: 350px;
   }
 }
-.backdrop .content .bottom {
+.project-details .bottom {
   border-top: 2px solid #7c4dff;
   position: relative;
 }
-.backdrop .content .bottom .text-group {
+.project-details .bottom .text-group {
   padding: 9px 15px 12px;
 }
-.backdrop .content .bottom .text-group .title {
+.project-details .bottom .text-group .title {
   font-size: 24px;
 }
-.backdrop .content .bottom .text-group .subtitle {
+.project-details .bottom .text-group .subtitle {
   font-size: 14px;
   padding-top: 2px;
 }
-.backdrop .content .bottom .text-group .description {
+.project-details .bottom .text-group .description {
   padding: 10px 0 18px;
 }
-.backdrop .content .bottom .text-group .links {
+.project-details .bottom .text-group .links {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
-.backdrop .content .bottom .text-group .links .link {
+.project-details .bottom .text-group .links .link {
   align-items: center;
   color: #6200ea;
   background: #f6f6f6;
@@ -227,48 +208,48 @@
   transition: background 0.1s linear, color 0.1s linear;
 }
 @media only screen and (min-width: 600px) {
-  .backdrop .content .bottom .text-group .links .link {
+  .project-details .bottom .text-group .links .link {
     flex: 0 0 48%;
   }
 }
-.backdrop .content .bottom .text-group .links .link:only-child {
+.project-details .bottom .text-group .links .link:only-child {
   flex: 0 0 100%;
 }
-.backdrop .content .bottom .text-group .links .link path {
+.project-details .bottom .text-group .links .link path {
   transition: fill 0.1s linear;
 }
-.backdrop .content .bottom .text-group .links .link:hover {
+.project-details .bottom .text-group .links .link:hover {
   background: #7c4dff;
   color: #fff;
   cursor: pointer;
 }
-.backdrop .content .bottom .text-group .links .link:hover path {
+.project-details .bottom .text-group .links .link:hover path {
   fill: #fff;
 }
-.backdrop .content .bottom .text-group .links .link svg {
+.project-details .bottom .text-group .links .link svg {
   margin-right: 9px;
 }
-.backdrop .content .bottom .text-group .links .link.is-desktop-icon svg {
+.project-details .bottom .text-group .links .link.is-desktop-icon svg {
   width: 18px;
 }
-.backdrop .content .bottom .text-group .links .link.is-github-icon svg {
+.project-details .bottom .text-group .links .link.is-github-icon svg {
   width: 22px;
 }
-.backdrop .content .bottom .tech-stack {
+.project-details .bottom .tech-stack {
   background: #7c4dff;
   display: flex;
   flex-flow: row wrap;
   justify-self: flex-start;
   padding: 9px 0 3px;
 }
-.backdrop .content .bottom .tech-stack .tech {
+.project-details .bottom .tech-stack .tech {
   color: #fff;
   box-shadow: 3px 3px 0 #6200ea;
   font-size: 14px;
   margin: 0 4px 6px 4px;
   padding: 6px 15px;
 }
-.backdrop .content .close {
+.project-details .close {
   background: transparent;
   border: none;
   bottom: 0;
@@ -277,10 +258,7 @@
   position: absolute;
   right: 0;
 }
-.backdrop .content .close:hover {
+.project-details .close:hover {
   cursor: pointer;
   opacity: 0.75;
-}
-.backdrop .bit-style {
-  border: 2px solid #6200ea;
 }

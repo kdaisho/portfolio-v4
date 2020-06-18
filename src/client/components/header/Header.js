@@ -4,8 +4,8 @@ import { Logo } from "../../svg/Icons";
 import menuDots from "../../images/nav/menu-dots-opt.svg";
 import menuClose from "../../images/nav/menu-close-opt.svg";
 
-const Header = ({ togglePane, openPane }) => (
-    <header className="header">
+const Header = ({ togglePane, openPane, jumpTo }) => (
+    <header className={`header ${openPane === "menu" ? "high-z-index" : ""}`}>
         <div className="content-wrap nav">
             <div className="nav-left">
                 <div className="logo">
@@ -28,7 +28,11 @@ const Header = ({ togglePane, openPane }) => (
                 </button>
                 <div className={`menu-pane ${openPane === "menu" ? "active" : ""}`}>
                     {menuItems.map((item) => (
-                        <button key={item.name} className="button has-shadow is-menu-item">
+                        <button
+                            key={item.name}
+                            className="button has-shadow is-menu-item"
+                            onClick={() => jumpTo(item.id)}
+                        >
                             {item.name}
                         </button>
                     ))}

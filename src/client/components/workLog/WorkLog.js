@@ -4,7 +4,7 @@ import cards from "./workLog-data";
 class WorkLog extends Component {
     render() {
         return (
-            <section className="section is-education">
+            <section id="toWorkLog" className="section is-education">
                 <div className="content-wrap is-side-by-side">
                     <div className="title-group">
                         <h2 className="title">Work Log</h2>

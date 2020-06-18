@@ -167,167 +167,144 @@
     }
 }
 
-.backdrop {
-    align-items: center;
-    background: rgba(0, 0, 0, 0.45);
-    border: none;
-    display: flex;
-    flex-flow: row nowrap;
-    height: 100%;
-    justify-content: center;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
+.project-details {
+    background: #fff;
+    display: none;
+    max-width: 604px;
+    width: 95%;
 
     &:hover {
-        cursor: pointer;
+        cursor: auto;
     }
 
-    @media @largerThan769 {
-        border: 15px solid @themeColor;
+    &.active {
+        display: block;
+        overflow: auto;
+        max-height: 90vh;
     }
 
-    .content {
-        background: #fff;
-        display: none;
-        max-width: 604px;
-        width: 95%;
+    &.bit-style {
+        border: 2px solid @themeColor;
+    }
 
-        &:hover {
-            cursor: auto;
+    .top {
+        height: 35vh;
+        width: 100%;
+
+        @media @largerThan769 {
+            height: 350px;
         }
+    }
 
-        &.active {
-            display: block;
-            overflow: auto;
-            max-height: 90vh;
-        }
+    .bottom {
+        border-top: 2px solid @themeColorSecondary;
+        position: relative;
 
-        .top {
-            height: 35vh;
-            width: 100%;
+        .text-group {
+            padding: 9px 15px 12px;
 
-            @media @largerThan769 {
-                height: 350px;
+            .title {
+                font-size: @font-lead;
             }
-        }
 
-        .bottom {
-            border-top: 2px solid @themeColorSecondary;
-            position: relative;
+            .subtitle {
+                font-size: @font-small;
+                padding-top: 2px;
+            }
 
-            .text-group {
-                padding: 9px 15px 12px;
+            .description {
+                padding: 10px 0 18px;
+            }
 
-                .title {
-                    font-size: @font-lead;
-                }
+            .links {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
 
-                .subtitle {
-                    font-size: @font-small;
-                    padding-top: 2px;
-                }
-
-                .description {
-                    padding: 10px 0 18px;
-                }
-
-                .links {
+                .link {
+                    align-items: center;
+                    color: @themeColor;
+                    background: @backgroundColor;
+                    border: 1px solid @themeColor;
                     display: flex;
-                    flex-flow: row wrap;
-                    justify-content: space-between;
+                    flex: 0 0 100%;
+                    flex-flow: row nowrap;
+                    font-size: @font-small;
+                    height: 32px;
+                    justify-content: center;
+                    margin-bottom: 6px;
+                    transition: background 0.1s linear, color 0.1s linear;
 
-                    .link {
-                        align-items: center;
-                        color: @themeColor;
-                        background: @backgroundColor;
-                        border: 1px solid @themeColor;
-                        display: flex;
+                    @media @largerThan600 {
+                        flex: 0 0 48%;
+                    }
+
+                    &:only-child {
                         flex: 0 0 100%;
-                        flex-flow: row nowrap;
-                        font-size: @font-small;
-                        height: 32px;
-                        justify-content: center;
-                        margin-bottom: 6px;
-                        transition: background 0.1s linear, color 0.1s linear;
+                    }
 
-                        @media @largerThan600 {
-                            flex: 0 0 48%;
-                        }
+                    path {
+                        transition: fill 0.1s linear;
+                    }
 
-                        &:only-child {
-                            flex: 0 0 100%;
-                        }
+                    &:hover {
+                        background: @themeColorSecondary;
+                        color: #fff;
+                        cursor: pointer;
 
                         path {
-                            transition: fill 0.1s linear;
+                            fill: #fff;
                         }
+                    }
 
-                        &:hover {
-                            background: @themeColorSecondary;
-                            color: #fff;
-                            cursor: pointer;
+                    svg {
+                        margin-right: 9px;
+                    }
 
-                            path {
-                                fill: #fff;
-                            }
-                        }
-
+                    &.is-desktop-icon {
                         svg {
-                            margin-right: 9px;
+                            width: 18px;
                         }
+                    }
 
-                        &.is-desktop-icon {
-                            svg {
-                                width: 18px;
-                            }
-                        }
-
-                        &.is-github-icon {
-                            svg {
-                                width: 22px;
-                            }
+                    &.is-github-icon {
+                        svg {
+                            width: 22px;
                         }
                     }
                 }
             }
-
-            .tech-stack {
-                background: @themeColorSecondary;
-                display: flex;
-                flex-flow: row wrap;
-                justify-self: flex-start;
-                padding: 9px 0 3px;
-
-                .tech {
-                    color: #fff;
-                    box-shadow: 3px 3px 0 @themeColor;
-                    font-size: @font-small;
-                    margin: 0 4px 6px 4px;
-                    padding: 6px 15px;
-                }
-            }
         }
 
-        .close {
-            background: transparent;
-            border: none;
-            bottom: 0;
-            color: #fff;
-            font-size: 32px;
-            position: absolute;
-            right: 0;
+        .tech-stack {
+            background: @themeColorSecondary;
+            display: flex;
+            flex-flow: row wrap;
+            justify-self: flex-start;
+            padding: 9px 0 3px;
 
-            &:hover {
-                cursor: pointer;
-                opacity: 0.75;
+            .tech {
+                color: #fff;
+                box-shadow: 3px 3px 0 @themeColor;
+                font-size: @font-small;
+                margin: 0 4px 6px 4px;
+                padding: 6px 15px;
             }
         }
     }
 
-    .bit-style {
-        border: 2px solid @themeColor;
+    .close {
+        background: transparent;
+        border: none;
+        bottom: 0;
+        color: #fff;
+        font-size: 32px;
+        position: absolute;
+        right: 0;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.75;
+        }
     }
 }

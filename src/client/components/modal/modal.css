@@ -7,7 +7,15 @@
   justify-content: center;
   position: fixed;
   width: 100%;
-  z-index: 40;
+  z-index: 100;
+}
+#modal .backdrop:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 769px) {
+  #modal .backdrop {
+    border: 15px solid #6200ea;
+  }
 }
 #modal .backdrop .modal-self {
   max-width: 650px;

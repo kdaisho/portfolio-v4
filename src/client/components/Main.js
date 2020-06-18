@@ -18,6 +18,10 @@ class Main extends Component {
         );
     };
 
+    jumpTo = (destinationId) => {
+        document.getElementById(destinationId).scrollIntoView({ behavior: "smooth" });
+    };
+
     render() {
         return (
             <div className="component-wrap">
@@ -27,7 +31,11 @@ class Main extends Component {
                         onClick={() => this.togglePane(this.state.openPane)}
                     ></div>
                 )}
-                <Header togglePane={this.togglePane} openPane={this.state.openPane} />
+                <Header
+                    togglePane={this.togglePane}
+                    openPane={this.state.openPane}
+                    jumpTo={this.jumpTo}
+                />
                 <Hero />
                 <WorkLog />
                 <Toolset togglePane={this.togglePane} openPane={this.state.openPane} />

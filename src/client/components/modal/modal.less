@@ -10,7 +10,15 @@
         justify-content: center;
         position: fixed;
         width: 100%;
-        z-index: 40;
+        z-index: 100;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media @largerThan769 {
+            border: 15px solid @themeColor;
+        }
 
         .modal-self {
             max-width: 650px;

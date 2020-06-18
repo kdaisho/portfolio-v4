@@ -51,7 +51,7 @@ class Contact extends Component {
 
     render() {
         return (
-            <section className="section is-contact">
+            <section id="toContact" className="section is-contact">
                 <div className="content-wrap is-side-by-side">
                     <div className="left-side title-group">
                         <h2 className="title">Contact</h2>

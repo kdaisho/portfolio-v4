@@ -16,16 +16,20 @@ const socials = [
 
 const menuItems = [
     {
-        name: "Work Log"
+        name: "Work Log",
+        id: "toWorkLog"
     },
     {
-        name: "Toolset"
+        name: "Toolset",
+        id: "toToolset"
     },
     {
-        name: "Side Projects"
+        name: "Side Projects",
+        id: "toSideProjects"
     },
     {
-        name: "Contact"
+        name: "Contact",
+        id: "toContact"
     }
 ];
 

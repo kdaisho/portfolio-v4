@@ -66,7 +66,7 @@ class Projects extends Component {
     render() {
         const { selectedProject } = this.state;
         return (
-            <section className="section is-projects">
+            <section id="toSideProjects" className="section is-projects">
                 <div className="content-wrap is-side-by-side">
                     <div className="right-side">
                         <div className="title-group has-filters">
@@ -161,7 +161,7 @@ class Projects extends Component {
                         <Modal>
                             <div className="backdrop" onClick={this.toggleModal}>
                                 <div
-                                    className="content bit-style active"
+                                    className="project-details bit-style active"
                                     onClick={(event) => event.stopPropagation()}
                                 >
                                     <div

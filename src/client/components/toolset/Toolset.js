@@ -39,7 +39,7 @@ class Toolset extends Component {
 
     render() {
         return (
-            <section className="section is-toolset">
+            <section id="toToolset" className="section is-toolset">
                 <div className="content-wrap is-side-by-side">
                     <div className="left-side">
                         <div className="title-group has-filters">

@@ -160,11 +160,12 @@
   top: 0;
   transition: right 0.15s ease-out;
   width: 250px;
-  z-index: 10;
+  z-index: 30;
 }
 .root .filter-section.active,
 .modal .filter-section.active {
   right: -6px;
+  z-index: 90;
 }
 @media only screen and (min-width: 769px) {
   .root .filter-section,

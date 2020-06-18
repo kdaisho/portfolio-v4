@@ -13,12 +13,13 @@ class Main extends Component {
     };
 
     togglePane = (name) => {
-        this.setState({ openPane: this.state.openPane ? "" : name }, () =>
-            console.log("TOO::", this.state.openPane)
-        );
+        this.setState({ openPane: this.state.openPane ? "" : name });
     };
 
-    jumpTo = (destinationId) => {
+    scrollTo = (destinationId) => {
+        const button = event.target;
+        button.classList.add("active");
+        setTimeout(() => button.classList.remove("active"), 150);
         document.getElementById(destinationId).scrollIntoView({ behavior: "smooth" });
     };
 
@@ -34,7 +35,7 @@ class Main extends Component {
                 <Header
                     togglePane={this.togglePane}
                     openPane={this.state.openPane}
-                    jumpTo={this.jumpTo}
+                    scrollTo={this.scrollTo}
                 />
                 <Hero />
                 <WorkLog />

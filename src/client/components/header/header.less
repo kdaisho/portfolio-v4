@@ -129,6 +129,12 @@
                         font-size: @font-medium;
                         height: 40px;
                         margin: 0 6px;
+                        transition: translate 0.05s ease-in box-shadow 0.05s ease-in;
+
+                        &.active {
+                            box-shadow: 0 0 0 @themeColor;
+                            transform: translate(4px, 4px);
+                        }
                     }
                 }
             }

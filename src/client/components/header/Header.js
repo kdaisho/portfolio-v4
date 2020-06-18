@@ -4,7 +4,7 @@ import { Logo } from "../../svg/Icons";
 import menuDots from "../../images/nav/menu-dots-opt.svg";
 import menuClose from "../../images/nav/menu-close-opt.svg";
 
-const Header = ({ togglePane, openPane, jumpTo }) => (
+const Header = ({ togglePane, openPane, scrollTo }) => (
     <header className={`header ${openPane === "menu" ? "high-z-index" : ""}`}>
         <div className="content-wrap nav">
             <div className="nav-left">
@@ -31,7 +31,7 @@ const Header = ({ togglePane, openPane, jumpTo }) => (
                         <button
                             key={item.name}
                             className="button has-shadow is-menu-item"
-                            onClick={() => jumpTo(item.id)}
+                            onClick={() => scrollTo(item.id)}
                         >
                             {item.name}
                         </button>

@@ -118,10 +118,6 @@
   padding: 15px 10px;
   transform: perspective(800px) rotateY(-180deg);
 }
-.is-education .is-back h3,
-.is-education .is-back p {
-  line-height: 1.3;
-}
 .is-education .is-back p {
   padding: 0 6px 1px;
 }

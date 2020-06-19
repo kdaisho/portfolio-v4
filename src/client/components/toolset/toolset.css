@@ -6,6 +6,9 @@
     flex: 0 0 35%;
   }
 }
+.is-toolset .left-side .star {
+  padding-left: 5px;
+}
 .is-toolset .toolset {
   display: flex;
   flex-flow: row wrap;

@@ -72,8 +72,9 @@ class Projects extends Component {
                         <div className="title-group has-filters">
                             <h2 className="title">Side Projects</h2>
                             <p className="subtitle font-large">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                                odio. Quisque volutpat mattis eros.
+                                There are many things to learn in building and launching a side
+                                project. Knowing how to build an application from start to finish is
+                                more than an asset today.
                             </p>
                         </div>
                         <fieldset

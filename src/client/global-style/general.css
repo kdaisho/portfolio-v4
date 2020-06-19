@@ -58,6 +58,12 @@
 .modal .title-group.has-filters {
   padding-bottom: 15px;
 }
+@media only screen and (min-width: 769px) {
+  .root .title-group.has-filters,
+  .modal .title-group.has-filters {
+    padding-bottom: 30px;
+  }
+}
 .root .title-group .title,
 .modal .title-group .title {
   color: #6200ea;
@@ -67,6 +73,7 @@
 .root .title-group .subtitle,
 .modal .title-group .subtitle {
   font-size: 18px;
+  line-height: 1.35;
 }
 .root .outline-button:focus,
 .modal .outline-button:focus {

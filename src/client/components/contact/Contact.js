@@ -56,8 +56,9 @@ class Contact extends Component {
                     <div className="left-side title-group">
                         <h2 className="title">Contact</h2>
                         <p className="subtitle font-large">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-                            Quisque volutpat mattis eros.
+                            Hopefully you found some of my things that I've learned over the years
+                            interesting, and maybe hopefully that helps you. Looking forward hearing
+                            from you!
                         </p>
                     </div>
                     <div className="right-side">

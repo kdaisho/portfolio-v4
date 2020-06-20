@@ -54,6 +54,10 @@
     width: 500px;
   }
 }
+.is-hero .greetings-wrap .greetings {
+  font-size: 18px;
+  line-height: 1.35;
+}
 .is-hero .clip-path {
   display: none;
   float: left;

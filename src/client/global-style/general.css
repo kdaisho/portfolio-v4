@@ -74,6 +74,7 @@
 .modal .title-group .subtitle {
   font-size: 18px;
   line-height: 1.35;
+  padding-top: 4px;
 }
 .root .outline-button:focus,
 .modal .outline-button:focus {

@@ -31,15 +31,14 @@ class Hero extends Component {
         });
 
     renderGreetings = () => {
+        const years = new Date().getFullYear() - 2014;
         return (
             <div className={`greetings-wrap ${this.state.animation ? "slide" : ""}`}>
                 <div className="clip-path"></div>
                 <p className="greetings">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
-                    volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh,
-                    viverra non, semper suscipit, posuere a, pede. Lorem ipsum dolor sit amet,
-                    consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-                    malesuada erat ut turpis.
+                    Hi, my name’s Daisho Komiyama, I’ve been a developer for about {years} years.
+                    I'm not gonna say I'm developer, but I'm gonna say I'm an effective developer
+                    that ships code regularly.
                 </p>
             </div>
         );

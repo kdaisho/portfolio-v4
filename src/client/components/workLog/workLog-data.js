@@ -16,14 +16,14 @@ const cards = [
         title: "Front-end Developer",
         location: "Montreal",
         what: "Doing",
-        tasks: ["Update", "Bug fix", "HTML Email"],
+        tasks: ["Enhancement", "Bug fix", "HTML Email"],
         techStack: ["AngularJS", "JavaScript", "HTML5", "CSS3", "Less", "Git"]
     },
     {
         id: "reitmans",
         company: "Reitmans",
         period: "Feb 2016 - Mar 2018",
-        title: "Web Integrator",
+        title: "Front-end Integrator",
         location: "Montreal",
         what: "Doing",
         tasks: ["Markup", "Style", "HTML Email", "DOM Manipulation"],

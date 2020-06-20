@@ -9,8 +9,8 @@ class WorkLog extends Component {
                     <div className="title-group">
                         <h2 className="title">Work Log</h2>
                         <p className="subtitle font-large">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-                            Quisque volutpat mattis eros.
+                            I've learned process and discipline it takes to be a good developer
+                            while working in these great teams.
                         </p>
                     </div>
                     <div className="cards">

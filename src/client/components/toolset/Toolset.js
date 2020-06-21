@@ -48,7 +48,8 @@ class Toolset extends Component {
                                 My current toolset includes JavaScript and all the other various
                                 frameworks, libraries and technologies related to it.
                                 <br />
-                                {String.fromCharCode(9733)} == experience
+                                <span className="star">{String.fromCharCode(9733)}</span> ==
+                                experience
                             </p>
                         </div>
                         <fieldset

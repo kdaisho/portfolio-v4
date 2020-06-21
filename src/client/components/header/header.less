@@ -17,9 +17,9 @@
         align-items: center;
         display: flex;
         flex-flow: row nowrap;
-        height: 50px;
-        position: relative;
+        height: 40px;
         justify-content: space-between;
+        padding: 0 6px;
 
         @media @largerThan769 {
             height: 58px;
@@ -27,19 +27,28 @@
 
         .nav-left {
             flex: 0 0 80px;
-            height: 45px;
+            height: 35px;
+            overflow: hidden;
+
+            @media @largerThan769 {
+                height: 43px;
+            }
 
             .logo {
                 width: 54px;
+            }
 
-                svg {
+            svg {
+                transform: scale(0.4);
+                transform-origin: top left;
+
+                @media @largerThan769 {
                     transform: scale(0.5);
-                    transform-origin: top left;
                 }
+            }
 
-                path {
-                    fill: @themeColor;
-                }
+            path {
+                fill: @themeColor;
             }
         }
 
@@ -53,13 +62,24 @@
             .social-links {
                 display: flex;
                 flex-flow: row nowrap;
-                flex: 0 0 100px;
-                height: 35px;
+                flex: 0 0 120px;
                 justify-content: space-around;
-                margin: 0 10px -5px;
 
                 img {
-                    width: 32px;
+                    width: 28px;
+
+                    @media @largerThan769 {
+                        width: 35px;
+                    }
+                }
+            }
+
+            .social-each {
+                flex: 0 0 50%;
+                height: 28px;
+
+                @media @largerThan769 {
+                    height: 35px;
                 }
             }
 
@@ -80,13 +100,13 @@
 
             .menu-pane {
                 background: #fff;
-                border: 4px solid #6200ea;
+                border: 4px solid #2962ff;
                 border-width: 0 0 4px 4px;
-                height: calc(100vh - 54px);
+                height: calc(100vh - 44px);
                 max-width: 250px;
                 position: absolute;
                 right: -250px;
-                top: 54px;
+                top: 44px;
                 transition: right 0.15s ease-out;
                 width: 100%;
 

@@ -1,6 +1,6 @@
 .header {
   background: #fff;
-  border-bottom: 4px solid #6200ea;
+  border-bottom: 4px solid #2962ff;
   left: 0;
   position: fixed;
   top: 0;
@@ -14,9 +14,9 @@
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  height: 50px;
-  position: relative;
+  height: 40px;
   justify-content: space-between;
+  padding: 0 6px;
 }
 @media only screen and (min-width: 769px) {
   .header .nav {
@@ -25,17 +25,28 @@
 }
 .header .nav .nav-left {
   flex: 0 0 80px;
-  height: 45px;
+  height: 35px;
+  overflow: hidden;
+}
+@media only screen and (min-width: 769px) {
+  .header .nav .nav-left {
+    height: 43px;
+  }
 }
 .header .nav .nav-left .logo {
   width: 54px;
 }
-.header .nav .nav-left .logo svg {
-  transform: scale(0.5);
+.header .nav .nav-left svg {
+  transform: scale(0.4);
   transform-origin: top left;
 }
-.header .nav .nav-left .logo path {
-  fill: #6200ea;
+@media only screen and (min-width: 769px) {
+  .header .nav .nav-left svg {
+    transform: scale(0.5);
+  }
+}
+.header .nav .nav-left path {
+  fill: #2962ff;
 }
 .header .nav .nav-right {
   align-items: center;
@@ -47,18 +58,30 @@
 .header .nav .nav-right .social-links {
   display: flex;
   flex-flow: row nowrap;
-  flex: 0 0 100px;
-  height: 35px;
+  flex: 0 0 120px;
   justify-content: space-around;
-  margin: 0 10px -5px;
 }
 .header .nav .nav-right .social-links img {
-  width: 32px;
+  width: 28px;
+}
+@media only screen and (min-width: 769px) {
+  .header .nav .nav-right .social-links img {
+    width: 35px;
+  }
+}
+.header .nav .nav-right .social-each {
+  flex: 0 0 50%;
+  height: 28px;
+}
+@media only screen and (min-width: 769px) {
+  .header .nav .nav-right .social-each {
+    height: 35px;
+  }
 }
 .header .nav .nav-right .menu-toggle {
   background: #fff;
   border: none;
-  color: #6200ea;
+  color: #2962ff;
   padding-top: 4px;
 }
 .header .nav .nav-right .menu-toggle img {
@@ -71,13 +94,13 @@
 }
 .header .nav .nav-right .menu-pane {
   background: #fff;
-  border: 4px solid #6200ea;
+  border: 4px solid #2962ff;
   border-width: 0 0 4px 4px;
-  height: calc(100vh - 54px);
+  height: calc(100vh - 44px);
   max-width: 250px;
   position: absolute;
   right: -250px;
-  top: 54px;
+  top: 44px;
   transition: right 0.15s ease-out;
   width: 100%;
 }
@@ -113,15 +136,15 @@
 }
 @media only screen and (min-width: 769px) {
   .header .nav .nav-right .menu-pane .is-menu-item {
-    border: 3px solid #6200ea;
-    box-shadow: 4px 4px 0 #6200ea;
+    border: 3px solid #2962ff;
+    box-shadow: 4px 4px 0 #2962ff;
     font-size: 16px;
     height: 40px;
     margin: 0 6px;
     transition: translate 0.05s ease-in box-shadow 0.05s ease-in;
   }
   .header .nav .nav-right .menu-pane .is-menu-item.active {
-    box-shadow: 0 0 0 #6200ea;
+    box-shadow: 0 0 0 #2962ff;
     transform: translate(4px, 4px);
   }
 }

@@ -52,20 +52,23 @@
                 transition: box-shadow 0.05s ease-out 0s, transform 0.05s ease-out 0s;
             }
 
-            .top {
-                flex: 0 0 50%;
-                overflow: hidden;
-
-                &:hover {
+            &:hover {
+                .top {
                     .glass {
                         opacity: 0;
                     }
                 }
+            }
+
+            .top {
+                flex: 0 0 50%;
+                overflow: hidden;
 
                 .glass {
                     height: 100%;
                     width: 100%;
-                    background: rgba(98, 0, 234, 0.9);
+                    // background: rgba(98, 0, 234, 0.9);
+                    background: rgba(41, 98, 255, 0.9);
                     opacity: 1;
                     transition: opacity 0.35s;
                     position: relative;

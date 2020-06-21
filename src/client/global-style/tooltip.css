@@ -9,7 +9,7 @@
   z-index: -100;
 }
 .tooltip:before {
-  border-color: #6200ea transparent transparent transparent;
+  border-color: #2962ff transparent transparent transparent;
   border-style: solid;
   border-width: 12px 10px 0 10px;
   bottom: 100%;
@@ -19,7 +19,7 @@
   transition: all 0.6s cubic-bezier(0.85, -0.18, 0.31, 1.26), opacity 0.65s 0.5s;
 }
 .tooltip:after {
-  background: #6200ea;
+  background: #2962ff;
   border-radius: 3px;
   bottom: 31px;
   color: #fff;

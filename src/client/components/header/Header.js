@@ -15,7 +15,7 @@ const Header = ({ togglePane, openPane, scrollTo }) => (
             <div id="navRight" className="nav-right">
                 <ul className="social-links">
                     {socials.map((item) => (
-                        <li key={item.name}>
+                        <li key={item.name} className="social-each">
                             <a
                                 href={item.url}
                                 title={item.name}

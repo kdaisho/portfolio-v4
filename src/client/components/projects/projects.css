@@ -30,8 +30,8 @@
   justify-content: space-evenly;
 }
 .is-projects .cards .card {
-  border: 4px solid #6200ea;
-  box-shadow: 6px 6px 0 #6200ea;
+  border: 4px solid #2962ff;
+  box-shadow: 6px 6px 0 #2962ff;
   display: flex;
   flex-flow: column nowrap;
   height: 280px;
@@ -46,21 +46,21 @@
   }
 }
 .is-projects .cards .card.active {
-  box-shadow: 0 0 0 #6200ea;
+  box-shadow: 0 0 0 #2962ff;
   transform: translate(6px, 6px);
   transition: box-shadow 0.05s ease-out 0s, transform 0.05s ease-out 0s;
+}
+.is-projects .cards .card:hover .top .glass {
+  opacity: 0;
 }
 .is-projects .cards .card .top {
   flex: 0 0 50%;
   overflow: hidden;
 }
-.is-projects .cards .card .top:hover .glass {
-  opacity: 0;
-}
 .is-projects .cards .card .top .glass {
   height: 100%;
   width: 100%;
-  background: rgba(98, 0, 234, 0.9);
+  background: rgba(41, 98, 255, 0.9);
   opacity: 1;
   transition: opacity 0.35s;
   position: relative;
@@ -106,21 +106,21 @@
   text-align: center;
 }
 .is-projects .cards .card .bottom .text-group .title {
-  color: #6200ea;
+  color: #2962ff;
   font-size: 18px;
 }
 .is-projects .cards .card .bottom .text-group .separator {
   display: block;
-  border-bottom: 2px solid #7c4dff;
+  border-bottom: 2px solid #0091ea;
   margin: 10px auto;
   width: 35px;
 }
 .is-projects .cards .card .bottom .text-group .desc {
-  color: #6200ea;
+  color: #2962ff;
   font-size: 14px;
 }
 .is-projects .cards .card .bottom .tech-stack {
-  background: #7c4dff;
+  background: #0091ea;
   bottom: 0;
   display: flex;
   flex-flow: row wrap;
@@ -160,7 +160,7 @@
   max-height: 90vh;
 }
 .project-details.bit-style {
-  border: 2px solid #6200ea;
+  border: 2px solid #2962ff;
 }
 .project-details .top {
   height: 35vh;
@@ -172,7 +172,7 @@
   }
 }
 .project-details .bottom {
-  border-top: 2px solid #7c4dff;
+  border-top: 2px solid #0091ea;
   position: relative;
 }
 .project-details .bottom .text-group {
@@ -195,9 +195,9 @@
 }
 .project-details .bottom .text-group .links .link {
   align-items: center;
-  color: #6200ea;
+  color: #2962ff;
   background: #f6f6f6;
-  border: 1px solid #6200ea;
+  border: 1px solid #2962ff;
   display: flex;
   flex: 0 0 100%;
   flex-flow: row nowrap;
@@ -219,7 +219,7 @@
   transition: fill 0.1s linear;
 }
 .project-details .bottom .text-group .links .link:hover {
-  background: #7c4dff;
+  background: #0091ea;
   color: #fff;
   cursor: pointer;
 }
@@ -236,7 +236,7 @@
   width: 22px;
 }
 .project-details .bottom .tech-stack {
-  background: #7c4dff;
+  background: #0091ea;
   display: flex;
   flex-flow: row wrap;
   justify-self: flex-start;
@@ -244,7 +244,7 @@
 }
 .project-details .bottom .tech-stack .tech {
   color: #fff;
-  box-shadow: 3px 3px 0 #6200ea;
+  box-shadow: 3px 3px 0 #2962ff;
   font-size: 14px;
   margin: 0 4px 6px 4px;
   padding: 6px 15px;

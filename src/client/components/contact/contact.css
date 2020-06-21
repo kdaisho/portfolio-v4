@@ -19,8 +19,8 @@
 }
 .is-contact .contact-form {
   background: #fff;
-  border: 4px solid #6200ea;
-  box-shadow: 5px 5px 0 #6200ea;
+  border: 4px solid #2962ff;
+  box-shadow: 5px 5px 0 #2962ff;
   flex: 0 0 100%;
   padding: 15px 12px 20px;
   transition: transform 0.3s ease-out, opacity 0s 0.2s;
@@ -37,41 +37,41 @@
   display: none;
 }
 .is-contact .contact-form .form-group label {
-  color: #6200ea;
+  color: #2962ff;
   display: block;
   padding-bottom: 3px;
 }
 .is-contact .contact-form .form-group .text-input,
 .is-contact .contact-form .form-group textarea {
-  border: 1px solid #6200ea;
+  border: 1px solid #2962ff;
   box-sizing: border-box;
   font-size: 16px;
   width: 100%;
 }
 .is-contact .contact-form .form-group .text-input::placeholder,
 .is-contact .contact-form .form-group textarea::placeholder {
-  color: #9a51ff;
+  color: #8fadff;
 }
 .is-contact .contact-form .form-group .text-input:-ms-input-placeholder,
 .is-contact .contact-form .form-group textarea:-ms-input-placeholder {
-  color: #9a51ff;
+  color: #8fadff;
 }
 .is-contact .contact-form .form-group .text-input::-ms-input-placeholder,
 .is-contact .contact-form .form-group textarea::-ms-input-placeholder {
-  color: #9a51ff;
+  color: #8fadff;
 }
 .is-contact .contact-form .form-group .text-input {
   height: 30px;
   padding: 0 5px;
 }
 .is-contact .contact-form .form-group .text-input:focus {
-  outline: 2px solid #6200ea;
+  outline: 2px solid #2962ff;
 }
 .is-contact .contact-form .form-group textarea {
   padding: 5px;
 }
 .is-contact .contact-form .form-group textarea:focus {
-  outline: 2px solid #6200ea;
+  outline: 2px solid #2962ff;
 }
 .is-contact .contact-form .form-group .receive-copy-check {
   align-items: center;
@@ -90,13 +90,13 @@
   z-index: -99;
 }
 .is-contact .contact-form .form-group input[type="checkbox"]:checked + .dummy {
-  background: #6200ea;
+  background: #2962ff;
   color: #fff;
   font-size: 22px;
   line-height: 18px;
 }
 .is-contact .contact-form .form-group .dummy {
-  border: 1px solid #6200ea;
+  border: 1px solid #2962ff;
   height: 20px;
   margin-right: 9px;
   width: 20px;
@@ -111,7 +111,7 @@
   opacity: 0.8;
 }
 .is-contact .thank-you-note {
-  color: #6200ea;
+  color: #2962ff;
   font-size: 18px;
   left: 0;
   position: absolute;

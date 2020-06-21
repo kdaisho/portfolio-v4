@@ -7,7 +7,7 @@
   }
 }
 .is-toolset .left-side .star {
-  padding-left: 5px;
+  color: #2962ff;
 }
 .is-toolset .toolset {
   display: flex;
@@ -31,7 +31,7 @@
   padding: 20px;
 }
 .is-toolset .toolset .tool:hover {
-  background: #6200ea;
+  background: #2962ff;
   cursor: pointer;
 }
 .is-toolset .toolset .tool:hover path,
@@ -55,11 +55,11 @@
 }
 .is-toolset .toolset .tool path,
 .is-toolset .toolset .tool circle {
-  fill: #6200ea;
+  fill: #2962ff;
 }
 .is-toolset .toolset .tool .separator {
   display: block;
-  border-bottom: 2px solid #6200ea;
+  border-bottom: 2px solid #2962ff;
   margin: 12px auto;
   transition: transform 0.25s ease-out;
   width: 30px;
@@ -71,7 +71,7 @@
   transition: opacity 0.25s ease-out 0.25s;
 }
 .is-toolset .toolset .tool .tool-name {
-  color: #6200ea;
+  color: #2962ff;
   font-size: 14px;
   transform: translateY(-20px);
   transition: transform 0.25s ease-out;

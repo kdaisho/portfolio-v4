@@ -1,5 +1,5 @@
 .root * ::selection {
-  background: #6200ea;
+  background: #2962ff;
   color: #fff;
 }
 .root h1,
@@ -66,7 +66,7 @@
 }
 .root .title-group .title,
 .modal .title-group .title {
-  color: #6200ea;
+  color: #2962ff;
   font-size: 36px;
   font-weight: bold;
 }
@@ -92,9 +92,9 @@
 .modal .button {
   align-items: center;
   background: #fff;
-  border: 3px solid #6200ea;
+  border: 3px solid #2962ff;
   bottom: 0;
-  color: #6200ea;
+  color: #2962ff;
   display: flex;
   font-size: 16px;
   font-weight: bold;
@@ -115,11 +115,11 @@
 }
 .root .button.has-shadow,
 .modal .button.has-shadow {
-  box-shadow: 4px 4px 0 #6200ea;
+  box-shadow: 4px 4px 0 #2962ff;
 }
 .root .button.is-flat,
 .modal .button.is-flat {
-  background: #6200ea;
+  background: #2962ff;
   color: #fff;
 }
 .root .button.is-medium,
@@ -139,9 +139,9 @@
 .root .toggle-filter,
 .modal .toggle-filter {
   background: #fff;
-  border: 3px solid #6200ea;
+  border: 3px solid #2962ff;
   border-right: none;
-  color: #6200ea;
+  color: #2962ff;
   display: block;
   font-size: 16px;
   left: -100px;
@@ -160,7 +160,7 @@
 .root .filter-section,
 .modal .filter-section {
   background: #fff;
-  border-color: #6200ea;
+  border-color: #2962ff;
   border-width: 3px;
   padding: 15px 15px 6px;
   position: absolute;
@@ -193,7 +193,7 @@
 @media only screen and (min-width: 769px) {
   .root .filter-section legend,
   .modal .filter-section legend {
-    color: #6200ea;
+    color: #2962ff;
     display: block;
   }
 }
@@ -206,9 +206,9 @@
 .root .filter-section .filters .tag,
 .modal .filter-section .filters .tag {
   align-items: center;
-  border: 2px solid #6200ea;
-  box-shadow: 4px 4px 0 #6200ea;
-  color: #6200ea;
+  border: 2px solid #2962ff;
+  box-shadow: 4px 4px 0 #2962ff;
+  color: #2962ff;
   display: flex;
   font-size: 18px;
   flex-flow: row nowrap;
@@ -244,12 +244,12 @@
 }
 .root .filter-section .filters .tag input[type="checkbox"]:checked + .dummy,
 .modal .filter-section .filters .tag input[type="checkbox"]:checked + .dummy {
-  background: #6200ea;
+  background: #2962ff;
   transition: background 0.1s ease-in 0.12s;
 }
 .root .filter-section .filters .tag .dummy,
 .modal .filter-section .filters .tag .dummy {
-  border: 1px solid #6200ea;
+  border: 1px solid #2962ff;
   transition: background 0.1s ease-in;
   display: block;
   height: 35px;

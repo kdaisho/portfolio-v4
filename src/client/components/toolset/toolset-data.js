@@ -15,7 +15,7 @@ export const toolset = [
         id: 2,
         name: "react",
         genre: "js",
-        stars: 3
+        stars: 4
     },
     {
         id: 3,

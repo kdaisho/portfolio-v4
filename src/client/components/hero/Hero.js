@@ -14,9 +14,10 @@ class Hero extends Component {
     };
 
     componentDidMount() {
+        this._width = window.innerWidth;
         setTimeout(() => this.setState({ animation: false }), 5000);
-        window.addEventListener("load", this.handleResize, this.options);
-        window.addEventListener("resize", this.handleResize, this.options);
+        addEventListener("load", this.handleResize, this.options);
+        addEventListener("resize", this.handleResize, this.options);
     }
 
     componentWillUnmount() {
@@ -24,11 +25,10 @@ class Hero extends Component {
         window.removeEventListener("resize", this.handleResize, this.options);
     }
 
-    handleResize = () =>
-        this.setState({
-            h: window.innerHeight,
-            w: window.innerWidth
-        });
+    handleResize = () => {
+        this.forceUpdate();
+        this._width = window.innerWidth;
+    };
 
     renderGreetings = () => {
         const years = new Date().getFullYear() - 2014;
@@ -53,15 +53,16 @@ class Hero extends Component {
                         <div className="typewriter">
                             <h1>Who am I?</h1>
                         </div>
+                        <Link to="manga">Manga</Link>
                     </div>
                     <div className="right-side" style={{ backgroundImage: `url(${cat})` }}>
                         <div
                             className="sequence"
                             style={{ background: `url(${catAction}) 0 0 no-repeat` }}
                         ></div>
-                        {this.state.w >= 769 && this.renderGreetings("red")}
+                        {this._width >= 769 && this.renderGreetings()}
                     </div>
-                    {this.state.w <= 768 && this.renderGreetings("green")}
+                    {this._width <= 768 && this.renderGreetings()}
                 </div>
             </section>
         );

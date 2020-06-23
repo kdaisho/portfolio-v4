@@ -23,6 +23,16 @@
         font-family: "Quicksand", sans-serif;
     }
 
+    // .component-wrap {
+    //     overflow: hidden;
+    //     position: relative;
+    // }
+
+    .component-wrap {
+        overflow: hidden;
+        position: relative;
+    }
+
     .section {
         padding: 50px 0;
 
@@ -43,6 +53,20 @@
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
+        }
+    }
+
+    .backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        height: 100vh;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 40;
+
+        @media @largerThan769 {
+            display: none;
         }
     }
 

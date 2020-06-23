@@ -106,12 +106,6 @@
   width: 0;
   white-space: nowrap;
 }
-.is-hero .cta-match {
-  display: flex;
-  flex-flow: row nowrap;
-  margin: 20px 0;
-  justify-content: center;
-}
 @keyframes slideTextIn {
   0% {
     opacity: 1;

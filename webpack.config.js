@@ -1,5 +1,6 @@
 const path = require("path");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const webpack = require("webpack");
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -26,7 +27,7 @@ module.exports = {
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg|jpe?g)$/,
-                loader: "url-loader?limit=100000"
+                loader: "url-loader?limit=4000"
             }
         ]
     },
@@ -44,6 +45,11 @@ module.exports = {
     },
     plugins: [
         // new BundleAnalyzerPlugin(),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify("production")
+            }
+        }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPattern: ["./dist/*"]
         }),

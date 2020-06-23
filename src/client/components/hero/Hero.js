@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
 import cat from "../../images/hero/cat-body-opt.svg";
 import catAction from "../../images/hero/cat-actions-opt.svg";
 
@@ -53,7 +52,6 @@ class Hero extends Component {
                         <div className="typewriter">
                             <h1>Who am I?</h1>
                         </div>
-                        <Link to="manga">Manga</Link>
                     </div>
                     <div className="right-side" style={{ backgroundImage: `url(${cat})` }}>
                         <div

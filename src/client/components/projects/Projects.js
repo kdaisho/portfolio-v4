@@ -168,7 +168,7 @@ class Projects extends Component {
                                     <div
                                         className="top"
                                         style={{
-                                            background: `#333 url(${selectedProject.hero})`,
+                                            background: `#666 url(${selectedProject.hero})`,
                                             backgroundSize: "cover"
                                         }}
                                     ></div>

@@ -1,6 +1,5 @@
 .header {
-  background: #fff;
-  border-bottom: 4px solid #2962ff;
+  background: #2962ff;
   left: 0;
   position: fixed;
   top: 0;
@@ -14,7 +13,7 @@
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  height: 40px;
+  height: 48px;
   justify-content: space-between;
   padding: 0 6px;
 }
@@ -46,7 +45,7 @@
   }
 }
 .header .nav .nav-left path {
-  fill: #2962ff;
+  fill: #fff;
 }
 .header .nav .nav-right {
   align-items: center;
@@ -58,8 +57,19 @@
 .header .nav .nav-right .social-links {
   display: flex;
   flex-flow: row nowrap;
-  flex: 0 0 120px;
+  flex: 0 0 100px;
   justify-content: space-around;
+  margin-right: 5px;
+}
+@media only screen and (min-width: 769px) {
+  .header .nav .nav-right .social-links {
+    flex: 0 0 110px;
+    margin-right: 15px;
+  }
+}
+.header .nav .nav-right .social-links a {
+  display: block;
+  text-align: center;
 }
 .header .nav .nav-right .social-links img {
   width: 28px;
@@ -79,7 +89,7 @@
   }
 }
 .header .nav .nav-right .menu-toggle {
-  background: #fff;
+  background: transparent;
   border: none;
   color: #2962ff;
   padding-top: 4px;
@@ -93,14 +103,14 @@
   }
 }
 .header .nav .nav-right .menu-pane {
-  background: #fff;
+  background: #2962ff;
   border: 4px solid #2962ff;
   border-width: 0 0 4px 4px;
-  height: calc(100vh - 44px);
+  height: calc(100vh - 48px);
   max-width: 250px;
   position: absolute;
   right: -250px;
-  top: 44px;
+  top: 48px;
   transition: right 0.15s ease-out;
   width: 100%;
 }
@@ -136,8 +146,9 @@
 }
 @media only screen and (min-width: 769px) {
   .header .nav .nav-right .menu-pane .is-menu-item {
-    border: 3px solid #2962ff;
-    box-shadow: 4px 4px 0 #2962ff;
+    border: 3px solid #001f76;
+    box-shadow: 4px 4px 0 #001f76;
+    color: #001f76;
     font-size: 16px;
     height: 40px;
     margin: 0 6px;

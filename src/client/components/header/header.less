@@ -1,8 +1,9 @@
 @import "../../global-style/variables";
 
 .header {
-    background: #fff;
-    border-bottom: 4px solid @themeColor;
+    // background: #fff;
+    background: @themeColor;
+    // border-bottom: 4px solid @themeColor;
     left: 0;
     position: fixed;
     top: 0;
@@ -17,7 +18,8 @@
         align-items: center;
         display: flex;
         flex-flow: row nowrap;
-        height: 40px;
+        // height: 40px;
+        height: 48px;
         justify-content: space-between;
         padding: 0 6px;
 
@@ -48,7 +50,8 @@
             }
 
             path {
-                fill: @themeColor;
+                // fill: @themeColor;
+                fill: #fff;
             }
         }
 
@@ -62,8 +65,19 @@
             .social-links {
                 display: flex;
                 flex-flow: row nowrap;
-                flex: 0 0 120px;
+                flex: 0 0 100px;
                 justify-content: space-around;
+                margin-right: 5px;
+
+                @media @largerThan769 {
+                    flex: 0 0 110px;
+                    margin-right: 15px;
+                }
+
+                a {
+                    display: block;
+                    text-align: center;
+                }
 
                 img {
                     width: 28px;
@@ -84,7 +98,7 @@
             }
 
             .menu-toggle {
-                background: #fff;
+                background: transparent;
                 border: none;
                 color: @themeColor;
                 padding-top: 4px;
@@ -99,14 +113,15 @@
             }
 
             .menu-pane {
-                background: #fff;
+                // background: #fff;
+                background: @themeColor;
                 border: 4px solid #2962ff;
                 border-width: 0 0 4px 4px;
-                height: calc(100vh - 44px);
+                height: calc(100vh - 48px);
                 max-width: 250px;
                 position: absolute;
                 right: -250px;
-                top: 44px;
+                top: 48px;
                 transition: right 0.15s ease-out;
                 width: 100%;
 
@@ -144,8 +159,9 @@
                     white-space: nowrap;
 
                     @media @largerThan769 {
-                        border: 3px solid @themeColor;
-                        box-shadow: 4px 4px 0 @themeColor;
+                        border: 3px solid darken(@themeColor, 35%);
+                        box-shadow: 4px 4px 0 darken(@themeColor, 35%);
+                        color: darken(@themeColor, 35%);
                         font-size: @font-medium;
                         height: 40px;
                         margin: 0 6px;

@@ -3,6 +3,7 @@ import { socials, menuItems } from "./header-data";
 import { Logo } from "../../svg/Icons";
 import menuDots from "../../images/nav/menu-dots-opt.svg";
 import menuClose from "../../images/nav/menu-close-opt.svg";
+import "./header.css";
 
 const Header = ({ togglePane, openPane, scrollTo }) => (
     <header className={`header ${openPane === "menu" ? "high-z-index" : ""}`}>

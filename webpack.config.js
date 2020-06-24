@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -22,7 +21,15 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                use: [
+                    {
+                        loader: "style-loader",
+                        options: { injectType: "singletonStyleTag" }
+                    },
+                    {
+                        loader: "css-loader"
+                    }
+                ]
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg|jpe?g)$/,
@@ -44,11 +51,6 @@ module.exports = {
     },
     plugins: [
         // new BundleAnalyzerPlugin(),
-        new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: JSON.stringify("production")
-            }
-        }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPattern: ["./dist/*"]
         }),

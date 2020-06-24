@@ -1,5 +1,6 @@
 import React, { Component, createRef } from "react";
 import { Logo } from "../../svg/Icons";
+import "./footer.css";
 
 class Footer extends Component {
     constructor(props) {

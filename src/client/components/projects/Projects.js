@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { projects, filterItems } from "./projects-data.js";
 import Modal from "../modal/Modal";
 import { Desktop, Github } from "../../svg/Icons";
+import "./projects.css";
 
 class Projects extends Component {
     state = {

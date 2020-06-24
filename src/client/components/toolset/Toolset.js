@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { toolset, filterItems } from "./toolset-data.js";
 import icons from "../../svg/devIcons";
+import "./toolset.css";
 
 class Toolset extends Component {
     state = {

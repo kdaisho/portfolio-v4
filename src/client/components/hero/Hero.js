@@ -5,7 +5,8 @@ import "./hero.css";
 
 class Hero extends Component {
     state = {
-        animation: true
+        animation: true,
+        w: window.innerWidth
     };
 
     options = {
@@ -14,7 +15,6 @@ class Hero extends Component {
     };
 
     componentDidMount() {
-        this._width = window.innerWidth;
         setTimeout(() => this.setState({ animation: false }), 5000);
         addEventListener("load", this.handleResize, this.options);
         addEventListener("resize", this.handleResize, this.options);
@@ -26,8 +26,7 @@ class Hero extends Component {
     }
 
     handleResize = () => {
-        this.forceUpdate();
-        this._width = window.innerWidth;
+        this.setState({ w: window.innerWidth });
     };
 
     renderGreetings = () => {
@@ -59,9 +58,9 @@ class Hero extends Component {
                             className="sequence"
                             style={{ background: `url(${catAction}) 0 0 no-repeat` }}
                         ></div>
-                        {this._width >= 769 && this.renderGreetings()}
+                        {this.state.w >= 769 && this.renderGreetings()}
                     </div>
-                    {this._width <= 768 && this.renderGreetings()}
+                    {this.state.w <= 768 && this.renderGreetings()}
                 </div>
             </section>
         );

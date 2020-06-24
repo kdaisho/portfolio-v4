@@ -14,7 +14,7 @@
 }
 @media only screen and (min-width: 769px) {
   #modal .backdrop {
-    border: 15px solid #0277bd;
+    border: 15px solid #2962ff;
   }
 }
 #modal .backdrop .modal-self {

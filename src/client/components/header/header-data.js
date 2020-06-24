@@ -4,7 +4,7 @@ import githubIcon from "../../images/nav/github-opt.svg";
 const socials = [
     {
         src: linkedinIcon,
-        name: "linkedinHub",
+        name: "linkedin",
         url: "https://www.linkedin.com/in/daisho-komiyama-6766657a/"
     },
     {

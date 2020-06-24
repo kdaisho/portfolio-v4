@@ -73,9 +73,8 @@ class Projects extends Component {
                         <div className="title-group has-filters">
                             <h2 className="title">Side Projects</h2>
                             <p className="subtitle font-large">
-                                I get my hands dirty with things I don't have a chance to do in my
-                                day job. There are so many things to learn in building and launching
-                                a side project. I don't wanna miss any of it.
+                                Getting my hands dirty with technologies I don't have a chance to do
+                                in my day job helps me stay in the current.
                             </p>
                         </div>
                         <fieldset

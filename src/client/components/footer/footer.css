@@ -17,15 +17,43 @@
 .is-footer .content-wrap .right p {
   color: #fff;
 }
-.is-footer .content-wrap .logo {
-  height: 44px;
-  margin-left: auto;
-  overflow: hidden;
-  width: 54px;
+.is-footer .content-wrap .left {
+  flex: 0 0 100%;
+  text-align: center;
 }
-.is-footer .content-wrap .logo svg {
+@media only screen and (min-width: 600px) {
+  .is-footer .content-wrap .left {
+    flex: 0 0 50%;
+    text-align: left;
+  }
+}
+.is-footer .content-wrap .right {
+  display: flex;
+  flex: 0 0 100%;
+  height: 44px;
+  justify-content: center;
+  margin-top: 10px;
+  overflow: hidden;
+}
+@media only screen and (min-width: 600px) {
+  .is-footer .content-wrap .right {
+    flex: 0 0 50%;
+    justify-content: flex-end;
+  }
+}
+.is-footer .content-wrap .right svg {
   transform: scale(0.5);
-  transform-origin: top left;
+  transform-origin: top right;
+}
+.is-footer .content-wrap .sns a {
+  display: inline-block;
+}
+.is-footer .content-wrap .sns a:first-child {
+  margin-right: 18px;
+}
+.is-footer .content-wrap .sns .linkedin,
+.is-footer .content-wrap .sns .github {
+  width: 35px;
 }
 .is-footer.draw path {
   stroke: #fff;

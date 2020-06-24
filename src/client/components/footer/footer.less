@@ -20,15 +20,47 @@
             }
         }
 
-        .logo {
+        .left {
+            flex: 0 0 100%;
+            text-align: center;
+
+            @media @largerThan600 {
+                flex: 0 0 50%;
+                text-align: left;
+            }
+        }
+
+        .right {
+            display: flex;
+            flex: 0 0 100%;
             height: 44px;
-            margin-left: auto;
+            justify-content: center;
+            margin-top: 10px;
             overflow: hidden;
-            width: 54px;
+
+            @media @largerThan600 {
+                flex: 0 0 50%;
+                justify-content: flex-end;
+            }
 
             svg {
                 transform: scale(0.5);
-                transform-origin: top left;
+                transform-origin: top right;
+            }
+        }
+
+        .sns {
+            a {
+                display: inline-block;
+
+                &:first-child {
+                    margin-right: 18px;
+                }
+            }
+
+            .linkedin,
+            .github {
+                width: 35px;
             }
         }
     }

@@ -1,5 +1,6 @@
 import React, { Component, createRef } from "react";
 import { Logo } from "../../svg/Icons";
+import { socials } from "../header/header-data";
 import "./footer.css";
 
 class Footer extends Component {
@@ -37,7 +38,20 @@ class Footer extends Component {
                         </p>
                         <p>Montreal, QC</p>
                     </div>
-                    <div className="logo right">
+                    <div className="right">
+                        <div className="sns">
+                            {socials.map((item) => (
+                                <a
+                                    key={item.name}
+                                    href={item.url}
+                                    title={item.name}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src={item.src} className={item.name} alt={item.name} />
+                                </a>
+                            ))}
+                        </div>
                         <Logo />
                     </div>
                 </div>

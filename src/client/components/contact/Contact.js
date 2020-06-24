@@ -59,7 +59,7 @@ class Contact extends Component {
                         <p className="subtitle font-large">
                             Hopefully you found some of things that I've done over the years
                             interesting, and maybe hopefully that helps you too. I'll be in touch
-                            with you when I hear from you for your problems.
+                            with you when I hear from you.
                         </p>
                     </div>
                     <div className="right-side">

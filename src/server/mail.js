@@ -12,6 +12,7 @@ const transport = nodemailer.createTransport({
 const myEmail = process.env.MAIL_DESTINATION;
 
 exports.sendMessage = (req, res) => {
+    // return false;
     let dest = "";
     let bcc = "";
 
@@ -41,8 +42,8 @@ exports.sendMessage = (req, res) => {
         to: dest,
         bcc,
         subject: req.body.requestCopy
-            ? `Copy: Message from ${sender.name}`
-            : `Message from ${sender.name}`,
+            ? `Copy: Message from ${sender.name} via portfolio`
+            : `Message from ${sender.name} via portfolio`,
         text: `Name: ${sender.name}. Content: ${sender.msg} Email: ${sender.email}`,
         html: `<p>Name: ${sender.name}</p><br><p>Message: ${sender.msg}</p><br><p>Email: ${sender.email}</p>`
     };

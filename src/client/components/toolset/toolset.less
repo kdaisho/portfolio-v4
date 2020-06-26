@@ -28,10 +28,14 @@
         }
 
         .tool {
-            flex: 0 0 20%;
+            flex: 0 0 50%;
             height: 165px;
             text-align: center;
             padding: 20px;
+
+            @media @largerThan600 {
+                flex: 0 0 20%;
+            }
 
             &:hover {
                 background: @themeColor;

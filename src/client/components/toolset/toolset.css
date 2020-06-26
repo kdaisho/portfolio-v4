@@ -25,10 +25,15 @@
   }
 }
 .is-toolset .toolset .tool {
-  flex: 0 0 20%;
+  flex: 0 0 50%;
   height: 165px;
   text-align: center;
   padding: 20px;
+}
+@media only screen and (min-width: 600px) {
+  .is-toolset .toolset .tool {
+    flex: 0 0 20%;
+  }
 }
 .is-toolset .toolset .tool:hover {
   background: #2962ff;

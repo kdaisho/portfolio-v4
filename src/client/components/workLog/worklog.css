@@ -93,6 +93,7 @@
 .is-education .is-front,
 .is-education .is-back {
   border: 4px solid #000;
+  -webkit-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
   transition: transform 0.3s linear 0.15s;

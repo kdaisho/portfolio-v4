@@ -35,7 +35,6 @@ class Contact extends Component {
         });
         const result = await response.json();
         this.setState({ hasSent: true });
-        console.log("DONE:::", result);
     };
 
     handleChange = (event) => {

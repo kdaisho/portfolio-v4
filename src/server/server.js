@@ -10,6 +10,7 @@ const app = express();
 app.get("*.js", function (req, res, next) {
     req.url = req.url + ".gz";
     res.set("Content-Encoding", "gzip");
+    res.set("Content-type", "application/javascript");
     next();
 });
 app.use(express.static("dist"));

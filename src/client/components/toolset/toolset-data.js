@@ -31,72 +31,78 @@ export const toolset = [
     },
     {
         id: 5,
+        name: "handlebars",
+        genre: "markup",
+        stars: 4
+    },
+    {
+        id: 6,
         name: "css",
         genre: "markup",
         stars: 5
     },
     {
-        id: 6,
+        id: 7,
         name: "sass",
         genre: "markup",
         stars: 5
     },
     {
-        id: 7,
+        id: 8,
         name: "less",
         genre: "markup",
         stars: 5
     },
     {
-        id: 8,
+        id: 9,
         name: "photoshop",
         genre: "graphicsEditor",
         stars: 4
     },
     {
-        id: 9,
+        id: 10,
         name: "gimp",
         genre: "graphicsEditor",
         stars: 3
     },
     {
-        id: 10,
+        id: 11,
         name: "inkscape",
         genre: "graphicsEditor",
         stars: 3
     },
     {
-        id: 11,
+        id: 12,
         name: "git",
         genre: "tools",
         stars: 4
     },
     {
-        id: 12,
+        id: 13,
         name: "webpack",
         genre: "tools",
         stars: 2
     },
     {
-        id: 13,
+        id: 14,
         name: "gulp",
         genre: "tools",
         stars: 3
     },
     {
-        id: 14,
+        id: 15,
         name: "mongodb",
         genre: "database",
-        stars: 1
+        stars: 2
     },
     {
-        id: 15,
+        id: 16,
         name: "ubuntu",
         genre: "platform",
         stars: 4
     },
     {
-        id: 16,
+        id: 17,
         name: "vim",
         genre: "textEditor",
         stars: 4

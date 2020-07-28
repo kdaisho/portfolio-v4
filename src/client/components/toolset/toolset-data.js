@@ -63,7 +63,7 @@ export const toolset = [
         id: 10,
         name: "photoshop",
         genre: "graphicsEditor",
-        stars: 4
+        stars: 3
     },
     {
         id: 11,

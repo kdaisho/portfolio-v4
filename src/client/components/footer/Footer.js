@@ -4,10 +4,8 @@ import { socials } from "../header/header-data";
 import "./footer.css";
 
 class Footer extends Component {
-    constructor(props) {
-        super(props);
-        this.refFooter = createRef();
-    }
+
+	refFooter = createRef();
 
     componentDidMount() {
         document.addEventListener("scroll", this.drawLogo, {

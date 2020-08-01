@@ -73,8 +73,8 @@ class Projects extends Component {
                         <div className="title-group has-filters">
                             <h2 className="title">Side Projects</h2>
                             <p className="subtitle font-large">
-                                Getting my hands dirty with technologies I don't have a chance to do
-                                in my day job helps me stay in the current.
+                                Getting my hands dirty with technologies I don't have a chance to
+                                work with in my day job helps me stay up to date.
                             </p>
                         </div>
                         <fieldset
@@ -139,21 +139,6 @@ class Projects extends Component {
                                             <span className="separator"></span>
                                             <p className="desc">{project.subtitle}</p>
                                         </div>
-                                        <ul className="tech-stack">
-                                            {project.stack.map((tech) => {
-                                                return (
-                                                    tech !== "live" && (
-                                                        <li
-                                                            key={tech}
-                                                            className={`tooltip ${tech}`}
-                                                            data-tip={tech}
-                                                        >
-                                                            {tech.slice(0, 1).toUpperCase()}
-                                                        </li>
-                                                    )
-                                                );
-                                            })}
-                                        </ul>
                                     </div>
                                 </div>
                             ))}

@@ -25,7 +25,7 @@ export const projects = [
         title: "JavaScriptBest",
         subtitle: "Online Course Review App",
         description:
-            "JavaScriptBest can keep your overviews of favourite online couses in one place. Built with only JavaScript from UI to backend while providing great performance thans to nginx.",
+            "JavaScriptBest can keep your overviews of favourite online couses in one place. Built with only JavaScript from UI to backend while providing great performance thanks to nginx.",
         stack: ["nodejs", "vanillajs", "live", "mongodb"],
         hero: jsbestHero,
         thumb: jsbestThumb,
@@ -73,7 +73,7 @@ export const projects = [
         title: "Email Builder",
         subtitle: "HTML email builder for non-coders",
         description:
-            "Email Builder was originally built just for myself in order to spend less time on emails more time on site updates. It reduces time from 50 minutes to 7 minutes on average per single email. Email Builder also enables non-coders build HTML email all by themselves. Built with Angular 4x.",
+            "Email Builder was originally built just for myself in order to spend less time on building HTML emails and more time on site updates. It reduces time from 50 minutes to 7 minutes on average per single email. Email Builder also enables non-coders build HTML email all by themselves. Built with Angular 4x.",
         stack: ["angular", "regex"],
         hero: ebHero,
         thumb: ebThumb,
@@ -83,7 +83,7 @@ export const projects = [
     {
         id: 5,
         title: "Suicide in Japan",
-        subtitle: "Beatiful visualization for beautiful country",
+        subtitle: "Data visualization for a Halloween project",
         description:
             "Suicide in Japan is an infographic inspired by Japan's high suicide rate. Built with plain HTML and CSS Grid.",
         stack: ["cssGrid", "live"],
@@ -106,7 +106,7 @@ export const projects = [
     },
     {
         id: 7,
-        title: "Global Countdown Timer",
+        title: "Global Countdown Timer Widget",
         subtitle: "Everybody ends at the same time anywhere on earth",
         description:
             "Global Countdown Timer allows you to implement a countdown widget that displays the same hours in different time zones without server setup. Implementation is a walk in the park to all level of Front-end devs.",

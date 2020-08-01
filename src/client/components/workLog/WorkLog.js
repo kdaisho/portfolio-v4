@@ -10,7 +10,7 @@ class WorkLog extends Component {
                     <div className="title-group">
                         <h2 className="title">Work Log</h2>
                         <p className="subtitle font-large">
-                            I've learned process and discipline it takes to be an effective
+                            I've learned processes and best practices it takes to be an effective
                             developer while working in these great teams.
                         </p>
                     </div>

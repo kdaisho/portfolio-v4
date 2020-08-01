@@ -57,8 +57,9 @@ class Contact extends Component {
                         <h2 className="title">Contact</h2>
                         <p className="subtitle font-large">
                             Hopefully you found some of things that I've done over the years
-                            interesting, and maybe hopefully that helps you too. I'll be in touch
-                            with you when I hear from you.
+                            interesting and useful.
+                            <br />
+                            I'll be in touch with you when I hear from you.
                         </p>
                     </div>
                     <div className="right-side">
@@ -81,7 +82,6 @@ class Contact extends Component {
                                 <input
                                     className="text-input"
                                     type="text"
-                                    placeholder="Name"
                                     name="name"
                                     value={this.state.name}
                                     onChange={this.handleChange}
@@ -94,7 +94,6 @@ class Contact extends Component {
                                 <input
                                     className="text-input"
                                     type="text"
-                                    placeholder="Address"
                                     name="address"
                                     value={this.state.address}
                                     onChange={this.handleChange}
@@ -105,7 +104,6 @@ class Contact extends Component {
                                 <input
                                     className="text-input"
                                     type="email"
-                                    placeholder="Email"
                                     name="email"
                                     value={this.state.email}
                                     onChange={this.handleChange}
@@ -116,7 +114,6 @@ class Contact extends Component {
                             <div className="form-group">
                                 <label htmlFor="message">Message</label>
                                 <textarea
-                                    placeholder="Message"
                                     name="message"
                                     rows="6"
                                     value={this.state.message}

@@ -25,7 +25,7 @@ export const toolset = [
     },
     {
         id: 4,
-        name: "angualr",
+        name: "angular",
         genre: "js",
         stars: 4
     },

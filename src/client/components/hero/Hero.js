@@ -35,10 +35,10 @@ class Hero extends Component {
             <div className={`greetings-wrap ${this.state.animation ? "slide" : ""}`}>
                 <div className="clip-path"></div>
                 <p className="greetings">
-                    Hi, my name’s Daisho Komiyama front-end developer based in Montreal. I’ve been a
-                    developer for about 6 years. Passionate about solving problems and building
-                    tools that makes our lives easier. I'm not the best coder but I'm an effective
-                    developer who ships code regularly.
+                    Hi, my name’s Daisho Komiyama and I'm a front-end developer based in Montreal.
+                    I’ve been a developer for about 6 years. Passionate about solving problems and
+                    building tools that makes our lives easier. I'm an effective developer who ships
+                    code regularly.
                 </p>
             </div>
         );

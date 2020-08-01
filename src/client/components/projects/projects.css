@@ -31,10 +31,9 @@
 }
 .is-projects .cards .card {
   border: 4px solid #2962ff;
-  box-shadow: 6px 6px 0 #2962ff;
+  box-shadow: 5px 5px 0 #2962ff;
   display: flex;
   flex-flow: column nowrap;
-  height: 280px;
   margin: 12px;
   max-width: 350px;
   transition: box-shadow 0.05s ease-out 0.1s, transform 0.05s ease-out 0.1s;
@@ -55,12 +54,13 @@
 }
 .is-projects .cards .card .top {
   flex: 0 0 50%;
+  height: 130px;
   overflow: hidden;
 }
 .is-projects .cards .card .top .glass {
   height: 100%;
   width: 100%;
-  background: rgba(41, 98, 255, 0.9);
+  background: rgba(41, 98, 255, 0.75);
   opacity: 1;
   transition: opacity 0.35s;
   position: relative;
@@ -97,7 +97,7 @@
   flex: 0 0 50%;
   flex-flow: column nowrap;
   justify-content: space-between;
-  padding: 8px 0 5px;
+  padding: 6px 0 12px;
   position: relative;
   user-select: none;
 }

@@ -46,8 +46,8 @@ class Toolset extends Component {
                         <div className="title-group has-filters">
                             <h2 className="title">Toolset</h2>
                             <p className="subtitle font-large">
-                                My current toolset includes JavaScript and all the other various
-                                frameworks, libraries and technologies related to it.
+                                My current toolset includes JavaScript and other various frameworks,
+                                libraries and technologies related to it.
                                 <br />
                                 <span className="star">{String.fromCharCode(9733)}</span> ==
                                 experience

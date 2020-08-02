@@ -9,9 +9,9 @@ const Header = ({ togglePane, openPane, scrollTo }) => (
     <header className={`header ${openPane === "menu" ? "high-z-index" : ""}`}>
         <div className="content-wrap nav">
             <div className="nav-left">
-                <div className="logo">
+                <button className="logo" onClick={() => scrollTo("pageTop")}>
                     <Logo />
-                </div>
+                </button>
             </div>
             <div id="navRight" className="nav-right">
                 <ul className="social-links">

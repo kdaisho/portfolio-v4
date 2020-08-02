@@ -37,7 +37,19 @@
             }
 
             .logo {
+                background: none;
+                border: none;
+                padding: 0;
                 width: 54px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:focus,
+                &:active {
+                    outline: none;
+                }
             }
 
             svg {

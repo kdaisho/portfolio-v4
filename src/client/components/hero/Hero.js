@@ -46,7 +46,7 @@ class Hero extends Component {
 
     render() {
         return (
-            <section className="is-hero">
+            <section id="pageTop" className="is-hero">
                 <div className="content-wrap is-side-by-side">
                     <div className="left-side">
                         <div className="typewriter">

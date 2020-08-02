@@ -55,6 +55,22 @@
   flex-flow: row wrap;
   justify-content: center;
 }
+.root .backdrop,
+.modal .backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 40;
+}
+@media only screen and (min-width: 769px) {
+  .root .backdrop,
+  .modal .backdrop {
+    display: none;
+  }
+}
 .root .title-group,
 .modal .title-group {
   padding-bottom: 50px;

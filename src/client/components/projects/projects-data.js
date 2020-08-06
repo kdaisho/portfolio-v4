@@ -26,7 +26,7 @@ export const projects = [
         subtitle: "Online Course Review App",
         description:
             "JavaScriptBest can keep your overviews of favourite online couses in one place. Built with only JavaScript from UI to backend while providing great performance thanks to nginx.",
-        stack: ["nodejs", "vanillajs", "live", "mongodb"],
+        stack: ["nodejs", "vanillajs", "sass", "live", "mongodb"],
         hero: jsbestHero,
         thumb: jsbestThumb,
         url: "https://javascriptbest.com",

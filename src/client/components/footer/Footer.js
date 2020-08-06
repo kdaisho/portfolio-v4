@@ -1,61 +1,58 @@
-import React, { Component, createRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Logo } from "../../svg/Icons";
 import { socials } from "../header/header-data";
 import "./footer.css";
 
-class Footer extends Component {
+const Footer = () => {
+    const refFooter = useRef();
 
-	refFooter = createRef();
-
-    componentDidMount() {
-        document.addEventListener("scroll", this.drawLogo, {
+    useEffect(() => {
+        document.addEventListener("scroll", drawLogo, {
             passive: true
         });
-    }
+    });
 
-    drawLogo = () => {
-        if (this.refFooter.current.getBoundingClientRect().top + 100 <= window.innerHeight) {
-            this.refFooter.current.classList.add("draw");
-            document.removeEventListener("scroll", this.drawLogo);
+    const drawLogo = () => {
+        if (refFooter.current.getBoundingClientRect().top + 100 <= window.innerHeight) {
+            refFooter.current.classList.add("draw");
+            document.removeEventListener("scroll", drawLogo);
         }
     };
 
-    getCurrentYear = () => {
+    const getCurrentYear = () => {
         const d = new Date();
         return d.getFullYear();
     };
 
-    render() {
-        return (
-            <footer className="is-footer" ref={this.refFooter}>
-                <div className="content-wrap">
-                    <div className="left">
-                        <p className="copyright">
-                            {" "}
-                            &copy; Copyright {this.getCurrentYear()} daishodesign.com
-                        </p>
-                        <p>Montreal, QC</p>
-                    </div>
-                    <div className="right">
-                        <div className="sns">
-                            {socials.map((item) => (
-                                <a
-                                    key={item.name}
-                                    href={item.url}
-                                    title={item.name}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img src={item.src} className={item.name} alt={item.name} />
-                                </a>
-                            ))}
-                        </div>
-                        <Logo />
-                    </div>
+    return (
+        <footer className="is-footer" ref={refFooter}>
+            <div className="content-wrap">
+                <div className="left">
+                    <p className="copyright">
+                        {" "}
+                        &copy; Copyright {getCurrentYear()} daishodesign.com
+                    </p>
+                    <p>Montreal, QC</p>
                 </div>
-            </footer>
-        );
-    }
-}
+                <div className="right">
+                    <div className="sns">
+                        {socials.map((item) => (
+                            <a
+                                key={item.name}
+                                href={item.url}
+                                title={item.name}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img src={item.src} className={item.name} alt={item.name} />
+                            </a>
+                        ))}
+                    </div>
+                    <Logo />
+                </div>
+            </div>
+        </footer>
+    );
+};
 
 export default Footer;

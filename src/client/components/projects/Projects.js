@@ -4,23 +4,10 @@ import Modal from "../modal/Modal";
 import { Desktop, Github } from "../../svg/Icons";
 import "./projects.css";
 
-const Projects = (props) => {
+const Projects = ({ openPane, togglePane, handleFilterChange }) => {
     const [filterTerms, setFilterTerms] = useState([]);
     const [selectedProject, setSelectedProject] = useState({});
     const [activeCardId, setActiveCardId] = useState("");
-
-    const handleChange = (tech) => {
-        const copy = [...filterTerms];
-        if (event.target.checked) {
-            setFilterTerms((prevFilterTerms) => [...prevFilterTerms, tech]);
-        } else {
-            const index = filterTerms.indexOf(tech);
-            if (index >= 0) {
-                copy.splice(index, 1);
-                setFilterTerms(copy);
-            }
-        }
-    };
 
     const isIncludes = (stack, filterTerms) => {
         let counter = 0;
@@ -56,13 +43,11 @@ const Projects = (props) => {
                         </p>
                     </div>
                     <fieldset
-                        className={`filter-section ${
-                            props.openPane === "projects" ? "active" : ""
-                        }`}
+                        className={`filter-section ${openPane === "projects" ? "active" : ""}`}
                     >
                         <button
                             className="toggle-filter outline-button"
-                            onClick={() => props.togglePane("projects")}
+                            onClick={() => togglePane("projects")}
                         >
                             Filters
                         </button>
@@ -78,7 +63,13 @@ const Projects = (props) => {
                                     <input
                                         type="checkbox"
                                         name={item.tech}
-                                        onChange={() => handleChange(item.tech)}
+                                        onChange={() =>
+                                            handleFilterChange(
+                                                item.tech,
+                                                filterTerms,
+                                                setFilterTerms
+                                            )
+                                        }
                                     />
                                     <span className="dummy"></span>
                                     {item.name}

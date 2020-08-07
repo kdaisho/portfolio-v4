@@ -22,14 +22,35 @@ const App = () => {
         document.getElementById(destinationId).scrollIntoView({ behavior: "smooth" });
     };
 
+    const handleFilterChange = (value, filterWords, setter) => {
+        const copy = [...filterWords];
+        if (event.target.checked) {
+            setter((prevFilterWords) => [...prevFilterWords, value]);
+        } else {
+            const index = filterWords.indexOf(value);
+            if (index >= 0) {
+                copy.splice(index, 1);
+                setter(copy);
+            }
+        }
+    };
+
     return (
         <div className="component-wrap">
             {openPane && <div className="backdrop" onClick={() => togglePane(openPane)}></div>}
             <Header togglePane={togglePane} openPane={openPane} scrollTo={scrollTo} />
             <Hero />
             <WorkLog />
-            <Toolset togglePane={togglePane} openPane={openPane} />
-            <Projects togglePane={togglePane} openPane={openPane} />
+            <Toolset
+                togglePane={togglePane}
+                openPane={openPane}
+                handleFilterChange={handleFilterChange}
+            />
+            <Projects
+                togglePane={togglePane}
+                openPane={openPane}
+                handleFilterChange={handleFilterChange}
+            />
             <Contact />
             <Footer />
         </div>

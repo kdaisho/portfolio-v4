@@ -3,21 +3,8 @@ import { toolset, filterItems } from "./toolset-data.js";
 import icons from "../../svg/devIcons";
 import "./toolset.css";
 
-const Toolset = ({ togglePane, openPane }) => {
+const Toolset = ({ openPane, togglePane, handleFilterChange }) => {
     const [filterTerms, setFilterTerms] = useState([]);
-
-    const handleChange = (type) => {
-        const copy = [...filterTerms];
-        if (event.target.checked) {
-            setFilterTerms((prevFilterTerms) => [...prevFilterTerms, type]);
-        } else {
-            const index = filterTerms.indexOf(type);
-            if (index >= 0) {
-                copy.splice(index, 1);
-                setFilterTerms(copy);
-            }
-        }
-    };
 
     const renderStars = (num) => {
         let str = "";
@@ -59,7 +46,13 @@ const Toolset = ({ togglePane, openPane }) => {
                                     <input
                                         type="checkbox"
                                         name={item.type}
-                                        onChange={() => handleChange(item.type)}
+                                        onChange={() =>
+                                            handleFilterChange(
+                                                item.type,
+                                                filterTerms,
+                                                setFilterTerms
+                                            )
+                                        }
                                     />
                                     <span className="dummy"></span>
                                     {item.name}

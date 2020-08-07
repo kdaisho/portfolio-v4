@@ -12,7 +12,7 @@ const App = () => {
     const [openPane, setOpenPane] = useState("");
 
     const togglePane = (name) => {
-        setOpenPane(this.state.openPane ? "" : name);
+        setOpenPane(openPane ? "" : name);
     };
 
     const scrollTo = (destinationId) => {

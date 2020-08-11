@@ -20,7 +20,7 @@ const Hero = () => {
 			window.removeEventListener("load", handleResize, options);
 			window.removeEventListener("resize", handleResize, options);
 		};
-	});
+	}, [window.innerWidth]);
 
 	const handleResize = () => {
 		setInnerWidth(window.innerWidth);

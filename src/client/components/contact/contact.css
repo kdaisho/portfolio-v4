@@ -126,3 +126,6 @@
     left: 30px;
   }
 }
+.is-contact .thank-you-note .error {
+  color: #ff1744;
+}

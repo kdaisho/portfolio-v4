@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
+import { connect } from "react-redux";
 import "./contact.css";
 
-const Contact = () => {
+const Contact = ({ theme }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -47,8 +48,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="toContact" className="section is-contact">
-      <div className="content-wrap is-side-by-side">
+    <section id="toContact" className={`section is-contact ${theme}`}>
+      <div className={`content-wrap is-side-by-side ${theme}`}>
         <div className="left-side title-group">
           <h2 className="title">Contact</h2>
           <p className="subtitle font-large">
@@ -137,4 +138,8 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+const mapStateToProps = ({ theme }) => ({
+  theme,
+});
+
+export default connect(mapStateToProps)(Contact);

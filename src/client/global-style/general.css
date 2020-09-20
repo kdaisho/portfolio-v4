@@ -40,6 +40,34 @@
     padding: 80px 0;
   }
 }
+.root .dark.is-hero,
+.modal .dark.is-hero {
+  background: #000;
+}
+.root .dark.section,
+.modal .dark.section {
+  background: #000;
+}
+.root .dark.section.is-education,
+.modal .dark.section.is-education,
+.root .dark.section.is-projects,
+.modal .dark.section.is-projects {
+  background: #111;
+}
+.root .dark .left-side .typewriter h1,
+.modal .dark .left-side .typewriter h1 {
+  color: #2962ff;
+}
+.root .dark .right-side .greetings-wrap .greetings,
+.modal .dark .right-side .greetings-wrap .greetings {
+  color: #2962ff;
+  font-weight: bold;
+}
+.root .dark .title-group .subtitle,
+.modal .dark .title-group .subtitle {
+  color: #2962ff !important;
+  font-weight: bold;
+}
 .root .content-wrap,
 .modal .content-wrap {
   margin: 0 auto;
@@ -99,7 +127,7 @@
 }
 .root .outline-button:focus,
 .modal .outline-button:focus {
-  outline: 2px solid #6200ea;
+  outline: 2px solid #fff;
 }
 .root .outline-button:active,
 .modal .outline-button:active,

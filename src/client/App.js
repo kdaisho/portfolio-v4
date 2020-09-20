@@ -9,52 +9,52 @@ import Footer from "./components/footer/Footer";
 import "./app.css";
 
 const App = () => {
-	const [openPane, setOpenPane] = useState("");
+  const [openPane, setOpenPane] = useState("");
 
-	const togglePane = (name) => {
-		setOpenPane(openPane ? "" : name);
-	};
+  const togglePane = (name) => {
+    setOpenPane(openPane ? "" : name);
+  };
 
-	const scrollTo = (destinationId) => {
-		const button = event.target;
-		button.classList.add("active");
-		setTimeout(() => button.classList.remove("active"), 150);
-		document.getElementById(destinationId).scrollIntoView({ behavior: "smooth" });
-	};
+  const scrollTo = (destinationId) => {
+    const button = event.target;
+    button.classList.add("active");
+    setTimeout(() => button.classList.remove("active"), 150);
+    document.getElementById(destinationId).scrollIntoView({ behavior: "smooth" });
+  };
 
-	const handleFilterChange = (value, filterWords, setter) => {
-		const copy = [...filterWords];
-		if (event.target.checked) {
-			setter((prevFilterWords) => [...prevFilterWords, value]);
-		} else {
-			const index = filterWords.indexOf(value);
-			if (index >= 0) {
-				copy.splice(index, 1);
-				setter(copy);
-			}
-		}
-	};
+  const handleFilterChange = (value, filterWords, setter) => {
+    const copy = [...filterWords];
+    if (event.target.checked) {
+      setter((prevFilterWords) => [...prevFilterWords, value]);
+    } else {
+      const index = filterWords.indexOf(value);
+      if (index >= 0) {
+        copy.splice(index, 1);
+        setter(copy);
+      }
+    }
+  };
 
-	return (
-		<div className="component-wrap">
-			{openPane && <div className="backdrop" onClick={() => togglePane(openPane)}></div>}
-			<Header togglePane={togglePane} openPane={openPane} scrollTo={scrollTo} />
-			<Hero />
-			<WorkLog />
-			<Toolset
-				togglePane={togglePane}
-				openPane={openPane}
-				handleFilterChange={handleFilterChange}
-			/>
-			<Projects
-				togglePane={togglePane}
-				openPane={openPane}
-				handleFilterChange={handleFilterChange}
-			/>
-			<Contact />
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="component-wrap">
+      {openPane && <div className="backdrop" onClick={() => togglePane(openPane)}></div>}
+      <Header togglePane={togglePane} openPane={openPane} scrollTo={scrollTo} />
+      <Hero />
+      <WorkLog />
+      <Toolset
+        togglePane={togglePane}
+        openPane={openPane}
+        handleFilterChange={handleFilterChange}
+      />
+      <Projects
+        togglePane={togglePane}
+        openPane={openPane}
+        handleFilterChange={handleFilterChange}
+      />
+      <Contact />
+      <Footer />
+    </div>
+  );
 };
 
 export default App;

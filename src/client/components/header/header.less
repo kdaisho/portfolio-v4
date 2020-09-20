@@ -1,191 +1,199 @@
 @import "../../global-style/variables";
 
 .header {
-	// background: #fff;
-	background: @themeColor;
-	// border-bottom: 4px solid @themeColor;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 35;
+  background: @themeColor;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 35;
 
-	&.high-z-index {
-		z-index: 100;
-	}
+  &.high-z-index {
+    z-index: 100;
+  }
 
-	.nav {
-		align-items: center;
-		display: flex;
-		flex-flow: row nowrap;
-		// height: 40px;
-		height: 48px;
-		justify-content: space-between;
-		padding: 0 6px;
+  .nav {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 48px;
+    justify-content: space-between;
+    padding: 0 6px;
 
-		@media @largerThan769 {
-			height: 58px;
-		}
+    @media @largerThan769 {
+      height: 58px;
+    }
 
-		.nav-left {
-			flex: 0 0 80px;
-			height: 35px;
-			overflow: hidden;
+    .nav-left {
+      flex: 0 0 80px;
+      height: 35px;
+      overflow: hidden;
 
-			@media @largerThan769 {
-				height: 43px;
-			}
+      @media @largerThan769 {
+        height: 43px;
+      }
 
-			.logo {
-				background: none;
-				border: none;
-				padding: 0;
-				width: 54px;
+      .logo {
+        background: none;
+        border: none;
+        padding: 0;
+        width: 54px;
 
-				&:hover {
-					cursor: pointer;
-				}
+        &:hover {
+          cursor: pointer;
+        }
 
-				&:focus,
-				&:active {
-					outline: none;
-				}
-			}
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
 
-			svg {
-				transform: scale(0.4);
-				transform-origin: top left;
+      svg {
+        transform: scale(0.4);
+        transform-origin: top left;
 
-				@media @largerThan769 {
-					transform: scale(0.5);
-				}
-			}
+        @media @largerThan769 {
+          transform: scale(0.5);
+        }
+      }
 
-			path {
-				// fill: @themeColor;
-				fill: #fff;
-			}
-		}
+      path {
+        fill: #fff;
+      }
+    }
 
-		.nav-right {
-			align-items: center;
-			display: flex;
-			flex-flow: row nowrap;
-			flex: 0 0 calc(100% - 150px);
-			justify-content: flex-end;
+    .nav-right {
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      flex: 0 0 calc(100% - 150px);
+      justify-content: flex-end;
 
-			.social-links {
-				display: flex;
-				flex-flow: row nowrap;
-				flex: 0 0 100px;
-				justify-content: space-around;
-				margin-right: 5px;
+      .social-links {
+        display: flex;
+        flex-flow: row nowrap;
+        flex: 0 0 100px;
+        justify-content: space-around;
+        margin-right: 5px;
 
-				@media @largerThan769 {
-					flex: 0 0 110px;
-					margin-right: 15px;
-				}
+        @media @largerThan769 {
+          flex: 0 0 110px;
+          margin-right: 15px;
+        }
 
-				a {
-					display: block;
-					text-align: center;
-				}
+        a {
+          display: block;
+          text-align: center;
+        }
 
-				img {
-					width: 28px;
+        img {
+          width: 28px;
 
-					@media @largerThan769 {
-						width: 35px;
-					}
-				}
-			}
+          @media @largerThan769 {
+            width: 35px;
+          }
+        }
+      }
 
-			.social-each {
-				flex: 0 0 50%;
-				height: 28px;
+      .social-each {
+        flex: 0 0 50%;
+        height: 28px;
 
-				@media @largerThan769 {
-					height: 35px;
-				}
-			}
+        @media @largerThan769 {
+          height: 35px;
+        }
+      }
 
-			.menu-toggle {
-				background: transparent;
-				border: none;
-				color: @themeColor;
-				padding-top: 4px;
+      .menu-toggle {
+        background: transparent;
+        border: none;
+        color: @themeColor;
+        padding-top: 4px;
 
-				img {
-					width: 32px;
-				}
+        img {
+          width: 32px;
+        }
 
-				@media @largerThan769 {
-					display: none;
-				}
-			}
+        @media @largerThan769 {
+          display: none;
+        }
+      }
 
-			.menu-pane {
-				// background: #fff;
-				background: @themeColor;
-				border: 4px solid #2962ff;
-				border-width: 0 0 4px 4px;
-				height: calc(100vh - 48px);
-				max-width: 250px;
-				position: absolute;
-				right: -250px;
-				top: 48px;
-				transition: right 0.15s ease-out;
-				width: 100%;
+      .theme-button {
+        button {
+          border: none;
+          background: none;
+          font-size: 1rem;
+          margin-left: 0.5rem;
 
-				&.active {
-					right: 0;
-					z-index: 100;
-				}
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
 
-				@media @largerThan769 {
-					border: none;
-					display: flex;
-					flex-flow: row nowrap;
-					flex: 0 0 50%;
-					height: auto;
-					justify-content: flex-end;
-					margin-top: -5px;
-					max-width: none;
-					position: initial;
-					width: 100%;
+      .menu-pane {
+        background: @themeColor;
+        border: 4px solid #2962ff;
+        border-width: 0 0 4px 4px;
+        height: calc(100vh - 48px);
+        max-width: 250px;
+        position: absolute;
+        right: -250px;
+        top: 48px;
+        transition: right 0.15s ease-out;
+        width: 100%;
 
-					label {
-						&:hover {
-							cursor: pointer;
-						}
-					}
-				}
+        &.active {
+          right: 0;
+          z-index: 100;
+        }
 
-				.is-menu-item {
-					box-shadow: none;
-					border-width: 0 0 4px 0;
-					font-size: 18px;
-					height: 70px;
-					margin: 0;
-					width: 100%;
-					white-space: nowrap;
+        @media @largerThan769 {
+          border: none;
+          display: flex;
+          flex-flow: row nowrap;
+          flex: 0 0 50%;
+          height: auto;
+          justify-content: flex-end;
+          margin-top: -5px;
+          max-width: none;
+          position: initial;
+          width: 100%;
 
-					@media @largerThan769 {
-						border: 3px solid darken(@themeColor, 35%);
-						box-shadow: 4px 4px 0 darken(@themeColor, 35%);
-						color: darken(@themeColor, 35%);
-						font-size: @font-medium;
-						height: 40px;
-						margin: 0 6px;
-						transition: translate 0.05s ease-in box-shadow 0.05s ease-in;
+          label {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
 
-						&.active {
-							box-shadow: 0 0 0 @themeColor;
-							transform: translate(4px, 4px);
-						}
-					}
-				}
-			}
-		}
-	}
+        .is-menu-item {
+          box-shadow: none;
+          border-width: 0 0 4px 0;
+          font-size: 18px;
+          height: 70px;
+          margin: 0;
+          width: 100%;
+          white-space: nowrap;
+
+          @media @largerThan769 {
+            border: 3px solid darken(@themeColor, 35%);
+            box-shadow: 4px 4px 0 darken(@themeColor, 35%);
+            color: darken(@themeColor, 35%);
+            font-size: @font-medium;
+            height: 40px;
+            margin: 0 6px;
+            transition: translate 0.05s ease-in box-shadow 0.05s ease-in;
+
+            &.active {
+              box-shadow: 0 0 0 @themeColor;
+              transform: translate(4px, 4px);
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -145,8 +145,8 @@ p {
 .modal .dark .left-side .typewriter h1 {
   color: #2962ff;
 }
-.root .dark .right-side .greetings-wrap .greetings,
-.modal .dark .right-side .greetings-wrap .greetings {
+.root .dark .greetings-wrap .greetings,
+.modal .dark .greetings-wrap .greetings {
   color: #2962ff;
   font-weight: bold;
 }

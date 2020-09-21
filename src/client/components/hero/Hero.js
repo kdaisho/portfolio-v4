@@ -43,7 +43,7 @@ const Hero = ({ theme }) => {
 
   return (
     <section id="pageTop" className={`is-hero ${theme}`}>
-      <div className={`content-wrap is-side-by-side ${theme}`}>
+      <div className="content-wrap is-side-by-side">
         <div className="left-side">
           <div className="typewriter">
             <h1>Who am I?</h1>

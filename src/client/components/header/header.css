@@ -112,11 +112,25 @@
     display: none;
   }
 }
+.header .nav .nav-right .theme-button {
+  display: flex;
+  height: 60px;
+  justify-content: center;
+}
+@media only screen and (min-width: 769px) {
+  .header .nav .nav-right .theme-button {
+    height: auto;
+  }
+}
 .header .nav .nav-right .theme-button button {
   border: none;
   background: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-left: 0.5rem;
+}
+.header .nav .nav-right .theme-button button:focus,
+.header .nav .nav-right .theme-button button:active {
+  outline: none;
 }
 .header .nav .nav-right .theme-button button:hover {
   cursor: pointer;

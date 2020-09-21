@@ -41,11 +41,11 @@ const Header = ({ togglePane, openPane, scrollTo, theme, changeTheme }) => (
               {item.name}
             </button>
           ))}
-        </div>
-        <div className="theme-button">
-          <button onClick={() => changeTheme(theme === "bright" ? "dark" : "bright")}>
-            {theme === "bright" ? "🌙" : "☀️"}
-          </button>
+          <div className="theme-button">
+            <button onClick={() => changeTheme(theme === "bright" ? "dark" : "bright")}>
+              {theme === "bright" ? "🌙" : "☀️"}
+            </button>
+          </div>
         </div>
       </div>
     </div>

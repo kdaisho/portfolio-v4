@@ -121,11 +121,24 @@
       }
 
       .theme-button {
+        display: flex;
+        height: 60px;
+        justify-content: center;
+
+        @media @largerThan769 {
+          height: auto;
+        }
+
         button {
           border: none;
           background: none;
-          font-size: 1rem;
+          font-size: 1.5rem;
           margin-left: 0.5rem;
+
+          &:focus,
+          &:active {
+            outline: none;
+          }
 
           &:hover {
             cursor: pointer;

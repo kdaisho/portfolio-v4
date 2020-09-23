@@ -6,7 +6,7 @@ import "./worklog.css";
 const WorkLog = ({ theme }) => {
   return (
     <section id="toWorkLog" className={`section is-education ${theme}`}>
-      <div className={`content-wrap is-side-by-side ${theme}`}>
+      <div className="content-wrap is-side-by-side">
         <div className="title-group">
           <h2 className="title">Work Log</h2>
           <p className="subtitle font-large">

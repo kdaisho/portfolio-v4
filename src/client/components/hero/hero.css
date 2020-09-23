@@ -57,7 +57,7 @@
   font-size: 18px;
   line-height: 1.35;
 }
-.is-hero .dark .typewriter h1 {
+.is-hero.dark .typewriter h1 {
   animation: typing 1s 1.75s steps(9, end) forwards, darkBlinkCursor 1s step-end infinite;
 }
 .is-hero .clip-path {

@@ -49,7 +49,7 @@ const Contact = ({ theme }) => {
 
   return (
     <section id="toContact" className={`section is-contact ${theme}`}>
-      <div className={`content-wrap is-side-by-side ${theme}`}>
+      <div className="content-wrap is-side-by-side">
         <div className="left-side title-group">
           <h2 className="title">Contact</h2>
           <p className="subtitle font-large">

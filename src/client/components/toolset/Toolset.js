@@ -17,7 +17,7 @@ const Toolset = ({ openPane, togglePane, handleFilterChange, theme }) => {
 
   return (
     <section id="toToolset" className={`section is-toolset ${theme}`}>
-      <div className={`content-wrap is-side-by-side ${theme}__`}>
+      <div className="content-wrap is-side-by-side">
         <div className="left-side">
           <div className="title-group has-filters">
             <h2 className="title">Toolset</h2>

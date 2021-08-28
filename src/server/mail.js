@@ -9,8 +9,6 @@ const transport = nodemailer.createTransport({
   },
 });
 
-const myEmail = process.env.MAIL_DESTINATION;
-
 exports.sendMessage = (req, res) => {
   if (!req.body.name || !req.body.email || !req.body.message) {
     return res.status(400).send({
@@ -18,8 +16,6 @@ exports.sendMessage = (req, res) => {
       message: "Name, email and message are required.",
     });
   }
-  let dest = "";
-  let bcc = "";
 
   // Honeypot
   if (req.body.address) {
@@ -27,14 +23,6 @@ exports.sendMessage = (req, res) => {
       type: "error",
       message: "You must be a robot.",
     });
-  }
-
-  if (req.body.requestCopy) {
-    // By using bcc my personal email won't be exposed to email sender
-    dest = req.body.email;
-    bcc = myEmail;
-  } else {
-    dest = myEmail;
   }
 
   const sender = {
@@ -45,8 +33,7 @@ exports.sendMessage = (req, res) => {
 
   const mailOptions = {
     from: `Daisho <noreply@${process.env}>`,
-    to: dest,
-    bcc,
+    to: process.env.MAIL_DESTINATION,
     subject: req.body.requestCopy
       ? `Copy: Message from ${sender.name} via portfolio`
       : `Message from ${sender.name} via portfolio`,

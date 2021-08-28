@@ -7,7 +7,6 @@ const Contact = ({ theme }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [address, setAddress] = useState("");
-  const [requestCopy, setRequestCopy] = useState(false);
   const [isFormActive, setIsFormActive] = useState(true);
   const [mailResult, setMailResult] = useState({});
   const contactForm = useRef();
@@ -20,7 +19,6 @@ const Contact = ({ theme }) => {
       email,
       message,
       address,
-      requestCopy,
     };
     const result = await fetch("/send", {
       method: "POST",
@@ -39,7 +37,7 @@ const Contact = ({ theme }) => {
 
   const handleChange = (event, setter) => {
     const { target } = event;
-    setter(target.name === "requestCopy" ? target.checked : target.value);
+    setter(target.value);
   };
 
   const throwEmail = () => {
@@ -111,19 +109,6 @@ const Contact = ({ theme }) => {
                 tabIndex={isFormActive ? "0" : "-1"}
                 required
               />
-            </div>
-            <div className="form-group">
-              <label className="receive-copy-check">
-                <input
-                  type="checkbox"
-                  name="requestCopy"
-                  checked={requestCopy}
-                  onChange={() => handleChange(event, setRequestCopy)}
-                  tabIndex={isFormActive ? "0" : "-1"}
-                />
-                <span className="dummy">{requestCopy ? String.fromCharCode(10004) : ""}</span>I want
-                to receive a copy
-              </label>
             </div>
             <button
               className="button is-flat is-submit outline-button"

@@ -74,17 +74,6 @@
 .is-contact .contact-form .form-group textarea:focus {
   outline: 2px solid #2962ff;
 }
-.is-contact .contact-form .form-group .receive-copy-check {
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-}
-.is-contact .contact-form .form-group .receive-copy-check:hover {
-  cursor: pointer;
-}
-.is-contact .contact-form .form-group .receive-copy-check input {
-  margin-right: 9px;
-}
 .is-contact .contact-form .form-group input[type="checkbox"] {
   position: absolute;
   visibility: hidden;

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { connect } from "react-redux";
+import { showToast } from "../toast";
 import "./contact.css";
 
 const Contact = ({ theme }) => {
@@ -8,7 +9,7 @@ const Contact = ({ theme }) => {
   const [message, setMessage] = useState("");
   const [address, setAddress] = useState("");
   const [isFormActive, setIsFormActive] = useState(true);
-  const [mailResult, setMailResult] = useState({});
+  const [mailResult, setMailResult] = useState("");
   const contactForm = useRef();
 
   const handleSubmit = async (event) => {
@@ -27,12 +28,10 @@ const Contact = ({ theme }) => {
       },
       body: JSON.stringify(params),
     });
-    const res = await result.json();
-    const sendMailResult = {
-      type: res.type,
-      text: res.message,
-    };
-    setMailResult(sendMailResult);
+    const { text, kind } = await result.json();
+
+    setMailResult("Done!");
+    showToast({ message: text, kind });
   };
 
   const handleChange = (event, setter) => {
@@ -58,8 +57,8 @@ const Contact = ({ theme }) => {
         </div>
         <div className="right-side">
           <p className="thank-you-note">
-            {mailResult.text ? (
-              <span className={mailResult.type}>{mailResult.text}</span>
+            {mailResult.length ? (
+              <span>{mailResult}</span>
             ) : (
               !isFormActive && <span>Sending...</span>
             )}

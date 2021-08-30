@@ -12,16 +12,16 @@ const transport = nodemailer.createTransport({
 exports.sendMessage = (req, res) => {
   if (!req.body.name || !req.body.email || !req.body.message) {
     return res.status(400).send({
-      type: "error",
-      message: "Name, email and message are required.",
+      kind: "error",
+      text: "Name, email and message are required.",
     });
   }
 
   // Honeypot
   if (req.body.address) {
     return res.status(401).send({
-      type: "error",
-      message: "You must be a robot.",
+      kind: "error",
+      text: "You must be a robot.",
     });
   }
 
@@ -45,13 +45,13 @@ exports.sendMessage = (req, res) => {
     if (err) {
       console.error(err);
       res.status(500).send({
-        type: "error",
-        message: "Umm.. something went wrong on our side. Not you.",
+        kind: "error",
+        text: "Umm.. something went wrong on our side. Not you.",
       });
     } else {
       res.status(200).send({
-        type: "success",
-        message: `Thank you ${sender.name}, I will get back to you soon!`,
+        kind: "success",
+        text: `Thank you ${sender.name}, I will get back to you soon!`,
       });
     }
   });

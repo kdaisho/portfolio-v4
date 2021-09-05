@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { connect } from "react-redux";
 import { showToast } from "../toast";
 import "./contact.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = ({ theme }) => {
   const [name, setName] = useState("");
@@ -42,6 +43,10 @@ const Contact = ({ theme }) => {
   const throwEmail = () => {
     contactForm.current.classList.add("fly");
     setTimeout(() => setIsFormActive(false), 200);
+  };
+
+  const onChange = (value) => {
+    console.log("recaptcha value", value);
   };
 
   return (
@@ -109,6 +114,11 @@ const Contact = ({ theme }) => {
                 required
               />
             </div>
+            <ReCAPTCHA
+              size="normal"
+              sitekey="6LfYY0kcAAAAAG_kd1ShiApIm93H7IkqVqVnSlbb"
+              onChange={onChange}
+            />
             <button
               className="button is-flat is-submit outline-button"
               tabIndex={isFormActive ? "0" : "-1"}

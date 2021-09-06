@@ -12,15 +12,20 @@ const Contact = ({ theme }) => {
   const [isFormActive, setIsFormActive] = useState(true);
   const [mailResult, setMailResult] = useState("");
   const contactForm = useRef();
+  const reCaptchaRef = useRef();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     throwEmail();
+    const token = await reCaptchaRef.current.executeAsync();
+    reCaptchaRef.current.reset();
+
     const params = {
       name,
       email,
       message,
       address,
+      token,
     };
     const result = await fetch("/send", {
       method: "POST",
@@ -43,10 +48,6 @@ const Contact = ({ theme }) => {
   const throwEmail = () => {
     contactForm.current.classList.add("fly");
     setTimeout(() => setIsFormActive(false), 200);
-  };
-
-  const onChange = (value) => {
-    console.log("recaptcha value", value);
   };
 
   return (
@@ -115,9 +116,9 @@ const Contact = ({ theme }) => {
               />
             </div>
             <ReCAPTCHA
-              size="normal"
-              sitekey="6LfYY0kcAAAAAG_kd1ShiApIm93H7IkqVqVnSlbb"
-              onChange={onChange}
+              sitekey="6Lc7kkkcAAAAAEin0TkCgCe0UlZzUPcLsvRDanPr"
+              size="invisible"
+              ref={reCaptchaRef}
             />
             <button
               className="button is-flat is-submit outline-button"

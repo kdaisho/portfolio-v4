@@ -1,3 +1,4 @@
+const axios = require("axios").default;
 const nodemailer = require("nodemailer");
 
 const transport = nodemailer.createTransport({
@@ -9,7 +10,23 @@ const transport = nodemailer.createTransport({
   },
 });
 
-exports.sendMessage = (req, res) => {
+const validateHuman = async (token) => {
+  const { data } = await axios.post(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+  );
+  return data?.success;
+};
+
+exports.sendMessage = async (req, res) => {
+  const isHuman = await validateHuman(req.body.token);
+
+  if (!isHuman) {
+    return res.status(400).send({
+      kind: "error",
+      text: "You're not allowed to submit, bot",
+    });
+  }
+
   if (!req.body.name || !req.body.email || !req.body.message) {
     return res.status(400).send({
       kind: "error",

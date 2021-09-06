@@ -11,10 +11,17 @@ const transport = nodemailer.createTransport({
 });
 
 const validateHuman = async (token) => {
-  const { data } = await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-  );
-  return data?.success;
+  try {
+    const { data } = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+    );
+    return data.success;
+  } catch (err) {
+    return res.status(500).send({
+      kind: "error",
+      text: "Error occurred due to reCaptcha validation",
+    });
+  }
 };
 
 exports.sendMessage = async (req, res) => {

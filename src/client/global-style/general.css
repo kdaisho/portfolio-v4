@@ -313,3 +313,6 @@
     width: 20px;
   }
 }
+.grecaptcha-badge {
+  z-index: 40;
+}

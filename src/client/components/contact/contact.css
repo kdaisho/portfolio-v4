@@ -118,3 +118,11 @@
 .is-contact .thank-you-note .error {
   color: #ff1744;
 }
+.is-contact.dark .contact-form {
+  background: #000;
+}
+.is-contact.dark .text-input,
+.is-contact.dark textarea {
+  background: #000;
+  color: #fff;
+}

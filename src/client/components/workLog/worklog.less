@@ -252,4 +252,43 @@
       }
     }
   }
+
+  &.dark .card {
+    .is-front,
+    .is-back {
+      background: #111;
+    }
+
+    &.is-bell {
+      box-shadow: 5px 5px 0 @bellBrightColor;
+      &:hover {
+        box-shadow: 0 0 0 @bellBrightColor;
+      }
+
+      .bell {
+        border: 4px solid @bellBrightColor;
+      }
+    }
+
+    &.is-reitmans {
+      box-shadow: 5px 5px 0 @reitmansBrightColor;
+      &:hover {
+        box-shadow: 0 0 0 @reitmansBrightColor;
+      }
+      .reitmans {
+        border-color: @reitmansBrightColor;
+        h2,
+        h3,
+        p,
+        .separator {
+          color: @reitmansBrightColor;
+        }
+
+        li {
+          background: @reitmansBrightColor;
+          color: #000;
+        }
+      }
+    }
+  }
 }

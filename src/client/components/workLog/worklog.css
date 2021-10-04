@@ -54,10 +54,10 @@
   box-shadow: 0 0 0 #000;
 }
 .is-education .card.is-jfandsons {
-  box-shadow: 5px 5px 0 #6b3552;
+  box-shadow: 5px 5px 0 #9a386d;
 }
 .is-education .card.is-jfandsons:hover {
-  box-shadow: 0 0 0 #6b3552;
+  box-shadow: 0 0 0 #9a386d;
 }
 .is-education .card:hover {
   cursor: pointer;
@@ -192,22 +192,54 @@
   background: #000;
 }
 .is-education .jfandsons {
-  border: 4px solid #6b3552;
+  border: 4px solid #9a386d;
 }
 .is-education .jfandsons h2,
 .is-education .jfandsons h3,
 .is-education .jfandsons p {
-  color: #6b3552;
+  color: #9a386d;
 }
 .is-education .jfandsons .separator {
-  border-color: #6b3552;
+  border-color: #9a386d;
 }
 .is-education .jfandsons li {
-  background: #6b3552;
+  background: #9a386d;
 }
 .is-education .jfandsons .list:first-child {
   flex: 0 0 35%;
 }
 .is-education .jfandsons .list:last-child {
   flex: 0 0 65%;
+}
+.is-education.dark .card .is-front,
+.is-education.dark .card .is-back {
+  background: #111;
+}
+.is-education.dark .card.is-bell {
+  box-shadow: 5px 5px 0 #1a8ae7;
+}
+.is-education.dark .card.is-bell:hover {
+  box-shadow: 0 0 0 #1a8ae7;
+}
+.is-education.dark .card.is-bell .bell {
+  border: 4px solid #1a8ae7;
+}
+.is-education.dark .card.is-reitmans {
+  box-shadow: 5px 5px 0 #e3e3e3;
+}
+.is-education.dark .card.is-reitmans:hover {
+  box-shadow: 0 0 0 #e3e3e3;
+}
+.is-education.dark .card.is-reitmans .reitmans {
+  border-color: #e3e3e3;
+}
+.is-education.dark .card.is-reitmans .reitmans h2,
+.is-education.dark .card.is-reitmans .reitmans h3,
+.is-education.dark .card.is-reitmans .reitmans p,
+.is-education.dark .card.is-reitmans .reitmans .separator {
+  color: #e3e3e3;
+}
+.is-education.dark .card.is-reitmans .reitmans li {
+  background: #e3e3e3;
+  color: #000;
 }

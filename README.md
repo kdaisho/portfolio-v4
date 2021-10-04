@@ -12,6 +12,10 @@ Built with Nodejs + React
 4. `npm run build`
 5. PM2 handles the rest (If not, `pm2 restart <application_name>`)
 
+#### Glitch with less compiler
+
+If you update css variables in variables.less, open the consumer file of the variable and save the file otherwise the change won't apply.
+
 ### Image dimensions in side projects section
 
 ##### Thumbnails

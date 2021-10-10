@@ -16,8 +16,8 @@ const WorkLog = ({ theme }) => {
         </div>
         <div className="cards">
           {cards.map((card) => (
-            <div key={card.id} className={`card is-${card.id}`}>
-              <div className={`side is-front ${card.id}`}>
+            <div key={card.id} className="card">
+              <div className="side is-front">
                 <h2 className="company">{card.company}</h2>
                 <div className="summary">
                   <h3 className="position">{card.title}</h3>
@@ -26,7 +26,7 @@ const WorkLog = ({ theme }) => {
                   <p>{card.location}</p>
                 </div>
               </div>
-              <div className={`side is-back ${card.id}`}>
+              <div className="side is-back">
                 <div className="list">
                   <p>{card.what}</p>
                   <ul>

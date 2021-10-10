@@ -22,7 +22,7 @@ const Header = ({ togglePane, openPane, scrollTo, theme, changeTheme }) => {
   };
 
   return (
-    <header className={`header ${openPane === "menu" ? "high-z-index" : ""}`}>
+    <header className={`header ${theme} ${openPane === "menu" ? "high-z-index" : ""}`}>
       <div className="content-wrap nav">
         <div className="nav-left">
           <button className="logo" onClick={() => scrollTo("pageTop")}>

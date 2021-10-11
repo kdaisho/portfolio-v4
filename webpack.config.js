@@ -13,6 +13,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        exclude: "/node_modules/",
+        use: {
+          loader: "ts-loader",
+        },
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -33,12 +40,15 @@ module.exports = {
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg|jpe?g)$/,
-        loader: "url-loader?limit=4000",
+        loader: "url-loader",
+        options: {
+          limit: 4000,
+        },
       },
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx", ".tsx"],
   },
   devServer: {
     port: 3000,

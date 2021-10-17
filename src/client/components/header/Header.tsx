@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { FunctionComponent, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { socials, menuItems } from './header-data'
 import { Logo } from '../../svg/Icons'
@@ -7,7 +7,21 @@ const menuClose = require('../../images/nav/menu-close-opt.svg') as string
 import changeTheme from '../../actionCreators/changeTheme'
 import './header.css'
 
-const Header = ({ togglePane, openPane, scrollTo, theme, changeTheme }) => {
+interface IProps {
+  togglePane: (target: string) => void
+  openPane: string
+  scrollTo: (id: string) => void
+  theme: string
+  changeTheme: (theme: string) => void
+}
+
+const Header: FunctionComponent<IProps> = ({
+  togglePane,
+  openPane,
+  scrollTo,
+  theme,
+  changeTheme,
+}) => {
   useEffect(() => {
     const siteTheme = localStorage.getItem('siteTheme')
     if (siteTheme && siteTheme !== theme) {
@@ -81,8 +95,10 @@ const mapStateToProps = ({ theme }) => ({
   theme,
 })
 
-const mapDispatchToProps = dispatch => ({
-  changeTheme: theme => dispatch(changeTheme(theme)),
+const mapDispatchToProps = (
+  dispatch: (changeTheme: IProps['changeTheme']) => void
+) => ({
+  changeTheme: (theme: string) => dispatch(changeTheme(theme)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

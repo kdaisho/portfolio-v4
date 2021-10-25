@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { socials, menuItems } from './header-data'
-import { Logo } from '../../svg/Icons'
-const menuDots = require('../../images/nav/menu-dots-opt.svg') as string
-const menuClose = require('../../images/nav/menu-close-opt.svg') as string
-import changeTheme from '../../actionCreators/changeTheme'
+import { Logo } from '@src/svg/Icons'
+import menuDots from '@src/images/nav/menu-dots-opt.svg'
+import menuClose from '@src/images/nav/menu-close-opt.svg'
+import changeTheme from '@src/actionCreators/changeTheme'
 import './header.css'
 
 interface IProps {

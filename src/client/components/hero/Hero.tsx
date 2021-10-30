@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { FunctionComponent, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import cat from '@src/images/hero/cat-body-opt.svg'
 import catAction from '@src/images/hero/cat-actions-opt.svg'
 import './hero.css'
 
-const Hero = ({ theme }) => {
+const Hero: FunctionComponent<{ theme: string }> = ({ theme }) => {
   const [animation, setAnimation] = useState(true)
   const [innerWidth, setInnerWidth] = useState(0)
   const options = {

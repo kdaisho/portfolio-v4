@@ -48,7 +48,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.tsx'],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
     alias: {
       '@src': path.resolve(__dirname, 'src/client/'),
     },

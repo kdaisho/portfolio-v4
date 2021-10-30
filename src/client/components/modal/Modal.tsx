@@ -7,6 +7,8 @@ import React, {
 import { createPortal } from 'react-dom'
 import './modal.css'
 
+const modalRoot = document.getElementById('modal')
+
 const Modal: FunctionComponent = ({ children }) => {
   const elementRef: MutableRefObject<HTMLDivElement | null> = useRef(null)
   if (!elementRef.current) {
@@ -14,10 +16,9 @@ const Modal: FunctionComponent = ({ children }) => {
   }
 
   useEffect(() => {
-    if (!elementRef.current) {
+    if (!modalRoot || !elementRef.current) {
       return
     }
-    const modalRoot = document.getElementById('modal')
     modalRoot.appendChild(elementRef.current)
 
     return () => {

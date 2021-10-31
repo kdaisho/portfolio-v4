@@ -3,6 +3,7 @@ import Modal from '@src/components/modal/Modal'
 import { connect } from 'react-redux'
 import { projects, filterItems } from '@src/components/projects/projects-data'
 import { Desktop, Github } from '@src/svg/Icons'
+import { MODAL_DURATION } from '@src/components/constants'
 import './projects.css'
 
 interface ProjectsIProps {
@@ -41,7 +42,7 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
     setActiveCardId(props.id)
     setTimeout(() => {
       setSelectedProject(props)
-    }, 150)
+    }, MODAL_DURATION)
   }
 
   const hideModal = () => {

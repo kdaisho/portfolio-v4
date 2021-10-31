@@ -16,6 +16,10 @@ app.get('*.js', function (req, res, next) {
 app.use(express.static('dist'))
 app.use(express.json({ limit: '4kb' }))
 app.post('/send', mail.sendMessage)
-app.listen(process.env.PORT, () =>
-  console.log(`Listening on port ${process.env.PORT}!`)
-)
+
+app.listen(process.env.PORT, () => {
+  console.group()
+  console.log(`[client] Listening on port ⚡⚡⚡ 3000 ⚡⚡⚡`)
+  console.log(`[server] Listening on port ⚡⚡⚡ ${process.env.PORT} ⚡⚡⚡`)
+  console.groupEnd()
+})

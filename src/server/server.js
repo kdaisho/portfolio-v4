@@ -4,8 +4,8 @@ require('dotenv').config({
 
 const express = require('express')
 const mail = require('./mail')
-
 const app = express()
+app.disable('x-powered-by')
 
 app.get('*.js', function (req, res, next) {
   req.url = req.url + '.gz'

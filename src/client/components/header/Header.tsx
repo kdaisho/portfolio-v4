@@ -7,7 +7,7 @@ import menuClose from '@src/images/nav/menu-close-opt.svg'
 import changeTheme from '@src/actionCreators/changeTheme'
 import './header.css'
 
-interface IProps {
+type HeaderProps = {
   togglePane: (target: string) => void
   openPane: string
   scrollTo: (id: string) => void
@@ -15,7 +15,7 @@ interface IProps {
   changeTheme: (theme: string) => void
 }
 
-const Header: FunctionComponent<IProps> = ({
+const Header: FunctionComponent<HeaderProps> = ({
   togglePane,
   openPane,
   scrollTo,
@@ -95,9 +95,7 @@ const mapStateToProps = ({ theme }) => ({
   theme,
 })
 
-const mapDispatchToProps = (
-  dispatch: (changeTheme: IProps['changeTheme']) => void
-) => ({
+const mapDispatchToProps = dispatch => ({
   changeTheme: (theme: string) => dispatch(changeTheme(theme)),
 })
 

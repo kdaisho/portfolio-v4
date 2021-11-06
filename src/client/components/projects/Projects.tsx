@@ -26,7 +26,7 @@ type ToggleModalProps = {
   stack: string[]
   url: string
   githubUrl: string
-} | null
+}
 
 const Projects: FunctionComponent<ProjectsIProps> = ({
   openPane,
@@ -35,14 +35,17 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
   theme,
 }) => {
   const [filterTerms, setFilterTerms] = useState<string[]>([])
-  const [selectedProject, setSelectedProject] = useState<ToggleModalProps>()
-  const [activeCardId, setActiveCardId] = useState(null)
+  const [selectedProject, setSelectedProject] =
+    useState<ToggleModalProps | null>(null)
+  const [activeCardId, setActiveCardId] = useState<number | null>(null)
 
   const showModal = (props: ToggleModalProps) => {
-    setActiveCardId(props.id)
-    setTimeout(() => {
-      setSelectedProject(props)
-    }, MODAL_DURATION)
+    if (props && props.id) {
+      setActiveCardId(props.id)
+      setTimeout(() => {
+        setSelectedProject(props)
+      }, MODAL_DURATION)
+    }
   }
 
   const hideModal = () => {
@@ -148,20 +151,22 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
                 <div
                   className='top'
                   style={{
-                    background: `#666 url(${selectedProject.hero})`,
+                    background: `#666 url(${selectedProject?.hero})`,
                     backgroundSize: 'cover',
                   }}
                 ></div>
                 <div className='bottom'>
                   <div className='text-group'>
-                    <h1 className='title'>{selectedProject.title}</h1>
-                    <p className='subtitle'>{selectedProject.subtitle}</p>
-                    <p className='description'>{selectedProject.description}</p>
+                    <h1 className='title'>{selectedProject?.title}</h1>
+                    <p className='subtitle'>{selectedProject?.subtitle}</p>
+                    <p className='description'>
+                      {selectedProject?.description}
+                    </p>
                     <div className='links'>
-                      {selectedProject.url && (
+                      {selectedProject?.url && (
                         <a
-                          href={selectedProject.url}
-                          title={selectedProject.title}
+                          href={selectedProject?.url}
+                          title={selectedProject?.title}
                           className='link is-desktop-icon'
                           target='_blank'
                           rel='noopener noreferrer'
@@ -169,10 +174,10 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
                           {Desktop()} Visit The Website
                         </a>
                       )}
-                      {selectedProject.githubUrl && (
+                      {selectedProject?.githubUrl && (
                         <a
-                          href={selectedProject.githubUrl}
-                          title={`${selectedProject.title} github repository`}
+                          href={selectedProject?.githubUrl}
+                          title={`${selectedProject?.title} github repository`}
                           className='link is-github-icon'
                           target='_blank'
                           rel='noopener noreferrer'
@@ -183,7 +188,7 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
                     </div>
                   </div>
                   <div className='tech-stack'>
-                    {selectedProject.stack.map((tech: string) => {
+                    {selectedProject?.stack.map((tech: string) => {
                       return tech === 'live' ? (
                         false
                       ) : (

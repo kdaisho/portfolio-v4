@@ -61,6 +61,7 @@ module.exports = {
       '/send': 'http://localhost:8888',
     },
   },
+  devtool: 'source-map',
   plugins: [
     // new BundleAnalyzerPlugin(),
     new CleanWebpackPlugin({

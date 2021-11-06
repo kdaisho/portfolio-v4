@@ -1,18 +1,18 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { DURATION } from './constants'
 
-interface IProps {
+type ToastProps = {
   message: string
   kind: string
 }
 
-const Toast: FunctionComponent<IProps> = ({ message, kind }) => {
-  const timeoutIds = []
+const Toast: FunctionComponent<ToastProps> = ({ message, kind }) => {
+  const timeoutIds: number[] = []
 
   useEffect(() => {
     const toastElements = document.getElementsByClassName('toast-container')
     timeoutIds.push(
-      setTimeout(() => {
+      window.setTimeout(() => {
         toastElements[0].remove()
       }, DURATION)
     )

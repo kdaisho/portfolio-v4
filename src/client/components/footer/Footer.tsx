@@ -4,7 +4,7 @@ import React, {
   useEffect,
   useRef,
 } from 'react'
-import { Logo } from '../../svg/Icons'
+import { Logo } from '@src/svg/Icons'
 import { socials } from '../header/header-data'
 import './footer.css'
 

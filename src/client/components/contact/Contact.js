@@ -121,7 +121,7 @@ const Contact = ({ theme }) => {
               />
             </div>
             <ReCAPTCHA
-              sitekey='6Ld2E8gdAAAAAA-_fAfI8AgdSocYMKhsf4DfZf5h'
+              sitekey='6Lc7kkkcAAAAAEin0TkCgCe0UlZzUPcLsvRDanPr'
               size='invisible'
               ref={reCaptchaRef}
             />

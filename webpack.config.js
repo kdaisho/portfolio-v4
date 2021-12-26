@@ -57,8 +57,8 @@ module.exports = {
     port: 3000,
     historyApiFallback: true,
     proxy: {
-      '/api': 'http://localhost:8888',
-      '/send': 'http://localhost:8888',
+      '/api': 'http://localhost:8890',
+      '/send': 'http://localhost:8890',
     },
   },
   devtool: 'source-map',

@@ -41,14 +41,6 @@ exports.sendMessage = async (req, res) => {
     })
   }
 
-  // Honeypot
-  if (req.body.address) {
-    return res.status(401).send({
-      kind: 'error',
-      text: 'You must be a robot.',
-    })
-  }
-
   const sender = {
     name: req.body.name,
     email: req.body.email,
@@ -67,7 +59,6 @@ exports.sendMessage = async (req, res) => {
 
   return transport.sendMail(mailOptions, err => {
     if (err) {
-      console.error(err)
       res.status(500).send({
         kind: 'error',
         text: 'Umm.. something went wrong on our side. Not you.',
@@ -75,7 +66,7 @@ exports.sendMessage = async (req, res) => {
     } else {
       res.status(200).send({
         kind: 'success',
-        text: `Thank you ${sender.name}, I will get back to you soon!`,
+        text: req.successMessage,
       })
     }
   })

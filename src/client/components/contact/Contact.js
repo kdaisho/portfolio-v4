@@ -8,7 +8,6 @@ const Contact = ({ theme }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [address, setAddress] = useState('')
   const [isFormActive, setIsFormActive] = useState(true)
   const [mailResult, setMailResult] = useState('')
   const contactForm = useRef()
@@ -24,7 +23,6 @@ const Contact = ({ theme }) => {
       name,
       email,
       message,
-      address,
       token,
     }
     const result = await fetch('/send', {
@@ -85,16 +83,6 @@ const Contact = ({ theme }) => {
                 onChange={() => handleChange(event, setName)}
                 tabIndex={isFormActive ? '0' : '-1'}
                 required
-              />
-            </div>
-            <div className='form-group is-address'>
-              <label htmlFor='address'>Address</label>
-              <input
-                className='text-input'
-                type='text'
-                name='address'
-                value={address}
-                onChange={() => handleChange(event, setAddress)}
               />
             </div>
             <div className='form-group'>

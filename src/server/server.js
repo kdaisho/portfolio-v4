@@ -4,7 +4,6 @@ require('dotenv').config({
 
 const express = require('express')
 const mail = require('./mail')
-const qcMail = require('./qc-mail')
 const app = express()
 app.disable('x-powered-by')
 
@@ -42,7 +41,6 @@ app.use((req, _, next) => {
 })
 
 app.post('/send', mail.sendMessage)
-app.post('/send-message', qcMail.sendMessage)
 
 app.listen(process.env.PORT, () => {
   console.group()

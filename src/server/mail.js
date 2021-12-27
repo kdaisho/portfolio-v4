@@ -66,7 +66,7 @@ exports.sendMessage = async (req, res) => {
     } else {
       res.status(200).send({
         kind: 'success',
-        text: req.successMessage,
+        text: `Thank you ${sender.name}, I will get back to you soon!`,
       })
     }
   })

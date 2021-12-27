@@ -82,6 +82,7 @@ const Contact = ({ theme }) => {
                 value={name}
                 onChange={() => handleChange(event, setName)}
                 tabIndex={isFormActive ? '0' : '-1'}
+                maxLength='45'
                 required
               />
             </div>
@@ -94,6 +95,7 @@ const Contact = ({ theme }) => {
                 value={email}
                 onChange={() => handleChange(event, setEmail)}
                 tabIndex={isFormActive ? '0' : '-1'}
+                maxLength='45'
                 required
               />
             </div>
@@ -105,6 +107,7 @@ const Contact = ({ theme }) => {
                 value={message}
                 onChange={() => handleChange(event, setMessage)}
                 tabIndex={isFormActive ? '0' : '-1'}
+                maxLength='2500'
                 required
               />
             </div>

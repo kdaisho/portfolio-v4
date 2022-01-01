@@ -20,18 +20,7 @@ jobs:
 
     steps:
       - name: Make envfile
-        uses: SpicyPizza/create-envfile@v1.2
-        with:
-          envkey_NODE_ENV: ${{ secrets.NODE_ENV }}
-          envkey_PORT: ${{ secrets.PORT }}
-          envkey_MAIL_USER: ${{ secrets.MAIL_USER }}
-          envkey_MAIL_PASS: ${{ secrets.MAIL_PASS }}
-          envkey_MAIL_HOST: ${{ secrets.MAIL_HOST }}
-          envkey_MAIL_PORT: ${{ secrets.MAIL_PORT }}
-          envkey_MAIL_DESTINATION: ${{ secrets.MAIL_DESTINATION }}
-          envkey_RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
-          file_name: .env
-
+        run: echo Yes! ${{ secrets.NODE_ENV}} This is the node env
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2

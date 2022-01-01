@@ -49,6 +49,10 @@ git remote add production ssh://<USERNAME>@<YOUR_SERVER_IP_ADDRESS>/var/repo/sit
 
 If you update css variables in variables.less, open the consumer file of the variable and save the file otherwise the change won't apply.
 
+### HTTPS redirect is not working for mobile devices
+
+- User who goes to none SSL URL `http://...` should be redirected to `https://...`. This works fine for desktop, but not wih mobile (android and iOS). RCA is unknown at this point of writing (Jan 1, 2022)
+
 ### Sending message won't work in localhost
 
 - Make sure mail service is up and running. It requires `.env` file.

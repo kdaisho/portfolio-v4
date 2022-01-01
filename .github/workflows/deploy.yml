@@ -20,7 +20,8 @@ jobs:
 
     steps:
       - name: Make envfile
-        run: echo Yes! ${{ secrets.NODE_ENV}} This is the node env
+        run: |
+          echo Yes! ${{ secrets.NODE_ENV}} This is the node env
           touch .env
           echo NODE_ENV=${{secrets.NODE_ENV}} >> .env
           echo PORT=${{secrets.PORT}} >> .env
@@ -35,4 +36,3 @@ jobs:
       - run: npm run build
       # - run: pm2 start --name daishodesign src/server/server.js --watch # for the initial deployment
       - run: pm2 restart daishodesign # for continuous deployment
-

@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Make envfile
         run: echo Yes! ${{ secrets.NODE_ENV}} This is the node env
+        run: touch .env
+        run: echo NODE_ENV=${{secrets.NODE_ENV}} >> .env
+        run: echo PORT=${{secrets.PORT}} >> .env
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2

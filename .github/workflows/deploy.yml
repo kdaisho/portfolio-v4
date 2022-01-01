@@ -23,11 +23,16 @@ jobs:
 
       - name: Make envfile
         run: |
-          echo Yes! ${{ secrets.NODE_ENV}} This is the node env
-          touch .env
-          echo NODE_ENV=${{secrets.NODE_ENV}} >> .env
-          echo PORT=${{secrets.PORT}} >> .env
-          cat .env
+          cat << EOF > .env
+          NODE_ENV=${{secrets.NODE_ENV}}
+          PORT=${{secrets.PORT}}
+          MAIL_USER=${{secrets.MAIL_USER}}
+          MAIL_PASS=${{secrets.MAIL_PASS}}
+          MAIL_HOST=${{secrets.MAIL_HOST}}
+          MAIL_PORT=${{secrets.MAIL_PORT}}
+          MAIL_DESTINATION=${{secrets.MAIL_DESTINATION}}
+          RECAPTCHA_SECRET_KEY=${{secrets.RECAPTCHA_SECRET_KEY}}
+          EOF
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2

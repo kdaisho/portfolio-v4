@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Make envfile
         run: echo Yes! ${{ secrets.NODE_ENV}} This is the node env
-      - run: touch .env
+          touch .env
           echo NODE_ENV=${{secrets.NODE_ENV}} >> .env
           echo PORT=${{secrets.PORT}} >> .env
 

@@ -19,14 +19,16 @@ jobs:
         node-version: [16.x]
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Make envfile
         run: |
           echo Yes! ${{ secrets.NODE_ENV}} This is the node env
           touch .env
           echo NODE_ENV=${{secrets.NODE_ENV}} >> .env
           echo PORT=${{secrets.PORT}} >> .env
+          cat .env
 
-      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -36,3 +38,4 @@ jobs:
       - run: npm run build
       # - run: pm2 start --name daishodesign src/server/server.js --watch # for the initial deployment
       - run: pm2 restart daishodesign # for continuous deployment
+

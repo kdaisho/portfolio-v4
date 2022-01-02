@@ -20,20 +20,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Make envfile
-        run: |
-          cat << EOF > .env
-          NODE_ENV=${{secrets.NODE_ENV}}
-          PORT=${{secrets.PORT}}
-          MAIL_USER=${{secrets.MAIL_USER}}
-          MAIL_PASS=${{secrets.MAIL_PASS}}
-          MAIL_HOST=${{secrets.MAIL_HOST}}
-          MAIL_PORT=${{secrets.MAIL_PORT}}
-          MAIL_DESTINATION=${{secrets.MAIL_DESTINATION}}
-          RECAPTCHA_SECRET_KEY=${{secrets.RECAPTCHA_SECRET_KEY}}
-          EOF
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -41,6 +27,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+      - run: cp -r server dist /var/www/daishodesign/
       # - run: pm2 start --name daishodesign src/server/server.js --watch # for the initial deployment
       - run: pm2 restart daishodesign # for continuous deployment
 

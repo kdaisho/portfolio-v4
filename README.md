@@ -24,24 +24,29 @@ RECAPTCHA_SECRET_KEY=<YOUR_RECAPTCHA_SECRET_KEY>
 
 ## Deployment
 
-### Add a remote for production to use Git Hooks
+<!-- ### Add a remote for production to use Git Hooks
 
 Git Hooks has already been set with production server. [How to set up Git Hooks](https://github.com/kdaisho/Blog/wiki/How-to-set-up-Git-Hooks)
 
-Make sure to add a `remote` for `production`, just like you usually do for `origin`, to push your changes to the server.
+Make sure to add a `remote` for `production`, just like you usually do for `origin`, to push your changes to the server. -->
 
+### Github actions
+
+CI/CD using Github actions has been set. It's triggered on push to master branch.
+
+### CI/CD process
+
+1. Pushing your changes to master triggers Github actions
+2. Action runner copies `dist/` to `/var/www/daishodesign/` after build
+3. In that directory, there's a `server/server.js` always running backed by PM2
+4. If you make changes to the server, you need to manually update the server.js in `/var/www/daishodesign`, then restart PM2 by `pm2 restart ddesign`
+5. .env file has been set within `/var/www/daishodesign/`
+
+ssh-key login has been set with the oracle cloud server. The way to login using the ssh key is a bit different from what I'm used to.
+
+```bash
+ssh -i ~/.ssh/<your_private_ssh_key_file_name> <user_name_for_your_server>@<ip_address_of_your_server>
 ```
-git remote add production ssh://<USERNAME>@<YOUR_SERVER_IP_ADDRESS>/var/repo/site-daishodesign.git
-```
-
-### Steps to deploy
-
-1. Run `git push production master`
-2. Login to the server on digitalocean (password login disabled)
-3. Navigate to application root
-4. Run `npm run build`
-5. Move the hero image: `highlights-en.jpg` into `dist/` folder. This is for open graph link.
-6. PM2 handles the rest (If not run `pm2 restart <application_name>`)
 
 ## Troubleshooting
 

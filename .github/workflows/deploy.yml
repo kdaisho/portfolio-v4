@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - run: cp -r server dist /var/www/daishodesign/
+      - run: cp -r dist /var/www/daishodesign/
       # - run: pm2 start --name daishodesign src/server/server.js --watch # for the initial deployment
       - run: pm2 restart daishodesign # for continuous deployment
 

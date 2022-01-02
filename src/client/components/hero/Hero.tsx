@@ -32,8 +32,8 @@ const Hero: FunctionComponent<{ theme: string }> = ({ theme }) => {
       <div className={`greetings-wrap ${animation ? 'slide' : ''}`}>
         <div className='clip-path'></div>
         <p className='greetings'>
-          Hello, my name's Daisho Komiyama and I'm a front-end developer based
-          in Montreal. I've been a developer for about{' '}
+          Hi, my name's Daisho Komiyama and I'm a front-end developer based in
+          Montreal. I've been a developer for about{' '}
           {new Date().getFullYear() - 2014} years. Passionate about solving
           problems and building tools that makes our lives easier. I'm an
           effective developer who ships code regularly.

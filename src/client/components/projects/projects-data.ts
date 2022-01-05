@@ -26,7 +26,7 @@ export const projects = [
     subtitle: 'Online Course Review App',
     description:
       'JavaScriptBest can keep your overviews of favourite online couses in one place. Built with only JavaScript from UI to backend while providing great performance thanks to nginx.',
-    stack: ['nodejs', 'vanillajs', 'sass', 'live', 'mongodb'],
+    stack: ['nodejs', 'handlebars', 'sass', 'live', 'mongodb'],
     hero: jsbestHero,
     thumb: jsbestThumb,
     url: '',
@@ -50,7 +50,7 @@ export const projects = [
     subtitle: 'Blog',
     description:
       'Quebec3 is a blog built with Gatsby: a static site generator. Super light, super fast.',
-    stack: ['graphql', 'sass', 'live'],
+    stack: ['gatsby', 'react', 'graphql', 'live'],
     hero: qc3Hero,
     thumb: qc3Thumb,
     url: 'https://quebec3.com',

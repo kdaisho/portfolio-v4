@@ -40,7 +40,7 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
   const [activeCardId, setActiveCardId] = useState<number | null>(null)
 
   const showModal = (props: ToggleModalProps) => {
-    if (props && props.id) {
+    if (props) {
       setActiveCardId(props.id)
       setTimeout(() => {
         setSelectedProject(props)

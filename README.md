@@ -24,12 +24,6 @@ RECAPTCHA_SECRET_KEY=<YOUR_RECAPTCHA_SECRET_KEY>
 
 ## Deployment
 
-<!-- ### Add a remote for production to use Git Hooks
-
-Git Hooks has already been set with production server. [How to set up Git Hooks](https://github.com/kdaisho/Blog/wiki/How-to-set-up-Git-Hooks)
-
-Make sure to add a `remote` for `production`, just like you usually do for `origin`, to push your changes to the server. -->
-
 ### Github actions
 
 CI/CD using Github actions has been set. It's triggered on push to master branch.
@@ -38,9 +32,13 @@ CI/CD using Github actions has been set. It's triggered on push to master branch
 
 1. Pushing your changes to master triggers Github actions
 2. Action runner copies `dist/` to `/var/www/daishodesign/` after build
-3. In that directory, there's a `server/server.js` always running backed by PM2
-4. If you make changes to the server, you need to manually update the server.js in `/var/www/daishodesign`, then restart PM2 by `pm2 restart ddesign`
-5. .env file has been set within `/var/www/daishodesign/`
+3. PM2 is always running, but in case the process gets destroyed, use below command to set it up.
+
+```bash
+pm2 start --name ddesign /home/ubuntu/actions-runner-daishodesign/daishodesign/portfolio-v4/portfolio-v4/src/server/server.js --watch
+```
+
+4. Otherwise, the action runner handles pm2 restart
 
 ssh-key login has been set with the oracle cloud server. The way to login using the ssh key is a bit different from what I'm used to.
 
@@ -65,24 +63,4 @@ If you update css variables in variables.less, open the consumer file of the var
 
 ## Miscellaneous
 
-## Image dimensions for side projects section
-
-### Thumbnails
-
-#### Original Dimensions
-
-272 \* 136
-
-#### Image dimensions and quality
-
-454 \* 272 (quality: 90%)
-
-### Hero
-
-#### Original dimensions
-
-600 \* 250
-
-#### Image dimensions and quality
-
-900 \* 525 (quality: 60%)
+Project icons: [Devicon](https://devicon.dev/)

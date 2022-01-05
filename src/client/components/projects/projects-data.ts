@@ -35,9 +35,9 @@ export const projects = [
   {
     id: 1,
     title: 'Portofolio',
-    subtitle: 'My portofolio site',
+    subtitle: 'My portofolio',
     description:
-      'My portfolio is a showcase of what I do and what I\'m good at. Built with React and Nodejs (Express) without "create-react-app" black magic.',
+      "A showcase of what I do and I'm good at. Built with React for UI and Nodejs for mail service. No scaffolding from create-react-app.",
     stack: ['react', 'nodejs', 'live', 'less'],
     hero: portfolioHero,
     thumb: portfolioThumb,
@@ -47,22 +47,22 @@ export const projects = [
   {
     id: 2,
     title: 'Quebec3',
-    subtitle: 'CMS with Laravel',
+    subtitle: 'Blog',
     description:
-      "Quebec3 is CMS built with PHP and Laravel from scratch. It's up and running since 2015.",
-    stack: ['php', 'sass', 'live'],
+      'Quebec3 is a blog built with Gatsby: a static site generator. Super light, super fast.',
+    stack: ['graphql', 'sass', 'live'],
     hero: qc3Hero,
     thumb: qc3Thumb,
     url: 'https://quebec3.com',
-    githubUrl: 'https://github.com/kdaisho/quebec3',
+    githubUrl: 'https://github.com/kdaisho/quebec3-v2',
   },
   {
     id: 3,
     title: 'My Brailler',
     subtitle: 'Electronic braille typewriter',
     description:
-      "My Brailler is a training application for visually impaired to practice Perkins Brailler. By using My Brailler, you don't need to reach out to paper in order to check if you've made typos anymore because My Brailler can speak what you just typed.",
-    stack: ['angular', 'live'],
+      "My Brailler is a training application for the visually impaired who uses Perkins brailler. Traditional Perkins brailler can't tell the user when they make a typo. My Brailler does as it speaks!",
+    stack: ['angular'],
     hero: mybraillerHero,
     thumb: mybraillerThumb,
     url: '',
@@ -71,9 +71,9 @@ export const projects = [
   {
     id: 4,
     title: 'Email Builder',
-    subtitle: 'HTML email builder for non-coders',
+    subtitle: 'HTML email builder for someone busy',
     description:
-      'Email Builder was originally built just for myself in order to spend less time on building HTML emails and more time on site updates. It reduces time from 50 minutes to 7 minutes on average per single email. Email Builder also enables non-coders build HTML email all by themselves. Built with Angular 4x.',
+      'Once I worked for a company that required me to do many HTML emails and website updates. Building emails was easy, but it was redundant and time-consuming; I had little time for other stuff. So I built this. The average time for making a single email was reduced from 50 min to 7 min.',
     stack: ['angular', 'regex'],
     hero: ebHero,
     thumb: ebThumb,
@@ -94,10 +94,10 @@ export const projects = [
   },
   {
     id: 6,
-    title: 'Non-breaking Injector',
-    subtitle: 'Save you time from French grammar police',
+    title: 'French Formatter',
+    subtitle: 'Saves you from French grammar police',
     description:
-      'Non-breaking Injector auto-inserts non-breakins space (as HTML entity) into where French grammar requires (i.e. 30 %)',
+      'French Formatter inserts a non-breaking space (&ngsp;) where French grammar requires. (i.e., 30&ngsp;%) Humans are not good at this type of repetition. Let computers do.',
     stack: ['vanillajs', 'less', 'regex'],
     hero: nonbreakingHero,
     thumb: nonbreakingThumb,
@@ -106,10 +106,10 @@ export const projects = [
   },
   {
     id: 7,
-    title: 'Global Countdown Timer Widget',
+    title: 'Global Countdown Timer',
     subtitle: 'Everybody ends at the same time anywhere on earth',
     description:
-      'Global Countdown Timer allows you to implement a countdown widget that displays the same hours in different time zones without server setup. Implementation is a walk in the park to all level of Front-end devs.',
+      "Global Countdown Timer lets you quickly implement a countdown widget for your applications. It is battle-tested by one of the major Canadian apparel retailers. It's best for advertising limited-time offers; it displays the same hours regardless of different time zones. It doesn't require API support; stand-alone.",
     stack: ['vanillajs'],
     hero: countdownHero,
     thumb: countdownThumb,
@@ -119,9 +119,8 @@ export const projects = [
   {
     id: 8,
     title: 'Japanese Drum Kit',
-    subtitle: 'Just a simple fun project',
-    description:
-      'Japanese Drum Kit is a simple fun project. Built with vanilla JS.',
+    subtitle: 'For fun',
+    description: 'A simple fun project. Built with vanilla JavaScript.',
     stack: ['vanillajs', 'live'],
     hero: drumkitHero,
     thumb: drumkitThumb,
@@ -133,7 +132,7 @@ export const projects = [
     title: 'Archive Everything',
     subtitle: 'Archiving tool using file system',
     description:
-      'Archive Everithing is a documentation tool built with Nodejs and React. It provides command-line interface to help initial setup. Data is persisitent using file system so this can be handy in a workplace where you handle sensitive information or just for self documentation.',
+      "Archive Everything is a documentation tool built with Nodejs and React. It provides a command-line interface to help initial setup. Data is persistent using a local file system, so it's best for a workplace where you handle sensitive information or just for self-documentation.",
     stack: ['nodejs', 'react'],
     hero: archiveHero,
     thumb: archiveThumb,

@@ -124,8 +124,8 @@ export const projects = [
     stack: ['vanillajs', 'live'],
     hero: drumkitHero,
     thumb: drumkitThumb,
-    url: 'https://kdaisho.github.io/Japan_Sound_Board/',
-    githubUrl: 'https://github.com/kdaisho/Japan_Sound_Board',
+    url: 'https://kdaisho.github.io/japan-sound-board/',
+    githubUrl: 'https://github.com/kdaisho/japan-sound-board',
   },
   {
     id: 9,

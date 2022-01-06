@@ -16,8 +16,16 @@ export const toolset = [
     stars: 3,
   },
   {
+    name: 'redux',
+    stars: 3,
+  },
+  {
     name: 'jest',
     stars: 3,
+  },
+  {
+    name: 'angular',
+    stars: 2,
   },
   {
     name: 'html',
@@ -40,14 +48,6 @@ export const toolset = [
     stars: 4,
   },
   {
-    name: 'gimp',
-    stars: 3,
-  },
-  {
-    name: 'inkscape',
-    stars: 3,
-  },
-  {
     name: 'git',
     stars: 3,
   },
@@ -57,7 +57,7 @@ export const toolset = [
   },
   {
     name: 'gulp',
-    stars: 3,
+    stars: 2,
   },
   {
     name: 'mongodb',
@@ -78,6 +78,10 @@ export const toolset = [
   {
     name: 'gatsby',
     stars: 3,
+  },
+  {
+    name: 'docker',
+    stars: 2,
   },
   {
     name: 'go',

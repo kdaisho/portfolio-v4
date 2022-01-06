@@ -49,6 +49,7 @@
 }
 .is-toolset .toolset .tool:hover .stars {
   font-size: 16px;
+  letter-spacing: 3px;
   opacity: 1;
 }
 .is-toolset .toolset .tool:hover .tool-name {

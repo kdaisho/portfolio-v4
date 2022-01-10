@@ -48,7 +48,7 @@ exports.sendMessage = async (req, res) => {
   }
 
   const mailOptions = {
-    from: `Daisho <noreply@${process.env}>`,
+    from: `daishodesign <noreply@${process.env}>`,
     to: process.env.MAIL_DESTINATION,
     subject: req.body.requestCopy
       ? `Copy: Message from ${sender.name} via portfolio`

@@ -16,6 +16,10 @@ export const toolset = [
     stars: 3,
   },
   {
+    name: 'nextjs',
+    stars: 3,
+  },
+  {
     name: 'redux',
     stars: 3,
   },
@@ -84,7 +88,7 @@ export const toolset = [
     stars: 2,
   },
   {
-    name: 'go',
+    name: 'rust',
     stars: 1,
   },
 ]

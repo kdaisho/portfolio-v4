@@ -5,6 +5,7 @@ import { Logo } from '@src/svg/Icons'
 import menuDots from '@src/images/nav/menu-dots-opt.svg'
 import menuClose from '@src/images/nav/menu-close-opt.svg'
 import changeTheme from '@src/actionCreators/changeTheme'
+import { Theme, ChangeThemeProps } from '@src/components/types'
 import './header.css'
 
 type HeaderProps = {
@@ -91,11 +92,13 @@ const Header: FunctionComponent<HeaderProps> = ({
   )
 }
 
-const mapStateToProps = ({ theme }) => ({
+const mapStateToProps = ({ theme }: Theme) => ({
   theme,
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (
+  dispatch: (arg: ChangeThemeProps) => { payload: string }
+) => ({
   changeTheme: (theme: string) => dispatch(changeTheme(theme)),
 })
 

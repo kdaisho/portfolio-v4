@@ -3,21 +3,37 @@ import { connect } from 'react-redux'
 import { showToast } from '../toast'
 import './contact.css'
 import ReCAPTCHA from 'react-google-recaptcha'
+import { Theme } from '@src/components/types'
 
-const Contact = ({ theme }) => {
+const Contact = ({ theme }: Theme) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [isFormActive, setIsFormActive] = useState(true)
   const [mailResult, setMailResult] = useState('')
-  const contactForm = useRef()
-  const reCaptchaRef = useRef()
+  const contactForm = useRef<HTMLFormElement>()
+  const reCaptchaRef = useRef<ReCAPTCHA>()
 
-  const handleSubmit = async event => {
+  type EventType = {
+    preventDefault: () => void
+  }
+
+  type HandleChangeProps = {
+    target: {
+      value: string
+    }
+  }
+
+  const handleSubmit = async (event: EventType): Promise<void> => {
     event.preventDefault()
     throwEmail()
-    const token = await reCaptchaRef.current.executeAsync()
-    reCaptchaRef.current.reset()
+    let token: string | null
+    if (reCaptchaRef?.current) {
+      token = await reCaptchaRef.current.executeAsync()
+      reCaptchaRef.current.reset()
+    } else {
+      return void null
+    }
 
     const params = {
       name,
@@ -38,13 +54,16 @@ const Contact = ({ theme }) => {
     showToast({ message: text, kind })
   }
 
-  const handleChange = (event, setter) => {
+  const handleChange = (
+    event: HandleChangeProps,
+    setter: (arg: string) => void
+  ) => {
     const { target } = event
     setter(target.value)
   }
 
   const throwEmail = () => {
-    contactForm.current.classList.add('fly')
+    contactForm?.current?.classList.add('fly')
     setTimeout(() => setIsFormActive(false), 200)
   }
 
@@ -80,9 +99,9 @@ const Contact = ({ theme }) => {
                 type='text'
                 name='name'
                 value={name}
-                onChange={() => handleChange(event, setName)}
-                tabIndex={isFormActive ? '0' : '-1'}
-                maxLength='45'
+                onChange={event => handleChange(event, setName)}
+                tabIndex={isFormActive ? 0 : -1}
+                maxLength={45}
                 required
               />
             </div>
@@ -93,9 +112,9 @@ const Contact = ({ theme }) => {
                 type='email'
                 name='email'
                 value={email}
-                onChange={() => handleChange(event, setEmail)}
-                tabIndex={isFormActive ? '0' : '-1'}
-                maxLength='45'
+                onChange={event => handleChange(event, setEmail)}
+                tabIndex={isFormActive ? 0 : -1}
+                maxLength={45}
                 required
               />
             </div>
@@ -103,11 +122,11 @@ const Contact = ({ theme }) => {
               <label htmlFor='message'>Message</label>
               <textarea
                 name='message'
-                rows='6'
+                rows={6}
                 value={message}
-                onChange={() => handleChange(event, setMessage)}
-                tabIndex={isFormActive ? '0' : '-1'}
-                maxLength='2500'
+                onChange={event => handleChange(event, setMessage)}
+                tabIndex={isFormActive ? 0 : -1}
+                maxLength={2500}
                 required
               />
             </div>
@@ -118,7 +137,7 @@ const Contact = ({ theme }) => {
             />
             <button
               className='button is-flat is-submit outline-button'
-              tabIndex={isFormActive ? '0' : '-1'}
+              tabIndex={isFormActive ? 0 : -1}
             >
               SEND
             </button>
@@ -129,7 +148,7 @@ const Contact = ({ theme }) => {
   )
 }
 
-const mapStateToProps = ({ theme }) => ({
+const mapStateToProps = ({ theme }: Theme) => ({
   theme,
 })
 

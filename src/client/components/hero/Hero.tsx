@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import cat from '@src/images/hero/cat-body-opt.svg'
 import catAction from '@src/images/hero/cat-actions-opt.svg'
+import { Theme } from '@src/components/types'
 import './hero.css'
 
 const Hero: FunctionComponent<{ theme: string }> = ({ theme }) => {
@@ -63,7 +64,7 @@ const Hero: FunctionComponent<{ theme: string }> = ({ theme }) => {
   )
 }
 
-const mapStateToProps = ({ theme }) => ({
+const mapStateToProps = ({ theme }: Theme) => ({
   theme,
 })
 

@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { connect } from 'react-redux'
 import cards from './workLog-data'
+import { Theme } from '@src/components/types'
 import './worklog.css'
 
 type cardProps = {
@@ -63,7 +64,7 @@ const WorkLog: FunctionComponent<{ theme: string }> = ({ theme }) => {
   )
 }
 
-const mapStateToProps = ({ theme }) => ({
+const mapStateToProps = ({ theme }: Theme) => ({
   theme,
 })
 

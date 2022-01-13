@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { projects, filterItems } from '@src/components/projects/projects-data'
 import { Desktop, Github } from '@src/svg/Icons'
 import { MODAL_DURATION } from '@src/components/constants'
+import { Theme } from '@src/components/types'
 import './projects.css'
 
 interface ProjectsIProps {
@@ -211,7 +212,7 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
   )
 }
 
-const mapStateToProps = ({ theme }) => ({
+const mapStateToProps = ({ theme }: Theme) => ({
   theme,
 })
 

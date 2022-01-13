@@ -9,8 +9,8 @@ import { socials } from '../header/header-data'
 import './footer.css'
 
 const Footer: FunctionComponent = () => {
-  const refFooter: MutableRefObject<HTMLDivElement | null> = useRef()
-
+  const refFooter: MutableRefObject<HTMLDivElement | null | undefined> =
+    useRef()
   useEffect(() => {
     document.addEventListener('scroll', drawLogo, {
       passive: true,
@@ -19,10 +19,10 @@ const Footer: FunctionComponent = () => {
 
   const drawLogo = () => {
     if (
-      refFooter.current.getBoundingClientRect().top + 100 <=
-      window.innerHeight
+      refFooter.current &&
+      refFooter.current.getBoundingClientRect().top + 100 <= window.innerHeight
     ) {
-      refFooter.current.classList.add('draw')
+      refFooter?.current?.classList.add('draw')
       document.removeEventListener('scroll', drawLogo)
     }
   }

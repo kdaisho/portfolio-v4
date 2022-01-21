@@ -1,82 +1,82 @@
-.is-toolset .left-side {
+.is-tooling .left-side {
   flex: 0 0 100%;
 }
 @media only screen and (min-width: 769px) {
-  .is-toolset .left-side {
+  .is-tooling .left-side {
     flex: 0 0 35%;
   }
 }
-.is-toolset .left-side .star {
+.is-tooling .left-side .star {
   color: #2962ff;
 }
-.is-toolset .toolset {
+.is-tooling .tooling {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
-.is-toolset .toolset.right-side {
+.is-tooling .tooling.right-side {
   flex: 0 0 100%;
   padding-top: 10px;
 }
 @media only screen and (min-width: 769px) {
-  .is-toolset .toolset.right-side {
+  .is-tooling .tooling.right-side {
     flex: 0 0 65%;
     padding: 0 0 0 3%;
   }
 }
-.is-toolset .toolset .tool {
+.is-tooling .tooling .tool {
   flex: 0 0 50%;
   height: 165px;
   text-align: center;
   padding: 20px;
 }
 @media only screen and (min-width: 600px) {
-  .is-toolset .toolset .tool {
+  .is-tooling .tooling .tool {
     flex: 0 0 20%;
   }
 }
-.is-toolset .toolset .tool:hover {
+.is-tooling .tooling .tool:hover {
   background: #2962ff;
   cursor: pointer;
 }
-.is-toolset .toolset .tool:hover path,
-.is-toolset .toolset .tool:hover circle {
+.is-tooling .tooling .tool:hover path,
+.is-tooling .tooling .tool:hover circle {
   fill: #fff;
 }
-.is-toolset .toolset .tool:hover .separator {
+.is-tooling .tooling .tool:hover .separator {
   border-color: #fff;
   transform: translateY(36px);
 }
-.is-toolset .toolset .tool:hover .stars {
+.is-tooling .tooling .tool:hover .stars {
   font-size: 16px;
   letter-spacing: 3px;
   opacity: 1;
 }
-.is-toolset .toolset .tool:hover .tool-name {
+.is-tooling .tooling .tool:hover .tool-name {
   color: #fff;
   transform: translateY(-36px);
 }
-.is-toolset .toolset .tool svg {
+.is-tooling .tooling .tool svg {
   width: 75px;
 }
-.is-toolset .toolset .tool path,
-.is-toolset .toolset .tool circle {
+.is-tooling .tooling .tool path,
+.is-tooling .tooling .tool circle {
   fill: #2962ff;
 }
-.is-toolset .toolset .tool .separator {
+.is-tooling .tooling .tool .separator {
   display: block;
   border-bottom: 2px solid #2962ff;
   margin: 12px auto;
   transition: transform 0.25s ease-out;
   width: 30px;
 }
-.is-toolset .toolset .tool .stars {
+.is-tooling .tooling .tool .stars {
   color: #fff;
   font-size: 0;
   opacity: 0;
   transition: opacity 0.25s ease-out 0.25s;
 }
-.is-toolset .toolset .tool .tool-name {
+.is-tooling .tooling .tool .tool-name {
   color: #2962ff;
   font-size: 14px;
   transform: translateY(-20px);

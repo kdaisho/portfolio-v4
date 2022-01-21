@@ -70,7 +70,7 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
             <h2 className='title'>Side Projects</h2>
             <p className='subtitle font-large'>
               Getting my hands dirty with technologies I don't have a chance to
-              work with in my day job helps me stay up to date.
+              work within my day job helps me stay up to date.
             </p>
           </div>
           <fieldset

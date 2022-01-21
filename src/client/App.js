@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Header from './components/header/Header'
 import Hero from './components/hero/Hero'
 import WorkLog from './components/workLog/WorkLog'
-import Toolset from './components/toolset/Toolset'
+import Tooling from './components/tooling/Tooling'
 import Projects from './components/projects/Projects'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
@@ -45,7 +45,7 @@ const App = () => {
       <Header togglePane={togglePane} openPane={openPane} scrollTo={scrollTo} />
       <Hero />
       <WorkLog />
-      <Toolset
+      <Tooling
         togglePane={togglePane}
         openPane={openPane}
         handleFilterChange={handleFilterChange}

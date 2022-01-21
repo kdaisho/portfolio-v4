@@ -1,4 +1,4 @@
-export const toolset = [
+export const tooling = [
   {
     name: 'javascript',
     stars: 4,
@@ -107,7 +107,7 @@ export const filterItems = [
     stars: 2,
   },
   {
-    name: 'Interest in learning',
+    name: 'Learning',
     stars: 1,
   },
 ]

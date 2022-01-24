@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './components/header/Header'
 import Hero from './components/hero/Hero'
 import WorkLog from './components/workLog/WorkLog'
@@ -6,10 +6,16 @@ import Tooling from './components/tooling/Tooling'
 import Projects from './components/projects/Projects'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
+import ReactGA from 'react-ga4'
 import './app.css'
 
 const App = () => {
   const [openPane, setOpenPane] = useState('')
+
+  useEffect(() => {
+    ReactGA.initialize('G-KC8D7SR0BP')
+    ReactGA.send('pageview')
+  }, [])
 
   const togglePane = name => {
     setOpenPane(openPane ? '' : name)

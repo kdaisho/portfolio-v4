@@ -22,8 +22,8 @@ const Tooling = ({ openPane, togglePane, handleFilterChange, theme }) => {
           <div className='title-group has-filters'>
             <h2 className='title'>Tooling</h2>
             <p className='subtitle font-large'>
-              Enthusiastic about JavaScript, TypeScript, Nodejs, Jest, both in
-              writing and reviewing.
+              Enthusiastic about JavaScript, TypeScript, Nodejs, Jest. I enjoy
+              both writing and reviewing.
             </p>
           </div>
           <fieldset

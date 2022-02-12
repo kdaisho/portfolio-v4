@@ -28,6 +28,10 @@ export const tooling = [
     stars: 3,
   },
   {
+    name: 'eslint',
+    stars: 3,
+  },
+  {
     name: 'angular',
     stars: 2,
   },

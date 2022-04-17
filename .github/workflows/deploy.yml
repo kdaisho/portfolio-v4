@@ -31,7 +31,7 @@ jobs:
           echo "Creating .env for ${{ secrets.MAIL_USER }}"
           touch .env
           echo NODE_ENV=production >> .env
-          echo PORT=9000 >> .env
+          echo PORT=${{ secrets.PORT }} >> .env
           echo MAIL_USER=${{ secrets.MAIL_USER }} >> .env
           echo MAIL_PASS=${{ secrets.MAIL_PASS }} >> .env
           echo MAIL_HOST=${{ secrets.MAIL_HOST }} >> .env

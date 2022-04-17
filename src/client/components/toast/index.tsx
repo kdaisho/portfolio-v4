@@ -1,7 +1,7 @@
+import { DURATION } from './constants'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Toast from './Toast'
-import { DURATION } from './constants'
 import './toast.css'
 
 type ShowToastProps = {

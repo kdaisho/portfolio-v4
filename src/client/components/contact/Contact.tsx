@@ -1,32 +1,22 @@
+import { FormEvent, MailResponse, Theme } from '@src/components/types'
 import React, { RefObject, useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import { Theme } from '@src/components/types'
 import { connect } from 'react-redux'
 import { showToast } from '../toast'
 import './contact.css'
 
 const Contact = ({ theme }: Theme) => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [mail, setMail] = useState({ name: '', email: '', message: '' })
   const [isFormActive, setIsFormActive] = useState(true)
   const [mailResult, setMailResult] = useState('')
   const contactForm: RefObject<HTMLFormElement> = useRef()
   const reCaptchaRef = useRef<ReCAPTCHA>()
 
-  type EventType = {
+  const handleSubmit = async (event: {
     preventDefault: () => void
-  }
-
-  type HandleChangeProps = {
-    target: {
-      value: string
-    }
-  }
-
-  const handleSubmit = async (event: EventType): Promise<void> => {
+  }): Promise<void> => {
     event.preventDefault()
-    throwEmail()
+    launchMailAnimation()
     let token: string | null
     if (reCaptchaRef?.current) {
       token = await reCaptchaRef.current.executeAsync()
@@ -35,34 +25,24 @@ const Contact = ({ theme }: Theme) => {
       return void null
     }
 
-    const params = {
-      name,
-      email,
-      message,
-      token,
-    }
-    const result = await fetch('/send', {
+    const response = await fetch('/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(params),
+      body: JSON.stringify({ ...mail, token }),
     })
-    const { text, kind } = await result.json()
+    const { text, kind } = (await response.json()) as MailResponse
 
     setMailResult('Done!')
-    showToast({ message: text, kind })
+    void showToast({ message: text, kind })
   }
 
-  const handleChange = (
-    event: HandleChangeProps,
-    setter: (arg: string) => void
-  ) => {
-    const { target } = event
-    setter(target.value)
+  const handleChange = ({ target }: FormEvent) => {
+    setMail({ ...mail, [target.name]: target.value })
   }
 
-  const throwEmail = () => {
+  const launchMailAnimation = () => {
     contactForm?.current?.classList.add('fly')
     setTimeout(() => setIsFormActive(false), 200)
   }
@@ -98,8 +78,8 @@ const Contact = ({ theme }: Theme) => {
                 className='text-input'
                 type='text'
                 name='name'
-                value={name}
-                onChange={event => handleChange(event, setName)}
+                value={mail.name}
+                onChange={handleChange}
                 tabIndex={isFormActive ? 0 : -1}
                 maxLength={45}
                 required
@@ -111,8 +91,8 @@ const Contact = ({ theme }: Theme) => {
                 className='text-input'
                 type='email'
                 name='email'
-                value={email}
-                onChange={event => handleChange(event, setEmail)}
+                value={mail.email}
+                onChange={handleChange}
                 tabIndex={isFormActive ? 0 : -1}
                 maxLength={45}
                 required
@@ -123,8 +103,8 @@ const Contact = ({ theme }: Theme) => {
               <textarea
                 name='message'
                 rows={6}
-                value={message}
-                onChange={event => handleChange(event, setMessage)}
+                value={mail.message}
+                onChange={handleChange}
                 tabIndex={isFormActive ? 0 : -1}
                 maxLength={2500}
                 required

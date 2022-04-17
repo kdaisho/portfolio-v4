@@ -97,7 +97,7 @@ export const tooling = [
   },
 ]
 
-export const filterItems = [
+export const filterItems: { name: string; stars: number }[] = [
   {
     name: 'Expert at',
     stars: 4,

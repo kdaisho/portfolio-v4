@@ -9,7 +9,7 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
-  "ignorePatterns": ["src/server/mail.js"],
+  "ignorePatterns": ["*/**/*.js", "src/server/mail.js"],
   "rules": {
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,

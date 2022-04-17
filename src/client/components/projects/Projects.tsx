@@ -1,46 +1,25 @@
-import React, { FunctionComponent, useState } from 'react'
-import Modal from '@src/components/modal/Modal'
-import { connect } from 'react-redux'
-import { projects, filterItems } from '@src/components/projects/projects-data'
 import { Desktop, Github } from '@src/svg/Icons'
+import React, { FunctionComponent, useState } from 'react'
+import { filterItems, projects } from '@src/components/projects/projects-data'
+import { FilterableSection } from '@src/components/types'
 import { MODAL_DURATION } from '@src/components/constants'
+import Modal from '@src/components/modal/Modal'
+import { Project } from './types'
 import { Theme } from '@src/components/types'
+import { connect } from 'react-redux'
 import './projects.css'
 
-interface ProjectsIProps {
-  openPane: string
-  togglePane: (name: string) => void
-  handleFilterChange: (
-    itemTech: string,
-    filterTerms: string[],
-    setFilterTerms: (terms: string[]) => void
-  ) => void
-  theme: string
-}
-
-type ToggleModalProps = {
-  id: number
-  title: string
-  subtitle: string
-  description: string
-  hero: string
-  stack: string[]
-  url: string
-  githubUrl: string
-}
-
-const Projects: FunctionComponent<ProjectsIProps> = ({
+const Projects: FunctionComponent<FilterableSection> = ({
   openPane,
   togglePane,
   handleFilterChange,
   theme,
 }) => {
   const [filterTerms, setFilterTerms] = useState<string[]>([])
-  const [selectedProject, setSelectedProject] =
-    useState<ToggleModalProps | null>(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [activeCardId, setActiveCardId] = useState<number | null>(null)
 
-  const showModal = (props: ToggleModalProps) => {
+  const showModal = (props: Project) => {
     if (props) {
       setActiveCardId(props.id)
       setTimeout(() => {
@@ -86,7 +65,7 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
             </button>
             <legend>(AND) Filters</legend>
             <div className='filters'>
-              {filterItems.map((item: { tech: string; name: string }) => (
+              {filterItems.map(item => (
                 <label
                   key={item.tech}
                   className={`tag ${
@@ -96,8 +75,13 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
                   <input
                     type='checkbox'
                     name={item.tech}
-                    onChange={() =>
-                      handleFilterChange(item.tech, filterTerms, setFilterTerms)
+                    onChange={({ target }) =>
+                      handleFilterChange({
+                        target,
+                        value: item.tech,
+                        filterTerms,
+                        setFilterTerms,
+                      })
                     }
                   />
                   <span className='dummy'></span>
@@ -109,7 +93,7 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
         </div>
         <div className='cards left-side'>
           {projects
-            .filter((project: { stack: any }) => {
+            .filter(project => {
               return filterTerms.length
                 ? isIncludes(project.stack, filterTerms)
                 : true
@@ -121,6 +105,9 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
                   activeCardId === project.id ? 'active' : ''
                 }`}
                 onClick={() => showModal(project)}
+                role='button'
+                onKeyPress={() => {}}
+                tabIndex={0}
               >
                 <div
                   className='top'
@@ -144,10 +131,19 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
         </div>
         {!!Object.keys(selectedProject || {}).length && (
           <Modal>
-            <div className='backdrop' onClick={hideModal}>
+            <div
+              className='backdrop'
+              onClick={hideModal}
+              role='button'
+              onKeyPress={() => {}}
+              tabIndex={0}
+            >
               <div
                 className='project-details bit-style active'
                 onClick={event => event.stopPropagation()}
+                role='button'
+                onKeyPress={() => {}}
+                tabIndex={0}
               >
                 <div
                   className='top'
@@ -189,7 +185,7 @@ const Projects: FunctionComponent<ProjectsIProps> = ({
                     </div>
                   </div>
                   <div className='tech-stack'>
-                    {selectedProject?.stack.map((tech: string) => {
+                    {selectedProject?.stack.map(tech => {
                       return tech === 'live' ? (
                         false
                       ) : (

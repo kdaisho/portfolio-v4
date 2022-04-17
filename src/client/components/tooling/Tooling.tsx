@@ -1,13 +1,19 @@
-import React, { useState } from 'react'
-import { filterItems, tooling } from './tooling-data.js'
+import React, { FunctionComponent, useState } from 'react'
+import { filterItems, tooling } from './tooling-data'
+import { FilterableSection } from '@src/components/types'
 import { connect } from 'react-redux'
 import devIcons from '../../svg/devIcons'
 import './tooling.css'
 
-const Tooling = ({ openPane, togglePane, handleFilterChange, theme }) => {
+const Tooling: FunctionComponent<FilterableSection> = ({
+  openPane,
+  togglePane,
+  handleFilterChange,
+  theme,
+}) => {
   const [filterTerms, setFilterTerms] = useState([])
 
-  const renderStars = num => {
+  const renderStars = (num: number) => {
     let str = ''
     for (let i = 0; i < num; i++) {
       str += String.fromCharCode(9733)
@@ -46,13 +52,14 @@ const Tooling = ({ openPane, togglePane, handleFilterChange, theme }) => {
                 >
                   <input
                     type='checkbox'
-                    name={item.type}
-                    onChange={() =>
-                      handleFilterChange(
-                        item.stars,
+                    name={item.name}
+                    onChange={({ target }) =>
+                      handleFilterChange({
+                        target,
+                        value: item.stars,
                         filterTerms,
-                        setFilterTerms
-                      )
+                        setFilterTerms,
+                      })
                     }
                   />
                   <span className='dummy'></span>
@@ -64,17 +71,17 @@ const Tooling = ({ openPane, togglePane, handleFilterChange, theme }) => {
         </div>
         <div className='tooling right-side'>
           {tooling
-            .filter(tool => {
+            .filter((tool: { name: string; stars: number }) => {
               return filterTerms.length
                 ? filterTerms.includes(tool.stars)
                 : true
             })
-            .map(tool => (
-              <div key={tool.name} className='tool'>
-                {devIcons[tool.name]}
+            .map(({ name, stars }) => (
+              <div key={name} className='tool'>
+                {devIcons[name]}
                 <span className='separator'></span>
-                <span className='stars'>{renderStars(tool.stars)}</span>
-                <p className='tool-name'>{tool.name}</p>
+                <span className='stars'>{renderStars(stars)}</span>
+                <p className='tool-name'>{name}</p>
               </div>
             ))}
         </div>
@@ -83,7 +90,7 @@ const Tooling = ({ openPane, togglePane, handleFilterChange, theme }) => {
   )
 }
 
-const mapStateToProps = ({ theme }) => ({
+const mapStateToProps = ({ theme }: { theme: string }) => ({
   theme,
 })
 

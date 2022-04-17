@@ -30,15 +30,20 @@ const App = () => {
       .scrollIntoView({ behavior: 'smooth' })
   }
 
-  const handleFilterChange = (value, filterWords, setter) => {
-    const copy = [...filterWords]
-    if (event.target.checked) {
-      setter(prevFilterWords => [...prevFilterWords, value])
+  const handleFilterChange = ({
+    target,
+    value,
+    filterTerms,
+    setFilterTerms,
+  }) => {
+    const copy = [...filterTerms]
+    if (target.checked) {
+      setFilterTerms(prevFilterWords => [...prevFilterWords, value])
     } else {
-      const index = filterWords.indexOf(value)
+      const index = filterTerms.indexOf(value)
       if (index >= 0) {
         copy.splice(index, 1)
-        setter(copy)
+        setFilterTerms(copy)
       }
     }
   }

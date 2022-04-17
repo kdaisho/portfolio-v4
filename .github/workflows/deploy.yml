@@ -19,6 +19,13 @@ jobs:
         node-version: [16.x]
 
     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
       - name: Create env file
         run: |
           echo "Creating .env for ${{ secrets.MAIL_USER }}"
@@ -32,13 +39,6 @@ jobs:
           echo MAIL_DESTINATION=${{ secrets.MAIL_DESTINATION }} >> .env
           echo RECAPTCHA_SECRET_KEY=${{ secrets.RECAPTCHA_SECRET_KEY }} >> .env
           cat .env
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci
       - run: npm run build
       - run: cp -r dist /var/www/daishodesign/
       # - run: pm2 start --name daishodesign src/server/server.js --watch # for the initial deployment

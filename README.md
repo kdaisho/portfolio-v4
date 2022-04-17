@@ -61,6 +61,20 @@ If you update css variables in variables.less, open the consumer file of the var
 - Make sure mail service is up and running. It requires `.env` file.
 - Make sure the list of domains contains `localhost` or `127.0.0.1` with your reCAPTCHA account (https://www.google.com/recaptcha)
 
-## Miscellaneous
+## Environment variable: MAIL_PASS
+Changed mail password from the password for quebec3 google account to newly created app password. (April 16, 2022)
+### How I setup the password
+- Go to google account
+- Go to "Security" from left hand-side menu
+- Find "Signing in to Google" section
+- Go to "2-Step Verification" then set it up
+- Go to App passwords
+- Select app (dropdown menu) -> Choose "Other (Custom name)"
+- Give your app a name
+- Click "Generate" -> Password is provided
+- Save the password somewhere safe
+- Use the password for SMTP mail authentication (.env file: MAIL_PASS variable)
+
+## Assets
 
 Project icons: [Devicon](https://devicon.dev/)

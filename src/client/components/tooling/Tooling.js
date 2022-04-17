@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
+import { filterItems, tooling } from './tooling-data.js'
 import { connect } from 'react-redux'
-import { tooling, filterItems } from './tooling-data.js'
 import devIcons from '../../svg/devIcons'
 import './tooling.css'
 

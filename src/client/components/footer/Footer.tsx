@@ -1,16 +1,10 @@
-import React, {
-  FunctionComponent,
-  MutableRefObject,
-  useEffect,
-  useRef,
-} from 'react'
+import React, { FunctionComponent, RefObject, useEffect, useRef } from 'react'
 import { Logo } from '@src/svg/Icons'
 import { socials } from '../header/header-data'
 import './footer.css'
 
 const Footer: FunctionComponent = () => {
-  const refFooter: MutableRefObject<HTMLDivElement | null | undefined> =
-    useRef()
+  const refFooter: RefObject<HTMLElement> = useRef()
   useEffect(() => {
     document.addEventListener('scroll', drawLogo, {
       passive: true,

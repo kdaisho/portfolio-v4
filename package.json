@@ -45,7 +45,7 @@
     "compression-webpack-plugin": "^4.0.0",
     "concurrently": "^5.0.2",
     "css-loader": "^3.4.2",
-    "eslint": "^6.8.0",
+    "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.4.0",

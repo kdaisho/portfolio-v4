@@ -1,9 +1,9 @@
-import React, { useState, useRef } from 'react'
+import React, { RefObject, useRef, useState } from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
+import { Theme } from '@src/components/types'
 import { connect } from 'react-redux'
 import { showToast } from '../toast'
 import './contact.css'
-import ReCAPTCHA from 'react-google-recaptcha'
-import { Theme } from '@src/components/types'
 
 const Contact = ({ theme }: Theme) => {
   const [name, setName] = useState('')
@@ -11,7 +11,7 @@ const Contact = ({ theme }: Theme) => {
   const [message, setMessage] = useState('')
   const [isFormActive, setIsFormActive] = useState(true)
   const [mailResult, setMailResult] = useState('')
-  const contactForm = useRef<HTMLFormElement>()
+  const contactForm: RefObject<HTMLFormElement> = useRef()
   const reCaptchaRef = useRef<ReCAPTCHA>()
 
   type EventType = {

@@ -9,17 +9,18 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
+  "ignorePatterns": ["src/server/mail.js"],
   "rules": {
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,
     "@typescript-eslint/no-empty-function": 0,
     "sort-imports": [
-      "error",
+      2,
       {
         "ignoreCase": false,
         "ignoreDeclarationSort": false,
         "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "memberSyntaxSortOrder": ["all", "multiple", "single", "none"],
         "allowSeparatedGroups": false
       }
     ]

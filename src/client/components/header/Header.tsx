@@ -39,6 +39,9 @@ const Header: FunctionComponent<HeaderProps> = ({
   return (
     <header
       className={`header ${theme} ${openPane === 'menu' ? 'high-z-index' : ''}`}
+      data-host-location={window.parent?.location}
+      data-host-location-origin={window.parent?.location?.origin}
+      data-current-location={window.location}
     >
       <div className='content-wrap nav'>
         <div className='nav-left'>

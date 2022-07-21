@@ -57,17 +57,16 @@ exports.sendMessage = async (req, res) => {
     html: `<p>Name: ${sender.name}</p><br><p>Message: ${sender.msg}</p><br><p>Email: ${sender.email}</p>`,
   }
 
-  return transport.sendMail(mailOptions, err => {
-    if (err) {
-      res.status(500).send({
-        kind: 'error',
-        text: 'Umm.. something went wrong on our side. Not you.',
-      })
-    } else {
-      res.status(200).send({
-        kind: 'success',
-        text: `Thank you ${sender.name}, I will get back to you soon!`,
-      })
-    }
-  })
+  try {
+    await transport.sendMail(mailOptions)
+    res.status(200).send({
+      kind: 'success',
+      text: `Thank you ${sender.name}, I will get back to you soon!`,
+    })
+  } catch (err) {
+    res.status(500).send({
+      kind: 'error',
+      text: 'Umm.. something went wrong on our side. Not you.',
+    })
+  }
 }

@@ -47,7 +47,7 @@ const Hero: FunctionComponent<{ theme: string }> = ({ theme }) => {
       <div className='content-wrap is-side-by-side'>
         <div className='left-side'>
           <div className='typewriter'>
-            <h1>Who am I??</h1>
+            <h1>Who am I?</h1>
           </div>
         </div>
         <div className='right-side' style={{ backgroundImage: `url(${cat})` }}>

@@ -1,42 +1,38 @@
-import { sendMessage } from "../mail";
-import "babel-polyfill";
+import MockAdapter from 'axios-mock-adapter'
+import axios from 'axios'
+import 'babel-polyfill'
+import { sendMessage } from '../mail'
 
-describe("mail", () => {
-  it("should require email, name and message", () => {
-    const req = { body: {} };
-    const res = {
-      status(statusCode) {
-        expect(statusCode).toBe(400);
-        return this;
-      },
-      send(result) {
-        expect(typeof result.message).toBe("string");
-      },
-    };
+const mock = new MockAdapter(axios)
 
-    sendMessage(req, res);
-  });
+describe('mail', () => {
+  const token = 'testToken'
 
-  it("should reject when request body includes an address", () => {
+  beforeEach(() => {
+    mock.reset()
+    mock
+      .onPost(
+        `https://www.google.com/recaptcha/api/siteverify?secret=${undefined}&response=${token}`
+      )
+      .reply(200, { success: true })
+  })
+
+  it('should return 400 error when email, name and message are missing', async () => {
     const req = {
       body: {
-        name: "test-man",
-        email: "testman@testman.ca",
-        address: "2020 avenue testman, montreal",
-        message: "Hello humans.",
+        token,
       },
-    };
-
+    }
     const res = {
       status(statusCode) {
-        expect(statusCode).toBe(401);
-        return this;
+        expect(statusCode).toBe(400)
+        return this
       },
       send(result) {
-        expect(typeof result.message).toBe("string");
+        expect(result.text).toBe('Name, email and message are required.')
       },
-    };
+    }
 
-    sendMessage(req, res);
-  });
-});
+    await sendMessage(req, res)
+  })
+})

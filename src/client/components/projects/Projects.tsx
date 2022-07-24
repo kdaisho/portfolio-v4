@@ -93,11 +93,9 @@ const Projects: FunctionComponent<FilterableSection> = ({
         </div>
         <div className='cards left-side'>
           {projects
-            .filter(project => {
-              return filterTerms.length
-                ? isIncludes(project.stack, filterTerms)
-                : true
-            })
+            .filter(project =>
+              filterTerms.length ? isIncludes(project.stack, filterTerms) : true
+            )
             .map(project => (
               <div
                 key={project.id}

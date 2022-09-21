@@ -2,7 +2,7 @@ const cards = [
   {
     id: 'fabric',
     company: 'Fabric.inc',
-    period: 'Aug 2020  - Present',
+    period: 'Aug 2020  - Sep 2022',
     title: 'Software Development Engineer',
     location: 'Remote',
     what: 'Doing',

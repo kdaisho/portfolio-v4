@@ -1,8 +1,8 @@
-import React, { FunctionComponent, useState, useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { FunctionComponent, useEffect, useState } from 'react'
+import { Theme } from '@src/components/types'
 import cat from '@src/images/hero/cat-body-opt.svg'
 import catAction from '@src/images/hero/cat-actions-opt.svg'
-import { Theme } from '@src/components/types'
+import { connect } from 'react-redux'
 import './hero.css'
 
 const Hero: FunctionComponent<{ theme: string }> = ({ theme }) => {

@@ -48,7 +48,7 @@
   transform: translateY(36px);
 }
 .is-tooling .tooling .tool:hover .stars {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 3px;
   opacity: 1;
 }

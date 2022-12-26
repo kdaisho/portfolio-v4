@@ -35,6 +35,9 @@
     flex: 0 0 20%;
   }
 }
+.is-tooling .tooling .tool path.white {
+  fill: #fff;
+}
 .is-tooling .tooling .tool:hover {
   background: #2962ff;
   cursor: pointer;
@@ -43,12 +46,15 @@
 .is-tooling .tooling .tool:hover circle {
   fill: #fff;
 }
+.is-tooling .tooling .tool:hover path.white {
+  fill: #2962ff;
+}
 .is-tooling .tooling .tool:hover .separator {
   border-color: #fff;
   transform: translateY(36px);
 }
 .is-tooling .tooling .tool:hover .stars {
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 3px;
   opacity: 1;
 }

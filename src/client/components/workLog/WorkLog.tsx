@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
-import { connect } from 'react-redux'
-import cards from './workLog-data'
 import { Theme } from '@src/components/types'
+import cards from './workLog-data'
+import { connect } from 'react-redux'
 import './worklog.css'
 
 type cardProps = {

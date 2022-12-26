@@ -37,6 +37,10 @@
         flex: 0 0 20%;
       }
 
+      path.white {
+        fill: #fff;
+      }
+
       &:hover {
         background: @themeColor;
         cursor: pointer;
@@ -46,13 +50,17 @@
           fill: #fff;
         }
 
+        path.white {
+          fill: @themeColor;
+        }
+
         .separator {
           border-color: #fff;
           transform: translateY(36px);
         }
 
         .stars {
-          font-size: @font-small;
+          font-size: 13px;
           letter-spacing: 3px;
           opacity: 1;
         }
@@ -67,6 +75,7 @@
         width: 75px;
       }
 
+      //   path:not(.white),
       path,
       circle {
         fill: @themeColor;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Logo = () => (
+const Logo = (): JSX.Element => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='106.96'
@@ -27,7 +27,7 @@ const Logo = () => (
   </svg>
 )
 
-const Desktop = () => (
+const Desktop = (): JSX.Element => (
   <svg viewBox='0 0 96 96' xmlns='http://www.w3.org/2000/svg'>
     <path
       fill='#2962ff'
@@ -36,7 +36,7 @@ const Desktop = () => (
   </svg>
 )
 
-const Github = () => (
+const Github = (): JSX.Element => (
   <svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'>
     <path
       fill='#2963ff'

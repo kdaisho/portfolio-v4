@@ -1,11 +1,11 @@
+import { ChangeThemeProps, Theme } from '@src/components/types'
 import React, { FunctionComponent, useEffect } from 'react'
-import { connect } from 'react-redux'
-import { socials, menuItems } from './header-data'
+import { menuItems, socials } from './header-data'
 import { Logo } from '@src/svg/Icons'
-import menuDots from '@src/images/nav/menu-dots-opt.svg'
-import menuClose from '@src/images/nav/menu-close-opt.svg'
 import changeTheme from '@src/actionCreators/changeTheme'
-import { Theme, ChangeThemeProps } from '@src/components/types'
+import { connect } from 'react-redux'
+import menuClose from '@src/images/nav/menu-close-opt.svg'
+import menuDots from '@src/images/nav/menu-dots-opt.svg'
 import './header.css'
 
 type HeaderProps = {

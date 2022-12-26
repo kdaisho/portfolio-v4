@@ -12,6 +12,14 @@ export const tooling = [
     stars: 3,
   },
   {
+    name: 'deno',
+    stars: 2,
+  },
+  {
+    name: 'svelte',
+    stars: 3,
+  },
+  {
     name: 'react',
     stars: 3,
   },

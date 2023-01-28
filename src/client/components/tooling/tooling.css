@@ -88,3 +88,9 @@
   transform: translateY(-20px);
   transition: transform 0.25s ease-out;
 }
+.dark.is-tooling .tooling .tool path.white {
+  fill: #000;
+}
+.dark.is-tooling .tooling .tool:hover path.white {
+  fill: #2962ff;
+}

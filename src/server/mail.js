@@ -1,14 +1,7 @@
 const axios = require('axios').default
-const nodemailer = require('nodemailer')
+const postmark = require('postmark')
 
-const transport = nodemailer.createTransport({
-  host: process.env.MAIL_HOST,
-  port: process.env.MAIL_PORT,
-  auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
-  },
-})
+const mailClient = new postmark.ServerClient(process.env.POSTMARK_API_TOKEN)
 
 const validateHuman = async token => {
   try {
@@ -47,18 +40,15 @@ exports.sendMessage = async (req, res) => {
     msg: req.body.message,
   }
 
-  const mailOptions = {
-    from: `daishodesign <noreply@${process.env}>`,
-    to: process.env.MAIL_DESTINATION,
-    subject: req.body.requestCopy
-      ? `Copy: Message from ${sender.name} via portfolio`
-      : `Message from ${sender.name} via portfolio`,
-    text: `Name: ${sender.name}. Content: ${sender.msg} Email: ${sender.email}`,
-    html: `<p>Name: ${sender.name}</p><br><p>Message: ${sender.msg}</p><br><p>Email: ${sender.email}</p>`,
-  }
-
   try {
-    await transport.sendMail(mailOptions)
+    mailClient.sendEmail({
+      From: 'admin@daishodesign.com',
+      To: process.env.MAIL_DESTINATION,
+      Subject: `Message from ${sender.name} via portfolio`,
+      HtmlBody: `<p>Name: ${sender.name}</p><br><p>Message: ${sender.msg}</p><br><p>Email: ${sender.email}</p>`,
+      TextBody: `Name: ${sender.name}. Content: ${sender.msg} Email: ${sender.email}`,
+      MessageStream: 'outbound',
+    })
     res.status(200).send({
       kind: 'success',
       text: `Thank you ${sender.name}, I will get back to you soon!`,

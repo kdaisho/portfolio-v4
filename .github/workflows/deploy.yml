@@ -37,6 +37,7 @@ jobs:
           echo MAIL_HOST=${{ secrets.MAIL_HOST }} >> .env
           echo MAIL_PORT=${{ secrets.MAIL_PORT }} >> .env
           echo MAIL_DESTINATION=${{ secrets.MAIL_DESTINATION }} >> .env
+          echo POSTMARK_API_TOKEN=${{ secrets.POSTMARK_API_TOKEN }} >> .env
           echo RECAPTCHA_SECRET_KEY=${{ secrets.RECAPTCHA_SECRET_KEY }} >> .env
           cat .env
       - run: npm run build

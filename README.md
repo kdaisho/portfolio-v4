@@ -14,11 +14,12 @@ To run the mail service, make sure to add `.env` file at root. Here's the conten
 ```
 NODE_ENV=<DEVELOPMENT_OR_PRODUCTION>
 PORT=8890 // has to match your webpack proxy, at least for local dev
-MAIL_USER=<GET_FROM_YOUR_GMAIL_ACCOUNT> // using quebec3 gmail
+MAIL_USER=<GET_FROM_YOUR_GMAIL_ACCOUNT> // using admin@daishodesign.com
 MAIL_PASS=<GET_FROM_YOUR_GMAIL_ACCOUNT>
 MAIL_HOST=<GET_FROM_YOUR_GMAIL_ACCOUNT>
 MAIL_PORT=<GET_FROM_YOUR_GMAIL_ACCOUNT>
 MAIL_DESTINATION=<YOUR_MAIN_EMAIL_ADDRESS>
+POSTMARK_API_TOKEN=<POSTMARK_API_TOKEN>
 RECAPTCHA_SECRET_KEY=<YOUR_RECAPTCHA_SECRET_KEY>
 ```
 
@@ -62,8 +63,11 @@ If you update css variables in variables.less, open the consumer file of the var
 - Make sure the list of domains contains `localhost` or `127.0.0.1` with your reCAPTCHA account (https://www.google.com/recaptcha)
 
 ## Environment variable: MAIL_PASS
+
 Changed mail password from the password for quebec3 google account to newly created app password. (April 16, 2022)
+
 ### How I setup the password
+
 - Go to google account
 - Go to "Security" from left hand-side menu
 - Find "Signing in to Google" section
